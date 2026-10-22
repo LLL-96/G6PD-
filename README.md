@@ -69,7 +69,9 @@ g6pd-tool/
 │   └── data.js         # 由 tools/build_web_data.py 生成
 ├── tools/
 │   ├── build_web_data.py    # items.json → web/data.js
-│   └── test_web_search.js   # 网页/CLI 搜索结果一致性测试（20 条用例）
+│   ├── test_web_search.js   # 网页/CLI 搜索结果一致性测试（20 条用例）
+│   ├── test_profile_smoke.js # 档案模块 DOM stub 冒烟测试
+│   └── deploy.sh            # 一键部署 GitHub Pages
 └── README.md
 ```
 
@@ -94,9 +96,35 @@ python -m http.server 8765 --bind 0.0.0.0
 - iPhone：Safari 打开 → 分享按钮 →“添加到主屏幕”
 - Android：Chrome 打开 → 右上角菜单 →“添加到主屏幕”
 
-手机端含四个页签：🔍 查询（大搜索框 + 风险筛选）/ 📋 全部（按类别浏览）/ 🚨 应急（发作3步流程 + 症状识别）/ 🪪 提示卡（可一键复制全文发给医生）。
+手机端含五个页签：🔍 查询（大搜索框 + 风险筛选）/ 📋 全部（按类别浏览）/ 📁 档案 / 🚨 应急（发作3步流程 + 症状识别）/ 🪪 提示卡（可一键复制全文发给医生）。
 
-> 改了 `data/items.json` 后，运行 `python tools/build_web_data.py` 重新生成网页数据；运行 `node tools/test_web_search.js` 可验证网页与 CLI 搜索结果一致。
+**📁 档案页**（数据存手机本地 localStorage，不上传、不注册）：
+- 患者信息（WHO 酶活性分级）、溶血发作史、就诊记录、家人 G6PD 状态、复查提醒
+- 录入就诊药品时**自动比对禁忌库**标风险（禁用药红色警告）
+- 统计条一览：发作次数 / 就诊次数 / 待办提醒；过期提醒红色提示
+- 智能提示：登记男性患者后，若母亲未查，提示母亲做酶活性检测
+- **数据管理**：导出备份 JSON / 导入恢复 / 清空——换手机时先导出再导入即可迁移
+
+> 改了 `data/items.json` 后，运行 `python tools/build_web_data.py` 重新生成网页数据；运行 `node tools/test_web_search.js` 可验证网页与 CLI 搜索结果一致；`node tools/test_profile_smoke.js` 验证档案模块渲染。
+
+## 一键部署到 GitHub Pages
+
+部署后得到一个公开链接（如 `https://你的用户名.github.io/g6pd-lookup/`），家人手机打开即用，**每个人的档案数据各自存在自己手机的浏览器里**，互不可见。
+
+**第一步：授权 GitHub（仅首次）**
+```bash
+gh auth login --web
+```
+按提示在浏览器中完成授权（没有 GitHub 账号则先在 github.com 注册）。
+
+**第二步：一键部署**
+```bash
+bash tools/deploy.sh                  # 默认仓库名 g6pd-lookup，公开
+bash tools/deploy.sh 我的仓库名 private   # 自定义仓库名/私有
+```
+脚本会自动完成：初始化仓库 → 提交 → 创建 GitHub 仓库并推送 → 开启 Pages → 输出访问链接。之后每次改动只需重新运行同一命令。
+
+> 隐私说明：`data/profile.json`（CLI 本地档案）已在 `.gitignore` 中排除，不会上传；网页版档案数据只存在于用户手机浏览器。公网部署时请保留页面底部免责声明。
 
 ## 如何扩充数据库（后续维护）
 
