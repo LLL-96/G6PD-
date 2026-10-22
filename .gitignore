@@ -1,0 +1,8 @@
+# 本地档案数据（含敏感信息，不上传）
+data/profile.json
+data/profile.json.tmp
+
+# 系统杂项
+.DS_Store
+Thumbs.db
+desktop.ini

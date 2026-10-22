@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#b71c1c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="蚕豆病速查">
+<title>蚕豆病（G6PD）禁忌速查</title>
+<style>
+  :root {
+    --red: #c62828; --red-bg: #fdecea; --red-border: #f5b5b0;
+    --yellow: #b26a00; --yellow-bg: #fff7e0; --yellow-border: #ffe08a;
+    --green: #2e7d32; --green-bg: #eaf6eb; --green-border: #b8e0ba;
+    --blue: #1565c0; --blue-bg: #e8f1fb; --blue-border: #b3d4f5;
+    --ink: #1f2329; --ink-2: #555c66; --ink-3: #8a919c;
+    --bg: #f6f7f9; --card: #ffffff; --line: #e6e8ec;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--ink);
+    font-size: 16px; line-height: 1.6;
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: linear-gradient(135deg, #b71c1c, #d32f2f);
+    color: #fff; padding: 14px 16px 12px;
+    padding-top: calc(14px + env(safe-area-inset-top));
+  }
+  header h1 { margin: 0; font-size: 19px; font-weight: 700; }
+  header p { margin: 2px 0 0; font-size: 12px; opacity: .85; }
+  main { max-width: 720px; margin: 0 auto; padding: 12px 12px 24px; }
+
+  /* 搜索区 */
+  .searchbox {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 10px 12px; margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+  .searchbox input {
+    flex: 1; border: none; outline: none; font-size: 17px;
+    background: transparent; color: var(--ink); min-width: 0;
+  }
+  .searchbox .icon { font-size: 18px; color: var(--ink-3); }
+  .searchbox .clear {
+    border: none; background: #eceef2; color: var(--ink-2);
+    width: 26px; height: 26px; border-radius: 50%; font-size: 14px;
+    display: none; align-items: center; justify-content: center; cursor: pointer;
+  }
+  .searchbox .clear.show { display: inline-flex; }
+
+  .chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 10px; -webkit-overflow-scrolling: touch; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip {
+    flex: 0 0 auto; border: 1px solid var(--line); background: var(--card);
+    border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--ink-2);
+    cursor: pointer; user-select: none;
+  }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .chip.on.r-forbidden { background: var(--red); border-color: var(--red); }
+  .chip.on.r-caution { background: var(--yellow); border-color: var(--yellow); }
+  .chip.on.r-safe { background: var(--green); border-color: var(--green); }
+  .chip.on.r-info { background: var(--blue); border-color: var(--blue); }
+
+  .count { font-size: 13px; color: var(--ink-3); margin: 2px 2px 10px; }
+  .quick { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px; }
+  .quick button {
+    border: 1px dashed var(--line); background: var(--card); color: var(--ink-2);
+    border-radius: 8px; padding: 6px 10px; font-size: 13px; cursor: pointer;
+  }
+
+  /* 条目卡片 */
+  .item {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    margin-bottom: 10px; overflow: hidden; cursor: pointer;
+  }
+  .item .bar { height: 4px; }
+  .item.forbidden .bar { background: var(--red); }
+  .item.caution .bar { background: var(--yellow); }
+  .item.safe .bar { background: var(--green); }
+  .item.info .bar { background: var(--blue); }
+  .item .head { padding: 12px 14px 10px; }
+  .item .row1 { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .item .name { font-size: 17px; font-weight: 700; }
+  .tag {
+    flex: 0 0 auto; font-size: 12px; font-weight: 600; border-radius: 6px;
+    padding: 2px 8px; white-space: nowrap;
+  }
+  .forbidden .tag { color: var(--red); background: var(--red-bg); border: 1px solid var(--red-border); }
+  .caution .tag { color: var(--yellow); background: var(--yellow-bg); border: 1px solid var(--yellow-border); }
+  .safe .tag { color: var(--green); background: var(--green-bg); border: 1px solid var(--green-border); }
+  .info .tag { color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-border); }
+  .debate { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .item .summary { font-size: 14px; color: var(--ink-2); margin-top: 4px; }
+  .item .detail { display: none; padding: 0 14px 12px; font-size: 14px; }
+  .item.open .detail { display: block; }
+  .item .detail .kv { margin-top: 6px; }
+  .item .detail .k { font-size: 12px; color: var(--ink-3); }
+  .item .detail .v { font-size: 14px; color: var(--ink); }
+  .item .warn {
+    margin-top: 8px; font-size: 13px; border-radius: 8px; padding: 8px 10px;
+    background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border);
+  }
+  .item.forbidden .warn { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+  .item .src { font-size: 11px; color: var(--ink-3); margin-top: 8px; }
+  .item .chev { float: right; color: var(--ink-3); font-size: 12px; margin-top: 2px; }
+
+  .group-title {
+    font-size: 14px; font-weight: 700; color: var(--ink-2);
+    margin: 16px 2px 8px;
+  }
+  .empty { text-align: center; color: var(--ink-3); padding: 40px 20px; font-size: 14px; }
+  .empty .big { font-size: 40px; margin-bottom: 8px; }
+
+  .prose { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; font-size: 15px; }
+  .prose h3 { margin: 14px 0 6px; font-size: 16px; }
+  .prose h3:first-child { margin-top: 0; }
+  .prose ul { margin: 6px 0; padding-left: 20px; }
+  .prose li { margin: 4px 0; }
+  .prose .step { border-left: 4px solid var(--red); padding: 8px 12px; background: var(--red-bg); border-radius: 0 8px 8px 0; margin: 10px 0; }
+  .prose .step b { color: var(--red); }
+  .prose .keyline { background: var(--blue-bg); border: 1px solid var(--blue-border); color: var(--blue); border-radius: 8px; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
+  .btn {
+    display: block; width: 100%; border: none; border-radius: 12px; padding: 13px;
+    font-size: 16px; font-weight: 600; background: var(--ink); color: #fff;
+    margin-top: 14px; cursor: pointer;
+  }
+  .btn.copy { background: #455a64; }
+
+  .footer-note { text-align: center; font-size: 11px; color: var(--ink-3); margin-top: 20px; line-height: 1.5; }
+
+  /* 底部 Tab */
+  nav {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+    display: flex; background: var(--card); border-top: 1px solid var(--line);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  nav button {
+    flex: 1; border: none; background: none; padding: 8px 0 7px;
+    font-size: 11px; color: var(--ink-3); cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+  }
+  nav button .ic { font-size: 21px; line-height: 1; }
+  nav button.on { color: var(--red); font-weight: 700; }
+
+  .page { display: none; }
+  .page.on { display: block; }
+
+  /* ===== 档案页 ===== */
+  .ptabs { display: flex; gap: 6px; overflow-x: auto; margin: 10px 0 12px; -webkit-overflow-scrolling: touch; }
+  .ptabs::-webkit-scrollbar { display: none; }
+  .ptab {
+    flex: 0 0 auto; border: 1px solid var(--line); background: var(--card); color: var(--ink-2);
+    border-radius: 999px; padding: 6px 13px; font-size: 13px; cursor: pointer; user-select: none;
+  }
+  .ptab.on { background: var(--red); border-color: var(--red); color: #fff; font-weight: 600; }
+  .pcard {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px; margin-bottom: 12px;
+  }
+  .pcard .pv { font-size: 15px; margin: 3px 0; }
+  .pcard .pk { font-size: 12px; color: var(--ink-3); }
+  .stat-row { display: flex; gap: 8px; margin-bottom: 12px; }
+  .stat {
+    flex: 1; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 10px 8px; text-align: center;
+  }
+  .stat .n { font-size: 22px; font-weight: 800; color: var(--red); }
+  .stat .t { font-size: 12px; color: var(--ink-2); margin-top: 2px; }
+  .form { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+  .form label { display: block; font-size: 13px; color: var(--ink-2); margin: 10px 0 4px; }
+  .form label:first-child { margin-top: 0; }
+  .form input, .form select, .form textarea {
+    width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px;
+    font-size: 15px; font-family: inherit; background: #fafbfc; color: var(--ink);
+    outline: none; -webkit-appearance: none; appearance: none;
+  }
+  .form input:focus, .form select:focus { border-color: var(--red); background: #fff; }
+  .form .row { display: flex; gap: 8px; }
+  .form .row > div { flex: 1; }
+  .btnrow { display: flex; gap: 8px; margin-top: 14px; }
+  .btnrow .btn { margin-top: 0; flex: 1; }
+  .btn.ghost { background: #eceef2; color: var(--ink-2); }
+  .btn.small { padding: 9px 12px; font-size: 14px; }
+  .addbtn {
+    display: block; width: 100%; border: 1.5px dashed #d3d6dc; background: none;
+    border-radius: 12px; padding: 11px; font-size: 15px; color: var(--ink-2);
+    margin-bottom: 12px; cursor: pointer;
+  }
+  .rec {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; margin-bottom: 10px; font-size: 14px;
+  }
+  .rec .rh { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .rec .rt { font-weight: 700; font-size: 15px; }
+  .rec .rd { color: var(--ink-3); font-size: 12px; white-space: nowrap; }
+  .rec .rb { color: var(--ink-2); margin-top: 4px; font-size: 13.5px; }
+  .rec .del { color: var(--ink-3); font-size: 12px; cursor: pointer; border: none; background: none; padding: 2px 4px; }
+  .rec .del:active { color: var(--red); }
+  .medline { display: flex; align-items: center; gap: 6px; margin-top: 5px; font-size: 13.5px; flex-wrap: wrap; }
+  .medline .mtag { font-size: 11px; font-weight: 700; border-radius: 5px; padding: 1px 6px; white-space: nowrap; }
+  .mtag.forbidden { color: var(--red); background: var(--red-bg); }
+  .mtag.caution { color: var(--yellow); background: var(--yellow-bg); }
+  .mtag.safe { color: var(--green); background: var(--green-bg); }
+  .mtag.info { color: var(--blue); background: var(--blue-bg); }
+  .mtag.none { color: var(--ink-3); background: #eef0f3; }
+  .med-check {
+    font-size: 12.5px; border-radius: 8px; padding: 7px 10px; margin-top: 6px;
+    background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border);
+  }
+  .med-check.bad { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+  .med-check.warn { background: var(--yellow-bg); color: var(--yellow); border-color: var(--yellow-border); }
+  .toast {
+    position: fixed; left: 50%; bottom: calc(84px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+    background: rgba(20,22,26,.92); color: #fff; font-size: 14px; border-radius: 10px;
+    padding: 10px 18px; z-index: 99; display: none; max-width: 86vw; text-align: center;
+  }
+  .toast.show { display: block; }
+  .overdue { color: var(--red); font-weight: 700; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🫘 蚕豆病（G6PD 缺乏症）禁忌速查</h1>
+  <p>药品 / 食物 / 日用品 · 风险查询 · 应急指引</p>
+</header>
+
+<main>
+  <!-- ============ 查询页 ============ -->
+  <section class="page on" id="page-search">
+    <div class="searchbox">
+      <span class="icon">🔍</span>
+      <input id="q" type="search" placeholder="输入药名 / 食物名，如：布洛芬、复方新诺明" enterkeyhint="search">
+      <button class="clear" id="clearBtn" aria-label="清空">✕</button>
+    </div>
+    <div class="chips" id="chips">
+      <div class="chip on" data-risk="">全部</div>
+      <div class="chip r-forbidden" data-risk="forbidden">⛔ 禁用</div>
+      <div class="chip r-caution" data-risk="caution">⚠️ 慎用</div>
+      <div class="chip r-safe" data-risk="safe">✅ 常规可用</div>
+      <div class="chip r-info" data-risk="info">ℹ️ 提示</div>
+    </div>
+    <div class="quick" id="quick">
+      <button data-q="对乙酰氨基酚">对乙酰氨基酚</button>
+      <button data-q="布洛芬">布洛芬</button>
+      <button data-q="阿莫西林">阿莫西林</button>
+      <button data-q="复方新诺明">复方新诺明</button>
+      <button data-q="感冒灵">感冒灵</button>
+      <button data-q="蚕豆">蚕豆</button>
+      <button data-q="樟脑丸">樟脑丸</button>
+      <button data-q="牛黄解毒片">牛黄解毒片</button>
+    </div>
+    <div class="count" id="count"></div>
+    <div id="results"></div>
+  </section>
+
+  <!-- ============ 列表页 ============ -->
+  <section class="page" id="page-list">
+    <div class="count">按类别浏览全部条目，点开看详情</div>
+    <div id="allList"></div>
+  </section>
+
+  <!-- ============ 档案页 ============ -->
+  <section class="page" id="page-profile">
+    <div id="profileApp"></div>
+  </section>
+
+  <!-- ============ 应急页 ============ -->
+  <section class="page" id="page-emergency">
+    <div class="prose">
+      <h3>🚨 溶血发作怎么办（先立即就医）</h3>
+      <div class="step"><b>第一步：立即停止接触诱因</b><br>停止食用蚕豆及可疑食物；停用可疑药物；远离樟脑丸（萘）等物品。</div>
+      <div class="step"><b>第二步：立即送正规医院</b><br>前往医院急诊科/血液科，明确告知医生：“有蚕豆病史，怀疑溶血发作”。溶血多为自限性（1~2天，长者10天），及时处理大多可完全恢复。</div>
+      <div class="step"><b>第三步：途中与院内配合</b><br>保证水分供给；不要自行喂药、喂偏方；配合医生进行血常规、尿常规（看血红蛋白尿）等检查，必要时输血。</div>
+      <h3>⚠️ 警惕症状（进食蚕豆/可疑药物后 1~3 天内）</h3>
+      <ul>
+        <li>尿色加深，呈浓茶色或酱油色（血红蛋白尿）</li>
+        <li>面色、嘴唇、指甲迅速苍白，乏力没精神</li>
+        <li>皮肤、眼白发黄（黄疸）</li>
+        <li>腹痛、恶心、呕吐、腰酸背痛</li>
+        <li>严重时：心跳快、呼吸急、尿少，甚至休克</li>
+      </ul>
+      <div class="keyline">一句话：吃过蚕豆/可疑药物 + 尿色变深 + 发黄苍白 = 高度怀疑溶血，<b>立即就医</b>。</div>
+    </div>
+  </section>
+
+  <!-- ============ 提示卡页 ============ -->
+  <section class="page" id="page-card">
+    <div class="prose" id="cardText">
+      <h3>🪪 G6PD 缺乏症（蚕豆病）就医提示卡</h3>
+      <p>患者/患儿患有 G6PD 缺乏症（蚕豆病）：红细胞易因氧化性物质破坏而发生急性溶血。用药、饮食前请核对以下禁忌：</p>
+      <p><b>【禁用药物】</b><br>
+      · 解热镇痛：阿司匹林、安乃近、氨基比林、非那西丁、保泰松<br>
+      · 磺胺类：复方新诺明（SMZ-TMP）、磺胺嘧啶及所有磺胺<br>
+      · 硝基呋喃类：呋喃妥因、呋喃唑酮（痢特灵）、呋喃西林<br>
+      · 抗疟药：伯氨喹、帕马喹（扑疟母星）、阿的平<br>
+      · 其他：亚甲蓝（美蓝）、氨苯砜、萘啶酸、非那吡啶、氯霉素<br>
+      · 中药成分：黄连、金银花、牛黄、珍珠末、薄荷、连翘、冰片、熊胆、腊梅花</p>
+      <p><b>【禁食 / 回避】</b><br>
+      · 蚕豆及一切制品（鲜蚕豆、豆瓣酱、兰花豆、蚕豆酥等）<br>
+      · 樟脑丸/卫生球/臭丸（萘）、紫药水（龙胆紫）</p>
+      <p><b>【慎用（需医生评估）】</b><br>
+      奎宁、氯喹、喹诺酮类（XX沙星）、大剂量维生素C、维生素K3、硝普钠、硝酸酯类、磺酰脲类降糖药、复方感冒药（成分复杂，需逐项核对）</p>
+      <p><b>【相对安全（供参考）】</b><br>
+      对乙酰氨基酚（常规剂量）、布洛芬（有分歧，需评估）、青霉素类 / 头孢类 / 大环内酯类抗生素</p>
+      <p>看病时请主动询问医生/药师：所开药物是否含以上禁忌成分？谢谢！</p>
+    </div>
+    <button class="btn copy" id="copyCard">📋 复制提示卡全文</button>
+  </section>
+
+  <div class="footer-note">
+    数据整理自公开权威资料（安徽省卫健委、协和/北大医院医生、台湾药学会等），仅供参考，不构成医疗建议。<br>
+    用药请以医生处方和药师指导为准 · 本地运行，数据不出手机
+  </div>
+</main>
+
+<nav>
+  <button class="on" data-page="search"><span class="ic">🔍</span>查询</button>
+  <button data-page="list"><span class="ic">📋</span>全部</button>
+  <button data-page="profile"><span class="ic">📁</span>档案</button>
+  <button data-page="emergency"><span class="ic">🚨</span>应急</button>
+  <button data-page="card"><span class="ic">🪪</span>提示卡</button>
+</nav>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>
