@@ -19,7 +19,8 @@ if ! gh auth status &>/dev/null; then
   echo "❌ 尚未授权 GitHub。请先运行：gh auth login --web"
   exit 1
 fi
-echo "✅ GitHub 已授权：$(gh api user --jq .login)"
+OWNER="$(gh api user --jq .login)"
+echo "✅ GitHub 已授权：$OWNER"
 
 # 2. git 仓库初始化（幂等）
 if [ ! -d .git ]; then
@@ -53,8 +54,8 @@ else
 fi
 
 # 6. 开启 GitHub Pages（main 分支根目录；已开启则忽略）
-if ! gh api "repos/{owner}/$REPO/pages" &>/dev/null; then
-  gh api --method POST "repos/{owner}/$REPO/pages" \
+if ! gh api "repos/$OWNER/$REPO/pages" &>/dev/null; then
+  gh api --method POST "repos/$OWNER/$REPO/pages" \
     -f source[branch]=main -f source[path]=/ &>/dev/null \
     && echo "✅ GitHub Pages 已开启" \
     || echo "⚠️  Pages 开启返回异常，请到仓库 Settings → Pages 手动确认"
