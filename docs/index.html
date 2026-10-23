@@ -77,7 +77,7 @@
   /* 条目卡片 */
   .item {
     background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    margin-bottom: 10px; overflow: hidden; cursor: pointer;
+    margin-bottom: 10px; overflow: hidden; cursor: pointer; position: relative;
   }
   .item .bar { height: 4px; }
   .item.forbidden .bar { background: var(--red); }
@@ -222,6 +222,69 @@
   }
   .toast.show { display: block; }
   .overdue { color: var(--red); font-weight: 700; font-size: 12px; }
+
+  /* ===== 优化：搜索联想 / 历史 / 收藏 / 概览 ===== */
+  .search-wrap { position: relative; }
+  .suggest {
+    position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 30;
+    background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.16); overflow: hidden; max-height: 58vh; overflow-y: auto;
+  }
+  .suggest .opt {
+    display: flex; align-items: center; gap: 10px; padding: 11px 14px;
+    cursor: pointer; border-bottom: 1px solid #f1f2f5;
+  }
+  .suggest .opt:last-child { border-bottom: none; }
+  .suggest .opt.active, .suggest .opt:active { background: #f5f7fa; }
+  .suggest .dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+  .suggest .s-name { font-size: 15px; font-weight: 600; }
+  .suggest .s-cat { font-size: 12px; color: var(--ink-3); margin-left: auto; white-space: nowrap; }
+  .suggest .s-hl { color: var(--red); }
+  .suggest .empty { padding: 14px; text-align: center; color: var(--ink-3); font-size: 13px; }
+  .dot.forbidden { background: var(--red); } .dot.caution { background: var(--yellow); }
+  .dot.safe { background: var(--green); } .dot.info { background: var(--blue); }
+
+  .history { margin: 2px 0 10px; }
+  .history .hlabel { font-size: 12px; color: var(--ink-3); display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .history .hlabel .clr { cursor: pointer; color: var(--ink-3); }
+  .history .hchips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .history .hchip { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 12px; font-size: 13px; color: var(--ink-2); cursor: pointer; }
+  .history .hchip:active { background: #eef0f3; }
+
+  .chip.r-fav { color: #b8791b; }
+  .chip.on.r-fav { background: #f5a623; border-color: #f5a623; color: #fff; }
+
+  .star {
+    float: right; border: none; background: none; font-size: 19px; line-height: 1;
+    cursor: pointer; padding: 0 0 0 8px; color: #cfd3da; transition: transform .1s ease;
+  }
+  .star.on { color: #f5a623; }
+  .star:active { transform: scale(1.2); }
+
+  .cat-pill { display: inline-block; font-size: 11px; color: var(--ink-3); background: #f1f3f6; border-radius: 6px; padding: 1px 7px; margin-left: 6px; }
+  .s-hl { color: var(--red); font-weight: 700; }
+
+  .list-summary { display: flex; gap: 8px; margin: 4px 2px 12px; }
+  .list-summary .ls { flex: 1; text-align: center; border-radius: 12px; padding: 10px 4px; border: 1px solid var(--line); background: #fff; cursor: pointer; }
+  .list-summary .ls .n { font-size: 20px; font-weight: 800; }
+  .list-summary .ls .t { font-size: 11px; color: var(--ink-2); margin-top: 2px; }
+  .list-summary .ls.active { border-color: var(--ink); }
+  .list-summary .ls.forbidden .n { color: var(--red); }
+  .list-summary .ls.caution .n { color: var(--yellow); }
+  .list-summary .ls.safe .n { color: var(--green); }
+  .list-summary .ls.info .n { color: var(--blue); }
+  .list-filter { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; margin-bottom: 10px; }
+  .list-filter input { flex: 1; border: none; outline: none; font-size: 15px; background: transparent; min-width: 0; }
+  .list-filter .icon { color: var(--ink-3); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .item { animation: fadeUp .22s ease both; }
+  .item .bar { width: 5px; height: 100%; position: absolute; left: 0; top: 0; }
+
+  .header-badges { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
+  .header-badge { font-size: 11px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: 2px 9px; }
+
+  .empty .big { font-size: 40px; margin-bottom: 8px; }
 </style>
 </head>
 <body>
@@ -229,18 +292,26 @@
 <header>
   <h1>🫘 蚕豆病（G6PD 缺乏症）禁忌速查</h1>
   <p>药品 / 食物 / 日用品 · 风险查询 · 应急指引</p>
+  <div class="header-badges">
+    <span class="header-badge">📦 本地运行 · 数据不出手机</span>
+    <span class="header-badge" id="badgeCount">共 0 条</span>
+  </div>
 </header>
 
 <main>
   <!-- ============ 查询页 ============ -->
   <section class="page on" id="page-search">
-    <div class="searchbox">
-      <span class="icon">🔍</span>
-      <input id="q" type="search" placeholder="输入药名 / 食物名，如：布洛芬、复方新诺明" enterkeyhint="search">
-      <button class="clear" id="clearBtn" aria-label="清空">✕</button>
+    <div class="search-wrap">
+      <div class="searchbox">
+        <span class="icon">🔍</span>
+        <input id="q" type="search" placeholder="输入药名 / 食物名，如：布洛芬、复方新诺明" enterkeyhint="search" autocomplete="off">
+        <button class="clear" id="clearBtn" aria-label="清空">✕</button>
+      </div>
+      <div class="suggest" id="suggest" style="display:none"></div>
     </div>
     <div class="chips" id="chips">
       <div class="chip on" data-risk="">全部</div>
+      <div class="chip r-fav" data-fav="1">⭐ 常用</div>
       <div class="chip r-forbidden" data-risk="forbidden">⛔ 禁用</div>
       <div class="chip r-caution" data-risk="caution">⚠️ 慎用</div>
       <div class="chip r-safe" data-risk="safe">✅ 常规可用</div>
@@ -262,7 +333,11 @@
 
   <!-- ============ 列表页 ============ -->
   <section class="page" id="page-list">
-    <div class="count">按类别浏览全部条目，点开看详情</div>
+    <div id="listSummary" class="list-summary"></div>
+    <div class="list-filter">
+      <span class="icon">🔍</span>
+      <input id="listQ" type="search" placeholder="在全部条目中筛选（药名 / 别名 / 类别）" autocomplete="off">
+    </div>
     <div id="allList"></div>
   </section>
 

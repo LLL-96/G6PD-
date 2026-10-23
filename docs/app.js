@@ -104,6 +104,62 @@
     }).join("；");
   }
 
+  /* 命中高亮：在文本中高亮与查询连续匹配的子串 */
+  function hl(text, q) {
+    var t = String(text == null ? "" : text);
+    if (!q) return esc(t);
+    var lt = t.toLowerCase(), lq = q.toLowerCase();
+    var i = lt.indexOf(lq);
+    if (i < 0) return esc(t);
+    return esc(t.slice(0, i)) + '<span class="s-hl">' + esc(t.slice(i, i + q.length)) + "</span>" + esc(t.slice(i + q.length));
+  }
+
+  /* ---------- 收藏（localStorage） ---------- */
+  var FAV_KEY = "g6pd_fav_v1";
+  function loadFav() {
+    try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch (e) { return []; }
+  }
+  var favArr = loadFav();
+  function isFav(id) { return favArr.indexOf(id) >= 0; }
+  function toggleFav(id) {
+    if (isFav(id)) favArr = favArr.filter(function (x) { return x !== id; });
+    else favArr.push(id);
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(favArr)); } catch (e) {}
+  }
+
+  /* ---------- 搜索历史（localStorage） ---------- */
+  var HIST_KEY = "g6pd_history_v1";
+  function loadHist() {
+    try { return JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch (e) { return []; }
+  }
+  function pushHist(q) {
+    q = (q || "").trim();
+    if (!q) return;
+    var h = loadHist().filter(function (x) { return x !== q; });
+    h.unshift(q);
+    if (h.length > 8) h = h.slice(0, 8);
+    try { localStorage.setItem(HIST_KEY, JSON.stringify(h)); } catch (e) {}
+  }
+  function clearHist() {
+    try { localStorage.removeItem(HIST_KEY); } catch (e) {}
+  }
+
+  /* ---------- 联想建议 ---------- */
+  function suggest(q, n) {
+    var nq = norm(q);
+    if (!nq) return [];
+    var out = [];
+    ITEMS.forEach(function (it) {
+      var s = scoreItem(nq, it);
+      if (s >= 50) out.push({ score: s, item: it });
+    });
+    out.sort(function (a, b) {
+      if (b.score !== a.score) return b.score - a.score;
+      return RISK_ORDER[a.item.risk] - RISK_ORDER[b.item.risk];
+    });
+    return out.slice(0, n).map(function (x) { return x.item; });
+  }
+
   /* ---------- 渲染 ---------- */
 
   function itemCard(it, idPrefix) {
@@ -117,11 +173,12 @@
         '<div class="head">' +
           '<div class="row1">' +
             '<span class="tag">' + esc(label) + '</span>' +
-            '<span class="name">' + esc(it.name) + '</span>' +
-            (it.controversy ? '<span class="debate">[口径有分歧]</span>' : "") +
+            '<span class="name">' + hl(it.name, currentQuery) + '</span>' +
+            (it.controversy ? '<span class="debate">[分歧]</span>' : "") +
+            '<button class="star' + (isFav(it.id) ? " on" : "") + '" data-fav="' + esc(it.id) + '" aria-label="收藏">★</button>' +
             '<span class="chev">展开 ▾</span>' +
           '</div>' +
-          '<div class="summary">' + esc(it.summary) + '</div>' +
+          '<div class="summary">' + hl(it.summary, currentQuery) + '</div>' +
         '</div>' +
         '<div class="detail" id="' + did + '">' +
           '<div class="kv"><div class="k">类别</div><div class="v">' + esc(cat) + '</div></div>' +
@@ -134,13 +191,29 @@
     return html;
   }
 
-  function bindCardToggles(container) {
-    container.querySelectorAll(".item").forEach(function (el) {
-      el.addEventListener("click", function () {
+  /* 卡片点击：收藏星 / 展开；历史 chip；统一委托 */
+  function bindCardClicks(container) {
+    container.addEventListener("click", function (e) {
+      var starBtn = e.target.closest(".star");
+      if (starBtn) {
+        e.stopPropagation();
+        var id = starBtn.getAttribute("data-fav");
+        toggleFav(id);
+        starBtn.classList.toggle("on");
+        if (currentFav) {
+          var q = inputEl.value.trim();
+          renderResults(applyFilters(search(q)));
+        }
+        return;
+      }
+      var hchip = e.target.closest(".hchip");
+      if (hchip) { runQuery(hchip.getAttribute("data-q")); return; }
+      var el = e.target.closest(".item");
+      if (el) {
         el.classList.toggle("open");
         var chev = el.querySelector(".chev");
         if (chev) chev.textContent = el.classList.contains("open") ? "收起 ▴" : "展开 ▾";
-      });
+      }
     });
   }
 
@@ -150,6 +223,15 @@
   var inputEl = document.getElementById("q");
   var clearBtn = document.getElementById("clearBtn");
   var currentRisk = "";
+  var currentFav = false;
+  var currentQuery = "";
+  var activeIndex = -1;
+
+  function applyFilters(list) {
+    if (currentRisk) list = list.filter(function (it) { return it.risk === currentRisk; });
+    if (currentFav) list = list.filter(function (it) { return isFav(it.id); });
+    return list;
+  }
 
   function renderResults(list) {
     if (!list.length) {
@@ -172,59 +254,112 @@
       countEl.textContent = "未收录 · 按「提示」处理";
       return;
     }
-    var html = list.map(function (it) { return itemCard(it, "s"); }).join("");
-    resultsEl.innerHTML = html;
-    countEl.textContent = "命中 " + list.length + " 条" + (currentRisk ? "（已按风险筛选）" : "");
-    bindCardToggles(resultsEl);
+    resultsEl.innerHTML = list.map(function (it) { return itemCard(it, "s"); }).join("");
+    countEl.textContent = "命中 " + list.length + " 条" + (currentRisk || currentFav ? "（已筛选）" : "");
+  }
+
+  /* 空输入：显示收藏或历史 */
+  function renderFavorites() {
+    var items = ITEMS.filter(function (it) { return isFav(it.id); });
+    if (!items.length) {
+      resultsEl.innerHTML = '<div class="empty"><div class="big">⭐</div>还没有收藏<br>在查询结果里点卡片右上角的 ☆，把常用药加进来</div>';
+      countEl.textContent = "";
+      return;
+    }
+    currentQuery = "";
+    resultsEl.innerHTML = items.map(function (it) { return itemCard(it, "s"); }).join("");
+    countEl.textContent = "常用 · " + items.length + " 条";
+  }
+
+  function renderHistory() {
+    var h = loadHist();
+    if (!h.length) { resultsEl.innerHTML = ""; countEl.textContent = ""; return; }
+    resultsEl.innerHTML =
+      '<div class="history"><div class="hlabel"><span>🕘 最近查询</span>' +
+      '<span class="clr" id="histClr">清空</span></div><div class="hchips">' +
+      h.map(function (q) { return '<span class="hchip" data-q="' + esc(q) + '">' + esc(q) + "</span>"; }).join("") +
+      "</div></div>";
+    countEl.textContent = "";
+    var clr = document.getElementById("histClr");
+    if (clr) clr.addEventListener("click", function (e) { e.stopPropagation(); clearHist(); renderHistory(); });
   }
 
   function refresh() {
     var q = inputEl.value.trim();
     clearBtn.classList.toggle("show", !!q);
     if (!q) {
-      resultsEl.innerHTML = "";
-      countEl.textContent = "";
+      currentQuery = "";
+      hideSuggest();
+      if (currentFav) renderFavorites();
+      else renderHistory();
       return;
     }
-    var list = search(q);
-    if (currentRisk) list = list.filter(function (it) { return it.risk === currentRisk; });
-    renderResults(list);
+    currentQuery = q;
+    renderResults(applyFilters(search(q)));
+    showSuggest(q);
   }
 
-  var debounceTimer = null;
-  inputEl.addEventListener("input", function () {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(refresh, 100);
-  });
-
-  clearBtn.addEventListener("click", function () {
-    inputEl.value = "";
-    clearBtn.classList.remove("show");
+  function runQuery(q) {
+    inputEl.value = q;
+    hideSuggest();
+    pushHist(q);
     refresh();
-    inputEl.focus();
-  });
+  }
 
-  document.getElementById("quick").addEventListener("click", function (e) {
-    var btn = e.target.closest("button");
-    if (!btn) return;
-    inputEl.value = btn.getAttribute("data-q");
-    refresh();
-  });
-
-  document.getElementById("chips").addEventListener("click", function (e) {
-    var chip = e.target.closest(".chip");
-    if (!chip) return;
-    document.querySelectorAll("#chips .chip").forEach(function (c) { c.classList.remove("on"); });
-    chip.classList.add("on");
-    currentRisk = chip.getAttribute("data-risk") || "";
-    refresh();
-  });
+  /* ---------- 联想下拉 ---------- */
+  var sugBox = document.getElementById("suggest");
+  function showSuggest(q) {
+    var items = suggest(q, 8);
+    if (!items.length) { hideSuggest(); return; }
+    activeIndex = -1;
+    sugBox.innerHTML = items.map(function (it, i) {
+      var cat = CATEGORY_NAMES[it.category] || it.category;
+      return '<div class="opt" data-i="' + i + '" data-name="' + esc(it.name) + '">' +
+        '<span class="dot ' + esc(it.risk) + '"></span>' +
+        '<span class="s-name">' + hl(it.name, q) + "</span>" +
+        '<span class="s-cat">' + esc(cat) + "</span>" +
+        "</div>";
+    }).join("");
+    sugBox.style.display = "block";
+  }
+  function hideSuggest() { sugBox.style.display = "none"; activeIndex = -1; }
+  function updateActive(opts) {
+    opts.forEach(function (o, i) { o.classList.toggle("active", i === activeIndex); });
+  }
+  function chooseSug(name) { runQuery(name); }
 
   /* ---------- 全部列表页 ---------- */
+  var listSummaryEl = document.getElementById("listSummary");
+  var listQEl = document.getElementById("listQ");
+  var listRiskFilter = "";
 
   function renderAllList() {
+    var rc = { forbidden: 0, caution: 0, safe: 0, info: 0 };
+    ITEMS.forEach(function (it) { rc[it.risk]++; });
+    listSummaryEl.innerHTML =
+      summaryCell("forbidden", "⛔ 禁用", rc.forbidden) +
+      summaryCell("caution", "⚠️ 慎用", rc.caution) +
+      summaryCell("safe", "✅ 可用", rc.safe) +
+      summaryCell("info", "ℹ️ 提示", rc.info);
+    currentQuery = "";
+    renderGrouped(norm(listQEl.value.trim()));
+  }
+  function summaryCell(risk, label, n) {
+    return '<div class="ls ' + risk + (listRiskFilter === risk ? " active" : "") + '" data-risk="' + risk + '">' +
+      '<div class="n">' + n + '</div><div class="t">' + label + "</div></div>";
+  }
+  function renderGrouped(q) {
+    q = norm(q);
     var byCat = {};
     ITEMS.forEach(function (it) {
+      if (listRiskFilter && it.risk !== listRiskFilter) return;
+      if (q) {
+        var hit = (norm(it.name).indexOf(q) >= 0) ||
+          (it.en && norm(it.en).indexOf(q) >= 0) ||
+          (it.aliases || []).some(function (a) { return norm(a).indexOf(q) >= 0; }) ||
+          norm(CATEGORY_NAMES[it.category] || "").indexOf(q) >= 0;
+        if (!hit) return;
+      }
       var c = CATEGORY_NAMES[it.category] || it.category;
       (byCat[c] = byCat[c] || []).push(it);
     });
@@ -238,12 +373,84 @@
       html += '<div class="group-title">' + esc(cat) + "（" + items.length + "）</div>";
       html += items.map(function (it) { return itemCard(it, "a"); }).join("");
     });
+    if (!html) html = '<div class="empty"><div class="big">🔍</div>没有匹配的条目</div>';
     allListEl.innerHTML = html;
-    bindCardToggles(allListEl);
   }
 
-  /* ---------- Tab 切换 ---------- */
+  /* ---------- 事件绑定 ---------- */
 
+  document.getElementById("quick").addEventListener("click", function (e) {
+    var btn = e.target.closest("button");
+    if (!btn) return;
+    runQuery(btn.getAttribute("data-q"));
+  });
+
+  document.getElementById("chips").addEventListener("click", function (e) {
+    var chip = e.target.closest(".chip");
+    if (!chip) return;
+    document.querySelectorAll("#chips .chip").forEach(function (c) { c.classList.remove("on"); });
+    chip.classList.add("on");
+    currentRisk = chip.getAttribute("data-risk") || "";
+    currentFav = !!chip.getAttribute("data-fav");
+    refresh();
+  });
+
+  listSummaryEl.addEventListener("click", function (e) {
+    var ls = e.target.closest(".ls");
+    if (!ls) return;
+    var r = ls.getAttribute("data-risk");
+    listRiskFilter = (listRiskFilter === r) ? "" : r;
+    renderAllList();
+  });
+
+  listQEl.addEventListener("input", function () { renderGrouped(norm(listQEl.value.trim())); });
+
+  var debounceTimer = null;
+  inputEl.addEventListener("input", function () {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(refresh, 100);
+  });
+  inputEl.addEventListener("keydown", function (e) {
+    if (sugBox.style.display === "none") return;
+    var opts = sugBox.querySelectorAll(".opt");
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      activeIndex = Math.min(activeIndex + 1, opts.length - 1);
+      updateActive(opts);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      activeIndex = Math.max(activeIndex - 1, 0);
+      updateActive(opts);
+    } else if (e.key === "Enter") {
+      if (activeIndex >= 0 && opts[activeIndex]) {
+        e.preventDefault();
+        chooseSug(opts[activeIndex].getAttribute("data-name"));
+      } else {
+        hideSuggest();
+        pushHist(inputEl.value.trim());
+      }
+    } else if (e.key === "Escape") {
+      hideSuggest();
+    }
+  });
+  inputEl.addEventListener("focus", function () {
+    if (!inputEl.value.trim()) { hideSuggest(); if (!currentFav) renderHistory(); }
+  });
+
+  clearBtn.addEventListener("click", function () {
+    inputEl.value = "";
+    clearBtn.classList.remove("show");
+    refresh();
+    inputEl.focus();
+  });
+
+  sugBox.addEventListener("click", function (e) {
+    var opt = e.target.closest(".opt");
+    if (!opt) return;
+    chooseSug(opt.getAttribute("data-name"));
+  });
+
+  /* ---------- Tab 切换 ---------- */
   document.querySelectorAll("nav button").forEach(function (btn) {
     btn.addEventListener("click", function () {
       document.querySelectorAll("nav button").forEach(function (b) { b.classList.remove("on"); });
@@ -252,11 +459,12 @@
       document.querySelectorAll(".page").forEach(function (p) { p.classList.remove("on"); });
       document.getElementById("page-" + page).classList.add("on");
       window.scrollTo(0, 0);
+      if (page === "list") renderAllList();
+      else if (page === "search") refresh();
     });
   });
 
   /* ---------- 复制提示卡 ---------- */
-
   document.getElementById("copyCard").addEventListener("click", function () {
     var text = document.getElementById("cardText").innerText;
     function done() {
@@ -283,8 +491,14 @@
   }
 
   /* ---------- 初始化 ---------- */
+  bindCardClicks(resultsEl);
+  bindCardClicks(allListEl);
+
+  var badge = document.getElementById("badgeCount");
+  if (badge) badge.textContent = "共 " + ITEMS.length + " 条";
 
   renderAllList();
+  refresh();
 
   /* 向档案模块（profile.js）暴露复用能力，避免重复实现 */
   window.g6pd = {
