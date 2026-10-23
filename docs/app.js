@@ -14,7 +14,8 @@
     antimalarial: "抗疟药", antibiotic_other: "其他抗菌药物", cardiovascular: "心血管系统用药",
     metabolic: "内分泌（降糖药）", neuro: "神经系统/抗过敏", urinary: "泌尿系统用药",
     other_drug: "其他药物", tcm: "中药与中成药成分", food: "食物",
-    household: "日用化学品", occupational: "职业/环境暴露", infection: "感染与疾病提示"
+    household: "日用化学品", occupational: "职业/环境暴露", infection: "感染与疾病提示",
+    vaccine: "疫苗（常规接种）"
   };
 
   var RISK_LABEL = { forbidden: "⛔ 禁用", caution: "⚠️ 慎用", safe: "✅ 常规可用", info: "ℹ️ 提示" };
@@ -152,10 +153,23 @@
 
   function renderResults(list) {
     if (!list.length) {
+      var q = inputEl.value.trim();
       resultsEl.innerHTML =
-        '<div class="empty"><div class="big">🤔</div>未找到「' + esc(inputEl.value) + '」<br>' +
-        '未收录 ≠ 安全，用药前请咨询医生/药师<br>并主动告知蚕豆病史</div>';
-      countEl.textContent = "";
+        '<div class="item info">' +
+          '<div class="bar"></div>' +
+          '<div class="head">' +
+            '<div class="row1">' +
+              '<span class="tag">ℹ️ 提示</span>' +
+              '<span class="name">' + esc(q) + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="detail" style="display:block">' +
+            '<div class="kv"><div class="k">结论</div><div class="v">本禁忌库未收录「' + esc(q) + '」。</div></div>' +
+            '<div class="kv"><div class="k">说明</div><div class="v">它目前不是已知 G6PD（蚕豆病）诱发物，常规情况下一般可用。</div></div>' +
+            '<div class="warn">⚠ 但蚕豆病个体对氧化性物质敏感度不同，且复方制剂常含多种成分；用药前务必咨询医师或药师，并主动告知蚕豆病史。未收录 ≠ 绝对安全。</div>' +
+          '</div>' +
+        '</div>';
+      countEl.textContent = "未收录 · 按「提示」处理";
       return;
     }
     var html = list.map(function (it) { return itemCard(it, "s"); }).join("");

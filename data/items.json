@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "G6PD缺乏症（蚕豆病）禁忌速查数据库",
-    "version": "0.1.2",
-    "updated": "2026-10-23",
+    "version": "0.1.3",
+    "updated": "2026-10-24",
     "disclaimer": "本数据库仅供参考，不构成医疗建议。一切用药请以医生处方和药师指导为准；如怀疑溶血发作，请立即就医。",
     "risk_levels": {
       "forbidden": "⛔ 禁用（高风险）",
@@ -1062,12 +1062,12 @@
         "亚硫酸氢钠甲萘醌",
         "Hykinone"
       ],
-      "category": "other_drug",
-      "risk": "caution",
-      "summary": "国内多列禁忌；与天然维生素K1不是一回事。",
-      "detail": "合成水溶性维生素K3（甲萘醌）国内资料列为禁忌或慎用；国外分级列为低危。新生儿出生时常规补充的是维生素K1（植物甲萘醌），不在禁用名单。",
-      "note": "就诊或用药时认准“K1”与“K3”的区别，不清楚就问医生。",
-      "controversy": true,
+    "category": "other_drug",
+    "risk": "forbidden",
+    "summary": "合成水溶性维生素K3（甲萘醌）为明确氧化性诱发物，禁用。",
+    "detail": "维生素K3（甲萘醌/Menadione）为合成水溶性形式，可在 G6PD 缺乏者中诱发急性氧化性溶血，是公认的蚕豆病禁忌。新生儿及婴幼儿常规补充的是维生素K1（植物甲萘醌），不在禁用名单。",
+    "note": "就诊或用药时务必认准“K1”与“K3”的区别，不清楚就问医生或药师。",
+    "controversy": false,
       "sources": [
         "S1",
         "S4",
@@ -2279,6 +2279,3028 @@
         "S1",
         "S3"
       ]
+    },
+    {
+      "name": "双氯芬酸",
+      "en": "Diclofenac",
+      "risk": "caution",
+      "category": "analgesic",
+      "aliases": [
+        "扶他林",
+        "戴芬",
+        "英太青"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "NSAID 类解热镇痛药。虽然不像阿司匹林那样是明确禁忌，但个别病例报告与溶血相关，且蚕豆病急性期、发热或感染时应避免使用；不建议自行服用，需医生评估。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "双氯芬酸",
+      "note": ""
+    },
+    {
+      "name": "洛索洛芬",
+      "en": "Loxoprofen",
+      "risk": "caution",
+      "category": "analgesic",
+      "aliases": [
+        "乐松"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "NSAID 类解热镇痛药。虽然不像阿司匹林那样是明确禁忌，但个别病例报告与溶血相关，且蚕豆病急性期、发热或感染时应避免使用；不建议自行服用，需医生评估。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "洛索洛芬",
+      "note": ""
+    },
+    {
+      "name": "萘普生",
+      "en": "Naproxen",
+      "risk": "caution",
+      "category": "analgesic",
+      "aliases": [
+        "萘普生钠"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "NSAID 类解热镇痛药。虽然不像阿司匹林那样是明确禁忌，但个别病例报告与溶血相关，且蚕豆病急性期、发热或感染时应避免使用；不建议自行服用，需医生评估。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "萘普生",
+      "note": ""
+    },
+    {
+      "name": "美洛昔康",
+      "en": "Meloxicam",
+      "risk": "caution",
+      "category": "analgesic",
+      "aliases": [
+        "莫比可"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "NSAID 类解热镇痛药。虽然不像阿司匹林那样是明确禁忌，但个别病例报告与溶血相关，且蚕豆病急性期、发热或感染时应避免使用；不建议自行服用，需医生评估。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "美洛昔康",
+      "note": ""
+    },
+    {
+      "name": "塞来昔布",
+      "en": "Celecoxib",
+      "risk": "caution",
+      "category": "analgesic",
+      "aliases": [
+        "西乐葆"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "NSAID 类解热镇痛药。虽然不像阿司匹林那样是明确禁忌，但个别病例报告与溶血相关，且蚕豆病急性期、发热或感染时应避免使用；不建议自行服用，需医生评估。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "塞来昔布",
+      "note": ""
+    },
+    {
+      "name": "吲哚美辛",
+      "en": "Indometacin",
+      "risk": "caution",
+      "category": "analgesic",
+      "aliases": [
+        "消炎痛"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "NSAID 类解热镇痛药。虽然不像阿司匹林那样是明确禁忌，但个别病例报告与溶血相关，且蚕豆病急性期、发热或感染时应避免使用；不建议自行服用，需医生评估。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "吲哚美辛",
+      "note": ""
+    },
+    {
+      "name": "依托考昔",
+      "en": "Etoricoxib",
+      "risk": "caution",
+      "category": "analgesic",
+      "aliases": [
+        "安康信"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "NSAID 类解热镇痛药。虽然不像阿司匹林那样是明确禁忌，但个别病例报告与溶血相关，且蚕豆病急性期、发热或感染时应避免使用；不建议自行服用，需医生评估。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "依托考昔",
+      "note": ""
+    },
+    {
+      "name": "氟比洛芬",
+      "en": "Flurbiprofen",
+      "risk": "caution",
+      "category": "analgesic",
+      "aliases": [
+        "氟比洛芬酯"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "NSAID 类解热镇痛药。虽然不像阿司匹林那样是明确禁忌，但个别病例报告与溶血相关，且蚕豆病急性期、发热或感染时应避免使用；不建议自行服用，需医生评估。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "氟比洛芬",
+      "note": ""
+    },
+    {
+      "name": "哌拉西林他唑巴坦",
+      "en": "Piperacillin/Tazobactam",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "特治星"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "哌拉西林他唑巴坦",
+      "note": ""
+    },
+    {
+      "name": "青霉素V",
+      "en": "Phenoxymethylpenicillin",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "青霉素Ⅴ钾"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "青霉素V",
+      "note": ""
+    },
+    {
+      "name": "头孢克肟",
+      "en": "Cefixime",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "世福素",
+        "立克舒"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "头孢克肟",
+      "note": ""
+    },
+    {
+      "name": "头孢拉定",
+      "en": "Cefradine",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "泛捷复",
+        "先锋Ⅵ"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "头孢拉定",
+      "note": ""
+    },
+    {
+      "name": "头孢氨苄",
+      "en": "Cefalexin",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "先锋Ⅳ",
+        "头孢Ⅳ号"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "头孢氨苄",
+      "note": ""
+    },
+    {
+      "name": "头孢他啶",
+      "en": "Ceftazidime",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "复达欣",
+        "凯复定"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "头孢他啶",
+      "note": ""
+    },
+    {
+      "name": "头孢哌酮舒巴坦",
+      "en": "Cefoperazone/Sulbactam",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "舒普深"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "头孢哌酮舒巴坦",
+      "note": ""
+    },
+    {
+      "name": "罗红霉素",
+      "en": "Roxithromycin",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "罗力得"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "罗红霉素",
+      "note": ""
+    },
+    {
+      "name": "阿米卡星",
+      "en": "Amikacin",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "丁胺卡那霉素"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "阿米卡星",
+      "note": ""
+    },
+    {
+      "name": "妥布霉素",
+      "en": "Tobramycin",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "托百士(眼用)"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "妥布霉素",
+      "note": ""
+    },
+    {
+      "name": "链霉素",
+      "en": "Streptomycin",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "链霉素",
+      "note": ""
+    },
+    {
+      "name": "多西环素",
+      "en": "Doxycycline",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "强力霉素",
+        "多西环素"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "多西环素",
+      "note": ""
+    },
+    {
+      "name": "米诺环素",
+      "en": "Minocycline",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "美满霉素"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "米诺环素",
+      "note": ""
+    },
+    {
+      "name": "四环素",
+      "en": "Tetracycline",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "四环素",
+      "note": ""
+    },
+    {
+      "name": "克林霉素",
+      "en": "Clindamycin",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "氯洁霉素",
+        "克林霉素磷酸酯"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "克林霉素",
+      "note": ""
+    },
+    {
+      "name": "万古霉素",
+      "en": "Vancomycin",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "稳可信"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "万古霉素",
+      "note": ""
+    },
+    {
+      "name": "利奈唑胺",
+      "en": "Linezolid",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "斯沃"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "利奈唑胺",
+      "note": ""
+    },
+    {
+      "name": "替考拉宁",
+      "en": "Teicoplanin",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "他格适"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "替考拉宁",
+      "note": ""
+    },
+    {
+      "name": "奥司他韦",
+      "en": "Oseltamivir",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "达菲",
+        "可威"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "奥司他韦",
+      "note": ""
+    },
+    {
+      "name": "阿昔洛韦",
+      "en": "Acyclovir",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "无环鸟苷",
+        "舒维疗"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "阿昔洛韦",
+      "note": ""
+    },
+    {
+      "name": "伐昔洛韦",
+      "en": "Valacyclovir",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "维德思"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "伐昔洛韦",
+      "note": ""
+    },
+    {
+      "name": "更昔洛韦",
+      "en": "Ganciclovir",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "赛美维"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "更昔洛韦",
+      "note": ""
+    },
+    {
+      "name": "泛昔洛韦",
+      "en": "Famciclovir",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "泛昔洛韦",
+      "note": ""
+    },
+    {
+      "name": "利巴韦林",
+      "en": "Ribavirin",
+      "risk": "caution",
+      "category": "antibiotic_other",
+      "aliases": [
+        "病毒唑"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "利巴韦林有诱发溶血的报道（尤其大剂量或特定人群），且具明确致畸性；蚕豆病者应避免使用，必须使用时由医生严格评估并监测。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "利巴韦林",
+      "note": ""
+    },
+    {
+      "name": "氟康唑",
+      "en": "Fluconazole",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "大扶康",
+        "三联"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氟康唑",
+      "note": ""
+    },
+    {
+      "name": "伊曲康唑",
+      "en": "Itraconazole",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "斯皮仁诺"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "伊曲康唑",
+      "note": ""
+    },
+    {
+      "name": "酮康唑",
+      "en": "Ketoconazole",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "里素劳"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "酮康唑",
+      "note": ""
+    },
+    {
+      "name": "制霉菌素",
+      "en": "Nystatin",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "制霉素"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "制霉菌素",
+      "note": ""
+    },
+    {
+      "name": "特比萘芬",
+      "en": "Terbinafine",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "兰美抒",
+        "疗霉舒"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "特比萘芬",
+      "note": ""
+    },
+    {
+      "name": "克霉唑",
+      "en": "Clotrimazole",
+      "risk": "safe",
+      "category": "antibiotic_other",
+      "aliases": [
+        "克霉唑阴道片"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "克霉唑",
+      "note": ""
+    },
+    {
+      "name": "氯苯那敏",
+      "en": "Chlorphenamine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "扑尔敏",
+        "马来酸氯苯那敏"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氯苯那敏",
+      "note": ""
+    },
+    {
+      "name": "地氯雷他定",
+      "en": "Desloratadine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "恩理思",
+        "芙必叮"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "地氯雷他定",
+      "note": ""
+    },
+    {
+      "name": "非索非那定",
+      "en": "Fexofenadine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "阿乐迈",
+        "毕研通"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "非索非那定",
+      "note": ""
+    },
+    {
+      "name": "依巴斯汀",
+      "en": "Ebastine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "开思亭"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "依巴斯汀",
+      "note": ""
+    },
+    {
+      "name": "咪唑斯汀",
+      "en": "Mizolastine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "皿治林"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "咪唑斯汀",
+      "note": ""
+    },
+    {
+      "name": "赛庚啶",
+      "en": "Cyproheptadine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "赛庚啶片"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "赛庚啶",
+      "note": ""
+    },
+    {
+      "name": "异丙嗪",
+      "en": "Promethazine",
+      "risk": "caution",
+      "category": "neuro",
+      "aliases": [
+        "非那根"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "异丙嗪（非那根）结构上与吩噻嗪相关，少数资料显示其可能参与氧化应激；虽非绝对禁忌，但谨慎起见建议咨询医生后使用。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "异丙嗪",
+      "note": ""
+    },
+    {
+      "name": "氨茶碱",
+      "en": "Aminophylline",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "茶碱缓释片(同族)"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氨茶碱",
+      "note": ""
+    },
+    {
+      "name": "茶碱",
+      "en": "Theophylline",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "茶碱",
+      "note": ""
+    },
+    {
+      "name": "乙酰半胱氨酸",
+      "en": "Acetylcysteine",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "痰易净",
+        "富露施"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "乙酰半胱氨酸",
+      "note": ""
+    },
+    {
+      "name": "右美沙芬",
+      "en": "Dextromethorphan",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "氢溴酸右美沙芬",
+        "美可糖浆"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "右美沙芬",
+      "note": ""
+    },
+    {
+      "name": "异丙托溴铵",
+      "en": "Ipratropium",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "爱全乐"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "异丙托溴铵",
+      "note": ""
+    },
+    {
+      "name": "噻托溴铵",
+      "en": "Tiotropium",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "思力华"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "噻托溴铵",
+      "note": ""
+    },
+    {
+      "name": "倍氯米松",
+      "en": "Beclometasone",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "必可酮",
+        "伯克纳"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "倍氯米松",
+      "note": ""
+    },
+    {
+      "name": "氟替卡松",
+      "en": "Fluticasone",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "辅舒酮",
+        "辅舒良"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氟替卡松",
+      "note": ""
+    },
+    {
+      "name": "沙美特罗",
+      "en": "Salmeterol",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "舒利迭(合用)"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "沙美特罗",
+      "note": ""
+    },
+    {
+      "name": "复方甘草片",
+      "en": "Compound Liquorice Tablets",
+      "risk": "caution",
+      "category": "other_drug",
+      "aliases": [
+        "复方甘草合剂"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "含甘草流浸膏、阿片粉及樟脑等成分，复方制剂成分复杂；虽非典型氧化性诱发物，但蚕豆病者建议慎用或改用单一成分止咳药，并咨询药师。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "复方甘草片",
+      "note": ""
+    },
+    {
+      "name": "奥美拉唑",
+      "en": "Omeprazole",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "洛赛克",
+        "奥克"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "奥美拉唑",
+      "note": ""
+    },
+    {
+      "name": "泮托拉唑",
+      "en": "Pantoprazole",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "潘妥洛克"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "泮托拉唑",
+      "note": ""
+    },
+    {
+      "name": "雷贝拉唑",
+      "en": "Rabeprazole",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "波利特"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "雷贝拉唑",
+      "note": ""
+    },
+    {
+      "name": "兰索拉唑",
+      "en": "Lansoprazole",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "达克普隆"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "兰索拉唑",
+      "note": ""
+    },
+    {
+      "name": "埃索美拉唑",
+      "en": "Esomeprazole",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "耐信"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "埃索美拉唑",
+      "note": ""
+    },
+    {
+      "name": "铝碳酸镁",
+      "en": "Hydrotalcite",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "达喜"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "铝碳酸镁",
+      "note": ""
+    },
+    {
+      "name": "西咪替丁",
+      "en": "Cimetidine",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "泰胃美"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "西咪替丁",
+      "note": ""
+    },
+    {
+      "name": "雷尼替丁",
+      "en": "Ranitidine",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "善胃得"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "雷尼替丁",
+      "note": ""
+    },
+    {
+      "name": "法莫替丁",
+      "en": "Famotidine",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "高舒达",
+        "信法丁"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "法莫替丁",
+      "note": ""
+    },
+    {
+      "name": "多潘立酮",
+      "en": "Domperidone",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "吗丁啉",
+        "恒邦"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "多潘立酮",
+      "note": ""
+    },
+    {
+      "name": "莫沙必利",
+      "en": "Mosapride",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "加斯清"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "莫沙必利",
+      "note": ""
+    },
+    {
+      "name": "乳果糖",
+      "en": "Lactulose",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "杜密克"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "乳果糖",
+      "note": ""
+    },
+    {
+      "name": "开塞露",
+      "en": "Glycerin Enema",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "甘油栓"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "开塞露",
+      "note": ""
+    },
+    {
+      "name": "口服补液盐",
+      "en": "Oral Rehydration Salts",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "ORS",
+        "博叶"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "口服补液盐",
+      "note": ""
+    },
+    {
+      "name": "硫糖铝",
+      "en": "Sucralfate",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "胃溃宁"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "硫糖铝",
+      "note": ""
+    },
+    {
+      "name": "胶体果胶铋",
+      "en": "Colloidal Bismuth Pectin",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "果胶铋"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "胶体果胶铋",
+      "note": ""
+    },
+    {
+      "name": "复方消化酶",
+      "en": "Compound Digestive Enzyme",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "达吉",
+        "慷彼申"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该消化/胃肠药不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；长期或大剂量使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "复方消化酶",
+      "note": ""
+    },
+    {
+      "name": "普萘洛尔",
+      "en": "Propranolol",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "心得安"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "普萘洛尔",
+      "note": ""
+    },
+    {
+      "name": "美托洛尔",
+      "en": "Metoprolol",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "倍他乐克"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "美托洛尔",
+      "note": ""
+    },
+    {
+      "name": "比索洛尔",
+      "en": "Bisoprolol",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "康忻",
+        "博苏"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "比索洛尔",
+      "note": ""
+    },
+    {
+      "name": "阿替洛尔",
+      "en": "Atenolol",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "氨酰心安"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "阿替洛尔",
+      "note": ""
+    },
+    {
+      "name": "氨氯地平",
+      "en": "Amlodipine",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "络活喜",
+        "压氏达"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氨氯地平",
+      "note": ""
+    },
+    {
+      "name": "硝苯地平",
+      "en": "Nifedipine",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "心痛定",
+        "拜新同"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "硝苯地平",
+      "note": ""
+    },
+    {
+      "name": "非洛地平",
+      "en": "Felodipine",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "波依定"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "非洛地平",
+      "note": ""
+    },
+    {
+      "name": "缬沙坦",
+      "en": "Valsartan",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "代文"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "缬沙坦",
+      "note": ""
+    },
+    {
+      "name": "氯沙坦",
+      "en": "Losartan",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "科素亚"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氯沙坦",
+      "note": ""
+    },
+    {
+      "name": "厄贝沙坦",
+      "en": "Irbesartan",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "安博维"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "厄贝沙坦",
+      "note": ""
+    },
+    {
+      "name": "卡托普利",
+      "en": "Captopril",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "开博通"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "卡托普利",
+      "note": ""
+    },
+    {
+      "name": "依那普利",
+      "en": "Enalapril",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "依苏",
+        "悦宁定"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "依那普利",
+      "note": ""
+    },
+    {
+      "name": "培哚普利",
+      "en": "Perindopril",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "雅施达"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "培哚普利",
+      "note": ""
+    },
+    {
+      "name": "呋塞米",
+      "en": "Furosemide",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "速尿",
+        "呋喃苯胺酸"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "呋塞米",
+      "note": ""
+    },
+    {
+      "name": "氢氯噻嗪",
+      "en": "Hydrochlorothiazide",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "双氢克尿噻"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氢氯噻嗪",
+      "note": ""
+    },
+    {
+      "name": "螺内酯",
+      "en": "Spironolactone",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "安体舒通"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "螺内酯",
+      "note": ""
+    },
+    {
+      "name": "地高辛",
+      "en": "Digoxin",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "地高辛",
+      "note": ""
+    },
+    {
+      "name": "阿托伐他汀",
+      "en": "Atorvastatin",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "立普妥"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "阿托伐他汀",
+      "note": ""
+    },
+    {
+      "name": "瑞舒伐他汀",
+      "en": "Rosuvastatin",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "可定"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "瑞舒伐他汀",
+      "note": ""
+    },
+    {
+      "name": "辛伐他汀",
+      "en": "Simvastatin",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "舒降之"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "辛伐他汀",
+      "note": ""
+    },
+    {
+      "name": "氯吡格雷",
+      "en": "Clopidogrel",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "波立维",
+        "泰嘉"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氯吡格雷",
+      "note": ""
+    },
+    {
+      "name": "华法林",
+      "en": "Warfarin",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "苄丙酮香豆素"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "华法林",
+      "note": ""
+    },
+    {
+      "name": "普罗帕酮",
+      "en": "Propafenone",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "心律平"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "普罗帕酮",
+      "note": ""
+    },
+    {
+      "name": "维拉帕米",
+      "en": "Verapamil",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "异搏定"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "维拉帕米",
+      "note": ""
+    },
+    {
+      "name": "地尔硫卓",
+      "en": "Diltiazem",
+      "risk": "safe",
+      "category": "cardiovascular",
+      "aliases": [
+        "合心爽",
+        "恬尔心"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该心血管药物不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；慢性病患者请继续遵专科医嘱用药，勿自行停药。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "地尔硫卓",
+      "note": ""
+    },
+    {
+      "name": "胺碘酮",
+      "en": "Amiodarone",
+      "risk": "caution",
+      "category": "cardiovascular",
+      "aliases": [
+        "可达龙",
+        "乙胺碘呋酮"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "胺碘酮含碘，长期大剂量使用有少数溶血相关报道；虽非绝对禁忌，但蚕豆病者在心律管理上应由心内科医生评估后使用并监测。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "胺碘酮",
+      "note": ""
+    },
+    {
+      "name": "二甲双胍",
+      "en": "Metformin",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "格华止",
+        "美迪康"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "二甲双胍",
+      "note": ""
+    },
+    {
+      "name": "阿卡波糖",
+      "en": "Acarbose",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "拜糖平",
+        "卡博平"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "阿卡波糖",
+      "note": ""
+    },
+    {
+      "name": "瑞格列奈",
+      "en": "Repaglinide",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "诺和龙"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "瑞格列奈",
+      "note": ""
+    },
+    {
+      "name": "吡格列酮",
+      "en": "Pioglitazone",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "艾可拓"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "吡格列酮",
+      "note": ""
+    },
+    {
+      "name": "胰岛素",
+      "en": "Insulin",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "重组人胰岛素",
+        "甘精胰岛素",
+        "门冬胰岛素"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "胰岛素",
+      "note": ""
+    },
+    {
+      "name": "左甲状腺素",
+      "en": "Levothyroxine",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "优甲乐",
+        "雷替斯"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "左甲状腺素",
+      "note": ""
+    },
+    {
+      "name": "泼尼松",
+      "en": "Prednisone",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "强的松"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "泼尼松",
+      "note": ""
+    },
+    {
+      "name": "甲泼尼龙",
+      "en": "Methylprednisolone",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "甲强龙",
+        "美卓乐"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "甲泼尼龙",
+      "note": ""
+    },
+    {
+      "name": "地塞米松",
+      "en": "Dexamethasone",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "氟美松"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "地塞米松",
+      "note": ""
+    },
+    {
+      "name": "阿仑膦酸钠",
+      "en": "Alendronate",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "福善美"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "阿仑膦酸钠",
+      "note": ""
+    },
+    {
+      "name": "别嘌醇",
+      "en": "Allopurinol",
+      "risk": "caution",
+      "category": "metabolic",
+      "aliases": [
+        "痛风立克",
+        "别嘌呤醇"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "别嘌醇含硫脲结构，个别病例报告与溶血及严重过敏相关；蚕豆病者降尿酸应谨慎，由医生权衡利弊，必要时换用非布司他并监测。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "别嘌醇",
+      "note": ""
+    },
+    {
+      "name": "维生素B1",
+      "en": "Vitamin B1",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "硫胺素"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该维生素/补充剂不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；避免盲目大剂量补充。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "维生素B1",
+      "note": ""
+    },
+    {
+      "name": "维生素B2",
+      "en": "Vitamin B2",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "核黄素"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该维生素/补充剂不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；避免盲目大剂量补充。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "维生素B2",
+      "note": ""
+    },
+    {
+      "name": "维生素B6",
+      "en": "Vitamin B6",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "吡哆醇"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该维生素/补充剂不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；避免盲目大剂量补充。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "维生素B6",
+      "note": ""
+    },
+    {
+      "name": "维生素B12",
+      "en": "Vitamin B12",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "钴胺素",
+        "甲钴胺"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该维生素/补充剂不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；避免盲目大剂量补充。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "维生素B12",
+      "note": ""
+    },
+    {
+      "name": "叶酸",
+      "en": "Folic Acid",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "叶酸片"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该维生素/补充剂不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；避免盲目大剂量补充。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "叶酸",
+      "note": ""
+    },
+    {
+      "name": "维生素E",
+      "en": "Vitamin E",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "生育酚"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该维生素/补充剂不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；避免盲目大剂量补充。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "维生素E",
+      "note": ""
+    },
+    {
+      "name": "复合维生素",
+      "en": "Multivitamin",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "多维元素片",
+        "善存",
+        "金施尔康"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该维生素/补充剂不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；避免盲目大剂量补充。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "复合维生素",
+      "note": ""
+    },
+    {
+      "name": "葡萄糖酸锌",
+      "en": "Zinc Gluconate",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "葡萄糖酸锌口服液"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该维生素/补充剂不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；避免盲目大剂量补充。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "葡萄糖酸锌",
+      "note": ""
+    },
+    {
+      "name": "铁剂",
+      "en": "Iron Supplement",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "硫酸亚铁",
+        "富马酸亚铁",
+        "右旋糖酐铁",
+        "蛋白琥珀酸铁"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该维生素/补充剂不属于已知 G6PD 氧化性诱发物，常规剂量下一般可用；避免盲目大剂量补充。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "铁剂",
+      "note": ""
+    },
+    {
+      "name": "流感疫苗",
+      "en": "Influenza Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "流感疫苗",
+      "note": ""
+    },
+    {
+      "name": "乙肝疫苗",
+      "en": "Hepatitis B Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "乙肝疫苗",
+      "note": ""
+    },
+    {
+      "name": "百白破疫苗",
+      "en": "DTP Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "百白破疫苗",
+      "note": ""
+    },
+    {
+      "name": "麻疹疫苗",
+      "en": "Measles Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "麻疹疫苗",
+      "note": ""
+    },
+    {
+      "name": "水痘疫苗",
+      "en": "Varicella Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "水痘疫苗",
+      "note": ""
+    },
+    {
+      "name": "肺炎球菌疫苗",
+      "en": "Pneumococcal Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "肺炎球菌疫苗",
+      "note": ""
+    },
+    {
+      "name": "HPV疫苗",
+      "en": "HPV Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "HPV疫苗",
+      "note": ""
+    },
+    {
+      "name": "新冠疫苗",
+      "en": "COVID-19 Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "新冠疫苗",
+      "note": ""
+    },
+    {
+      "name": "卡介苗",
+      "en": "BCG Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "卡介苗",
+      "note": ""
+    },
+    {
+      "name": "脊髓灰质炎疫苗",
+      "en": "Polio Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "脊髓灰质炎疫苗",
+      "note": ""
+    },
+    {
+      "name": "轮状病毒疫苗",
+      "en": "Rotavirus Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "轮状病毒疫苗",
+      "note": ""
+    },
+    {
+      "name": "麻腮风疫苗",
+      "en": "MMR Vaccine",
+      "risk": "safe",
+      "category": "vaccine",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "疫苗本身不诱发 G6PD 溶血，多数权威资料将其列入可接种范围。少数儿童接种后可能发热，而发热/感染可加重溶血风险；接种后注意补水、监测尿色，出现浓茶色尿立即就医。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "麻腮风疫苗",
+      "note": ""
+    },
+    {
+      "name": "红霉素软膏",
+      "en": "Erythromycin Ointment",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "红霉素软膏",
+      "note": ""
+    },
+    {
+      "name": "阿昔洛韦乳膏",
+      "en": "Aciclovir Cream",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "无环鸟苷乳膏"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "阿昔洛韦乳膏",
+      "note": ""
+    },
+    {
+      "name": "氟轻松",
+      "en": "Fluocinolone",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "肤轻松"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氟轻松",
+      "note": ""
+    },
+    {
+      "name": "醋酸地塞米松乳膏",
+      "en": "Dexamethasone Acetate Cream",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "皮炎平(含)"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "醋酸地塞米松乳膏",
+      "note": ""
+    },
+    {
+      "name": "尿素软膏",
+      "en": "Urea Ointment",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "尿素维E乳膏"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "尿素软膏",
+      "note": ""
+    },
+    {
+      "name": "维A酸乳膏",
+      "en": "Tretinoin Cream",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "迪维",
+        "维特明"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "维A酸乳膏",
+      "note": ""
+    },
+    {
+      "name": "鱼石脂",
+      "en": "Ichthammol",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "鱼石脂软膏"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "鱼石脂",
+      "note": ""
+    },
+    {
+      "name": "水杨酸软膏",
+      "en": "Salicylic Acid Ointment",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "水杨酸软膏",
+      "note": ""
+    },
+    {
+      "name": "创可贴",
+      "en": "Adhesive Bandage",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "苯扎氯铵贴"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "创可贴",
+      "note": ""
+    },
+    {
+      "name": "红霉素眼膏",
+      "en": "Erythromycin Eye Ointment",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "红霉素眼膏",
+      "note": ""
+    },
+    {
+      "name": "妥布霉素滴眼液",
+      "en": "Tobramycin Eye Drops",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "托百士"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "妥布霉素滴眼液",
+      "note": ""
+    },
+    {
+      "name": "色甘酸钠滴眼液",
+      "en": "Sodium Cromoglicate Eye Drops",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "宁敏"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "色甘酸钠滴眼液",
+      "note": ""
+    },
+    {
+      "name": "玻璃酸钠滴眼液",
+      "en": "Sodium Hyaluronate Eye Drops",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "润舒",
+        "爱丽"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "玻璃酸钠滴眼液",
+      "note": ""
+    },
+    {
+      "name": "金霉素眼膏",
+      "en": "Chlortetracycline Eye Ointment",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该外用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用；大面积破损皮肤使用请遵医嘱。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "金霉素眼膏",
+      "note": ""
+    },
+    {
+      "name": "氯霉素滴眼液",
+      "en": "Chloramphenicol Eye Drops",
+      "risk": "caution",
+      "category": "other_drug",
+      "aliases": [
+        "润舒(含氯霉素)"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "氯霉素全身用药在 G6PD 缺乏症中明确禁用；滴眼液局部吸收少，风险相对低，但婴幼儿及长期使用者建议咨询医生，优先选其他抗菌滴眼液。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "氯霉素滴眼液",
+      "note": ""
+    },
+    {
+      "name": "生理性海水鼻喷雾",
+      "en": "Saline Nasal Spray",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "生理盐水喷鼻",
+        "诺斯清"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该鼻用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "生理性海水鼻喷雾",
+      "note": ""
+    },
+    {
+      "name": "糠酸莫米松鼻喷雾",
+      "en": "Mometasone Nasal Spray",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "内舒拿"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该鼻用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "糠酸莫米松鼻喷雾",
+      "note": ""
+    },
+    {
+      "name": "氮卓斯汀鼻喷雾",
+      "en": "Azelastine Nasal Spray",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "爱赛平"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "该鼻用/局部制剂全身吸收少，不属于已知 G6PD 氧化性诱发物，一般可用。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氮卓斯汀鼻喷雾",
+      "note": ""
+    },
+    {
+      "name": "地西泮",
+      "en": "Diazepam",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "安定"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "地西泮",
+      "note": ""
+    },
+    {
+      "name": "艾司唑仑",
+      "en": "Estazolam",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "舒乐安定"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "艾司唑仑",
+      "note": ""
+    },
+    {
+      "name": "唑吡坦",
+      "en": "Zolpidem",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "思诺思",
+        "思梦还"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "唑吡坦",
+      "note": ""
+    },
+    {
+      "name": "舍曲林",
+      "en": "Sertraline",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "左洛复",
+        "郁乐复"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "舍曲林",
+      "note": ""
+    },
+    {
+      "name": "氟西汀",
+      "en": "Fluoxetine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "百忧解"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "氟西汀",
+      "note": ""
+    },
+    {
+      "name": "帕罗西汀",
+      "en": "Paroxetine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "赛乐特",
+        "乐友"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "帕罗西汀",
+      "note": ""
+    },
+    {
+      "name": "米氮平",
+      "en": "Mirtazapine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "瑞美隆"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "米氮平",
+      "note": ""
+    },
+    {
+      "name": "奥氮平",
+      "en": "Olanzapine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "再普乐",
+        "欧兰宁"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "奥氮平",
+      "note": ""
+    },
+    {
+      "name": "喹硫平",
+      "en": "Quetiapine",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "思瑞康"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "喹硫平",
+      "note": ""
+    },
+    {
+      "name": "加巴喷丁",
+      "en": "Gabapentin",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "纽诺汀"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "加巴喷丁",
+      "note": ""
+    },
+    {
+      "name": "普瑞巴林",
+      "en": "Pregabalin",
+      "risk": "safe",
+      "category": "neuro",
+      "aliases": [
+        "乐瑞卡"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "普瑞巴林",
+      "note": ""
+    },
+    {
+      "name": "丙戊酸钠",
+      "en": "Sodium Valproate",
+      "risk": "caution",
+      "category": "neuro",
+      "aliases": [
+        "德巴金",
+        "丙戊酸镁"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "丙戊酸有个别溶血/肝功能损害报道，且具明确致畸性；蚕豆病者使用抗癫痫药应由神经科评估，并定期监测。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "丙戊酸钠",
+      "note": ""
+    },
+    {
+      "name": "卡马西平",
+      "en": "Carbamazepine",
+      "risk": "caution",
+      "category": "neuro",
+      "aliases": [
+        "得理多",
+        "卡马西平缓释片"
+      ],
+      "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用。",
+      "detail": "卡马西平可见严重皮肤反应及个别血液系统异常报道；蚕豆病者使用应由神经科评估利弊并监测。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "卡马西平",
+      "note": ""
+    },
+    {
+      "name": "碘海醇",
+      "en": "Iohexol",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "欧乃派克"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "碘对比剂/钡剂本身不诱发 G6PD 溶血，增强造影前告知病史即可；检查后多饮水促进排泄。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "碘海醇",
+      "note": ""
+    },
+    {
+      "name": "碘普罗胺",
+      "en": "Iopromide",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "优维显"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "碘对比剂/钡剂本身不诱发 G6PD 溶血，增强造影前告知病史即可；检查后多饮水促进排泄。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "碘普罗胺",
+      "note": ""
+    },
+    {
+      "name": "硫酸钡",
+      "en": "Barium Sulfate",
+      "risk": "safe",
+      "category": "other_drug",
+      "aliases": [
+        "钡餐"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "碘对比剂/钡剂本身不诱发 G6PD 溶血，增强造影前告知病史即可；检查后多饮水促进排泄。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "硫酸钡",
+      "note": ""
+    },
+    {
+      "name": "黄体酮",
+      "en": "Progesterone",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "孕酮",
+        "地屈孕酮"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "黄体酮",
+      "note": ""
+    },
+    {
+      "name": "雌激素",
+      "en": "Estrogen",
+      "risk": "safe",
+      "category": "metabolic",
+      "aliases": [
+        "戊酸雌二醇",
+        "结合雌激素"
+      ],
+      "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
+      "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
+      "controversy": false,
+      "sources": [
+        "S7",
+        "S1"
+      ],
+      "id": "雌激素",
+      "note": ""
+    },
+    {
+      "name": "复方口服避孕药",
+      "en": "Combined Oral Contraceptive",
+      "risk": "info",
+      "category": "metabolic",
+      "aliases": [
+        "短效避孕药",
+        "妈富隆",
+        "达英35"
+      ],
+      "summary": "与 G6PD 相关的一般性提示。",
+      "detail": "含雌激素/孕激素的复方避孕药一般不属于 G6PD 氧化性诱发物，多数资料视为可用；个体耐受不同，使用前咨询医师或药师。",
+      "controversy": false,
+      "sources": [
+        "S4",
+        "S7"
+      ],
+      "id": "复方口服避孕药",
+      "note": ""
     }
   ]
 }

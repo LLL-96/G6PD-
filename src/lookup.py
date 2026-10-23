@@ -67,6 +67,7 @@ CATEGORY_NAMES = {
     "household": "日用化学品",
     "occupational": "职业/环境暴露",
     "infection": "感染与疾病提示",
+    "vaccine": "疫苗（常规接种）",
 }
 
 # ---------- 数据加载 ----------
@@ -151,9 +152,10 @@ def print_item(it, index=None):
     print()
 
 def print_not_found(query):
-    print(yellow(f"未在数据库中找到「{query}」。"))
-    print("可能的原因：名称不在库中、输入有误，或该药确实未列入 G6PD 禁忌分级。")
-    print("不要就此认为它安全——用药前请咨询医生/药师，并主动告知蚕豆病史。\n")
+    print(blue(f"ℹ️  提示：本禁忌库未收录「{query}」。"))
+    print("它目前不是已知 G6PD（蚕豆病）诱发物，常规情况下一般可用。")
+    print(yellow("但蚕豆病个体对氧化性物质敏感度不同，且复方制剂常含多种成分；")
+          + yellow("用药前务必咨询医师或药师，并主动告知蚕豆病史。未收录 ≠ 绝对安全。\n"))
 
 # ---------- 子命令 ----------
 
