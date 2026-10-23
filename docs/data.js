@@ -2,7 +2,7 @@
 const G6PD_DATA = {
  "meta": {
   "title": "G6PD缺乏症（蚕豆病）禁忌速查数据库",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "updated": "2026-10-23",
   "disclaimer": "本数据库仅供参考，不构成医疗建议。一切用药请以医生处方和药师指导为准；如怀疑溶血发作，请立即就医。",
   "risk_levels": {
@@ -82,7 +82,9 @@ const G6PD_DATA = {
     "S4",
     "S5",
     "S7"
-   ]
+   ],
+   "icon": "💊",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fdecea%27%20stroke%3D%27%23c62828%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23c62828%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%98%BF%E5%8F%B8%E5%8C%B9%E6%9E%97%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "metamizole",
@@ -103,7 +105,8 @@ const G6PD_DATA = {
     "S4",
     "S5",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "aminopyrine",
@@ -123,7 +126,8 @@ const G6PD_DATA = {
     "S4",
     "S5",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "phenacetin",
@@ -143,7 +147,8 @@ const G6PD_DATA = {
     "S4",
     "S5",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "phenylbutazone",
@@ -161,7 +166,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S4"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "smz",
@@ -184,7 +190,13 @@ const G6PD_DATA = {
     "S1",
     "S4",
     "S7"
-   ]
+   ],
+   "ingredients": [
+    "磺胺甲噁唑",
+    "甲氧苄啶"
+   ],
+   "icon": "💊",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fdecea%27%20stroke%3D%27%23c62828%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23c62828%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E5%A4%8D%E6%96%B9%E6%96%B0%E8%AF%BA%E6%98%8E%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "sulfadiazine",
@@ -204,7 +216,8 @@ const G6PD_DATA = {
     "S1",
     "S4",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "sulfisoxazole",
@@ -223,7 +236,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "sulfacetamide",
@@ -241,7 +255,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "sulfapyridine",
@@ -258,7 +273,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "sulfaguanidine",
@@ -276,7 +292,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "nitrofurantoin",
@@ -297,7 +314,8 @@ const G6PD_DATA = {
     "S4",
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "furazolidone",
@@ -316,7 +334,8 @@ const G6PD_DATA = {
     "S1",
     "S4",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "nitrofural",
@@ -336,7 +355,8 @@ const G6PD_DATA = {
     "S1",
     "S4",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "primaquine",
@@ -357,7 +377,9 @@ const G6PD_DATA = {
     "S4",
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "💊",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fdecea%27%20stroke%3D%27%23c62828%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23c62828%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E4%BC%AF%E6%B0%A8%E5%96%B9%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "pamaquine",
@@ -376,7 +398,8 @@ const G6PD_DATA = {
    "sources": [
     "S4",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "quinacrine",
@@ -395,7 +418,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "methylene_blue",
@@ -415,7 +439,8 @@ const G6PD_DATA = {
     "S1",
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "nalidixic_acid",
@@ -433,7 +458,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "⚪"
   },
   {
    "id": "phenazopyridine",
@@ -453,7 +479,8 @@ const G6PD_DATA = {
     "S1",
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "acetanilide",
@@ -471,7 +498,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "chloramphenicol",
@@ -489,7 +517,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "dapsone",
@@ -509,7 +538,8 @@ const G6PD_DATA = {
     "S6",
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "rasburicase",
@@ -528,7 +558,8 @@ const G6PD_DATA = {
    "sources": [
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "fava_bean",
@@ -558,7 +589,9 @@ const G6PD_DATA = {
     "S2",
     "S3",
     "S8"
-   ]
+   ],
+   "icon": "🫘",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23eaf6eb%27%20stroke%3D%27%232e7d32%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%AB%98%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%232e7d32%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E8%9A%95%E8%B1%86%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "naphthalene",
@@ -584,7 +617,9 @@ const G6PD_DATA = {
     "S6",
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "⚪",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23eef2f7%27%20stroke%3D%27%23455a64%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%E2%9A%AA%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23455a64%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E6%A8%9F%E8%84%91%E4%B8%B8%2F%E8%90%98%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "gentian_violet",
@@ -604,7 +639,9 @@ const G6PD_DATA = {
    "sources": [
     "S5",
     "S8"
-   ]
+   ],
+   "icon": "🟣",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23f3e8fb%27%20stroke%3D%27%236a1b9a%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%9F%A3%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%236a1b9a%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E7%B4%AB%E8%8D%AF%E6%B0%B4%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "benzene",
@@ -624,7 +661,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S5"
-   ]
+   ],
+   "icon": "⚠️"
   },
   {
    "id": "arsenic",
@@ -643,7 +681,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S5"
-   ]
+   ],
+   "icon": "⚠️"
   },
   {
    "id": "trinitrotoluene",
@@ -661,7 +700,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S7"
-   ]
+   ],
+   "icon": "⚠️"
   },
   {
    "id": "phenylhydrazine",
@@ -678,7 +718,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S7"
-   ]
+   ],
+   "icon": "⚠️"
   },
   {
    "id": "berberis",
@@ -699,7 +740,9 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S1"
-   ]
+   ],
+   "icon": "🟡",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%9F%A1%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%BB%84%E8%BF%9E%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "honeysuckle",
@@ -717,7 +760,9 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S1"
-   ]
+   ],
+   "icon": "🌸",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8C%BC%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%87%91%E9%93%B6%E8%8A%B1%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "bezoar",
@@ -736,7 +781,9 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S1"
-   ]
+   ],
+   "icon": "🟡",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%9F%A1%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E7%89%9B%E9%BB%84%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "pearl",
@@ -757,7 +804,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "wintersweet",
@@ -776,7 +824,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S1"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "mint",
@@ -797,7 +846,9 @@ const G6PD_DATA = {
     "S1",
     "S6",
     "S8"
-   ]
+   ],
+   "icon": "🧴",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23eaf6eb%27%20stroke%3D%27%232e7d32%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8C%BF%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%232e7d32%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E8%96%84%E8%8D%B7%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "forsythia",
@@ -816,7 +867,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S1"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "borneol",
@@ -835,7 +887,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S1"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "bear_bile",
@@ -853,7 +906,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S1"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "quinine",
@@ -875,7 +929,8 @@ const G6PD_DATA = {
     "S3",
     "S4",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "chloroquine",
@@ -894,7 +949,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "levofloxacin",
@@ -915,7 +971,8 @@ const G6PD_DATA = {
     "S1",
     "S6",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "ciprofloxacin",
@@ -935,7 +992,8 @@ const G6PD_DATA = {
     "S1",
     "S6",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "norfloxacin",
@@ -954,7 +1012,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "ofloxacin",
@@ -972,7 +1031,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "moxifloxacin",
@@ -989,7 +1049,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S6"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "acetaminophen",
@@ -1013,7 +1074,8 @@ const G6PD_DATA = {
     "S9",
     "S7",
     "S1"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "ibuprofen",
@@ -1034,7 +1096,8 @@ const G6PD_DATA = {
     "S3",
     "S9",
     "S1"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "vitamin_c_high",
@@ -1055,7 +1118,8 @@ const G6PD_DATA = {
     "S1",
     "S6",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "vitamin_k3",
@@ -1076,7 +1140,8 @@ const G6PD_DATA = {
     "S1",
     "S4",
     "S7"
-   ]
+   ],
+   "icon": "⚪"
   },
   {
    "id": "isoniazid",
@@ -1095,7 +1160,8 @@ const G6PD_DATA = {
    "sources": [
     "S3",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "probenecid",
@@ -1113,7 +1179,8 @@ const G6PD_DATA = {
    "sources": [
     "S4",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "nitroprusside",
@@ -1130,7 +1197,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S1"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "isosorbide_dinitrate",
@@ -1149,7 +1217,8 @@ const G6PD_DATA = {
    "sources": [
     "S6",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "nitroglycerin",
@@ -1167,7 +1236,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S6"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "gliclazide",
@@ -1186,7 +1256,8 @@ const G6PD_DATA = {
    "sources": [
     "S6",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "glibenclamide",
@@ -1205,7 +1276,8 @@ const G6PD_DATA = {
    "sources": [
     "S6",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "glimepiride",
@@ -1223,7 +1295,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S6"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "pyrimethamine",
@@ -1242,7 +1315,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "colchicine",
@@ -1260,7 +1334,9 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "🌸",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8C%B8%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E6%B0%B4%E4%BB%99%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "diphenhydramine",
@@ -1279,7 +1355,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "levodopa",
@@ -1297,7 +1374,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "quinidine",
@@ -1315,7 +1393,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "phenytoin",
@@ -1333,35 +1412,37 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "compound_cold_med",
    "name": "复方感冒药/复方解热镇痛药",
    "en": "Compound cold & antipyretic medicines",
    "aliases": [
-    "小儿氨酚黄那敏",
-    "氨酚伪麻美芬片",
-    "白加黑",
-    "泰诺感冒片",
-    "维C银翘片",
     "感冒灵颗粒",
     "复方锌布颗粒",
     "复方氨酚烷胺片",
-    "快克",
-    "感康",
     "999感冒灵"
    ],
    "category": "analgesic",
    "risk": "caution",
    "summary": "最大的隐蔽雷区：成分复杂，需逐项核对。",
    "detail": "复方制剂常同时含：对乙酰氨基酚（与单方退烧药叠加过量风险）、咖啡因、马来酸氯苯那敏，以及金银花、连翘、薄荷等中药禁忌成分。给蚕豆病患者使用前必须逐条核对成分表。",
-   "note": "核对要点：对乙酰氨基酚、阿司匹林、咖啡因、磺胺、金银花、连翘、薄荷、牛黄、冰片。不确定就问医生或药师。",
+   "note": "以下为常见复方感冒药的代表性成分，具体以所购药品说明书为准。",
    "controversy": false,
    "sources": [
     "S1",
     "S5"
-   ]
+   ],
+   "ingredients": [
+    "对乙酰氨基酚",
+    "马来酸氯苯那敏",
+    "伪麻黄碱",
+    "咖啡因",
+    "人工牛黄"
+   ],
+   "icon": "💊"
   },
   {
    "id": "methyl_salicylate",
@@ -1381,7 +1462,8 @@ const G6PD_DATA = {
    "sources": [
     "S6",
     "S8"
-   ]
+   ],
+   "icon": "🧴"
   },
   {
    "id": "camphor_topical",
@@ -1407,7 +1489,9 @@ const G6PD_DATA = {
     "S5",
     "S6",
     "S8"
-   ]
+   ],
+   "icon": "🧴",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23e8f1fb%27%20stroke%3D%27%231565c0%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%A7%B4%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%231565c0%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%A3%8E%E6%B2%B9%E7%B2%BE%2F%E6%B8%85%E5%87%89%E6%B2%B9%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "id": "eucalyptus",
@@ -1422,7 +1506,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S8"
-   ]
+   ],
+   "icon": "🧴"
   },
   {
    "id": "hair_dye",
@@ -1437,7 +1522,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S5"
-   ]
+   ],
+   "icon": "🧴"
   },
   {
    "id": "honey",
@@ -1452,7 +1538,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S3"
-   ]
+   ],
+   "icon": "🍽️"
   },
   {
    "id": "penicillins",
@@ -1474,7 +1561,8 @@ const G6PD_DATA = {
    "sources": [
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "cephalosporins",
@@ -1497,7 +1585,8 @@ const G6PD_DATA = {
    "sources": [
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "macrolides",
@@ -1518,7 +1607,8 @@ const G6PD_DATA = {
    "sources": [
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "metronidazole",
@@ -1538,7 +1628,8 @@ const G6PD_DATA = {
    "sources": [
     "S7",
     "S8"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "vitamin_k1",
@@ -1556,7 +1647,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S7"
-   ]
+   ],
+   "icon": "⚪"
   },
   {
    "id": "infection",
@@ -1579,7 +1671,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S3"
-   ]
+   ],
+   "icon": "🦠"
   },
   {
    "id": "neonatal_jaundice",
@@ -1598,7 +1691,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S8"
-   ]
+   ],
+   "icon": "🦠"
   },
   {
    "id": "genetics",
@@ -1618,7 +1712,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S5"
-   ]
+   ],
+   "icon": "🦠"
   },
   {
    "id": "toluidine-blue",
@@ -1637,7 +1732,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "phenolphthalein",
@@ -1655,7 +1751,8 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S1"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "pudilan",
@@ -1675,7 +1772,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "lanqin",
@@ -1694,7 +1792,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "banlangen",
@@ -1713,7 +1812,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "lianhua",
@@ -1732,7 +1832,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "xiaochaihu",
@@ -1750,7 +1851,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "xiaoershaoqiao",
@@ -1769,7 +1871,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "ganmaoqingre",
@@ -1788,7 +1891,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "jizhi",
@@ -1806,7 +1910,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "beibipingba",
@@ -1825,7 +1930,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "kangbingdu",
@@ -1844,7 +1950,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "loratadine",
@@ -1863,7 +1970,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "cetirizine",
@@ -1882,7 +1990,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "montelukast",
@@ -1899,7 +2008,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "ambroxol",
@@ -1918,7 +2028,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "yitanjing",
@@ -1936,7 +2047,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "smecta",
@@ -1954,7 +2066,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "mami",
@@ -1972,7 +2085,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "probiotic",
@@ -1991,7 +2105,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "calciumglu",
@@ -2009,7 +2124,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "vitd",
@@ -2028,7 +2144,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "calpol",
@@ -2045,7 +2162,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "zincoxide",
@@ -2063,7 +2181,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "hydrocort",
@@ -2081,7 +2200,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "mupirocin",
@@ -2098,7 +2218,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "iodophor",
@@ -2116,7 +2237,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "🧴"
   },
   {
    "id": "alcohol",
@@ -2135,7 +2257,8 @@ const G6PD_DATA = {
    "controversy": false,
    "sources": [
     "S2"
-   ]
+   ],
+   "icon": "🧴"
   },
   {
    "id": "miconazole",
@@ -2154,7 +2277,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "ceftriaxone",
@@ -2173,7 +2297,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "salbutamol",
@@ -2192,7 +2317,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "budesonide",
@@ -2211,7 +2337,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "gentamicin",
@@ -2229,7 +2356,8 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S7"
-   ]
+   ],
+   "icon": "💊"
   },
   {
    "id": "changning",
@@ -2248,7 +2376,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "jianwei",
@@ -2267,7 +2396,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "id": "xiaoerfeike",
@@ -2285,7 +2415,8 @@ const G6PD_DATA = {
    "sources": [
     "S1",
     "S3"
-   ]
+   ],
+   "icon": "🌿"
   },
   {
    "name": "双氯芬酸",
@@ -2305,7 +2436,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "双氯芬酸",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "洛索洛芬",
@@ -2323,7 +2455,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "洛索洛芬",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "萘普生",
@@ -2341,7 +2474,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "萘普生",
-   "note": ""
+   "note": "",
+   "icon": "⚪"
   },
   {
    "name": "美洛昔康",
@@ -2359,7 +2493,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "美洛昔康",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "塞来昔布",
@@ -2377,7 +2512,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "塞来昔布",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "吲哚美辛",
@@ -2395,7 +2531,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "吲哚美辛",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "依托考昔",
@@ -2413,7 +2550,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "依托考昔",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氟比洛芬",
@@ -2431,7 +2569,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "氟比洛芬",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "哌拉西林他唑巴坦",
@@ -2449,7 +2588,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "哌拉西林他唑巴坦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "青霉素V",
@@ -2467,7 +2607,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "青霉素V",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "头孢克肟",
@@ -2486,7 +2627,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "头孢克肟",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "头孢拉定",
@@ -2505,7 +2647,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "头孢拉定",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "头孢氨苄",
@@ -2524,7 +2667,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "头孢氨苄",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "头孢他啶",
@@ -2543,7 +2687,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "头孢他啶",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "头孢哌酮舒巴坦",
@@ -2561,7 +2706,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "头孢哌酮舒巴坦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "罗红霉素",
@@ -2579,7 +2725,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "罗红霉素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "阿米卡星",
@@ -2597,7 +2744,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "阿米卡星",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "妥布霉素",
@@ -2615,7 +2763,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "妥布霉素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "链霉素",
@@ -2631,7 +2780,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "链霉素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "多西环素",
@@ -2650,7 +2800,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "多西环素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "米诺环素",
@@ -2668,7 +2819,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "米诺环素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "四环素",
@@ -2684,7 +2836,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "四环素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "克林霉素",
@@ -2703,7 +2856,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "克林霉素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "万古霉素",
@@ -2721,7 +2875,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "万古霉素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "利奈唑胺",
@@ -2739,7 +2894,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "利奈唑胺",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "替考拉宁",
@@ -2757,7 +2913,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "替考拉宁",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "奥司他韦",
@@ -2776,7 +2933,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "奥司他韦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "阿昔洛韦",
@@ -2795,7 +2953,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "阿昔洛韦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "伐昔洛韦",
@@ -2813,7 +2972,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "伐昔洛韦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "更昔洛韦",
@@ -2831,7 +2991,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "更昔洛韦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "泛昔洛韦",
@@ -2847,7 +3008,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "泛昔洛韦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "利巴韦林",
@@ -2865,7 +3027,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "利巴韦林",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氟康唑",
@@ -2884,7 +3047,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氟康唑",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "伊曲康唑",
@@ -2902,7 +3066,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "伊曲康唑",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "酮康唑",
@@ -2920,7 +3085,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "酮康唑",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "制霉菌素",
@@ -2938,7 +3104,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "制霉菌素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "特比萘芬",
@@ -2957,7 +3124,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "特比萘芬",
-   "note": ""
+   "note": "",
+   "icon": "⚪"
   },
   {
    "name": "克霉唑",
@@ -2975,7 +3143,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "克霉唑",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氯苯那敏",
@@ -2984,7 +3153,8 @@ const G6PD_DATA = {
    "category": "neuro",
    "aliases": [
     "扑尔敏",
-    "马来酸氯苯那敏"
+    "马来酸氯苯那敏",
+    "马来酸氯苯那敏片"
    ],
    "summary": "非氧化性药物，目前无明确诱发 G6PD 溶血的证据，常规剂量下一般可用。",
    "detail": "蚕豆病并非对全部药物都禁忌。该药不属于已知氧化性诱发物，多部权威『低危/相对安全』药物清单将其列入。用药仍须遵医嘱，并主动告知蚕豆病史。",
@@ -2994,7 +3164,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氯苯那敏",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "地氯雷他定",
@@ -3013,7 +3184,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "地氯雷他定",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "非索非那定",
@@ -3032,7 +3204,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "非索非那定",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "依巴斯汀",
@@ -3050,7 +3223,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "依巴斯汀",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "咪唑斯汀",
@@ -3068,7 +3242,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "咪唑斯汀",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "赛庚啶",
@@ -3086,7 +3261,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "赛庚啶",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "异丙嗪",
@@ -3104,7 +3280,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "异丙嗪",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氨茶碱",
@@ -3122,7 +3299,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氨茶碱",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "茶碱",
@@ -3138,7 +3316,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "茶碱",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "乙酰半胱氨酸",
@@ -3157,7 +3336,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "乙酰半胱氨酸",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "右美沙芬",
@@ -3176,7 +3356,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "右美沙芬",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "异丙托溴铵",
@@ -3194,7 +3375,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "异丙托溴铵",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "噻托溴铵",
@@ -3212,7 +3394,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "噻托溴铵",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "倍氯米松",
@@ -3231,7 +3414,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "倍氯米松",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氟替卡松",
@@ -3250,7 +3434,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氟替卡松",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "沙美特罗",
@@ -3268,7 +3453,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "沙美特罗",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "复方甘草片",
@@ -3286,7 +3472,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "复方甘草片",
-   "note": ""
+   "note": "",
+   "ingredients": [
+    "甘草流浸膏",
+    "阿片粉",
+    "樟脑"
+   ],
+   "icon": "💊"
   },
   {
    "name": "奥美拉唑",
@@ -3305,7 +3497,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "奥美拉唑",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "泮托拉唑",
@@ -3323,7 +3516,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "泮托拉唑",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "雷贝拉唑",
@@ -3341,7 +3535,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "雷贝拉唑",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "兰索拉唑",
@@ -3359,7 +3554,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "兰索拉唑",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "埃索美拉唑",
@@ -3377,7 +3573,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "埃索美拉唑",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "铝碳酸镁",
@@ -3395,7 +3592,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "铝碳酸镁",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "西咪替丁",
@@ -3413,7 +3611,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "西咪替丁",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "雷尼替丁",
@@ -3431,7 +3630,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "雷尼替丁",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "法莫替丁",
@@ -3450,7 +3650,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "法莫替丁",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "多潘立酮",
@@ -3469,7 +3670,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "多潘立酮",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "莫沙必利",
@@ -3487,7 +3689,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "莫沙必利",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "乳果糖",
@@ -3505,7 +3708,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "乳果糖",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "开塞露",
@@ -3523,7 +3727,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "开塞露",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "口服补液盐",
@@ -3542,7 +3747,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "口服补液盐",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "硫糖铝",
@@ -3560,7 +3766,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "硫糖铝",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "胶体果胶铋",
@@ -3578,7 +3785,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "胶体果胶铋",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "复方消化酶",
@@ -3597,7 +3805,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "复方消化酶",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "普萘洛尔",
@@ -3615,7 +3824,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "普萘洛尔",
-   "note": ""
+   "note": "",
+   "icon": "⚪"
   },
   {
    "name": "美托洛尔",
@@ -3633,7 +3843,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "美托洛尔",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "比索洛尔",
@@ -3652,7 +3863,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "比索洛尔",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "阿替洛尔",
@@ -3670,7 +3882,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "阿替洛尔",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氨氯地平",
@@ -3689,7 +3902,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氨氯地平",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "硝苯地平",
@@ -3708,7 +3922,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "硝苯地平",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "非洛地平",
@@ -3726,7 +3941,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "非洛地平",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "缬沙坦",
@@ -3744,7 +3960,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "缬沙坦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氯沙坦",
@@ -3762,7 +3979,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氯沙坦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "厄贝沙坦",
@@ -3780,7 +3998,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "厄贝沙坦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "卡托普利",
@@ -3798,7 +4017,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "卡托普利",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "依那普利",
@@ -3817,7 +4037,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "依那普利",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "培哚普利",
@@ -3835,7 +4056,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "培哚普利",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "呋塞米",
@@ -3854,7 +4076,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "呋塞米",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氢氯噻嗪",
@@ -3872,7 +4095,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氢氯噻嗪",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "螺内酯",
@@ -3890,7 +4114,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "螺内酯",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "地高辛",
@@ -3906,7 +4131,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "地高辛",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "阿托伐他汀",
@@ -3924,7 +4150,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "阿托伐他汀",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "瑞舒伐他汀",
@@ -3942,7 +4169,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "瑞舒伐他汀",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "辛伐他汀",
@@ -3960,7 +4188,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "辛伐他汀",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氯吡格雷",
@@ -3979,7 +4208,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氯吡格雷",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "华法林",
@@ -3997,7 +4227,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "华法林",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "普罗帕酮",
@@ -4015,7 +4246,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "普罗帕酮",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "维拉帕米",
@@ -4033,7 +4265,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "维拉帕米",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "地尔硫卓",
@@ -4052,7 +4285,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "地尔硫卓",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "胺碘酮",
@@ -4071,7 +4305,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "胺碘酮",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "二甲双胍",
@@ -4090,7 +4325,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "二甲双胍",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "阿卡波糖",
@@ -4109,7 +4345,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "阿卡波糖",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "瑞格列奈",
@@ -4127,7 +4364,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "瑞格列奈",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "吡格列酮",
@@ -4145,7 +4383,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "吡格列酮",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "胰岛素",
@@ -4165,7 +4404,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "胰岛素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "左甲状腺素",
@@ -4184,7 +4424,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "左甲状腺素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "泼尼松",
@@ -4202,7 +4443,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "泼尼松",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "甲泼尼龙",
@@ -4221,7 +4463,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "甲泼尼龙",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "地塞米松",
@@ -4239,7 +4482,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "地塞米松",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "阿仑膦酸钠",
@@ -4257,7 +4501,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "阿仑膦酸钠",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "别嘌醇",
@@ -4276,7 +4521,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "别嘌醇",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "维生素B1",
@@ -4294,7 +4540,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "维生素B1",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "维生素B2",
@@ -4312,7 +4559,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "维生素B2",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "维生素B6",
@@ -4330,7 +4578,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "维生素B6",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "维生素B12",
@@ -4349,7 +4598,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "维生素B12",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "叶酸",
@@ -4367,7 +4617,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "叶酸",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "维生素E",
@@ -4385,7 +4636,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "维生素E",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "复合维生素",
@@ -4405,7 +4657,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "复合维生素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "葡萄糖酸锌",
@@ -4423,7 +4676,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "葡萄糖酸锌",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "铁剂",
@@ -4444,7 +4698,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "铁剂",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "流感疫苗",
@@ -4460,7 +4715,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "流感疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "乙肝疫苗",
@@ -4476,7 +4732,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "乙肝疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "百白破疫苗",
@@ -4492,7 +4749,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "百白破疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "麻疹疫苗",
@@ -4508,7 +4766,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "麻疹疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "水痘疫苗",
@@ -4524,7 +4783,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "水痘疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "肺炎球菌疫苗",
@@ -4540,7 +4800,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "肺炎球菌疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "HPV疫苗",
@@ -4556,7 +4817,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "HPV疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "新冠疫苗",
@@ -4572,7 +4834,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "新冠疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "卡介苗",
@@ -4588,7 +4851,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "卡介苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "脊髓灰质炎疫苗",
@@ -4604,7 +4868,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "脊髓灰质炎疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "轮状病毒疫苗",
@@ -4620,7 +4885,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "轮状病毒疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "麻腮风疫苗",
@@ -4636,7 +4902,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "麻腮风疫苗",
-   "note": ""
+   "note": "",
+   "icon": "💉"
   },
   {
    "name": "红霉素软膏",
@@ -4652,7 +4919,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "红霉素软膏",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "阿昔洛韦乳膏",
@@ -4670,7 +4938,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "阿昔洛韦乳膏",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氟轻松",
@@ -4688,7 +4957,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氟轻松",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "醋酸地塞米松乳膏",
@@ -4706,7 +4976,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "醋酸地塞米松乳膏",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "尿素软膏",
@@ -4724,7 +4995,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "尿素软膏",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "维A酸乳膏",
@@ -4743,7 +5015,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "维A酸乳膏",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "鱼石脂",
@@ -4761,7 +5034,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "鱼石脂",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "水杨酸软膏",
@@ -4777,7 +5051,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "水杨酸软膏",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "创可贴",
@@ -4795,7 +5070,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "创可贴",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "红霉素眼膏",
@@ -4811,7 +5087,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "红霉素眼膏",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "妥布霉素滴眼液",
@@ -4829,7 +5106,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "妥布霉素滴眼液",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "色甘酸钠滴眼液",
@@ -4847,7 +5125,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "色甘酸钠滴眼液",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "玻璃酸钠滴眼液",
@@ -4866,7 +5145,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "玻璃酸钠滴眼液",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "金霉素眼膏",
@@ -4882,7 +5162,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "金霉素眼膏",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氯霉素滴眼液",
@@ -4900,7 +5181,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "氯霉素滴眼液",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "生理性海水鼻喷雾",
@@ -4919,7 +5201,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "生理性海水鼻喷雾",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "糠酸莫米松鼻喷雾",
@@ -4937,7 +5220,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "糠酸莫米松鼻喷雾",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氮卓斯汀鼻喷雾",
@@ -4955,7 +5239,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氮卓斯汀鼻喷雾",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "地西泮",
@@ -4973,7 +5258,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "地西泮",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "艾司唑仑",
@@ -4991,7 +5277,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "艾司唑仑",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "唑吡坦",
@@ -5010,7 +5297,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "唑吡坦",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "舍曲林",
@@ -5029,7 +5317,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "舍曲林",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "氟西汀",
@@ -5047,7 +5336,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "氟西汀",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "帕罗西汀",
@@ -5066,7 +5356,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "帕罗西汀",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "米氮平",
@@ -5084,7 +5375,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "米氮平",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "奥氮平",
@@ -5103,7 +5395,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "奥氮平",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "喹硫平",
@@ -5121,7 +5414,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "喹硫平",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "加巴喷丁",
@@ -5139,7 +5433,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "加巴喷丁",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "普瑞巴林",
@@ -5157,7 +5452,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "普瑞巴林",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "丙戊酸钠",
@@ -5176,7 +5472,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "丙戊酸钠",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "卡马西平",
@@ -5195,7 +5492,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "卡马西平",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "碘海醇",
@@ -5213,7 +5511,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "碘海醇",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "碘普罗胺",
@@ -5231,7 +5530,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "碘普罗胺",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "硫酸钡",
@@ -5249,7 +5549,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "硫酸钡",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "黄体酮",
@@ -5268,7 +5569,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "黄体酮",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "雌激素",
@@ -5287,7 +5589,8 @@ const G6PD_DATA = {
     "S1"
    ],
    "id": "雌激素",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "复方口服避孕药",
@@ -5307,7 +5610,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "复方口服避孕药",
-   "note": ""
+   "note": "",
+   "icon": "💊"
   },
   {
    "name": "海娜/指甲花",
@@ -5329,7 +5633,9 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "海娜/指甲花",
-   "note": ""
+   "note": "",
+   "icon": "🎨",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff0e6%27%20stroke%3D%27%23b8791b%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8E%A8%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b8791b%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E6%B5%B7%E5%A8%9C%2F%E6%8C%87%E7%94%B2%E8%8A%B1%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "name": "红花",
@@ -5350,7 +5656,9 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "红花",
-   "note": ""
+   "note": "",
+   "icon": "🌸",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fdecea%27%20stroke%3D%27%23c62828%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8C%BA%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23c62828%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E7%BA%A2%E8%8A%B1%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "name": "银杏/白果",
@@ -5371,7 +5679,9 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "银杏/白果",
-   "note": ""
+   "note": "",
+   "icon": "🍂",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8D%82%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%93%B6%E6%9D%8F%2F%E7%99%BD%E6%9E%9C%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "name": "丹参",
@@ -5391,7 +5701,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "丹参",
-   "note": ""
+   "note": "",
+   "icon": "🌱"
   },
   {
    "name": "鱼腥草",
@@ -5411,7 +5722,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "鱼腥草",
-   "note": ""
+   "note": "",
+   "icon": "🌱"
   },
   {
    "name": "茵栀黄",
@@ -5432,7 +5744,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "茵栀黄",
-   "note": ""
+   "note": "",
+   "icon": "🌱"
   },
   {
    "name": "红花油",
@@ -5452,7 +5765,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "红花油",
-   "note": ""
+   "note": "",
+   "icon": "🌸"
   },
   {
    "name": "指甲油/美甲产品",
@@ -5474,7 +5788,8 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "指甲油/美甲产品",
-   "note": ""
+   "note": "",
+   "icon": "🧴"
   },
   {
    "name": "高锰酸钾",
@@ -5494,7 +5809,9 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "高锰酸钾",
-   "note": ""
+   "note": "",
+   "icon": "🟣",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23f3e8fb%27%20stroke%3D%27%236a1b9a%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%9F%A3%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%236a1b9a%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%AB%98%E9%94%B0%E9%85%B8%E9%92%BE%3C%2Ftext%3E%3C%2Fsvg%3E"
   },
   {
    "name": "香薰/精油（薄荷脑·樟脑类）",
@@ -5517,7 +5834,644 @@ const G6PD_DATA = {
     "S7"
    ],
    "id": "香薰/精油（薄荷脑·樟脑类）",
-   "note": ""
+   "note": "",
+   "icon": "🧴"
+  },
+  {
+   "name": "夹竹桃",
+   "en": "Oleander (Nerium oleander)",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "夹竹桃叶",
+    "柳叶桃"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：含强心苷，极少量即可致严重心律失常甚至死亡，全株剧毒。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "夹竹桃",
+   "note": "",
+   "icon": "🌸",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fdeef2%27%20stroke%3D%27%23c2185b%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8C%B8%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23c2185b%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E5%A4%B9%E7%AB%B9%E6%A1%83%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+   "name": "水仙",
+   "en": "Daffodil / Narcissus",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "水仙花",
+    "凌波仙子"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：鳞茎含石蒜碱等生物碱，误食致呕吐、腹泻、惊厥。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "水仙",
+   "note": "",
+   "icon": "🌸"
+  },
+  {
+   "name": "石蒜",
+   "en": "Lycoris radiata",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "红花石蒜",
+    "彼岸花"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：含石蒜碱、加兰他敏类生物碱，误食致呕吐、惊厥。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "石蒜",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "郁金香",
+   "en": "Tulip",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "郁金香花"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：鳞茎含郁金香苷，接触致「郁金香指」皮炎，误食不适。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "郁金香",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "滴水观音/海芋",
+   "en": "Alocasia / Elephant ear",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "海芋",
+    "广东狼毒"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：汁液含草酸钙针晶，误食/沾肤致剧烈刺痛、肿胀。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "滴水观音/海芋",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "绿萝/黄金葛",
+   "en": "Pothos / Epipremnum",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "黄金葛"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：含草酸钙针晶，宠物与幼儿误食致口腔灼伤。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "绿萝/黄金葛",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "万年青/黛粉叶",
+   "en": "Dieffenbachia",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "黛粉叶",
+    "粗肋草"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：含草酸钙针晶，误食致口腔肿胀、流涎。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "万年青/黛粉叶",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "曼陀罗",
+   "en": "Datura / Thorn apple",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "洋金花",
+    "醉仙桃"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：含莨菪碱类，误食致幻觉、口干、高热、昏迷，剧毒。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "曼陀罗",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "蓖麻",
+   "en": "Castor bean (Ricinus)",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "蓖麻子"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：种子含蓖麻毒蛋白（ricin），微量即可致肝肾功能衰竭，剧毒。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "蓖麻",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "相思豆/相思子",
+   "en": "Abrus precatorius / Rosary pea",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "鸡母珠",
+    "美人豆"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：种子含相思豆毒蛋白（abrin），嚼碎吞下可致死，剧毒。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "相思豆/相思子",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "苏铁/铁树",
+   "en": "Cycas",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "铁树",
+    "凤尾蕉"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：种子与茎髓含苏铁苷，长期/大量致肝损伤，有致癌风险。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "苏铁/铁树",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "马缨丹/五色梅",
+   "en": "Lantana",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "五色梅",
+    "七变花"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：叶与未熟果含马缨丹烯，误食致肝损伤、光敏。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "马缨丹/五色梅",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "含羞草",
+   "en": "Mimosa / Sensitive plant",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "知羞草"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：含含羞草碱，长期接触/饲养可能致脱发、影响甲状腺。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "含羞草",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "罂粟/虞美人",
+   "en": "Poppy (Papaver)",
+   "risk": "info",
+   "category": "plant",
+   "aliases": [
+    "虞美人",
+    "鸦片花"
+   ],
+   "summary": "观赏/家养植物；主要风险是自身毒性，非 G6PD 溶血。",
+   "detail": "该植物主要风险并非 G6PD 溶血，而是自身毒性（误食/接触可中毒）；蚕豆病患儿亦应避免接触与误食，出现口唇麻木、呕吐、心慌等立即就医。 具体毒性：含吗啡类生物碱，非法种植；果实/汁液具成瘾与中毒风险。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "罂粟/虞美人",
+   "note": "",
+   "icon": "🌱"
+  },
+  {
+   "name": "油漆/涂料（含苯系溶剂）",
+   "en": "Paint / Coatings (benzene solvents)",
+   "risk": "caution",
+   "category": "occupational",
+   "aliases": [
+    "油漆",
+    "涂料",
+    "乳胶漆(含溶剂)",
+    "木器漆"
+   ],
+   "summary": "与 G6PD 相关的一般性提示。",
+   "detail": "油漆、稀释剂常含苯、甲苯、二甲苯等芳香族溶剂，长期吸入可损害造血系统；作业人员注意通风与防护，孕妇及儿童远离施工现场。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "油漆/涂料（含苯系溶剂）",
+   "note": "",
+   "icon": "⚠️"
+  },
+  {
+   "name": "对苯二胺（染发剂成分/PPD）",
+   "en": "p-Phenylenediamine (PPD)",
+   "risk": "caution",
+   "category": "occupational",
+   "aliases": [
+    "PPD",
+    "染发剂成分",
+    "乌尔丝"
+   ],
+   "summary": "与 G6PD 相关的一般性提示。",
+   "detail": "对苯二胺是氧化型染发剂主要成分，可致严重接触性皮炎，少数个案报道溶血；染发前做皮肤试验，蚕豆病者慎用，避免染发剂接触头皮破损处。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "对苯二胺（染发剂成分/PPD）",
+   "note": "",
+   "icon": "⚠️"
+  },
+  {
+   "name": "橡胶防老剂（防老剂D/4010NA等）",
+   "en": "Rubber antioxidants",
+   "risk": "caution",
+   "category": "occupational",
+   "aliases": [
+    "防老剂D",
+    "防老剂甲",
+    "4010NA",
+    "IPPD",
+    "防老剂A"
+   ],
+   "summary": "与 G6PD 相关的一般性提示。",
+   "detail": "橡胶制品（轮胎、胶管、手套）常用芳胺类防老剂（如防老剂D、4010NA），部分具氧化应激与泌尿/血液系统风险；相关行业人员注意防护。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "橡胶防老剂（防老剂D/4010NA等）",
+   "note": "",
+   "icon": "⚠️"
+  },
+  {
+   "name": "苯胺及其衍生物",
+   "en": "Aniline & derivatives",
+   "risk": "caution",
+   "category": "occupational",
+   "aliases": [
+    "苯胺",
+    "邻甲苯胺",
+    "对氯苯胺",
+    "联苯胺"
+   ],
+   "summary": "与 G6PD 相关的一般性提示。",
+   "detail": "苯胺类芳香胺可诱发高铁血红蛋白血症与氧化溶血，属职业性血液毒物；接触后注意监测尿色与血象。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "苯胺及其衍生物",
+   "note": "",
+   "icon": "⚠️"
+  },
+  {
+   "name": "氢醌/对苯二酚",
+   "en": "Hydroquinone",
+   "risk": "caution",
+   "category": "occupational",
+   "aliases": [
+    "对苯二酚",
+    "氢醌",
+    "照相显影剂"
+   ],
+   "summary": "与 G6PD 相关的一般性提示。",
+   "detail": "氢醌为强氧化剂，皮肤外用（美白）与职业接触在 G6PD 缺乏者中有溶血风险；避免大面积/长期外用含氢醌产品。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "氢醌/对苯二酚",
+   "note": "",
+   "icon": "⚠️"
+  },
+  {
+   "name": "硝基苯",
+   "en": "Nitrobenzene",
+   "risk": "caution",
+   "category": "occupational",
+   "aliases": [
+    "硝基苯",
+    "密斑油"
+   ],
+   "summary": "与 G6PD 相关的一般性提示。",
+   "detail": "硝基苯可经皮肤吸收致高铁血红蛋白血症与溶血，属职业中毒物；注意防护。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "硝基苯",
+   "note": "",
+   "icon": "⚠️"
+  },
+  {
+   "name": "天那水/香蕉水（稀释剂）",
+   "en": "Thinner / Banana oil",
+   "risk": "caution",
+   "category": "occupational",
+   "aliases": [
+    "天那水",
+    "香蕉水",
+    "松香水",
+    "油漆稀释剂"
+   ],
+   "summary": "与 G6PD 相关的一般性提示。",
+   "detail": "含甲苯、二甲苯、丙酮等，挥发气体长期吸入损害神经与造血；施工通风、戴口罩。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "天那水/香蕉水（稀释剂）",
+   "note": "",
+   "icon": "⚠️"
+  },
+  {
+   "name": "农药/杀虫剂（百草枯/有机磷等）",
+   "en": "Pesticides / Insecticides",
+   "risk": "info",
+   "category": "occupational",
+   "aliases": [
+    "百草枯",
+    "有机磷",
+    "敌敌畏",
+    "杀虫剂"
+   ],
+   "summary": "与 G6PD 相关的一般性提示。",
+   "detail": "农药主要风险是急性中毒（百草枯致肺纤维化、有机磷致胆碱能危象），并非 G6PD 溶血；但任何中毒都应在正规医院处理，就诊时主动告知蚕豆病史。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "农药/杀虫剂（百草枯/有机磷等）",
+   "note": "",
+   "icon": "⚠️"
+  },
+  {
+   "name": "印刷油墨",
+   "en": "Printing ink",
+   "risk": "info",
+   "category": "occupational",
+   "aliases": [
+    "油墨",
+    "印刷油",
+    "报纸油墨"
+   ],
+   "summary": "与 G6PD 相关的一般性提示。",
+   "detail": "油墨含溶剂与少量重金属，长期职业接触注意通风防护；主要风险非 G6PD 溶血。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "印刷油墨",
+   "note": "",
+   "icon": "⚠️"
+  },
+  {
+   "id": "ped_analgesic",
+   "name": "小儿氨酚黄那敏颗粒",
+   "en": "Pediatric Paracetamol/CPM",
+   "risk": "caution",
+   "category": "other_drug",
+   "aliases": [
+    "小儿氨酚黄那敏",
+    "护彤"
+   ],
+   "ingredients": [
+    "对乙酰氨基酚",
+    "马来酸氯苯那敏",
+    "人工牛黄"
+   ],
+   "summary": "小儿常用复方感冒药，成分须逐条核对。",
+   "detail": "本品为中西药复方，下方已按成分逐条比对禁忌库；具体以说明书为准，用药前咨询医师或药师。",
+   "note": "含人工牛黄（牛黄在 G6PD 禁忌名单中）。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "icon": "💊",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23eaf6eb%27%20stroke%3D%27%232e7d32%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%232e7d32%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E5%B0%8F%E5%84%BF%E6%B0%A8%E9%85%9A%E9%BB%84%E9%82%A3%E6%95%8F%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+   "id": "amantadine_complex",
+   "name": "氨酚烷胺类（快克/感康）",
+   "en": "Paracetamol/Amantadine",
+   "risk": "caution",
+   "category": "other_drug",
+   "aliases": [
+    "快克",
+    "感康",
+    "氨酚烷胺胶囊",
+    "复方氨酚烷胺片"
+   ],
+   "ingredients": [
+    "对乙酰氨基酚",
+    "盐酸金刚烷胺",
+    "咖啡因",
+    "马来酸氯苯那敏",
+    "人工牛黄"
+   ],
+   "summary": "复方感冒药，成分须逐条核对。",
+   "detail": "本品为复方，下方已按成分逐条比对禁忌库；具体以说明书为准，用药前咨询医师或药师。",
+   "note": "含人工牛黄（牛黄在 G6PD 禁忌名单中）。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "icon": "💊"
+  },
+  {
+   "id": "tylenol_complex",
+   "name": "酚麻美敏（泰诺）",
+   "en": "Tylenol Cold (APAP/PSE/DM/CPM)",
+   "risk": "caution",
+   "category": "other_drug",
+   "aliases": [
+    "泰诺",
+    "酚麻美敏片",
+    "泰诺感冒片"
+   ],
+   "ingredients": [
+    "对乙酰氨基酚",
+    "伪麻黄碱",
+    "氢溴酸右美沙芬",
+    "马来酸氯苯那敏"
+   ],
+   "summary": "复方感冒药，成分须逐条核对。",
+   "detail": "本品为复方，下方已按成分逐条比对禁忌库；具体以说明书为准，用药前咨询医师或药师。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "note": "",
+   "icon": "💊"
+  },
+  {
+   "id": "vitc_yin",
+   "name": "维C银翘片",
+   "en": "VC Yinqiao tablet",
+   "risk": "caution",
+   "category": "other_drug",
+   "aliases": [
+    "维C银翘",
+    "VC银翘片"
+   ],
+   "ingredients": [
+    "对乙酰氨基酚",
+    "维生素C",
+    "马来酸氯苯那敏",
+    "金银花",
+    "连翘"
+   ],
+   "summary": "复方中成药，含西药成分，须逐条核对禁忌。",
+   "detail": "本品为中西药复方，下方已按成分逐条比对禁忌库；具体以说明书为准，用药前咨询医师或药师。",
+   "note": "金银花、连翘在 G6PD 禁忌名单中，含这些成分的复方须特别留意。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "icon": "💊",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E7%BB%B4C%E9%93%B6%E7%BF%98%E7%89%87%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+   "id": "baijiahei",
+   "name": "白加黑",
+   "en": "Baijiahei (day/night)",
+   "risk": "caution",
+   "category": "other_drug",
+   "aliases": [
+    "氨酚伪麻美芬片",
+    "氨酚美芬伪麻片"
+   ],
+   "ingredients": [
+    "对乙酰氨基酚",
+    "盐酸伪麻黄碱",
+    "氢溴酸右美沙芬",
+    "苯海拉明"
+   ],
+   "summary": "复方感冒药（日/夜片），成分须逐条核对。",
+   "detail": "本品为复方，下方已按成分逐条比对禁忌库；具体以说明书为准，用药前咨询医师或药师。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "note": "",
+   "icon": "💊",
+   "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23e8f1fb%27%20stroke%3D%27%231565c0%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%231565c0%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E7%99%BD%E5%8A%A0%E9%BB%91%3C%2Ftext%3E%3C%2Fsvg%3E"
   }
  ]
 };

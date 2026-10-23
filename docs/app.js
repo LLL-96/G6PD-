@@ -65,7 +65,7 @@
     for (var j = 0; j < fields.length; j++) {
       var f = norm(fields[j]);
       if (!f) continue;
-      if (f.indexOf(q) !== -1 || q.indexOf(f) !== -1) return 80;
+      if (f.indexOf(q) !== -1 || (f.length >= 2 && q.indexOf(f) !== -1)) return 80;
     }
     if (q.length >= 4) {
       for (var k = 0; k < fields.length; k++) {
@@ -167,28 +167,65 @@
     var cat = CATEGORY_NAMES[it.category] || it.category;
     var aliases = (it.aliases && it.aliases.length) ? it.aliases.join("、") : "";
     var did = idPrefix + "-" + it.id;
+
+    // 复方药：自动拆成分并逐条比对禁忌库
+    var comp = null, hasForbid = false, hasCaution = false;
+    if (it.ingredients && it.ingredients.length) {
+      comp = it.ingredients.map(function (ing) {
+        var r = search(ing);
+        var top = r[0];
+        return { name: ing, risk: top ? top.risk : "none", matched: top ? top.name : null };
+      });
+      hasForbid = comp.some(function (c) { return c.risk === "forbidden"; });
+      hasCaution = comp.some(function (c) { return c.risk === "caution"; });
+    }
+    var cmpTag = "";
+    if (hasForbid) cmpTag = '<span class="cmp-tag bad">含禁用成分</span>';
+    else if (hasCaution) cmpTag = '<span class="cmp-tag warn">含慎用成分</span>';
+
     var html =
       '<div class="item ' + esc(it.risk) + '" data-id="' + esc(it.id) + '">' +
         '<div class="bar"></div>' +
         '<div class="head">' +
           '<div class="row1">' +
             '<span class="tag">' + esc(label) + '</span>' +
+            (it.icon ? '<span class="ic-badge">' + esc(it.icon) + '</span>' : '') +
             '<span class="name">' + hl(it.name, currentQuery) + '</span>' +
             (it.controversy ? '<span class="debate">[分歧]</span>' : "") +
+            cmpTag +
             '<button class="star' + (isFav(it.id) ? " on" : "") + '" data-fav="' + esc(it.id) + '" aria-label="收藏">★</button>' +
             '<span class="chev">展开 ▾</span>' +
           '</div>' +
           '<div class="summary">' + hl(it.summary, currentQuery) + '</div>' +
         '</div>' +
         '<div class="detail" id="' + did + '">' +
+          (it.img ? '<div class="imgwrap"><img class="item-img" alt="' + esc(it.name) + '" src="' + it.img + '"><div class="imgcap">示意图 · 仅供识别参考，以实物/说明书为准</div></div>' : "") +
           '<div class="kv"><div class="k">类别</div><div class="v">' + esc(cat) + '</div></div>' +
           (aliases ? '<div class="kv"><div class="k">别名/商品名</div><div class="v">' + esc(aliases) + '</div></div>' : "") +
           (it.detail ? '<div class="kv"><div class="k">说明</div><div class="v">' + esc(it.detail) + '</div></div>' : "") +
           (it.note ? '<div class="warn">⚠ ' + esc(it.note) + '</div>' : "") +
+          (comp ? compoundBlock(comp, hasForbid, hasCaution) : "") +
           '<div class="src">来源：' + sourceText(it) + '</div>' +
         '</div>' +
       '</div>';
     return html;
+  }
+
+  function compoundBlock(comp, hasForbid, hasCaution) {
+    var rows = comp.map(function (c) {
+      var lab = c.risk === "none" ? "未收录" : (RISK_LABEL[c.risk] || c.risk);
+      var cls = c.risk === "none" ? "none" : c.risk;
+      var approx = (c.matched && c.matched !== c.name) ? "（≈" + esc(c.matched) + "）" : "";
+      return '<div class="cing"><span class="mtag ' + cls + '">' + esc(lab) + "</span>" +
+        '<span class="ingname">' + esc(c.name) + approx + "</span></div>";
+    }).join("");
+    var note = hasForbid
+      ? "⛔ 本品含禁用成分，如已开具请立即与开药医生复核。"
+      : hasCaution
+        ? "⚠ 本品含慎用成分，请确认医生/药师已知情。"
+        : "成分均未提示禁忌，但仍需遵医嘱。";
+    return '<div class="compound"><div class="ck">🔬 成分比对（逐条核对禁忌库）</div>' +
+      rows + '<div class="cnote ' + (hasForbid ? "bad" : hasCaution ? "warn" : "") + '">' + note + "</div></div>";
   }
 
   /* 卡片点击：收藏星 / 展开；历史 chip；统一委托 */

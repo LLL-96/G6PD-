@@ -106,7 +106,7 @@ def search(query, items=None):
             if nf == q:
                 exact.append((100, it))
                 break
-            if q in nf or nf in q:
+            if q in nf or (len(nf) >= 2 and nf in q):
                 partial.append((80 if len(q) >= 2 else 40, it))
                 break
         else:
