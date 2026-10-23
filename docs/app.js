@@ -15,7 +15,7 @@
     metabolic: "内分泌（降糖药）", neuro: "神经系统/抗过敏", urinary: "泌尿系统用药",
     other_drug: "其他药物", tcm: "中药与中成药成分", food: "食物",
     household: "日用化学品", occupational: "职业/环境暴露", infection: "感染与疾病提示",
-    vaccine: "疫苗（常规接种）"
+    vaccine: "疫苗（常规接种）", plant: "植物 / 花草"
   };
 
   var RISK_LABEL = { forbidden: "⛔ 禁用", caution: "⚠️ 慎用", safe: "✅ 常规可用", info: "ℹ️ 提示" };

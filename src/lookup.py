@@ -68,6 +68,7 @@ CATEGORY_NAMES = {
     "occupational": "职业/环境暴露",
     "infection": "感染与疾病提示",
     "vaccine": "疫苗（常规接种）",
+    "plant": "植物 / 花草",
 }
 
 # ---------- 数据加载 ----------

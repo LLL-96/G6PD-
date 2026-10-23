@@ -408,8 +408,8 @@
 const G6PD_DATA = {
  "meta": {
   "title": "G6PD缺乏症（蚕豆病）禁忌速查数据库",
-  "version": "0.1.3",
-  "updated": "2026-10-24",
+  "version": "0.1.4",
+  "updated": "2026-10-23",
   "disclaimer": "本数据库仅供参考，不构成医疗建议。一切用药请以医生处方和药师指导为准；如怀疑溶血发作，请立即就医。",
   "risk_levels": {
    "forbidden": "⛔ 禁用（高风险）",
@@ -948,7 +948,10 @@ const G6PD_DATA = {
     "蚕豆酥",
     "蚕豆酱",
     "豆瓣酱",
-    "油炸蚕豆"
+    "油炸蚕豆",
+    "佛豆",
+    "川豆",
+    "南豆"
    ],
    "category": "food",
    "risk": "forbidden",
@@ -1795,7 +1798,10 @@ const G6PD_DATA = {
     "风油精",
     "无比滴",
     "退热贴（部分）",
-    "止痒膏"
+    "止痒膏",
+    "万金油",
+    "白花油",
+    "薄荷膏"
    ],
    "category": "household",
    "risk": "caution",
@@ -5708,6 +5714,216 @@ const G6PD_DATA = {
    ],
    "id": "复方口服避孕药",
    "note": ""
+  },
+  {
+   "name": "海娜/指甲花",
+   "en": "Henna (Lawsonia inermis)",
+   "risk": "caution",
+   "category": "plant",
+   "aliases": [
+    "指甲花",
+    "海娜粉",
+    "散沫花",
+    "mehndi"
+   ],
+   "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用或避免。",
+   "detail": "海娜含萘醌类色素（lawsone），已有多篇儿童急性溶血个案报道与 G6PD 缺乏相关；蚕豆病者应避免用于染发、手绘等皮肤接触，尤其婴幼儿。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "海娜/指甲花",
+   "note": ""
+  },
+  {
+   "name": "红花",
+   "en": "Safflower (Carthamus tinctorius)",
+   "risk": "caution",
+   "category": "plant",
+   "aliases": [
+    "草红花",
+    "红蓝花",
+    "刺红花"
+   ],
+   "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用或避免。",
+   "detail": "红花黄色素具一定氧化潜力，部分资料将其列入蚕豆病慎用；作为活血化瘀中药使用时应由医生评估。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "红花",
+   "note": ""
+  },
+  {
+   "name": "银杏/白果",
+   "en": "Ginkgo (Ginkgo biloba)",
+   "risk": "caution",
+   "category": "plant",
+   "aliases": [
+    "白果",
+    "公孙树",
+    "银杏叶提取物"
+   ],
+   "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用或避免。",
+   "detail": "银杏叶提取物有个别溶血相关报道；白果（银杏果）主要风险为神经毒性，但蚕豆病者食用/用药仍建议谨慎，儿童尤甚。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "银杏/白果",
+   "note": ""
+  },
+  {
+   "name": "丹参",
+   "en": "Salvia miltiorrhiza",
+   "risk": "caution",
+   "category": "plant",
+   "aliases": [
+    "紫丹参",
+    "赤参"
+   ],
+   "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用或避免。",
+   "detail": "丹参酮、丹酚酸兼具抗氧化与个别氧化争议，作为心血管常用中药，蚕豆病者使用建议咨询医生。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "丹参",
+   "note": ""
+  },
+  {
+   "name": "鱼腥草",
+   "en": "Houttuynia cordata",
+   "risk": "caution",
+   "category": "plant",
+   "aliases": [
+    "折耳根",
+    "蕺菜"
+   ],
+   "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用或避免。",
+   "detail": "含挥发油与多种活性成分，部分资料提示蚕豆病者慎用；作为野菜或注射液使用时注意个体反应。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "鱼腥草",
+   "note": ""
+  },
+  {
+   "name": "茵栀黄",
+   "en": "Yinzhihuang (herbal)",
+   "risk": "caution",
+   "category": "plant",
+   "aliases": [
+    "茵栀黄口服液",
+    "茵栀黄颗粒",
+    "茵栀黄注射液"
+   ],
+   "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用或避免。",
+   "detail": "用于新生儿黄疸的中成药（茵陈、栀子、黄芩、金银花等），蚕豆病新生儿用药需由医生评估利弊，不自行使用。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "茵栀黄",
+   "note": ""
+  },
+  {
+   "name": "红花油",
+   "en": "Red flower oil",
+   "risk": "caution",
+   "category": "household",
+   "aliases": [
+    "正红花油",
+    "万花油"
+   ],
+   "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用或避免。",
+   "detail": "常含红花、冬青油（水杨酸甲酯）、樟脑等成分，外用亦建议蚕豆病者慎用，避免大面积使用。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "红花油",
+   "note": ""
+  },
+  {
+   "name": "指甲油/美甲产品",
+   "en": "Nail polish / Artificial nails",
+   "risk": "caution",
+   "category": "household",
+   "aliases": [
+    "指甲油",
+    "美甲",
+    "甲油胶",
+    "光疗胶"
+   ],
+   "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用或避免。",
+   "detail": "含甲苯、甲醛、邻苯二甲酸酯等有机溶剂，长期或大量接触建议谨慎；优先选成分标注清晰的产品。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "指甲油/美甲产品",
+   "note": ""
+  },
+  {
+   "name": "高锰酸钾",
+   "en": "Potassium permanganate",
+   "risk": "caution",
+   "category": "household",
+   "aliases": [
+    "PP粉",
+    "灰锰氧"
+   ],
+   "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用或避免。",
+   "detail": "强氧化剂，外用于消毒/坐浴须严格按说明稀释；误服或高浓度有风险，妥善保管远离儿童。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "高锰酸钾",
+   "note": ""
+  },
+  {
+   "name": "香薰/精油（薄荷脑·樟脑类）",
+   "en": "Aromatherapy oils (menthol/camphor)",
+   "risk": "caution",
+   "category": "household",
+   "aliases": [
+    "精油",
+    "香薰",
+    "薄荷精油",
+    "樟脑精油",
+    "尤加利精油"
+   ],
+   "summary": "可能具氧化应激风险或证据有限，需在医生/药师评估后慎用或避免。",
+   "detail": "含薄荷脑、樟脑、桉叶油等的精油对 G6PD 缺乏者具风险，尤其避免婴幼儿吸入/涂抹；普通薰衣草、甜橙等相对温和但大面积使用仍建议谨慎。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ],
+   "id": "香薰/精油（薄荷脑·樟脑类）",
+   "note": ""
   }
  ]
 };
@@ -5731,7 +5947,7 @@ const G6PD_DATA = {
     metabolic: "内分泌（降糖药）", neuro: "神经系统/抗过敏", urinary: "泌尿系统用药",
     other_drug: "其他药物", tcm: "中药与中成药成分", food: "食物",
     household: "日用化学品", occupational: "职业/环境暴露", infection: "感染与疾病提示",
-    vaccine: "疫苗（常规接种）"
+    vaccine: "疫苗（常规接种）", plant: "植物 / 花草"
   };
 
   var RISK_LABEL = { forbidden: "⛔ 禁用", caution: "⚠️ 慎用", safe: "✅ 常规可用", info: "ℹ️ 提示" };
