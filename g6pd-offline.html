@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#b71c1c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="蚕豆病速查">
+<title>蚕豆病（G6PD）禁忌速查</title>
+<style>
+  :root {
+    --red: #c62828; --red-bg: #fdecea; --red-border: #f5b5b0;
+    --yellow: #b26a00; --yellow-bg: #fff7e0; --yellow-border: #ffe08a;
+    --green: #2e7d32; --green-bg: #eaf6eb; --green-border: #b8e0ba;
+    --blue: #1565c0; --blue-bg: #e8f1fb; --blue-border: #b3d4f5;
+    --ink: #1f2329; --ink-2: #555c66; --ink-3: #8a919c;
+    --bg: #f6f7f9; --card: #ffffff; --line: #e6e8ec;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--ink);
+    font-size: 16px; line-height: 1.6;
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: linear-gradient(135deg, #b71c1c, #d32f2f);
+    color: #fff; padding: 14px 16px 12px;
+    padding-top: calc(14px + env(safe-area-inset-top));
+  }
+  header h1 { margin: 0; font-size: 19px; font-weight: 700; }
+  header p { margin: 2px 0 0; font-size: 12px; opacity: .85; }
+  main { max-width: 720px; margin: 0 auto; padding: 12px 12px 24px; }
+
+  /* 搜索区 */
+  .searchbox {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 10px 12px; margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+  .searchbox input {
+    flex: 1; border: none; outline: none; font-size: 17px;
+    background: transparent; color: var(--ink); min-width: 0;
+  }
+  .searchbox .icon { font-size: 18px; color: var(--ink-3); }
+  .searchbox .clear {
+    border: none; background: #eceef2; color: var(--ink-2);
+    width: 26px; height: 26px; border-radius: 50%; font-size: 14px;
+    display: none; align-items: center; justify-content: center; cursor: pointer;
+  }
+  .searchbox .clear.show { display: inline-flex; }
+
+  .chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 10px; -webkit-overflow-scrolling: touch; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip {
+    flex: 0 0 auto; border: 1px solid var(--line); background: var(--card);
+    border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--ink-2);
+    cursor: pointer; user-select: none;
+  }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .chip.on.r-forbidden { background: var(--red); border-color: var(--red); }
+  .chip.on.r-caution { background: var(--yellow); border-color: var(--yellow); }
+  .chip.on.r-safe { background: var(--green); border-color: var(--green); }
+  .chip.on.r-info { background: var(--blue); border-color: var(--blue); }
+
+  .count { font-size: 13px; color: var(--ink-3); margin: 2px 2px 10px; }
+  .quick { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px; }
+  .quick button {
+    border: 1px dashed var(--line); background: var(--card); color: var(--ink-2);
+    border-radius: 8px; padding: 6px 10px; font-size: 13px; cursor: pointer;
+  }
+
+  /* 条目卡片 */
+  .item {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    margin-bottom: 10px; overflow: hidden; cursor: pointer;
+  }
+  .item .bar { height: 4px; }
+  .item.forbidden .bar { background: var(--red); }
+  .item.caution .bar { background: var(--yellow); }
+  .item.safe .bar { background: var(--green); }
+  .item.info .bar { background: var(--blue); }
+  .item .head { padding: 12px 14px 10px; }
+  .item .row1 { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .item .name { font-size: 17px; font-weight: 700; }
+  .tag {
+    flex: 0 0 auto; font-size: 12px; font-weight: 600; border-radius: 6px;
+    padding: 2px 8px; white-space: nowrap;
+  }
+  .forbidden .tag { color: var(--red); background: var(--red-bg); border: 1px solid var(--red-border); }
+  .caution .tag { color: var(--yellow); background: var(--yellow-bg); border: 1px solid var(--yellow-border); }
+  .safe .tag { color: var(--green); background: var(--green-bg); border: 1px solid var(--green-border); }
+  .info .tag { color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-border); }
+  .debate { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .item .summary { font-size: 14px; color: var(--ink-2); margin-top: 4px; }
+  .item .detail { display: none; padding: 0 14px 12px; font-size: 14px; }
+  .item.open .detail { display: block; }
+  .item .detail .kv { margin-top: 6px; }
+  .item .detail .k { font-size: 12px; color: var(--ink-3); }
+  .item .detail .v { font-size: 14px; color: var(--ink); }
+  .item .warn {
+    margin-top: 8px; font-size: 13px; border-radius: 8px; padding: 8px 10px;
+    background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border);
+  }
+  .item.forbidden .warn { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+  .item .src { font-size: 11px; color: var(--ink-3); margin-top: 8px; }
+  .item .chev { float: right; color: var(--ink-3); font-size: 12px; margin-top: 2px; }
+
+  .group-title {
+    font-size: 14px; font-weight: 700; color: var(--ink-2);
+    margin: 16px 2px 8px;
+  }
+  .empty { text-align: center; color: var(--ink-3); padding: 40px 20px; font-size: 14px; }
+  .empty .big { font-size: 40px; margin-bottom: 8px; }
+
+  .prose { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; font-size: 15px; }
+  .prose h3 { margin: 14px 0 6px; font-size: 16px; }
+  .prose h3:first-child { margin-top: 0; }
+  .prose ul { margin: 6px 0; padding-left: 20px; }
+  .prose li { margin: 4px 0; }
+  .prose .step { border-left: 4px solid var(--red); padding: 8px 12px; background: var(--red-bg); border-radius: 0 8px 8px 0; margin: 10px 0; }
+  .prose .step b { color: var(--red); }
+  .prose .keyline { background: var(--blue-bg); border: 1px solid var(--blue-border); color: var(--blue); border-radius: 8px; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
+  .btn {
+    display: block; width: 100%; border: none; border-radius: 12px; padding: 13px;
+    font-size: 16px; font-weight: 600; background: var(--ink); color: #fff;
+    margin-top: 14px; cursor: pointer;
+  }
+  .btn.copy { background: #455a64; }
+
+  .footer-note { text-align: center; font-size: 11px; color: var(--ink-3); margin-top: 20px; line-height: 1.5; }
+
+  /* 底部 Tab */
+  nav {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+    display: flex; background: var(--card); border-top: 1px solid var(--line);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  nav button {
+    flex: 1; border: none; background: none; padding: 8px 0 7px;
+    font-size: 11px; color: var(--ink-3); cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+  }
+  nav button .ic { font-size: 21px; line-height: 1; }
+  nav button.on { color: var(--red); font-weight: 700; }
+
+  .page { display: none; }
+  .page.on { display: block; }
+
+  /* ===== 档案页 ===== */
+  .ptabs { display: flex; gap: 6px; overflow-x: auto; margin: 10px 0 12px; -webkit-overflow-scrolling: touch; }
+  .ptabs::-webkit-scrollbar { display: none; }
+  .ptab {
+    flex: 0 0 auto; border: 1px solid var(--line); background: var(--card); color: var(--ink-2);
+    border-radius: 999px; padding: 6px 13px; font-size: 13px; cursor: pointer; user-select: none;
+  }
+  .ptab.on { background: var(--red); border-color: var(--red); color: #fff; font-weight: 600; }
+  .pcard {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px; margin-bottom: 12px;
+  }
+  .pcard .pv { font-size: 15px; margin: 3px 0; }
+  .pcard .pk { font-size: 12px; color: var(--ink-3); }
+  .stat-row { display: flex; gap: 8px; margin-bottom: 12px; }
+  .stat {
+    flex: 1; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 10px 8px; text-align: center;
+  }
+  .stat .n { font-size: 22px; font-weight: 800; color: var(--red); }
+  .stat .t { font-size: 12px; color: var(--ink-2); margin-top: 2px; }
+  .form { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+  .form label { display: block; font-size: 13px; color: var(--ink-2); margin: 10px 0 4px; }
+  .form label:first-child { margin-top: 0; }
+  .form input, .form select, .form textarea {
+    width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px;
+    font-size: 15px; font-family: inherit; background: #fafbfc; color: var(--ink);
+    outline: none; -webkit-appearance: none; appearance: none;
+  }
+  .form input:focus, .form select:focus { border-color: var(--red); background: #fff; }
+  .form .row { display: flex; gap: 8px; }
+  .form .row > div { flex: 1; }
+  .btnrow { display: flex; gap: 8px; margin-top: 14px; }
+  .btnrow .btn { margin-top: 0; flex: 1; }
+  .btn.ghost { background: #eceef2; color: var(--ink-2); }
+  .btn.small { padding: 9px 12px; font-size: 14px; }
+  .addbtn {
+    display: block; width: 100%; border: 1.5px dashed #d3d6dc; background: none;
+    border-radius: 12px; padding: 11px; font-size: 15px; color: var(--ink-2);
+    margin-bottom: 12px; cursor: pointer;
+  }
+  .rec {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; margin-bottom: 10px; font-size: 14px;
+  }
+  .rec .rh { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .rec .rt { font-weight: 700; font-size: 15px; }
+  .rec .rd { color: var(--ink-3); font-size: 12px; white-space: nowrap; }
+  .rec .rb { color: var(--ink-2); margin-top: 4px; font-size: 13.5px; }
+  .rec .del { color: var(--ink-3); font-size: 12px; cursor: pointer; border: none; background: none; padding: 2px 4px; }
+  .rec .del:active { color: var(--red); }
+  .medline { display: flex; align-items: center; gap: 6px; margin-top: 5px; font-size: 13.5px; flex-wrap: wrap; }
+  .medline .mtag { font-size: 11px; font-weight: 700; border-radius: 5px; padding: 1px 6px; white-space: nowrap; }
+  .mtag.forbidden { color: var(--red); background: var(--red-bg); }
+  .mtag.caution { color: var(--yellow); background: var(--yellow-bg); }
+  .mtag.safe { color: var(--green); background: var(--green-bg); }
+  .mtag.info { color: var(--blue); background: var(--blue-bg); }
+  .mtag.none { color: var(--ink-3); background: #eef0f3; }
+  .med-check {
+    font-size: 12.5px; border-radius: 8px; padding: 7px 10px; margin-top: 6px;
+    background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border);
+  }
+  .med-check.bad { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+  .med-check.warn { background: var(--yellow-bg); color: var(--yellow); border-color: var(--yellow-border); }
+  .toast {
+    position: fixed; left: 50%; bottom: calc(84px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+    background: rgba(20,22,26,.92); color: #fff; font-size: 14px; border-radius: 10px;
+    padding: 10px 18px; z-index: 99; display: none; max-width: 86vw; text-align: center;
+  }
+  .toast.show { display: block; }
+  .overdue { color: var(--red); font-weight: 700; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🫘 蚕豆病（G6PD 缺乏症）禁忌速查</h1>
+  <p>药品 / 食物 / 日用品 · 风险查询 · 应急指引</p>
+</header>
+
+<main>
+  <!-- ============ 查询页 ============ -->
+  <section class="page on" id="page-search">
+    <div class="searchbox">
+      <span class="icon">🔍</span>
+      <input id="q" type="search" placeholder="输入药名 / 食物名，如：布洛芬、复方新诺明" enterkeyhint="search">
+      <button class="clear" id="clearBtn" aria-label="清空">✕</button>
+    </div>
+    <div class="chips" id="chips">
+      <div class="chip on" data-risk="">全部</div>
+      <div class="chip r-forbidden" data-risk="forbidden">⛔ 禁用</div>
+      <div class="chip r-caution" data-risk="caution">⚠️ 慎用</div>
+      <div class="chip r-safe" data-risk="safe">✅ 常规可用</div>
+      <div class="chip r-info" data-risk="info">ℹ️ 提示</div>
+    </div>
+    <div class="quick" id="quick">
+      <button data-q="对乙酰氨基酚">对乙酰氨基酚</button>
+      <button data-q="布洛芬">布洛芬</button>
+      <button data-q="阿莫西林">阿莫西林</button>
+      <button data-q="复方新诺明">复方新诺明</button>
+      <button data-q="感冒灵">感冒灵</button>
+      <button data-q="蚕豆">蚕豆</button>
+      <button data-q="樟脑丸">樟脑丸</button>
+      <button data-q="牛黄解毒片">牛黄解毒片</button>
+    </div>
+    <div class="count" id="count"></div>
+    <div id="results"></div>
+  </section>
+
+  <!-- ============ 列表页 ============ -->
+  <section class="page" id="page-list">
+    <div class="count">按类别浏览全部条目，点开看详情</div>
+    <div id="allList"></div>
+  </section>
+
+  <!-- ============ 档案页 ============ -->
+  <section class="page" id="page-profile">
+    <div id="profileApp"></div>
+  </section>
+
+  <!-- ============ 应急页 ============ -->
+  <section class="page" id="page-emergency">
+    <div class="prose">
+      <h3>🚨 溶血发作怎么办（先立即就医）</h3>
+      <div class="step"><b>第一步：立即停止接触诱因</b><br>停止食用蚕豆及可疑食物；停用可疑药物；远离樟脑丸（萘）等物品。</div>
+      <div class="step"><b>第二步：立即送正规医院</b><br>前往医院急诊科/血液科，明确告知医生：“有蚕豆病史，怀疑溶血发作”。溶血多为自限性（1~2天，长者10天），及时处理大多可完全恢复。</div>
+      <div class="step"><b>第三步：途中与院内配合</b><br>保证水分供给；不要自行喂药、喂偏方；配合医生进行血常规、尿常规（看血红蛋白尿）等检查，必要时输血。</div>
+      <h3>⚠️ 警惕症状（进食蚕豆/可疑药物后 1~3 天内）</h3>
+      <ul>
+        <li>尿色加深，呈浓茶色或酱油色（血红蛋白尿）</li>
+        <li>面色、嘴唇、指甲迅速苍白，乏力没精神</li>
+        <li>皮肤、眼白发黄（黄疸）</li>
+        <li>腹痛、恶心、呕吐、腰酸背痛</li>
+        <li>严重时：心跳快、呼吸急、尿少，甚至休克</li>
+      </ul>
+      <div class="keyline">一句话：吃过蚕豆/可疑药物 + 尿色变深 + 发黄苍白 = 高度怀疑溶血，<b>立即就医</b>。</div>
+    </div>
+  </section>
+
+  <!-- ============ 提示卡页 ============ -->
+  <section class="page" id="page-card">
+    <div class="prose" id="cardText">
+      <h3>🪪 G6PD 缺乏症（蚕豆病）就医提示卡</h3>
+      <p>患者/患儿患有 G6PD 缺乏症（蚕豆病）：红细胞易因氧化性物质破坏而发生急性溶血。用药、饮食前请核对以下禁忌：</p>
+      <p><b>【禁用药物】</b><br>
+      · 解热镇痛：阿司匹林、安乃近、氨基比林、非那西丁、保泰松<br>
+      · 磺胺类：复方新诺明（SMZ-TMP）、磺胺嘧啶及所有磺胺<br>
+      · 硝基呋喃类：呋喃妥因、呋喃唑酮（痢特灵）、呋喃西林<br>
+      · 抗疟药：伯氨喹、帕马喹（扑疟母星）、阿的平<br>
+      · 其他：亚甲蓝（美蓝）、氨苯砜、萘啶酸、非那吡啶、氯霉素<br>
+      · 中药成分：黄连、金银花、牛黄、珍珠末、薄荷、连翘、冰片、熊胆、腊梅花</p>
+      <p><b>【禁食 / 回避】</b><br>
+      · 蚕豆及一切制品（鲜蚕豆、豆瓣酱、兰花豆、蚕豆酥等）<br>
+      · 樟脑丸/卫生球/臭丸（萘）、紫药水（龙胆紫）</p>
+      <p><b>【慎用（需医生评估）】</b><br>
+      奎宁、氯喹、喹诺酮类（XX沙星）、大剂量维生素C、维生素K3、硝普钠、硝酸酯类、磺酰脲类降糖药、复方感冒药（成分复杂，需逐项核对）</p>
+      <p><b>【相对安全（供参考）】</b><br>
+      对乙酰氨基酚（常规剂量）、布洛芬（有分歧，需评估）、青霉素类 / 头孢类 / 大环内酯类抗生素</p>
+      <p>看病时请主动询问医生/药师：所开药物是否含以上禁忌成分？谢谢！</p>
+    </div>
+    <button class="btn copy" id="copyCard">📋 复制提示卡全文</button>
+  </section>
+
+  <div class="footer-note">
+    数据整理自公开权威资料（安徽省卫健委、协和/北大医院医生、台湾药学会等），仅供参考，不构成医疗建议。<br>
+    用药请以医生处方和药师指导为准 · 本地运行，数据不出手机
+  </div>
+</main>
+
+<nav>
+  <button class="on" data-page="search"><span class="ic">🔍</span>查询</button>
+  <button data-page="list"><span class="ic">📋</span>全部</button>
+  <button data-page="profile"><span class="ic">📁</span>档案</button>
+  <button data-page="emergency"><span class="ic">🚨</span>应急</button>
+  <button data-page="card"><span class="ic">🪪</span>提示卡</button>
+</nav>
+
+<script>
+// 本文件由 tools/build_web_data.py 自动生成，请勿手改；请修改 data/items.json 后重新生成。
+const G6PD_DATA = {
+ "meta": {
+  "title": "G6PD缺乏症（蚕豆病）禁忌速查数据库",
+  "version": "0.1.0",
+  "updated": "2026-10-22",
+  "disclaimer": "本数据库仅供参考，不构成医疗建议。一切用药请以医生处方和药师指导为准；如怀疑溶血发作，请立即就医。",
+  "risk_levels": {
+   "forbidden": "⛔ 禁用（高风险）",
+   "caution": "⚠️ 慎用（中风险，需医生评估）",
+   "safe": "✅ 常规剂量一般可用",
+   "info": "ℹ️ 疾病提示"
+  }
+ },
+ "sources": [
+  {
+   "id": "S1",
+   "name": "安徽省卫生健康委员会《蚕豆病宝宝的“药物禁忌清单”》",
+   "url": "https://wjw.ah.gov.cn/ztzl/fyjk/xjpx/58286751.html"
+  },
+  {
+   "id": "S2",
+   "name": "腾讯医典《葡萄糖-6-磷酸脱氢酶缺乏症》",
+   "url": "https://h5.baike.qq.com/mobile/overview_detail.html?name=葡萄糖-6-磷酸脱氢酶缺乏症"
+  },
+  {
+   "id": "S3",
+   "name": "北京协和医院段明辉主任医师（39健康网《蚕豆病饮食及用药禁忌》）",
+   "url": "https://mip.39yst.com/ask/14214850.shtml"
+  },
+  {
+   "id": "S4",
+   "name": "北京医院范芸主任医师（39健康网《蚕豆病禁用的药物》）",
+   "url": "https://mip.39yst.com/ask/7514763.shtml"
+  },
+  {
+   "id": "S5",
+   "name": "科普中国《蚕豆病：一颗蚕豆引发的溶血危机》",
+   "url": "https://www.kepuchina.cn/article/articleinfo?ar_id=675508"
+  },
+  {
+   "id": "S6",
+   "name": "台北荣民总医院健康电子报《認識蠶豆症》",
+   "url": "https://epaper.ntuh.gov.tw/health/201304/pdf/%E8%AA%8D%E8%AD%98%E8%A0%B6%E8%B1%86%E7%97%87.pdf"
+  },
+  {
+   "id": "S7",
+   "name": "台湾药学会《G6PD缺乏病人之低危險及不安全藥物》",
+   "url": "http://tcpa.taiwan-pharma.org.tw/node/14809"
+  },
+  {
+   "id": "S8",
+   "name": "新竹台大分院药师《蠶豆症Q&A》",
+   "url": "https://www.hch.gov.tw/?aid=626&pid=81&page_name=detail&iid=1457"
+  },
+  {
+   "id": "S9",
+   "name": "北京大学第一医院侯凤琴主任医师（有来医生）",
+   "url": "https://www.youlai.cn/video/article/43327EszYt.html"
+  }
+ ],
+ "items": [
+  {
+   "id": "aspirin",
+   "name": "阿司匹林",
+   "en": "Aspirin / Acetylsalicylic acid",
+   "aliases": [
+    "乙酰水杨酸",
+    "拜阿司匹林",
+    "APC",
+    "复方阿司匹林",
+    "巴米尔"
+   ],
+   "category": "analgesic",
+   "risk": "forbidden",
+   "summary": "解热镇痛剂量明确诱发溶血，禁用。",
+   "detail": "阿司匹林在解热镇痛剂量下是G6PD缺乏者的明确高危药物，代谢中产生氧化应激，可诱发急性溶血。复方制剂（如APC）同样禁用。",
+   "note": "低剂量（如川崎病抗血小板治疗）须由专科医生严格评估后使用，家长不可自行给药。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S5",
+    "S7"
+   ]
+  },
+  {
+   "id": "metamizole",
+   "name": "安乃近",
+   "en": "Metamizole / Dipyrone",
+   "aliases": [
+    "诺瓦经",
+    "罗瓦尔精"
+   ],
+   "category": "analgesic",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "解热镇痛老药，其氨基结构可诱发氧化性溶血，国内多部资料列为蚕豆病绝对禁忌。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S5",
+    "S7"
+   ]
+  },
+  {
+   "id": "aminopyrine",
+   "name": "氨基比林",
+   "en": "Aminopyrine / Aminophenazone",
+   "aliases": [
+    "胺比林"
+   ],
+   "category": "analgesic",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "解热镇痛药，可直接损伤红细胞膜，诱发溶血。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S5",
+    "S7"
+   ]
+  },
+  {
+   "id": "phenacetin",
+   "name": "非那西丁",
+   "en": "Phenacetin / Acetophenetidin",
+   "aliases": [
+    "对乙酰氨基苯乙醚"
+   ],
+   "category": "analgesic",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "代谢产物可诱发溶血。常隐藏在复方解热镇痛药中，需注意核对成分表。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S5",
+    "S7"
+   ]
+  },
+  {
+   "id": "phenylbutazone",
+   "name": "保泰松",
+   "en": "Phenylbutazone",
+   "aliases": [
+    "布他酮"
+   ],
+   "category": "analgesic",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "非甾体抗炎药，国内资料列为蚕豆病禁忌药物。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4"
+   ]
+  },
+  {
+   "id": "smz",
+   "name": "复方磺胺甲噁唑",
+   "en": "Trimethoprim/Sulfamethoxazole (SMZ-TMP)",
+   "aliases": [
+    "复方新诺明",
+    "SMZ",
+    "磺胺甲噁唑",
+    "co-trimoxazole",
+    "百炎净"
+   ],
+   "category": "sulfa",
+   "risk": "forbidden",
+   "summary": "磺胺类代表药，明确禁用。",
+   "detail": "磺胺甲噁唑与甲氧苄啶的复方制剂，是最常见的“踩雷”抗生素之一，感染时若医生不知情很容易开出。",
+   "note": "整个磺胺类药物家族均禁用，包括单方制剂和外用制剂。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ]
+  },
+  {
+   "id": "sulfadiazine",
+   "name": "磺胺嘧啶",
+   "en": "Sulfadiazine (SD)",
+   "aliases": [
+    "SD",
+    "磺胺嘧啶银"
+   ],
+   "category": "sulfa",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "经典磺胺类抗菌药，可诱发溶血，烧伤外用的磺胺嘧啶银同样应回避。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ]
+  },
+  {
+   "id": "sulfisoxazole",
+   "name": "磺胺异噁唑",
+   "en": "Sulfisoxazole (SIZ)",
+   "aliases": [
+    "SIZ",
+    "菌得清"
+   ],
+   "category": "sulfa",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "短效磺胺类，国内资料列为蚕豆病绝对禁忌。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "sulfacetamide",
+   "name": "磺胺醋酰",
+   "en": "Sulfacetamide",
+   "aliases": [
+    "磺胺乙酰",
+    "斑马眼药水"
+   ],
+   "category": "sulfa",
+   "risk": "forbidden",
+   "summary": "磺胺类滴眼液，禁用。",
+   "detail": "常用于结膜炎/沙眼的磺胺类滴眼液，经黏膜吸收，同样有溶血风险。",
+   "note": "买眼药水前看清成分，含“磺胺”二字即回避。",
+   "controversy": false,
+   "sources": [
+    "S7"
+   ]
+  },
+  {
+   "id": "sulfapyridine",
+   "name": "磺胺吡啶",
+   "en": "Sulfapyridine (SP)",
+   "aliases": [
+    "SP"
+   ],
+   "category": "sulfa",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "磺胺类抗菌药，国外分级列为G6PD缺乏者不安全药物。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S7"
+   ]
+  },
+  {
+   "id": "sulfaguanidine",
+   "name": "磺胺胍",
+   "en": "Sulfaguanidine (SG)",
+   "aliases": [
+    "SG",
+    "磺胺咪"
+   ],
+   "category": "sulfa",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "肠道磺胺类，国外分级列为不安全药物，现已少用但需警惕老药复方制剂。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S7"
+   ]
+  },
+  {
+   "id": "nitrofurantoin",
+   "name": "呋喃妥因",
+   "en": "Nitrofurantoin",
+   "aliases": [
+    "呋喃坦啶",
+    "硝基呋喃妥因"
+   ],
+   "category": "furan",
+   "risk": "forbidden",
+   "summary": "硝基呋喃类，明确禁用。",
+   "detail": "曾广泛用于尿路感染，代谢生成的活性氧自由基损伤红细胞，极易诱发急性溶血。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "furazolidone",
+   "name": "呋喃唑酮",
+   "en": "Furazolidone",
+   "aliases": [
+    "痢特灵"
+   ],
+   "category": "furan",
+   "risk": "forbidden",
+   "summary": "硝基呋喃类，明确禁用。",
+   "detail": "旧称“痢特灵”，用于肠道感染，溶血风险明确。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ]
+  },
+  {
+   "id": "nitrofural",
+   "name": "呋喃西林",
+   "en": "Nitrofural / Furacilin",
+   "aliases": [
+    "呋喃星",
+    "硝基呋喃腙"
+   ],
+   "category": "furan",
+   "risk": "forbidden",
+   "summary": "硝基呋喃类，明确禁用。",
+   "detail": "常作为外用消毒成分，也可诱发溶血。",
+   "note": "部分外用消毒制剂含此成分，需核对说明书。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ]
+  },
+  {
+   "id": "primaquine",
+   "name": "伯氨喹",
+   "en": "Primaquine",
+   "aliases": [
+    "伯氨喹啉",
+    "磷酸伯氨喹"
+   ],
+   "category": "antimalarial",
+   "risk": "forbidden",
+   "summary": "抗疟药，蚕豆病经典禁忌。",
+   "detail": "伯氨喹是G6PD缺乏者诱发溶血最著名的药物，直接破坏红细胞膜稳定性，也是WHO分级中Ⅱ/Ⅲ型缺乏者的不安全药物。",
+   "note": "前往疟疾流行区需预防用药时，务必提前告知医生病史。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S4",
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "pamaquine",
+   "name": "帕马喹",
+   "en": "Pamaquine",
+   "aliases": [
+    "扑疟母星",
+    " plasmochin"
+   ],
+   "category": "antimalarial",
+   "risk": "forbidden",
+   "summary": "抗疟药，明确禁用。",
+   "detail": "与伯氨喹同属8-氨基喹啉类，溶血风险明确，现临床已少用。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S4",
+    "S7"
+   ]
+  },
+  {
+   "id": "quinacrine",
+   "name": "阿的平",
+   "en": "Quinacrine / Mepacrine",
+   "aliases": [
+    "米帕林",
+    "疟涤平"
+   ],
+   "category": "antimalarial",
+   "risk": "forbidden",
+   "summary": "抗疟药，国内资料列为禁忌。",
+   "detail": "早期合成抗疟药，国内卫健委科普列为蚕豆病宝宝绝对禁用药物。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "methylene_blue",
+   "name": "亚甲蓝",
+   "en": "Methylene Blue",
+   "aliases": [
+    "美蓝",
+    "次甲蓝"
+   ],
+   "category": "other_drug",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "大剂量亚甲蓝可抑制G6PD活性，诱发高铁血红蛋白血症与溶血。常用于化验示踪或药物中毒急救。",
+   "note": "急诊抢救时家属应主动告知病史。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "nalidixic_acid",
+   "name": "萘啶酸",
+   "en": "Nalidixic Acid",
+   "aliases": [
+    "萘啶酮酸"
+   ],
+   "category": "other_drug",
+   "risk": "forbidden",
+   "summary": "第一代喹诺酮类，明确禁用。",
+   "detail": "泌尿道抗菌药，国内外分级均列为G6PD缺乏者不安全药物。",
+   "note": "注意与“慎用”的喹诺酮类区分：萘啶酸风险高于环丙沙星等。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "phenazopyridine",
+   "name": "非那吡啶",
+   "en": "Phenazopyridine",
+   "aliases": [
+    "尿通宁",
+    "苯偶氮吡胺"
+   ],
+   "category": "urinary",
+   "risk": "forbidden",
+   "summary": "泌尿道镇痛药，明确禁用。",
+   "detail": "缓解尿路刺激症状的对症药，国内外分级均列为不安全药物。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "acetanilide",
+   "name": "乙酰苯胺",
+   "en": "Acetanilide",
+   "aliases": [
+    "退热冰"
+   ],
+   "category": "analgesic",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "旧式解热药，是“非那西丁”的代谢前体，溶血风险明确。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "chloramphenicol",
+   "name": "氯霉素",
+   "en": "Chloramphenicol",
+   "aliases": [
+    "氯丝霉素"
+   ],
+   "category": "antibiotic_other",
+   "risk": "forbidden",
+   "summary": "国内资料列为禁用（存在地区分歧）。",
+   "detail": "国内卫健委科普明确将氯霉素列入蚕豆病绝对禁用清单；国外分级将其列为低危，但注明地中海型与亚洲型变异者高危。",
+   "note": "鉴于国内以亚洲型变异为主，按国内口径回避为妥。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "dapsone",
+   "name": "氨苯砜",
+   "en": "Dapsone",
+   "aliases": [
+    "二氨二苯砜",
+    "迪对策"
+   ],
+   "category": "other_drug",
+   "risk": "forbidden",
+   "summary": "明确禁用。",
+   "detail": "抗麻风及皮肤病用药，强氧化性，溶血风险明确；台大医院提示即使非G6PD缺乏者大量使用也可能溶血。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S6",
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "rasburicase",
+   "name": "拉布立酶",
+   "en": "Rasburicase",
+   "aliases": [
+    "Fasturtec",
+    "艾力"
+   ],
+   "category": "other_drug",
+   "risk": "forbidden",
+   "summary": "肿瘤溶解综合征用药，明确禁用。",
+   "detail": "重组尿酸氧化酶，国内外分级均列为G6PD缺乏者不安全药物，用药前常规筛查G6PD。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "fava_bean",
+   "name": "蚕豆及蚕豆制品",
+   "en": "Fava beans / Broad beans",
+   "aliases": [
+    "胡豆",
+    "罗汉豆",
+    "兰花豆",
+    "怪味胡豆",
+    "蚕豆酥",
+    "蚕豆酱",
+    "豆瓣酱",
+    "油炸蚕豆"
+   ],
+   "category": "food",
+   "risk": "forbidden",
+   "summary": "疾病名称的来源，绝对禁食。",
+   "detail": "鲜、干蚕豆均含蚕豆嘧啶核苷等强氧化物质，食后诱发的溶血往往比药物更重。豆瓣酱等蚕豆制品同样回避。",
+   "note": "幼儿对蚕豆毒素更敏感；市售零食（怪味胡豆、兰花豆）成分表含“蚕豆”即回避。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S2",
+    "S3",
+    "S8"
+   ]
+  },
+  {
+   "id": "naphthalene",
+   "name": "萘（樟脑丸/卫生球）",
+   "en": "Naphthalene (mothballs)",
+   "aliases": [
+    "樟脑丸",
+    "卫生球",
+    "臭丸",
+    "萘丸",
+    "mothballs"
+   ],
+   "category": "household",
+   "risk": "forbidden",
+   "summary": "衣柜防虫樟脑丸，禁用。",
+   "detail": "传统樟脑丸主含萘，升华气体经呼吸道吸收可诱发溶血，是家庭中最常见的非药物诱因之一。幼儿可能误食，风险更高。",
+   "note": "注意区分“萘丸”与“对二氯苯”型防虫剂——两者都应回避；防蛀可改用密封收纳。台湾2013年仅删除了“外用樟脑药品”的禁用注解，萘丸仍在禁用名单。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S2",
+    "S5",
+    "S6",
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "gentian_violet",
+   "name": "龙胆紫（紫药水）",
+   "en": "Gentian violet",
+   "aliases": [
+    "紫药水",
+    "甲紫",
+    "结晶紫"
+   ],
+   "category": "household",
+   "risk": "forbidden",
+   "summary": "皮肤消毒剂，禁用。",
+   "detail": "龙胆紫是明确的可诱发溶血物质，严禁涂抹伤口或皮肤。",
+   "note": "家庭小药箱建议清理，伤口消毒改用碘伏。",
+   "controversy": false,
+   "sources": [
+    "S5",
+    "S8"
+   ]
+  },
+  {
+   "id": "benzene",
+   "name": "苯及芳香族溶剂",
+   "en": "Benzene",
+   "aliases": [
+    "苯",
+    "甲苯接触",
+    "油漆稀料"
+   ],
+   "category": "occupational",
+   "risk": "forbidden",
+   "summary": "职业/环境暴露，应回避。",
+   "detail": "苯等工业化学品是明确的溶血诱因，从事装修、印刷、化工等职业者需做好防护。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S5"
+   ]
+  },
+  {
+   "id": "arsenic",
+   "name": "砷（砒霜/含砷污染）",
+   "en": "Arsenic",
+   "aliases": [
+    "砒霜",
+    "三氧化二砷"
+   ],
+   "category": "occupational",
+   "risk": "forbidden",
+   "summary": "环境/职业暴露，应回避。",
+   "detail": "砷是明确的氧化性溶血诱因，需避免污染饮用水与职业接触。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S5"
+   ]
+  },
+  {
+   "id": "trinitrotoluene",
+   "name": "三硝基甲苯（TNT）",
+   "en": "Trinitrotoluene",
+   "aliases": [
+    "TNT",
+    "炸药"
+   ],
+   "category": "occupational",
+   "risk": "forbidden",
+   "summary": "职业暴露，明确回避。",
+   "detail": "军工/采矿从业者的明确溶血诱因。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S7"
+   ]
+  },
+  {
+   "id": "phenylhydrazine",
+   "name": "苯肼",
+   "en": "Phenylhydrazine",
+   "aliases": [
+    "苯基联胺"
+   ],
+   "category": "occupational",
+   "risk": "forbidden",
+   "summary": "实验/工业试剂，明确回避。",
+   "detail": "强还原性工业与实验试剂，溶血风险明确，普通家庭极少接触。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S7"
+   ]
+  },
+  {
+   "id": "berberis",
+   "name": "黄连（川连）",
+   "en": "Coptis / Berberine source",
+   "aliases": [
+    "川连",
+    "味连",
+    "鸡爪连",
+    "黄连素",
+    "小檗碱"
+   ],
+   "category": "tcm",
+   "risk": "forbidden",
+   "summary": "中药禁忌成分。",
+   "detail": "安徽省卫健委科普将黄连、川连列为蚕豆病患者应避免的中药成分；含黄连/小檗碱的中成药（如黄连上清片、香连丸）需回避。",
+   "note": "小檗碱（黄连素）虽是西药化的常用药，其来源成分仍在禁忌清单内，使用前咨询医生。",
+   "controversy": false,
+   "sources": [
+    "S1"
+   ]
+  },
+  {
+   "id": "honeysuckle",
+   "name": "金银花",
+   "en": "Honeysuckle / Lonicera",
+   "aliases": [
+    "双花",
+    "忍冬花"
+   ],
+   "category": "tcm",
+   "risk": "forbidden",
+   "summary": "中药禁忌成分。",
+   "detail": "安徽省卫健委科普列为应避免的中药成分。很多“清热”类感冒中成药含金银花（如双黄连口服液）。",
+   "note": "给孩子用任何中成药前，务必逐条核对成分表。",
+   "controversy": false,
+   "sources": [
+    "S1"
+   ]
+  },
+  {
+   "id": "bezoar",
+   "name": "牛黄",
+   "en": "Calculus Bovis",
+   "aliases": [
+    "天然牛黄",
+    "人工牛黄",
+    "体外培育牛黄"
+   ],
+   "category": "tcm",
+   "risk": "forbidden",
+   "summary": "中药禁忌成分。",
+   "detail": "安徽省卫健委科普列为应避免的中药成分。牛黄解毒片、小儿牛黄散等含牛黄制剂需回避。",
+   "note": "人工牛黄同样在回避范围内。",
+   "controversy": false,
+   "sources": [
+    "S1"
+   ]
+  },
+  {
+   "id": "pearl",
+   "name": "珍珠（珍珠末/珍珠粉）",
+   "en": "Pearl powder",
+   "aliases": [
+    "珍珠末",
+    "珍珠粉",
+    "真珠母",
+    "珠贝"
+   ],
+   "category": "tcm",
+   "risk": "forbidden",
+   "summary": "中药禁忌成分。",
+   "detail": "安徽省卫健委科普将珍珠末列为应避免的中药成分；协和医生提示珍珠粉等传统食品需咨询医生后食用。",
+   "note": "不少“惊悸安神”类儿科中成药含珍珠成分。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "wintersweet",
+   "name": "腊梅花",
+   "en": "Wintersweet flower",
+   "aliases": [
+    "腊梅",
+    "黄梅花",
+    "铁筷子花"
+   ],
+   "category": "tcm",
+   "risk": "forbidden",
+   "summary": "中药禁忌成分。",
+   "detail": "安徽省卫健委科普列为应避免的中药成分，常见于暑湿类中成药。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1"
+   ]
+  },
+  {
+   "id": "mint",
+   "name": "薄荷（薄荷脑/薄荷醇）",
+   "en": "Menthol / Mint",
+   "aliases": [
+    "薄荷脑",
+    "薄荷醇",
+    "menthol"
+   ],
+   "category": "tcm",
+   "risk": "forbidden",
+   "summary": "中药禁忌成分；外用制剂按地区口径谨慎。",
+   "detail": "国内卫健委科普将薄荷列为蚕豆病应避免的中药成分，含薄荷的儿科外用/口服制剂均需核对。台湾方面：含薄荷的吸入剂、擦剂、滴鼻剂建议2岁以下禁用，其他外用剂型需咨询医师药师。",
+   "note": "清凉油、风油精、部分驱蚊贴含薄荷脑/樟脑，给宝宝使用前先看成分。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S6",
+    "S8"
+   ]
+  },
+  {
+   "id": "forsythia",
+   "name": "连翘",
+   "en": "Forsythia",
+   "aliases": [
+    "青翘",
+    "老翘",
+    "连召"
+   ],
+   "category": "tcm",
+   "risk": "forbidden",
+   "summary": "中药禁忌成分。",
+   "detail": "安徽省卫健委科普列为应避免的中药成分，银翘散类制剂（如维C银翘片）含连翘。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1"
+   ]
+  },
+  {
+   "id": "borneol",
+   "name": "冰片",
+   "en": "Borneol",
+   "aliases": [
+    "合成冰片",
+    "龙脑",
+    "艾片"
+   ],
+   "category": "tcm",
+   "risk": "forbidden",
+   "summary": "中药禁忌成分。",
+   "detail": "安徽省卫健委科普列为应避免的中药成分，常见于开窍类中成药与外用膏药。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1"
+   ]
+  },
+  {
+   "id": "bear_bile",
+   "name": "熊胆",
+   "en": "Bear bile",
+   "aliases": [
+    "熊胆粉",
+    "金胆"
+   ],
+   "category": "tcm",
+   "risk": "forbidden",
+   "summary": "中药禁忌成分。",
+   "detail": "安徽省卫健委科普列为应避免的中药成分，常见于小儿惊风、清热类中成药。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1"
+   ]
+  },
+  {
+   "id": "quinine",
+   "name": "奎宁",
+   "en": "Quinine",
+   "aliases": [
+    "金鸡纳霜",
+    "奎宁水",
+    "tonic water"
+   ],
+   "category": "antimalarial",
+   "risk": "caution",
+   "summary": "存在分歧：国内多列禁忌，国外列为低危。",
+   "detail": "国内多部资料将奎宁列为禁忌；国外分级将其列为低危药物（Ⅱ/Ⅲ型缺乏者可在医师指导下使用）。夜间腿部痉挛患者可能接触到含奎宁制剂（部分国家仍有销售）。",
+   "note": "需用时务必由医生评估，并说明溶血风险分级。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3",
+    "S4",
+    "S7"
+   ]
+  },
+  {
+   "id": "chloroquine",
+   "name": "氯喹",
+   "en": "Chloroquine",
+   "aliases": [
+    "氯喹啉",
+    "羟氯喹（相关）"
+   ],
+   "category": "antimalarial",
+   "risk": "caution",
+   "summary": "存在分歧：国内列禁用，国外列为低危。",
+   "detail": "安徽省卫健委将氯喹列入绝对禁用；国外分级列为低危。羟氯喹（Plaquenil）在台大医院高风险药品表中出现。用于疟疾预防或自身免疫病时，须由医生权衡。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "levofloxacin",
+   "name": "左氧氟沙星",
+   "en": "Levofloxacin",
+   "aliases": [
+    "左克",
+    "来立信",
+    "可乐必妥"
+   ],
+   "category": "antibiotic_other",
+   "risk": "caution",
+   "summary": "喹诺酮类，谨慎使用。",
+   "detail": "国内卫健委列为谨慎使用；台大医院将其列入高风险药品表；台湾药学会列为低危。意见不一，需医生评估后使用。",
+   "note": "整个喹诺酮类（XX沙星）在使用前都应主动告知病史。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S6",
+    "S7"
+   ]
+  },
+  {
+   "id": "ciprofloxacin",
+   "name": "环丙沙星",
+   "en": "Ciprofloxacin",
+   "aliases": [
+    "西普乐",
+    "悉复欢"
+   ],
+   "category": "antibiotic_other",
+   "risk": "caution",
+   "summary": "喹诺酮类，谨慎使用。",
+   "detail": "国内卫健委列为谨慎使用；台大医院高风险药品表收录；国外分级列为低危。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S6",
+    "S7"
+   ]
+  },
+  {
+   "id": "norfloxacin",
+   "name": "诺氟沙星",
+   "en": "Norfloxacin",
+   "aliases": [
+    "氟哌酸",
+    "力醇罗"
+   ],
+   "category": "antibiotic_other",
+   "risk": "caution",
+   "summary": "喹诺酮类，谨慎使用。",
+   "detail": "国内卫健委列为谨慎使用；国外分级列为低危。俗称“氟哌酸”，家庭常备，需特别注意。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "ofloxacin",
+   "name": "氧氟沙星",
+   "en": "Ofloxacin",
+   "aliases": [
+    "氟嗪酸",
+    "泰利必妥"
+   ],
+   "category": "antibiotic_other",
+   "risk": "caution",
+   "summary": "喹诺酮类，谨慎使用。",
+   "detail": "国外分级列为低危药物，需医生指导下使用。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S7"
+   ]
+  },
+  {
+   "id": "moxifloxacin",
+   "name": "莫西沙星",
+   "en": "Moxifloxacin",
+   "aliases": [
+    "拜复乐"
+   ],
+   "category": "antibiotic_other",
+   "risk": "caution",
+   "summary": "喹诺酮类，谨慎使用。",
+   "detail": "台大医院将其列入G6PD缺乏高风险药品表，需医生评估。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S6"
+   ]
+  },
+  {
+   "id": "acetaminophen",
+   "name": "对乙酰氨基酚",
+   "en": "Acetaminophen / Paracetamol",
+   "aliases": [
+    "扑热息痛",
+    "泰诺林",
+    "必理通",
+    "paracetamol"
+   ],
+   "category": "analgesic",
+   "risk": "safe",
+   "summary": "常规剂量下一般可用，是首选退烧药。",
+   "detail": "协和医生建议蚕豆病发热首选对乙酰氨基酚，其机制不经过影响红细胞代谢的途径；国外分级列为低危。国内部分学者认为不能完全排除溶血可能，倾向慎用。",
+   "note": "①只用单方制剂；②严格按体重计算剂量、不超量；③不与含同成分的复方感冒药叠加服用；④有溶血发作史者先咨询医生。",
+   "controversy": true,
+   "sources": [
+    "S3",
+    "S9",
+    "S7",
+    "S1"
+   ]
+  },
+  {
+   "id": "ibuprofen",
+   "name": "布洛芬",
+   "en": "Ibuprofen",
+   "aliases": [
+    "芬必得",
+    "美林",
+    "托恩"
+   ],
+   "category": "analgesic",
+   "risk": "caution",
+   "summary": "存在分歧：一派认为相对安全，一派认为需谨慎。",
+   "detail": "北大第一医院医生认为布洛芬不是强氧化物、相对安全，可作为首选；协和医生认为可能增加溶血风险，建议对乙酰氨基酚效果不佳时才考虑。国内卫健委口径：常规剂量可用，严禁超量或与其他解热镇痛药同用。",
+   "note": "如使用：常规剂量、短期、单一品种；有家族史或既往溶血史者避免；不与对乙酰氨基酚同时服用。",
+   "controversy": true,
+   "sources": [
+    "S3",
+    "S9",
+    "S1"
+   ]
+  },
+  {
+   "id": "vitamin_c_high",
+   "name": "大剂量维生素C",
+   "en": "High-dose Ascorbic acid",
+   "aliases": [
+    "维生素C",
+    "维C",
+    "抗坏血酸"
+   ],
+   "category": "other_drug",
+   "risk": "caution",
+   "summary": "大剂量（静脉/日超1克）慎用；日常剂量无虞。",
+   "detail": "大剂量维生素C（尤其静脉输注、每日口服超过1克）有促氧化作用，国内外资料均提示慎用；台大医院将其列为“正常治疗剂量下可由医师处方使用”。",
+   "note": "日常膳食或常规剂量补充剂无需恐慌；避免静脉大剂量维生素C。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S6",
+    "S7"
+   ]
+  },
+  {
+   "id": "vitamin_k3",
+   "name": "维生素K3（甲萘醌）",
+   "en": "Vitamin K3 / Menadione",
+   "aliases": [
+    "甲萘醌",
+    "亚硫酸氢钠甲萘醌",
+    "Hykinone"
+   ],
+   "category": "other_drug",
+   "risk": "caution",
+   "summary": "国内多列禁忌；与天然维生素K1不是一回事。",
+   "detail": "合成水溶性维生素K3（甲萘醌）国内资料列为禁忌或慎用；国外分级列为低危。新生儿出生时常规补充的是维生素K1（植物甲萘醌），不在禁用名单。",
+   "note": "就诊或用药时认准“K1”与“K3”的区别，不清楚就问医生。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S4",
+    "S7"
+   ]
+  },
+  {
+   "id": "isoniazid",
+   "name": "异烟肼",
+   "en": "Isoniazid (INH)",
+   "aliases": [
+    "雷米封",
+    "INH"
+   ],
+   "category": "antibiotic_other",
+   "risk": "caution",
+   "summary": "抗结核药，慎用。",
+   "detail": "协和医生提示需严格遵医嘱；国外分级列为低危药物。结核规范治疗不可擅自停药，应由专科医生评估。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S3",
+    "S7"
+   ]
+  },
+  {
+   "id": "probenecid",
+   "name": "丙磺舒",
+   "en": "Probenecid",
+   "aliases": [
+    "羧苯磺胺"
+   ],
+   "category": "other_drug",
+   "risk": "caution",
+   "summary": "存在分歧：国内列禁忌，国外列低危。",
+   "detail": "北京医院医生提示其干扰尿酸排泄、加重溶血风险，列为禁忌；国外分级列为低危。痛风患者可能接触，需提前说明病史。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S4",
+    "S7"
+   ]
+  },
+  {
+   "id": "nitroprusside",
+   "name": "硝普钠",
+   "en": "Sodium nitroprusside",
+   "aliases": [
+    "亚硝基铁氰化钠"
+   ],
+   "category": "cardiovascular",
+   "risk": "caution",
+   "summary": "静脉降压药，慎用。",
+   "detail": "用于高血压急症的静脉用药，国内卫健委列为谨慎使用，急诊抢救时需家属主动告知病史。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S1"
+   ]
+  },
+  {
+   "id": "isosorbide_dinitrate",
+   "name": "硝酸异山梨酯",
+   "en": "Isosorbide dinitrate",
+   "aliases": [
+    "消心痛",
+    "异舒吉"
+   ],
+   "category": "cardiovascular",
+   "risk": "caution",
+   "summary": "硝酸酯类，谨慎使用。",
+   "detail": "国外分级列为低危；台大医院将其列入高风险药品表，意见不一。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S6",
+    "S7"
+   ]
+  },
+  {
+   "id": "nitroglycerin",
+   "name": "硝酸甘油",
+   "en": "Nitroglycerin",
+   "aliases": [
+    "耐绞宁",
+    "硝酸甘油片"
+   ],
+   "category": "cardiovascular",
+   "risk": "caution",
+   "summary": "硝酸酯类急救药，谨慎使用。",
+   "detail": "台大医院将其列入G6PD缺乏高风险药品表。心绞痛急救场景下需医生知情决策。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S6"
+   ]
+  },
+  {
+   "id": "gliclazide",
+   "name": "格列齐特",
+   "en": "Gliclazide",
+   "aliases": [
+    "达美康",
+    "列克"
+   ],
+   "category": "metabolic",
+   "risk": "caution",
+   "summary": "磺酰脲类降糖药，谨慎使用。",
+   "detail": "台大医院高风险药品表与国外低危分级均涉及该类药物，糖尿病患者需提前说明病史。",
+   "note": "同类格列本脲（优降糖）、格列美脲（亚莫利）同样谨慎。",
+   "controversy": true,
+   "sources": [
+    "S6",
+    "S7"
+   ]
+  },
+  {
+   "id": "glibenclamide",
+   "name": "格列本脲",
+   "en": "Glibenclamide",
+   "aliases": [
+    "优降糖",
+    "达安疗"
+   ],
+   "category": "metabolic",
+   "risk": "caution",
+   "summary": "磺酰脲类降糖药，谨慎使用。",
+   "detail": "国外分级与台大医院高风险表均涉及，需医生知情。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S6",
+    "S7"
+   ]
+  },
+  {
+   "id": "glimepiride",
+   "name": "格列美脲",
+   "en": "Glimepiride",
+   "aliases": [
+    "亚莫利",
+    "万苏平"
+   ],
+   "category": "metabolic",
+   "risk": "caution",
+   "summary": "磺酰脲类降糖药，谨慎使用。",
+   "detail": "台大医院将其列入高风险药品表。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S6"
+   ]
+  },
+  {
+   "id": "pyrimethamine",
+   "name": "乙胺嘧啶",
+   "en": "Pyrimethamine",
+   "aliases": [
+    "息疟定",
+    "达拉匹林"
+   ],
+   "category": "antimalarial",
+   "risk": "caution",
+   "summary": "抗疟药，谨慎使用。",
+   "detail": "国内卫健委列为谨慎使用；国外分级列为低危。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "colchicine",
+   "name": "秋水仙碱",
+   "en": "Colchicine",
+   "aliases": [
+    "秋水仙素"
+   ],
+   "category": "other_drug",
+   "risk": "caution",
+   "summary": "痛风/家族性地中海热用药，慎用。",
+   "detail": "国内卫健委列为谨慎使用；国外分级列为低危。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "diphenhydramine",
+   "name": "苯海拉明",
+   "en": "Diphenhydramine",
+   "aliases": [
+    "Benadryl",
+    "苯那君"
+   ],
+   "category": "neuro",
+   "risk": "caution",
+   "summary": "第一代抗组胺药，慎用。",
+   "detail": "国内卫健委列为谨慎使用；国外分级列为低危。常见于复方抗过敏/晕车药。",
+   "note": "第二代抗组胺药（如西替利嗪、氯雷他定）未见列入名单，可优先与医生确认。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "levodopa",
+   "name": "左旋多巴",
+   "en": "Levodopa",
+   "aliases": [
+    "L-Dopa"
+   ],
+   "category": "neuro",
+   "risk": "caution",
+   "summary": "抗帕金森药，慎用。",
+   "detail": "国内卫健委列为谨慎使用；国外分级列为低危。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "quinidine",
+   "name": "奎尼丁",
+   "en": "Quinidine",
+   "aliases": [
+    "硫酸奎尼丁"
+   ],
+   "category": "cardiovascular",
+   "risk": "caution",
+   "summary": "抗心律失常药，慎用。",
+   "detail": "国内卫健委列为谨慎使用；国外分级列为低危。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S7"
+   ]
+  },
+  {
+   "id": "phenytoin",
+   "name": "苯妥英",
+   "en": "Phenytoin",
+   "aliases": [
+    "大仑丁",
+    "苯妥英钠"
+   ],
+   "category": "neuro",
+   "risk": "caution",
+   "summary": "抗癫痫药，慎用。",
+   "detail": "国外分级列为低危药物，需在医生指导下使用。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S7"
+   ]
+  },
+  {
+   "id": "compound_cold_med",
+   "name": "复方感冒药/复方解热镇痛药",
+   "en": "Compound cold & antipyretic medicines",
+   "aliases": [
+    "小儿氨酚黄那敏",
+    "氨酚伪麻美芬片",
+    "白加黑",
+    "泰诺感冒片",
+    "维C银翘片",
+    "感冒灵颗粒",
+    "复方锌布颗粒",
+    "复方氨酚烷胺片",
+    "快克",
+    "感康"
+   ],
+   "category": "analgesic",
+   "risk": "caution",
+   "summary": "最大的隐蔽雷区：成分复杂，需逐项核对。",
+   "detail": "复方制剂常同时含：对乙酰氨基酚（与单方退烧药叠加过量风险）、咖啡因、马来酸氯苯那敏，以及金银花、连翘、薄荷等中药禁忌成分。给蚕豆病患者使用前必须逐条核对成分表。",
+   "note": "核对要点：对乙酰氨基酚、阿司匹林、咖啡因、磺胺、金银花、连翘、薄荷、牛黄、冰片。不确定就问医生或药师。",
+   "controversy": false,
+   "sources": [
+    "S1",
+    "S5"
+   ]
+  },
+  {
+   "id": "methyl_salicylate",
+   "name": "水杨酸甲酯（冬青油）",
+   "en": "Methyl salicylate",
+   "aliases": [
+    "冬青油",
+    "冬绿油",
+    "topsyl"
+   ],
+   "category": "household",
+   "risk": "caution",
+   "summary": "外用制剂，谨慎使用。",
+   "detail": "台湾卫生署要求含水杨酸甲酯的外用软膏加注每日使用量上限，以避免水杨酸中毒；国内应咨询医生药师。",
+   "note": "常见于跌打损伤外用药、肌肉止痛膏。",
+   "controversy": true,
+   "sources": [
+    "S6",
+    "S8"
+   ]
+  },
+  {
+   "id": "camphor_topical",
+   "name": "含薄荷脑/樟脑的外用制剂",
+   "en": "Camphor/Menthol topical products",
+   "aliases": [
+    "清凉油",
+    "风油精",
+    "无比滴",
+    "退热贴（部分）",
+    "止痒膏"
+   ],
+   "category": "household",
+   "risk": "caution",
+   "summary": "外用产品意见不一，用前咨询药师。",
+   "detail": "台湾2007年要求含薄荷、樟脑、甲基水杨酸的吸入剂/擦剂/滴鼻剂加注“婴儿及2岁以下禁用”警语，其他外用剂型需咨询医师药师；2013年删除了“樟脑外用对蚕豆症患者禁用”的注解（目前无文献认定外用樟脑致溶血）。国内资料保守，建议回避。",
+   "note": "婴幼儿建议直接回避；成人外用也先咨询药师。注意与“萘丸（卫生球）”区分——萘丸是明确禁用的。",
+   "controversy": true,
+   "sources": [
+    "S5",
+    "S6",
+    "S8"
+   ]
+  },
+  {
+   "id": "eucalyptus",
+   "name": "尤加利树精油",
+   "en": "Eucalyptus oil",
+   "aliases": [],
+   "category": "household",
+   "risk": "caution",
+   "summary": "台湾国民健康署不推荐使用。",
+   "detail": "预防蚕豆症发作的官方建议中明确“不推荐使用尤加利树精油”。",
+   "note": "",
+   "controversy": false,
+   "sources": [
+    "S8"
+   ]
+  },
+  {
+   "id": "hair_dye",
+   "name": "染发剂与人工色素",
+   "en": "Hair dye / artificial colorants",
+   "aliases": [],
+   "category": "household",
+   "risk": "caution",
+   "summary": "科普资料提示回避。",
+   "detail": "科普中国将部分染发剂、人工色素列为应避免的氧化性物质；证据有限，保守回避为宜。",
+   "note": "",
+   "controversy": true,
+   "sources": [
+    "S5"
+   ]
+  },
+  {
+   "id": "honey",
+   "name": "蜂蜜",
+   "en": "Honey",
+   "aliases": [],
+   "category": "food",
+   "risk": "caution",
+   "summary": "个别资料提示谨慎（证据有限）。",
+   "detail": "协和医生提到部分蜂蜜可能含类蚕豆嘧啶成分，建议咨询医生后食用。主流清单并不限制蜂蜜，且1岁以下婴儿本就不应食用蜂蜜（肉毒风险）。",
+   "note": "该条证据较弱，列入仅供家长参考，不必过度紧张。",
+   "controversy": true,
+   "sources": [
+    "S3"
+   ]
+  },
+  {
+   "id": "penicillins",
+   "name": "青霉素类抗生素",
+   "en": "Penicillins",
+   "aliases": [
+    "阿莫西林",
+    "氨苄西林",
+    "青霉素",
+    "阿莫西林克拉维酸钾",
+    " augmentin"
+   ],
+   "category": "antibiotic_other",
+   "risk": "safe",
+   "summary": "未列入任何禁用名单，常规剂量一般可用。",
+   "detail": "国内外G6PD禁忌分级中均不包含青霉素类（前提是本人无青霉素过敏）。细菌感染时它通常是医生会优先选择的 safe 选项。",
+   "note": "过敏者禁用；具体遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "cephalosporins",
+   "name": "头孢菌素类抗生素",
+   "en": "Cephalosporins",
+   "aliases": [
+    "头孢克洛",
+    "头孢地尼",
+    "头孢羟氨苄",
+    "头孢丙烯",
+    "希刻劳",
+    "头孢呋辛"
+   ],
+   "category": "antibiotic_other",
+   "risk": "safe",
+   "summary": "未列入任何禁用名单，常规剂量一般可用。",
+   "detail": "国内外G6PD禁忌分级均未列入头孢类（前提是本人无相关过敏史）。",
+   "note": "过敏者禁用；具体遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "macrolides",
+   "name": "大环内酯类抗生素",
+   "en": "Macrolides",
+   "aliases": [
+    "阿奇霉素",
+    "红霉素",
+    "克拉霉素",
+    "希舒美"
+   ],
+   "category": "antibiotic_other",
+   "risk": "safe",
+   "summary": "未列入任何禁用名单，常规剂量一般可用。",
+   "detail": "支原体感染等场景的常用药，国内外G6PD禁忌分级均未列入。",
+   "note": "具体遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "metronidazole",
+   "name": "甲硝唑/替硝唑",
+   "en": "Metronidazole / Tinidazole",
+   "aliases": [
+    "甲硝唑",
+    "替硝唑",
+    "灭滴灵"
+   ],
+   "category": "antibiotic_other",
+   "risk": "safe",
+   "summary": "未列入经典禁用名单，一般可用。",
+   "detail": "注意与“硝基呋喃类”（呋喃妥因、呋喃唑酮、呋喃西林）区分：后者明确禁用，甲硝唑属硝基咪唑类，不在国内外禁用名单中。",
+   "note": "为保守起见，首次使用如发现尿色加深等异常，及时就医并告知病史。",
+   "controversy": true,
+   "sources": [
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "vitamin_k1",
+   "name": "维生素K1（植物甲萘醌）",
+   "en": "Vitamin K1 / Phytomenadione",
+   "aliases": [
+    "叶绿醌",
+    "VK1"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "新生儿出生常规补充剂，与禁用的K3不同。",
+   "detail": "国内外G6PD禁忌分级均未列入维生素K1；新生儿出生后常规补充K1预防出血，不在回避范围。禁用/慎用名单针对的是合成维生素K3（甲萘醌）。",
+   "note": "如有疑虑，用药前再与医生确认。",
+   "controversy": false,
+   "sources": [
+    "S7"
+   ]
+  },
+  {
+   "id": "infection",
+   "name": "感染诱因",
+   "en": "Infections as triggers",
+   "aliases": [
+    "肝炎",
+    "巨细胞病毒",
+    "伤寒",
+    "肺炎",
+    "上呼吸道感染",
+    "流感"
+   ],
+   "category": "infection",
+   "risk": "info",
+   "summary": "感染本身就是常见溶血诱因，不可忽视。",
+   "detail": "肝炎病毒、巨细胞病毒、伤寒、肺炎等感染是G6PD缺乏者急性溶血的常见诱因。防感染与防错药同等重要。",
+   "note": "少去人多密闭场所、勤洗手、按时接种疫苗；感染期间密切观察面色与尿色。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S3"
+   ]
+  },
+  {
+   "id": "neonatal_jaundice",
+   "name": "新生儿黄疸",
+   "en": "Neonatal hyperbilirubinemia",
+   "aliases": [
+    "核黄疸",
+    "胆红素脑病"
+   ],
+   "category": "infection",
+   "risk": "info",
+   "summary": "G6PD缺乏患儿更易出现中重度新生儿黄疸。",
+   "detail": "多发生于出生后2~4天，也可提前至24小时内，容易引起胆红素脑病。患儿出生后应尽早进行G6PD筛查。",
+   "note": "黄疸出现早、消退慢、程度重，务必告知新生儿科医生排查G6PD。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S8"
+   ]
+  },
+  {
+   "id": "genetics",
+   "name": "遗传特点",
+   "en": "Inheritance pattern",
+   "aliases": [
+    "X连锁",
+    "产前咨询",
+    "携带者"
+   ],
+   "category": "infection",
+   "risk": "info",
+   "summary": "X连锁不完全显性遗传，男性远多于女性。",
+   "detail": "儿子患病必从母亲遗传；女儿患病可从父母任一方遗传。我国南方（广东、广西、海南、云南、贵州、四川等）高发。备孕家庭可做产前咨询与筛查。",
+   "note": "育龄人群可在遗传咨询门诊评估子代风险。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S5"
+   ]
+  }
+ ]
+};
+
+</script>
+<script>
+/* 蚕豆病禁忌速查 · 移动端逻辑
+ * 依赖 data.js 提供的 G6PD_DATA
+ * 搜索策略与 CLI 版保持一致：精确 > 别名/子串 > 字符 subsequence 模糊
+ */
+(function () {
+  "use strict";
+
+  var ITEMS = G6PD_DATA.items;
+  var SOURCES = {};
+  G6PD_DATA.sources.forEach(function (s) { SOURCES[s.id] = s.name; });
+
+  var CATEGORY_NAMES = {
+    analgesic: "解热镇痛药", sulfa: "磺胺类抗菌药", furan: "硝基呋喃类抗菌药",
+    antimalarial: "抗疟药", antibiotic_other: "其他抗菌药物", cardiovascular: "心血管系统用药",
+    metabolic: "内分泌（降糖药）", neuro: "神经系统/抗过敏", urinary: "泌尿系统用药",
+    other_drug: "其他药物", tcm: "中药与中成药成分", food: "食物",
+    household: "日用化学品", occupational: "职业/环境暴露", infection: "感染与疾病提示"
+  };
+
+  var RISK_LABEL = { forbidden: "⛔ 禁用", caution: "⚠️ 慎用", safe: "✅ 常规可用", info: "ℹ️ 提示" };
+  var RISK_ORDER = { forbidden: 0, caution: 1, safe: 2, info: 3 };
+
+  /* ===== SEARCH-CORE-START（tools/test_web_search.js 会提取本段做一致性测试） ===== */
+  function norm(s) {
+    return String(s || "").toLowerCase().replace(/\s+/g, "");
+  }
+
+  /* 最长公共子序列长度（difflib.SequenceMatcher.ratio 的核心度量） */
+  function lcsLen(a, b) {
+    var n = a.length, m = b.length;
+    if (!n || !m) return 0;
+    var prev = new Array(m + 1).fill(0);
+    var cur = new Array(m + 1).fill(0);
+    for (var i = 1; i <= n; i++) {
+      for (var j = 1; j <= m; j++) {
+        cur[j] = a[i - 1] === b[j - 1]
+          ? prev[j - 1] + 1
+          : Math.max(prev[j], cur[j - 1]);
+      }
+      var tmp = prev; prev = cur; cur = tmp;
+    }
+    return prev[m];
+  }
+
+  /* 与 CLI difflib.get_close_matches(cutoff=0.6) 等效的相似度 */
+  function similar(a, b) {
+    var total = a.length + b.length;
+    if (!total) return 0;
+    return (2 * lcsLen(a, b)) / total;
+  }
+
+  function itemFields(it) {
+    return [it.name, it.en || ""].concat(it.aliases || []);
+  }
+
+  /* 返回匹配得分（0 表示不匹配），与 CLI 的三档策略对应 */
+  function scoreItem(q, it) {
+    var fields = itemFields(it);
+    for (var i = 0; i < fields.length; i++) {
+      var nf = norm(fields[i]);
+      if (!nf) continue;
+      if (nf === q) return 100;
+    }
+    for (var j = 0; j < fields.length; j++) {
+      var f = norm(fields[j]);
+      if (!f) continue;
+      if (f.indexOf(q) !== -1 || q.indexOf(f) !== -1) return 80;
+    }
+    if (q.length >= 4) {
+      for (var k = 0; k < fields.length; k++) {
+        var t = norm(fields[k]);
+        if (t && similar(q, t) >= 0.6 - 1e-9) return 50;
+      }
+    }
+    return 0;
+  }
+
+  function search(q) {
+    var nq = norm(q);
+    if (!nq) return [];
+    var out = [];
+    ITEMS.forEach(function (it) {
+      var s = scoreItem(nq, it);
+      if (s > 0) out.push({ score: s, item: it });
+    });
+    out.sort(function (a, b) {
+      if (b.score !== a.score) return b.score - a.score;
+      return RISK_ORDER[a.item.risk] - RISK_ORDER[b.item.risk];
+    });
+    return out.map(function (x) { return x.item; });
+  }
+  /* ===== SEARCH-CORE-END ===== */
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  function sourceText(it) {
+    return (it.sources || []).map(function (id) {
+      return SOURCES[id] ? esc(SOURCES[id]) : esc(id);
+    }).join("；");
+  }
+
+  /* ---------- 渲染 ---------- */
+
+  function itemCard(it, idPrefix) {
+    var label = RISK_LABEL[it.risk] || it.risk;
+    var cat = CATEGORY_NAMES[it.category] || it.category;
+    var aliases = (it.aliases && it.aliases.length) ? it.aliases.join("、") : "";
+    var did = idPrefix + "-" + it.id;
+    var html =
+      '<div class="item ' + esc(it.risk) + '" data-id="' + esc(it.id) + '">' +
+        '<div class="bar"></div>' +
+        '<div class="head">' +
+          '<div class="row1">' +
+            '<span class="tag">' + esc(label) + '</span>' +
+            '<span class="name">' + esc(it.name) + '</span>' +
+            (it.controversy ? '<span class="debate">[口径有分歧]</span>' : "") +
+            '<span class="chev">展开 ▾</span>' +
+          '</div>' +
+          '<div class="summary">' + esc(it.summary) + '</div>' +
+        '</div>' +
+        '<div class="detail" id="' + did + '">' +
+          '<div class="kv"><div class="k">类别</div><div class="v">' + esc(cat) + '</div></div>' +
+          (aliases ? '<div class="kv"><div class="k">别名/商品名</div><div class="v">' + esc(aliases) + '</div></div>' : "") +
+          (it.detail ? '<div class="kv"><div class="k">说明</div><div class="v">' + esc(it.detail) + '</div></div>' : "") +
+          (it.note ? '<div class="warn">⚠ ' + esc(it.note) + '</div>' : "") +
+          '<div class="src">来源：' + sourceText(it) + '</div>' +
+        '</div>' +
+      '</div>';
+    return html;
+  }
+
+  function bindCardToggles(container) {
+    container.querySelectorAll(".item").forEach(function (el) {
+      el.addEventListener("click", function () {
+        el.classList.toggle("open");
+        var chev = el.querySelector(".chev");
+        if (chev) chev.textContent = el.classList.contains("open") ? "收起 ▴" : "展开 ▾";
+      });
+    });
+  }
+
+  var resultsEl = document.getElementById("results");
+  var countEl = document.getElementById("count");
+  var allListEl = document.getElementById("allList");
+  var inputEl = document.getElementById("q");
+  var clearBtn = document.getElementById("clearBtn");
+  var currentRisk = "";
+
+  function renderResults(list) {
+    if (!list.length) {
+      resultsEl.innerHTML =
+        '<div class="empty"><div class="big">🤔</div>未找到「' + esc(inputEl.value) + '」<br>' +
+        '未收录 ≠ 安全，用药前请咨询医生/药师<br>并主动告知蚕豆病史</div>';
+      countEl.textContent = "";
+      return;
+    }
+    var html = list.map(function (it) { return itemCard(it, "s"); }).join("");
+    resultsEl.innerHTML = html;
+    countEl.textContent = "命中 " + list.length + " 条" + (currentRisk ? "（已按风险筛选）" : "");
+    bindCardToggles(resultsEl);
+  }
+
+  function refresh() {
+    var q = inputEl.value.trim();
+    clearBtn.classList.toggle("show", !!q);
+    if (!q) {
+      resultsEl.innerHTML = "";
+      countEl.textContent = "";
+      return;
+    }
+    var list = search(q);
+    if (currentRisk) list = list.filter(function (it) { return it.risk === currentRisk; });
+    renderResults(list);
+  }
+
+  var debounceTimer = null;
+  inputEl.addEventListener("input", function () {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(refresh, 100);
+  });
+
+  clearBtn.addEventListener("click", function () {
+    inputEl.value = "";
+    clearBtn.classList.remove("show");
+    refresh();
+    inputEl.focus();
+  });
+
+  document.getElementById("quick").addEventListener("click", function (e) {
+    var btn = e.target.closest("button");
+    if (!btn) return;
+    inputEl.value = btn.getAttribute("data-q");
+    refresh();
+  });
+
+  document.getElementById("chips").addEventListener("click", function (e) {
+    var chip = e.target.closest(".chip");
+    if (!chip) return;
+    document.querySelectorAll("#chips .chip").forEach(function (c) { c.classList.remove("on"); });
+    chip.classList.add("on");
+    currentRisk = chip.getAttribute("data-risk") || "";
+    refresh();
+  });
+
+  /* ---------- 全部列表页 ---------- */
+
+  function renderAllList() {
+    var byCat = {};
+    ITEMS.forEach(function (it) {
+      var c = CATEGORY_NAMES[it.category] || it.category;
+      (byCat[c] = byCat[c] || []).push(it);
+    });
+    var html = "";
+    Object.keys(byCat).sort(function (a, b) {
+      return RISK_ORDER[byCat[a][0].risk] - RISK_ORDER[byCat[b][0].risk];
+    }).forEach(function (cat) {
+      var items = byCat[cat].slice().sort(function (a, b) {
+        return RISK_ORDER[a.risk] - RISK_ORDER[b.risk];
+      });
+      html += '<div class="group-title">' + esc(cat) + "（" + items.length + "）</div>";
+      html += items.map(function (it) { return itemCard(it, "a"); }).join("");
+    });
+    allListEl.innerHTML = html;
+    bindCardToggles(allListEl);
+  }
+
+  /* ---------- Tab 切换 ---------- */
+
+  document.querySelectorAll("nav button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("nav button").forEach(function (b) { b.classList.remove("on"); });
+      btn.classList.add("on");
+      var page = btn.getAttribute("data-page");
+      document.querySelectorAll(".page").forEach(function (p) { p.classList.remove("on"); });
+      document.getElementById("page-" + page).classList.add("on");
+      window.scrollTo(0, 0);
+    });
+  });
+
+  /* ---------- 复制提示卡 ---------- */
+
+  document.getElementById("copyCard").addEventListener("click", function () {
+    var text = document.getElementById("cardText").innerText;
+    function done() {
+      var btn = document.getElementById("copyCard");
+      btn.textContent = "✅ 已复制，可直接粘贴发给医生";
+      setTimeout(function () { btn.textContent = "📋 复制提示卡全文"; }, 2500);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+    } else {
+      fallbackCopy(text); done();
+    }
+  });
+
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  /* ---------- 初始化 ---------- */
+
+  renderAllList();
+
+  /* 向档案模块（profile.js）暴露复用能力，避免重复实现 */
+  window.g6pd = {
+    search: search,
+    esc: esc,
+    itemCard: itemCard,
+    RISK_LABEL: RISK_LABEL,
+    RISK_ORDER: RISK_ORDER,
+    CATEGORY_NAMES: CATEGORY_NAMES,
+    SOURCES: SOURCES
+  };
+})();
+
+</script>
+<script>
+/* 蚕豆病禁忌速查 · 健康档案模块（网页版）
+ * 数据存于浏览器 localStorage（key: g6pd_profile_v1），不出设备；
+ * 支持导出 JSON / 导入 JSON 换机迁移。
+ * 依赖 app.js 暴露的 window.g6pd（search / esc / itemCard 等）。
+ */
+(function () {
+  "use strict";
+
+  var KEY = "g6pd_profile_v1";
+  var app = window.g6pd;
+  var esc = app.esc;
+  var search = app.search;
+
+  /* ---------- 数据层 ---------- */
+
+  function blank() {
+    return {
+      patient: { name: "", gender: "", birth: "", diagnosed: "", who: "", notes: "" },
+      episodes: [], visits: [], family: [], reminders: []
+    };
+  }
+
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return blank();
+      var d = JSON.parse(raw);
+      var b = blank();
+      // 合并默认结构，容忍旧版本缺字段
+      b.patient = Object.assign(b.patient, d.patient || {});
+      ["episodes", "visits", "family", "reminders"].forEach(function (k) {
+        if (Array.isArray(d[k])) b[k] = d[k];
+      });
+      return b;
+    } catch (e) {
+      return blank();
+    }
+  }
+
+  function save() {
+    localStorage.setItem(KEY, JSON.stringify(state.data));
+  }
+
+  var state = { data: load(), tab: "episodes", form: null };
+  var root = document.getElementById("profileApp");
+
+  function nextId(rows) {
+    return rows.reduce(function (m, r) { return Math.max(m, r.id || 0); }, 0) + 1;
+  }
+
+  function today() {
+    var d = new Date();
+    var p = function (n) { return (n < 10 ? "0" : "") + n; };
+    return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+  }
+
+  function addDays(dateStr, days) {
+    var d = new Date(dateStr + "T00:00:00");
+    d.setDate(d.getDate() + days);
+    var p = function (n) { return (n < 10 ? "0" : "") + n; };
+    return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+  }
+
+  function daysUntil(dateStr) {
+    var diff = new Date(dateStr + "T00:00:00") - new Date(today() + "T00:00:00");
+    return Math.round(diff / 86400000);
+  }
+
+  /* ---------- 常量 ---------- */
+
+  var WHO = [
+    ["I", "Ⅰ类 严重缺乏（接近0，可慢性溶血）"],
+    ["II", "Ⅱ类 严重缺乏（<10%）"],
+    ["III", "Ⅲ类 轻中度缺乏（10%~60%）"],
+    ["IV", "Ⅳ类 轻度降低（一般无症状）"],
+    ["", "不清楚/未分级"]
+  ];
+  var TRIGGERS = [
+    ["drug", "药物"], ["food", "食物（如蚕豆）"], ["infection", "感染"],
+    ["chemical", "化学品（如樟脑丸）"], ["unknown", "不明/多种"]
+  ];
+  var FSTATUS = [
+    ["patient", "G6PD缺乏症患者"], ["carrier", "携带者"],
+    ["normal", "正常/已排除"], ["unknown", "未查/不清楚"]
+  ];
+  var STATUS_STYLE = { patient: "forbidden", carrier: "caution", normal: "safe", unknown: "none" };
+
+  /* ---------- 工具 ---------- */
+
+  function toast(msg) {
+    var t = document.getElementById("toast");
+    if (!t) {
+      t = document.createElement("div");
+      t.id = "toast";
+      t.className = "toast";
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(t._timer);
+    t._timer = setTimeout(function () { t.classList.remove("show"); }, 2600);
+  }
+
+  function optgroups(options, selected) {
+    return options.map(function (o) {
+      var sel = o[0] === selected ? " selected" : "";
+      return '<option value="' + esc(o[0]) + '"' + sel + ">" + esc(o[1]) + "</option>";
+    }).join("");
+  }
+
+  /* ---------- 渲染 ---------- */
+
+  function render() {
+    var d = state.data;
+    var html = "";
+
+    // 患者卡片
+    var p = d.patient;
+    html += '<div class="pcard"><div class="rh" style="display:flex;justify-content:space-between;align-items:center">' +
+      '<b style="font-size:16px">👤 患者信息</b>' +
+      '<button class="btn ghost small" data-action="edit-patient">' + (p.name ? "编辑" : "填写") + "</button></div>";
+    if (p.name) {
+      var whoLabel = "";
+      WHO.forEach(function (o) { if (o[0] === p.who) whoLabel = o[1]; });
+      html += '<div class="pv" style="margin-top:8px"><b>' + esc(p.name) + "</b>" +
+        (p.gender ? " · " + esc(p.gender) : "") + "</div>";
+      if (p.birth) html += '<div class="pv"><span class="pk">出生</span> ' + esc(p.birth) + "</div>";
+      if (p.diagnosed) html += '<div class="pv"><span class="pk">确诊</span> ' + esc(p.diagnosed) + "</div>";
+      if (p.who) html += '<div class="pv"><span class="pk">分级</span> ' + esc(whoLabel) + "</div>";
+      if (p.notes) html += '<div class="pv"><span class="pk">备注</span> ' + esc(p.notes) + "</div>";
+    } else {
+      html += '<div class="pv" style="color:var(--ink-3);margin-top:6px">尚未填写，点右上角「填写」</div>';
+    }
+    html += "</div>";
+
+    // 统计条
+    html += '<div class="stat-row">' +
+      stat(d.episodes.length, "溶血发作") +
+      stat(d.visits.length, "就诊记录") +
+      stat(d.family.length, "家人登记") +
+      stat(dueCount(), "待办提醒") +
+      "</div>";
+
+    // 表单（如有）
+    if (state.form && FORMS[state.form]) html += FORMS[state.form]();
+
+    // 子页签
+    var tabs = [
+      ["episodes", "发作史"], ["visits", "就诊记录"],
+      ["family", "家人状态"], ["reminders", "复查提醒"], ["data", "数据"]
+    ];
+    html += '<div class="ptabs">';
+    tabs.forEach(function (t) {
+      html += '<div class="ptab' + (state.tab === t[0] ? " on" : "") + '" data-action="tab" data-tab="' + t[0] + '">' + t[1] + "</div>";
+    });
+    html += "</div>";
+
+    // 子内容
+    if (state.tab === "episodes") html += viewEpisodes();
+    else if (state.tab === "visits") html += viewVisits();
+    else if (state.tab === "family") html += viewFamily();
+    else if (state.tab === "reminders") html += viewReminders();
+    else if (state.tab === "data") html += viewData();
+
+    root.innerHTML = html;
+
+    // 就诊表单：药品输入框回车即添加
+    if (state.form === "visit") {
+      var mi = root.querySelector('[data-f="med"]');
+      if (mi) mi.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter") { ev.preventDefault(); addMedFromInput(); }
+      });
+    }
+  }
+
+  function stat(n, label) {
+    return '<div class="stat"><div class="n">' + n + '</div><div class="t">' + label + "</div></div>";
+  }
+
+  function dueCount() {
+    return state.data.reminders.filter(function (r) {
+      return r.next_due && daysUntil(r.next_due) <= 7;
+    }).length;
+  }
+
+  /* ----- 患者表单 ----- */
+
+  function formPatient() {
+    var p = state.data.patient;
+    return '<div class="form"><b>患者信息</b>' +
+      field("姓名/昵称", '<input data-f="name" value="' + esc(p.name) + '" placeholder="如：小明">') +
+      '<div class="row">' +
+      '<div>' + field("性别", '<select data-f="gender">' + optgroups([["", "未填"], ["男", "男"], ["女", "女"]], p.gender) + "</select>") + "</div>" +
+      '<div>' + field("出生日期", '<input type="date" data-f="birth" value="' + esc(p.birth) + '">') + "</div>" +
+      "</div>" +
+      '<div class="row">' +
+      '<div>' + field("确诊日期", '<input type="date" data-f="diagnosed" value="' + esc(p.diagnosed) + '">') + "</div>" +
+      '<div>' + field("WHO酶活性分级", '<select data-f="who">' + optgroups(WHO, p.who) + "</select>") + "</div>" +
+      "</div>" +
+      field("备注", '<input data-f="notes" value="' + esc(p.notes) + '" placeholder="可选">') +
+      '<div class="btnrow"><button class="btn" data-action="save-patient">保存</button>' +
+      '<button class="btn ghost" data-action="cancel">取消</button></div></div>';
+  }
+
+  function field(label, inputHtml) {
+    return "<label>" + esc(label) + "</label>" + inputHtml;
+  }
+
+  /* ----- 发作史 ----- */
+
+  function viewEpisodes() {
+    var eps = state.data.episodes.slice().sort(function (a, b) { return (a.date || "") < (b.date || "") ? 1 : -1; });
+    var html = "";
+    if (!eps.length) html += '<div class="empty"><div class="big">🌤️</div>暂无发作记录<br>没有发作是最好的情况</div>';
+    eps.forEach(function (e) {
+      var trig = "";
+      TRIGGERS.forEach(function (t) { if (t[0] === e.trigger_type) trig = t[1]; });
+      html += '<div class="rec"><div class="rh"><span class="rt">' + esc(e.date) + " " + esc(trig) + "</span>" +
+        '<button class="del" data-action="del-episode" data-id="' + e.id + '">删除</button></div>';
+      if (e.trigger) html += '<div class="rb">诱因：' + esc(e.trigger) + "</div>";
+      if (e.symptoms) html += '<div class="rb">症状：' + esc(e.symptoms) + "</div>";
+      if (e.hospital) html += '<div class="rb">就诊：' + esc(e.hospital) + (e.outcome ? "（" + esc(e.outcome) + "）" : "") + "</div>";
+      else if (e.outcome) html += '<div class="rb">转归：' + esc(e.outcome) + "</div>";
+      if (e.notes) html += '<div class="rb" style="color:var(--ink-3)">备注：' + esc(e.notes) + "</div>";
+      html += "</div>";
+    });
+    html += '<button class="addbtn" data-action="add-episode">＋ 记录一次发作</button>';
+    return html;
+  }
+
+  function formEpisode() {
+    return '<div class="form"><b>记录溶血发作</b>' +
+      field("发作日期", '<input type="date" data-f="date" value="' + today() + '">') +
+      field("诱因类型", '<select data-f="trigger_type">' + optgroups(TRIGGERS, "") + "</select>") +
+      field("具体诱因（药名/食物名）", '<input data-f="trigger" placeholder="如：复方新诺明（将自动比对禁忌库）">') +
+      field("症状", '<input data-f="symptoms" placeholder="如：尿色深、黄疸、苍白">') +
+      field("就诊医院/科室", '<input data-f="hospital" placeholder="可选">') +
+      field("转归", '<input data-f="outcome" placeholder="如：痊愈、输血">') +
+      field("备注", '<input data-f="notes" placeholder="可选">') +
+      '<div class="btnrow"><button class="btn" data-action="save-episode">保存</button>' +
+      '<button class="btn ghost" data-action="cancel">取消</button></div></div>';
+  }
+
+  /* ----- 就诊记录 ----- */
+
+  function medTag(risk) {
+    if (!risk) return '<span class="mtag none">未收录</span>';
+    return '<span class="mtag ' + esc(risk) + '">' + esc(app.RISK_LABEL[risk] || risk) + "</span>";
+  }
+
+  function statusTag(status) {
+    var cls = STATUS_STYLE[status] || "none";
+    var label = "";
+    FSTATUS.forEach(function (s) { if (s[0] === status) label = s[1]; });
+    return '<span class="mtag ' + esc(cls) + '">' + esc(label || "未填") + "</span>";
+  }
+
+  function viewVisits() {
+    var vs = state.data.visits.slice().sort(function (a, b) { return (a.date || "") < (b.date || "") ? 1 : -1; });
+    var html = "";
+    if (!vs.length) html += '<div class="empty"><div class="big">🏥</div>暂无就诊记录</div>';
+    vs.forEach(function (v) {
+      html += '<div class="rec"><div class="rh"><span class="rt">' + esc(v.date) + " " + esc(v.hospital) + "</span>" +
+        '<button class="del" data-action="del-visit" data-id="' + v.id + '">删除</button></div>' +
+        '<div class="rb">' + esc(v.department || "") +
+        (v.doctor ? " · " + esc(v.doctor) : "") +
+        (v.told ? ' · <span style="color:var(--green)">已告知病史</span>' : ' · <span style="color:var(--yellow)">未确认告知</span>') + "</div>";
+      if (v.reason) html += '<div class="rb">主诉：' + esc(v.reason) + "</div>";
+      (v.meds || []).forEach(function (m) {
+        html += '<div class="medline">💊 ' + esc(m.name) + " " + medTag(m.risk) + "</div>";
+      });
+      if (v.notes) html += '<div class="rb" style="color:var(--ink-3)">备注：' + esc(v.notes) + "</div>";
+      html += "</div>";
+    });
+    html += '<button class="addbtn" data-action="add-visit">＋ 记录一次就诊</button>';
+    return html;
+  }
+
+  function formVisit() {
+    return '<div class="form"><b>记录就诊</b>' +
+      '<div class="row">' +
+      '<div>' + field("就诊日期", '<input type="date" data-f="date" value="' + today() + '">') + "</div>" +
+      '<div>' + field("科室", '<input data-f="department" value="儿科">') + "</div>" +
+      "</div>" +
+      field("医院", '<input data-f="hospital" placeholder="如：市妇幼保健院" required>') +
+      field("医生", '<input data-f="doctor" placeholder="可选">') +
+      field("主诉/诊断", '<input data-f="reason" placeholder="可选">') +
+      field("已主动告知蚕豆病史？", '<select data-f="told"><option value="1">已告知</option><option value="0">未告知/不确定</option></select>') +
+      '<label>开具药品（逐条添加，自动比对禁忌库）</label>' +
+      '<div class="row"><div><input data-f="med" placeholder="药名，如：阿莫西林" enterkeyhint="done"></div>' +
+      '<div style="flex:0 0 76px"><button class="btn small" data-action="add-med" style="width:100%">添加</button></div></div>' +
+      '<div id="medCheck"></div><div id="medList"></div>' +
+      field("备注", '<input data-f="notes" placeholder="可选">') +
+      '<div class="btnrow"><button class="btn" data-action="save-visit">保存</button>' +
+      '<button class="btn ghost" data-action="cancel">取消</button></div></div>';
+  }
+
+  var formMeds = [];
+
+  function renderMedList() {
+    var box = document.getElementById("medList");
+    if (!box) return;
+    box.innerHTML = formMeds.map(function (m, i) {
+      return '<div class="medline">💊 ' + esc(m.name) + " " + medTag(m.risk) +
+        '<button class="del" data-action="del-med" data-i="' + i + '">✕</button></div>';
+    }).join("");
+  }
+
+  function addMedFromInput() {
+    var input = root.querySelector('[data-f="med"]');
+    var check = document.getElementById("medCheck");
+    var name = (input.value || "").trim();
+    if (!name) return;
+    var hits = search(name);
+    var risk = null, html = "";
+    if (hits.length) {
+      var it = hits[0];
+      risk = it.risk;
+      var tag = medTag(it.risk);
+      html = '<div class="med-check' + (it.risk === "forbidden" ? " bad" : it.risk === "caution" ? " warn" : "") + '">' +
+        tag + " " + esc(it.name) + " —— " + esc(it.summary) + "</div>";
+      if (it.risk === "forbidden") {
+        html += '<div class="med-check bad">⛔ 该药在禁用名单中！如已开具，请立即与开药医生复核。</div>';
+      } else if (it.risk === "caution") {
+        html += '<div class="med-check warn">⚠ 该药需医生评估后使用，请确认医生已知情。</div>';
+      }
+    } else {
+      html = '<div class="med-check">禁忌库中无此药（未收录 ≠ 安全，请遵医嘱）。</div>';
+    }
+    check.innerHTML = html;
+    formMeds.push({ name: name, risk: risk });
+    input.value = "";
+    renderMedList();
+    input.focus();
+  }
+
+  /* ----- 家人状态 ----- */
+
+  function viewFamily() {
+    var fam = state.data.family;
+    var html = "";
+    if (!fam.length) html += '<div class="empty"><div class="big">👨‍👩‍👧</div>暂无家人登记<br>X连锁遗传，母系亲属尤其值得关注</div>';
+    fam.forEach(function (m) {
+      var st = "";
+      FSTATUS.forEach(function (s) { if (s[0] === m.status) st = s[1]; });
+      html += '<div class="rec"><div class="rh"><span class="rt">' + esc(m.relation) + " " + esc(m.name) + "</span>" +
+        '<button class="del" data-action="del-family" data-id="' + m.id + '">删除</button></div>' +
+        '<div class="medline">' + statusTag(m.status) + "</div>";
+      if (m.tested) html += '<div class="rb" style="color:var(--ink-3)">检测：' + esc(m.tested) + "</div>";
+      html += "</div>";
+    });
+    html += '<button class="addbtn" data-action="add-family">＋ 登记一位家人</button>';
+    return html;
+  }
+
+  function formFamily() {
+    return '<div class="form"><b>登记家人</b>' +
+      '<div class="row">' +
+      '<div>' + field("关系", '<input data-f="relation" placeholder="如：母亲">') + "</div>" +
+      '<div>' + field("姓名", '<input data-f="name" placeholder="可选">') + "</div>" +
+      "</div>" +
+      field("G6PD状态", '<select data-f="status">' + optgroups(FSTATUS, "") + "</select>") +
+      field("检测方式", '<input data-f="tested" placeholder="如：新生儿筛查/酶活性/基因检测">') +
+      '<div class="btnrow"><button class="btn" data-action="save-family">保存</button>' +
+      '<button class="btn ghost" data-action="cancel">取消</button></div></div>';
+  }
+
+  /* ----- 复查提醒 ----- */
+
+  function viewReminders() {
+    var rs = state.data.reminders.slice().sort(function (a, b) {
+      return (a.next_due || "9999") < (b.next_due || "9999") ? -1 : 1;
+    });
+    var html = "";
+    if (!rs.length) html += '<div class="empty"><div class="big">📅</div>暂无提醒<br>无症状者通常无需定期复查，遵医嘱即可</div>';
+    rs.forEach(function (r) {
+      var due = "";
+      if (r.next_due) {
+        var n = daysUntil(r.next_due);
+        due = n < 0 ? '<span class="overdue">已过期' + (-n) + "天</span>"
+          : n <= 7 ? '<span style="color:var(--yellow);font-weight:700">' + n + "天后</span>"
+          : esc(r.next_due);
+      }
+      html += '<div class="rec"><div class="rh"><span class="rt">' + esc(r.title) + "</span>" +
+        '<span><button class="del" data-action="done-reminder" data-id="' + r.id + '">完成</button>' +
+        '<button class="del" data-action="del-reminder" data-id="' + r.id + '">删除</button></span></div>' +
+        '<div class="rb">下次：' + due + (r.interval_days ? "（每" + r.interval_days + "天）" : "") + "</div>" +
+        (r.notes ? '<div class="rb" style="color:var(--ink-3)">' + esc(r.notes) + "</div>" : "") +
+        "</div>";
+    });
+    html += '<button class="addbtn" data-action="add-reminder">＋ 新增提醒</button>';
+    return html;
+  }
+
+  function formReminder() {
+    return '<div class="form"><b>新增复查提醒</b>' +
+      field("事项", '<input data-f="title" placeholder="如：血常规复查">') +
+      '<div class="row">' +
+      '<div>' + field("重复周期（天）", '<input type="number" data-f="interval_days" placeholder="如：180，可空">') + "</div>" +
+      '<div>' + field("上次完成日期", '<input type="date" data-f="last_done">') + "</div>" +
+      "</div>" +
+      field("备注", '<input data-f="notes" placeholder="可选">') +
+      '<div class="btnrow"><button class="btn" data-action="save-reminder">保存</button>' +
+      '<button class="btn ghost" data-action="cancel">取消</button></div></div>';
+  }
+
+  /* ----- 数据管理 ----- */
+
+  function viewData() {
+    return '<div class="pcard"><b>💾 数据管理</b>' +
+      '<div class="pv" style="color:var(--ink-2);margin-top:8px;font-size:13.5px">档案数据只保存在这台设备的浏览器里（localStorage），不会上传。换手机或清理浏览器前，请先导出备份。</div>' +
+      '<div class="btnrow">' +
+      '<button class="btn" data-action="export">⬇ 导出备份</button>' +
+      '<button class="btn ghost" data-action="import">⬆ 导入备份</button>' +
+      "</div>" +
+      '<div class="btnrow"><button class="btn ghost" data-action="wipe" style="color:var(--red)">🗑 清空全部数据</button></div>' +
+      '<input type="file" id="importFile" accept=".json,application/json" style="display:none">' +
+      "</div>";
+  }
+
+  /* ---------- 表单收集与保存 ---------- */
+
+  function collect(prefix) {
+    var out = {};
+    root.querySelectorAll("[data-f]").forEach(function (el) {
+      var k = el.getAttribute("data-f");
+      if (prefix && k.indexOf(prefix) !== 0) return;
+      out[k] = el.value;
+    });
+    return out;
+  }
+
+  function actions() {
+    root.addEventListener("click", function (e) {
+      var el = e.target.closest("[data-action]");
+      if (!el) return;
+      var a = el.getAttribute("data-action");
+      var d = state.data;
+
+      if (a === "tab") {
+        state.tab = el.getAttribute("data-tab");
+        state.form = null;
+        formMeds = [];
+        render();
+      } else if (a === "edit-patient") {
+        state.form = "patient";
+        render();
+      } else if (a === "cancel") {
+        state.form = null;
+        formMeds = [];
+        render();
+      } else if (a === "save-patient") {
+        var f = collect();
+        d.patient = {
+          name: (f.name || "").trim(), gender: f.gender || "",
+          birth: f.birth || "", diagnosed: f.diagnosed || "",
+          who: f.who || "", notes: f.notes || ""
+        };
+        save(); state.form = null; render();
+        toast("已保存");
+        if (d.patient.gender === "男") {
+          setTimeout(motherHint, 300);
+        }
+      } else if (a === "add-episode") {
+        state.form = "episode"; render();
+      } else if (a === "save-episode") {
+        var ef = collect();
+        if (!ef.date) { toast("请选择发作日期"); return; }
+        d.episodes.push({
+          id: nextId(d.episodes), date: ef.date, trigger_type: ef.trigger_type || "",
+          trigger: ef.trigger || "", symptoms: ef.symptoms || "",
+          hospital: ef.hospital || "", outcome: ef.outcome || "", notes: ef.notes || ""
+        });
+        save(); state.form = null; render(); toast("已保存");
+        // 诱因自动比对
+        if (ef.trigger) {
+          var hits = search(ef.trigger);
+          if (hits.length) {
+            var it = hits[0];
+            toast("禁忌库比对：" + (app.RISK_LABEL[it.risk] || it.risk) + " " + it.name);
+          }
+        }
+      } else if (a === "add-visit") {
+        state.form = "visit"; formMeds = []; render();
+      } else if (a === "add-med") {
+        addMedFromInput();
+      } else if (a === "del-med") {
+        formMeds.splice(parseInt(el.getAttribute("data-i"), 10), 1);
+        renderMedList();
+      } else if (a === "save-visit") {
+        var vf = collect();
+        if (!vf.hospital || !vf.hospital.trim()) { toast("请填写医院"); return; }
+        d.visits.push({
+          id: nextId(d.visits), date: vf.date || today(), hospital: vf.hospital.trim(),
+          department: vf.department || "", doctor: vf.doctor || "",
+          reason: vf.reason || "", told: vf.told === "1",
+          meds: formMeds.slice(), notes: vf.notes || ""
+        });
+        save(); state.form = null; formMeds = []; render(); toast("已保存");
+        var bad = d.visits[d.visits.length - 1].meds.filter(function (m) { return m.risk === "forbidden"; });
+        if (bad.length) {
+          setTimeout(function () {
+            toast("⚠ 本次录入含 " + bad.length + " 种禁用药物，请与医生复核");
+          }, 2800);
+        }
+      } else if (a === "add-family") {
+        state.form = "family"; render();
+      } else if (a === "save-family") {
+        var ff = collect();
+        if (!ff.relation || !ff.relation.trim()) { toast("请填写关系"); return; }
+        d.family.push({
+          id: nextId(d.family), relation: ff.relation.trim(), name: ff.name || "",
+          status: ff.status || "", tested: ff.tested || ""
+        });
+        save(); state.form = null; render(); toast("已保存");
+        if (d.patient.gender === "男" && ["母亲", "妈妈", "母"].indexOf(ff.relation.trim()) !== -1
+            && (ff.status === "unknown" || !ff.status)) {
+          setTimeout(function () {
+            toast("提示：男性患者致病基因必然来自母亲，建议母亲做G6PD检测");
+          }, 2800);
+        }
+      } else if (a === "add-reminder") {
+        state.form = "reminder"; render();
+      } else if (a === "save-reminder") {
+        var rf = collect();
+        if (!rf.title || !rf.title.trim()) { toast("请填写事项"); return; }
+        var interval = parseInt(rf.interval_days, 10);
+        if (isNaN(interval) || interval <= 0) interval = null;
+        var nextDue = "";
+        if (interval && rf.last_done) nextDue = addDays(rf.last_done, interval);
+        d.reminders.push({
+          id: nextId(d.reminders), title: rf.title.trim(),
+          interval_days: interval, last_done: rf.last_done || "",
+          next_due: nextDue, notes: rf.notes || ""
+        });
+        save(); state.form = null; render(); toast("已保存");
+      } else if (a === "done-reminder") {
+        var r = d.reminders.filter(function (x) { return x.id === parseInt(el.getAttribute("data-id"), 10); })[0];
+        if (r) {
+          r.last_done = today();
+          r.next_due = r.interval_days ? addDays(today(), r.interval_days) : "";
+          save(); render(); toast("已标记完成");
+        }
+      } else if (a === "export") {
+        exportJson();
+      } else if (a === "import") {
+        var fi = document.getElementById("importFile");
+        if (fi) fi.click();
+      } else if (a === "wipe") {
+        if (confirm("确定清空全部档案数据？此操作不可恢复，建议先导出备份。")) {
+          state.data = blank();
+          save(); state.tab = "patient"; state.form = null; render();
+          toast("已清空");
+        }
+      } else if (a === "del-episode" || a === "del-visit" || a === "del-family" || a === "del-reminder") {
+        var key = { "del-episode": "episodes", "del-visit": "visits", "del-family": "family", "del-reminder": "reminders" }[a];
+        var id = parseInt(el.getAttribute("data-id"), 10);
+        d[key] = d[key].filter(function (x) { return x.id !== id; });
+        save(); render(); toast("已删除");
+      }
+    });
+  }
+
+  function motherHint() {
+    var d = state.data;
+    var mother = d.family.filter(function (m) {
+      return ["母亲", "妈妈", "母"].indexOf(m.relation) !== -1;
+    })[0];
+    if (!mother) {
+      toast("提示：登记母亲状态——男性患者致病基因必然来自母亲");
+    } else if (mother.status === "unknown" || !mother.status) {
+      toast("提示：母亲状态为未查，建议做G6PD酶活性检测");
+    }
+  }
+
+  /* ---------- 导入导出 ---------- */
+
+  function exportJson() {
+    var blob = new Blob([JSON.stringify(state.data, null, 2)], { type: "application/json" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "g6pd-档案备份-" + today() + ".json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    toast("已导出，请妥善保存备份文件");
+  }
+
+  function bindImport() {
+    root.addEventListener("change", function (e) {
+      if (e.target.id !== "importFile") return;
+      var file = e.target.files && e.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function () {
+        try {
+          var d = JSON.parse(reader.result);
+          if (!d || typeof d !== "object" || !d.patient) throw new Error("bad format");
+          var b = blank();
+          b.patient = Object.assign(b.patient, d.patient || {});
+          ["episodes", "visits", "family", "reminders"].forEach(function (k) {
+            if (Array.isArray(d[k])) b[k] = d[k];
+          });
+          state.data = b;
+          save(); state.tab = "patient"; state.form = null;
+          render();
+          toast("导入成功");
+        } catch (err) {
+          toast("导入失败：文件格式不正确");
+        }
+      };
+      reader.readAsText(file);
+      e.target.value = "";
+    });
+  }
+
+  /* ---------- 启动 ---------- */
+
+  var FORMS = {
+    patient: formPatient,
+    episode: formEpisode,
+    visit: formVisit,
+    family: formFamily,
+    reminder: formReminder
+  };
+
+  function init() {
+    actions();
+    bindImport();
+    render();
+  }
+
+  init();
+})();
+
+</script>
+</body>
+</html>
