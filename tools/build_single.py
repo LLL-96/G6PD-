@@ -10,7 +10,7 @@ import re
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-WEB = ROOT / "web"
+WEB = ROOT / "docs"
 OUT = ROOT / "g6pd-offline.html"
 
 

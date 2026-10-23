@@ -61,10 +61,10 @@ function check(name, cond) {
 }
 
 try {
-  load("web/data.js");
-  load("web/app.js");
+  load("docs/data.js");
+  load("docs/app.js");
   check("app.js 加载并暴露 window.g6pd", typeof window.g6pd === "object" && typeof window.g6pd.search === "function");
-  load("web/profile.js");
+  load("docs/profile.js");
   const root = document.getElementById("profileApp");
   check("档案页渲染：患者信息卡", root.innerHTML.indexOf("患者信息") !== -1);
   check("档案页渲染：统计条", root.innerHTML.indexOf("溶血发作") !== -1);

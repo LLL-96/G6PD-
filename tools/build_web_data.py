@@ -11,7 +11,7 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "data", "items.json")
-DST_DIR = os.path.join(ROOT, "web")
+DST_DIR = os.path.join(ROOT, "docs")
 DST = os.path.join(DST_DIR, "data.js")
 
 def main():

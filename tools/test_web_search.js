@@ -9,8 +9,8 @@ const path = require("path");
 const { execFileSync } = require("child_process");
 
 const ROOT = path.resolve(__dirname, "..");
-const appSrc = fs.readFileSync(path.join(ROOT, "web", "app.js"), "utf8");
-const dataSrc = fs.readFileSync(path.join(ROOT, "web", "data.js"), "utf8");
+const appSrc = fs.readFileSync(path.join(ROOT, "docs", "app.js"), "utf8");
+const dataSrc = fs.readFileSync(path.join(ROOT, "docs", "data.js"), "utf8");
 
 const m = appSrc.match(/\/\* ===== SEARCH-CORE-START[\s\S]*?===== \*\/([\s\S]*?)\/\* ===== SEARCH-CORE-END/);
 if (!m) { console.error("未找到 SEARCH-CORE 段"); process.exit(1); }
