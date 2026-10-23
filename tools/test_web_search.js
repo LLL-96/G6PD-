@@ -19,7 +19,9 @@ const coreSrc = m[1];
 // 在 node 上下文中执行：data.js 提供 G6PD_DATA，core 提供 norm/search 等
 const G6PD_DATA = new Function(dataSrc + "\nreturn G6PD_DATA;")();
 const fn = new Function("G6PD_DATA",
-  "var ITEMS = G6PD_DATA.items;\n" + coreSrc + "\nreturn { search: search, norm: norm };");
+  "var ITEMS = G6PD_DATA.items;\n" +
+  "var RISK_ORDER = { forbidden:0, caution:1, safe:2, info:3 };\n" +
+  coreSrc + "\nreturn { search: search, norm: norm };");
 const api = fn(G6PD_DATA);
 
 const QUERIES = [

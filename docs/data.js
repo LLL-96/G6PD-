@@ -2,7 +2,7 @@
 const G6PD_DATA = {
  "meta": {
   "title": "G6PD缺乏症（蚕豆病）禁忌速查数据库",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "updated": "2026-10-23",
   "disclaimer": "本数据库仅供参考，不构成医疗建议。一切用药请以医生处方和药师指导为准；如怀疑溶血发作，请立即就医。",
   "risk_levels": {
@@ -996,7 +996,8 @@ const G6PD_DATA = {
     "扑热息痛",
     "泰诺林",
     "必理通",
-    "paracetamol"
+    "paracetamol",
+    "百服咛"
    ],
    "category": "analgesic",
    "risk": "safe",
@@ -1345,7 +1346,8 @@ const G6PD_DATA = {
     "复方锌布颗粒",
     "复方氨酚烷胺片",
     "快克",
-    "感康"
+    "感康",
+    "999感冒灵"
    ],
    "category": "analgesic",
    "risk": "caution",
@@ -1647,6 +1649,636 @@ const G6PD_DATA = {
    "controversy": true,
    "sources": [
     "S1"
+   ]
+  },
+  {
+   "id": "pudilan",
+   "name": "蒲地蓝",
+   "en": "Pudilan",
+   "aliases": [
+    "蒲地蓝消炎",
+    "蒲地蓝消炎口服液",
+    "蒲地蓝消炎片"
+   ],
+   "category": "tcm",
+   "risk": "caution",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "清热解毒类中成药，常含黄芩、金银花、连翘等；其中金银花、连翘属本库回避中药，服用前务必核对成分表。",
+   "note": "中成药大多由多味中药组成，难以逐一判定；凡含本库已列回避成分（黄连/金银花/牛黄/连翘/薄荷/冰片/熊胆/腊梅花/珍珠等）者，按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "lanqin",
+   "name": "蓝芩",
+   "en": "Lanqin",
+   "aliases": [
+    "蓝芩口服液",
+    "蓝芩颗粒"
+   ],
+   "category": "tcm",
+   "risk": "caution",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "清热解毒类中成药，多含板蓝根、黄芩、栀子等，成分复杂，G6PD 患儿建议核对成分并咨询医生。",
+   "note": "中成药大多由多味中药组成，难以逐一判定；凡含本库已列回避成分（黄连/金银花/牛黄/连翘/薄荷/冰片/熊胆/腊梅花/珍珠等）者，按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "banlangen",
+   "name": "板蓝根",
+   "en": "Banlangen / Isatis root",
+   "aliases": [
+    "板蓝根颗粒",
+    "复方板蓝根"
+   ],
+   "category": "tcm",
+   "risk": "caution",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "常见清热解毒中成药；虽部分资料认为相对温和，但成分复杂，G6PD 患儿使用建议咨询医生。",
+   "note": "中成药大多由多味中药组成，难以逐一判定；凡含本库已列回避成分（黄连/金银花/牛黄/连翘/薄荷/冰片/熊胆/腊梅花/珍珠等）者，按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "lianhua",
+   "name": "连花清瘟",
+   "en": "Lianhua Qingwen",
+   "aliases": [
+    "连花清瘟胶囊",
+    "连花清瘟颗粒"
+   ],
+   "category": "tcm",
+   "risk": "caution",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "常见清热解毒中成药，含连翘、金银花、薄荷脑等；其中连翘、金银花属本库回避中药，服用前核对成分表。",
+   "note": "中成药大多由多味中药组成，难以逐一判定；凡含本库已列回避成分（黄连/金银花/牛黄/连翘/薄荷/冰片/熊胆/腊梅花/珍珠等）者，按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "xiaochaihu",
+   "name": "小柴胡颗粒",
+   "en": "Xiaochaihu",
+   "aliases": [
+    "小柴胡"
+   ],
+   "category": "tcm",
+   "risk": "caution",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "和解类中成药，成分含柴胡、黄芩、姜半夏等，成分复杂，G6PD 患儿建议咨询医生后使用。",
+   "note": "中成药大多由多味中药组成，难以逐一判定；凡含本库已列回避成分（黄连/金银花/牛黄/连翘/薄荷/冰片/熊胆/腊梅花/珍珠等）者，按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "xiaoershaoqiao",
+   "name": "小儿豉翘清热颗粒",
+   "en": "Xiao'er Shaoqiao",
+   "aliases": [
+    "豉翘",
+    "小儿豉翘"
+   ],
+   "category": "tcm",
+   "risk": "caution",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "儿科常用清热颗粒，含连翘、薄荷、淡豆豉等；连翘、薄荷属本库回避中药，服用前核对成分表。",
+   "note": "中成药大多由多味中药组成，难以逐一判定；凡含本库已列回避成分（黄连/金银花/牛黄/连翘/薄荷/冰片/熊胆/腊梅花/珍珠等）者，按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "ganmaoqingre",
+   "name": "感冒清热颗粒",
+   "en": "Ganmao Qingre",
+   "aliases": [
+    "感冒清热",
+    "感冒清热冲剂"
+   ],
+   "category": "tcm",
+   "risk": "caution",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "疏风散寒类中成药，成分含荆芥、薄荷、防风等；薄荷属本库回避中药，服用前核对成分表。",
+   "note": "中成药大多由多味中药组成，难以逐一判定；凡含本库已列回避成分（黄连/金银花/牛黄/连翘/薄荷/冰片/熊胆/腊梅花/珍珠等）者，按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "jizhi",
+   "name": "急支糖浆",
+   "en": "Jizhi Tangjiang",
+   "aliases": [
+    "急支"
+   ],
+   "category": "tcm",
+   "risk": "caution",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "止咳化痰中成药，含鱼腥草、金荞麦、麻黄等，成分复杂，G6PD 患儿建议咨询医生。",
+   "note": "中成药大多由多味中药组成，难以逐一判定；凡含本库已列回避成分（黄连/金银花/牛黄/连翘/薄荷/冰片/熊胆/腊梅花/珍珠等）者，按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "beibipingba",
+   "name": "蜜炼川贝枇杷膏",
+   "en": "Beibipingba Gao",
+   "aliases": [
+    "川贝枇杷膏",
+    "枇杷膏"
+   ],
+   "category": "tcm",
+   "risk": "info",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "润肺止咳膏剂，成分复杂（多含川贝、枇杷叶、蜂蜜等），G6PD 患儿建议核对成分并咨询医生。",
+   "note": "中成药大多由多味中药组成，难以逐一判定；凡含本库已列回避成分（黄连/金银花/牛黄/连翘/薄荷/冰片/熊胆/腊梅花/珍珠等）者，按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "kangbingdu",
+   "name": "抗病毒口服液",
+   "en": "Kangbingdu",
+   "aliases": [
+    "抗病毒",
+    "抗病毒颗粒"
+   ],
+   "category": "tcm",
+   "risk": "info",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "清热解毒类中成药，成分复杂，G6PD 患儿建议咨询医生后使用。",
+   "note": "中成药大多由多味中药组成，难以逐一判定；凡含本库已列回避成分（黄连/金银花/牛黄/连翘/薄荷/冰片/熊胆/腊梅花/珍珠等）者，按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "loratadine",
+   "name": "氯雷他定",
+   "en": "Loratadine",
+   "aliases": [
+    "开瑞坦",
+    "克敏能"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "第二代抗组胺药。",
+   "detail": "第二代抗组胺药，非 G6PD 诱发物，常规剂量一般可用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S7"
+   ]
+  },
+  {
+   "id": "cetirizine",
+   "name": "西替利嗪",
+   "en": "Cetirizine",
+   "aliases": [
+    "仙特明",
+    "迪皿"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "第二代抗组胺药。",
+   "detail": "第二代抗组胺药，非 G6PD 诱发物，常规剂量一般可用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S7"
+   ]
+  },
+  {
+   "id": "montelukast",
+   "name": "孟鲁司特",
+   "en": "Montelukast",
+   "aliases": [
+    "顺尔宁"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "白三烯受体拮抗剂（平喘/抗过敏）。",
+   "detail": "白三烯受体拮抗剂（平喘/抗过敏），非 G6PD 诱发物，常规剂量一般可用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "ambroxol",
+   "name": "氨溴索",
+   "en": "Ambroxol",
+   "aliases": [
+    "沐舒坦",
+    "盐酸氨溴索"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "祛痰药。",
+   "detail": "祛痰药，非 G6PD 诱发物，常规剂量一般可用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S7"
+   ]
+  },
+  {
+   "id": "yitanjing",
+   "name": "易坦静",
+   "en": "Yitanjing",
+   "aliases": [
+    "氨溴特罗",
+    "氨溴特罗口服溶液"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "含氨溴索+克仑特罗的复方祛痰平喘口服液；两者均非已知 G6PD 诱发物。",
+   "detail": "含氨溴索+克仑特罗的复方祛痰平喘口服液；两者均非已知 G6PD 诱发物，一般可用，按医嘱。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "smecta",
+   "name": "蒙脱石散",
+   "en": "Smectite / Diosmectite",
+   "aliases": [
+    "思密达",
+    "蒙脱石"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "止泻吸附剂。",
+   "detail": "止泻吸附剂，不被吸收，非 G6PD 诱发物，腹泻时可按医嘱使用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "mami",
+   "name": "妈咪爱",
+   "en": "Medilac-Vita",
+   "aliases": [
+    "枯草杆菌二联活菌",
+    "益生菌颗粒"
+   ],
+   "category": "other_drug",
+   "risk": "info",
+   "summary": "益生菌制剂。",
+   "detail": "益生菌制剂，非 G6PD 诱发物，一般可用。",
+   "note": "证据有限/存在个别报道，需医生评估。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "probiotic",
+   "name": "益生菌",
+   "en": "Probiotics",
+   "aliases": [
+    "乳酸菌",
+    "双歧杆菌",
+    "合生元"
+   ],
+   "category": "other_drug",
+   "risk": "info",
+   "summary": "肠道微生态制剂。",
+   "detail": "肠道微生态制剂，非 G6PD 诱发物，一般可用。",
+   "note": "证据有限/存在个别报道，需医生评估。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "calciumglu",
+   "name": "葡萄糖酸钙",
+   "en": "Calcium gluconate",
+   "aliases": [
+    "钙",
+    "葡萄糖钙"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "补钙/抗过敏辅助。",
+   "detail": "补钙/抗过敏辅助，非 G6PD 诱发物，常规剂量一般可用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "vitd",
+   "name": "维生素D",
+   "en": "Vitamin D",
+   "aliases": [
+    "维D",
+    "星鲨",
+    "D3"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "常规营养补充。",
+   "detail": "常规营养补充，非 G6PD 诱发物，一般可用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "calpol",
+   "name": "炉甘石",
+   "en": "Calamine",
+   "aliases": [
+    "炉甘石洗剂"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "外用止痒收敛剂。",
+   "detail": "外用止痒收敛剂，不被吸收，非 G6PD 诱发物，可安全外用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "zincoxide",
+   "name": "氧化锌",
+   "en": "Zinc oxide",
+   "aliases": [
+    "氧化锌软膏",
+    "护臀霜"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "外用保护剂。",
+   "detail": "外用保护剂，不被吸收，非 G6PD 诱发物，可安全外用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "hydrocort",
+   "name": "氢化可的松",
+   "en": "Hydrocortisone",
+   "aliases": [
+    "氢化可的松乳膏"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "外用糖皮质激素。",
+   "detail": "外用糖皮质激素，局部吸收少，非 G6PD 诱发物，可外用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S7"
+   ]
+  },
+  {
+   "id": "mupirocin",
+   "name": "莫匹罗星",
+   "en": "Mupirocin",
+   "aliases": [
+    "百多邦"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "外用抗生素（针对革兰氏阳性菌）。",
+   "detail": "外用抗生素（针对革兰氏阳性菌），不被吸收，非 G6PD 诱发物，可安全外用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "iodophor",
+   "name": "碘伏",
+   "en": "Povidone-iodine",
+   "aliases": [
+    "碘伏消毒液",
+    "安尔碘"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "外用消毒剂。",
+   "detail": "外用消毒剂，皮肤黏膜消毒，非 G6PD 诱发物，可安全外用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "alcohol",
+   "name": "酒精",
+   "en": "Ethanol / Alcohol",
+   "aliases": [
+    "乙醇",
+    "75%酒精",
+    "医用酒精"
+   ],
+   "category": "other_drug",
+   "risk": "info",
+   "summary": "外用消毒剂。",
+   "detail": "外用消毒剂，不被吸收，非 G6PD 诱发物，可用于皮肤消毒。",
+   "note": "证据有限/存在个别报道，需医生评估。",
+   "controversy": false,
+   "sources": [
+    "S2"
+   ]
+  },
+  {
+   "id": "miconazole",
+   "name": "达克宁",
+   "en": "Miconazole",
+   "aliases": [
+    "咪康唑",
+    "硝酸咪康唑"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "外用抗真菌药（脚气/股癣）。",
+   "detail": "外用抗真菌药（脚气/股癣），局部吸收少，非 G6PD 诱发物，可安全外用。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S7"
+   ]
+  },
+  {
+   "id": "ceftriaxone",
+   "name": "头孢曲松",
+   "en": "Ceftriaxone",
+   "aliases": [
+    "罗氏芬",
+    "头孢三嗪"
+   ],
+   "category": "other_drug",
+   "risk": "safe",
+   "summary": "第三代头孢菌素。",
+   "detail": "第三代头孢菌素，非 G6PD 诱发物，常规剂量一般可用（与青霉素类一致）。",
+   "note": "证据说明：上述多为非经典 G6PD 诱发物；如合并其他疾病或多种用药，仍请遵医嘱。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S7"
+   ]
+  },
+  {
+   "id": "salbutamol",
+   "name": "沙丁胺醇",
+   "en": "Salbutamol",
+   "aliases": [
+    "舒喘灵",
+    "万托林"
+   ],
+   "category": "other_drug",
+   "risk": "info",
+   "summary": "β2 受体激动剂（平喘）。",
+   "detail": "β2 受体激动剂（平喘），非 G6PD 诱发物，喘息时按医嘱使用。",
+   "note": "证据有限/存在个别报道，需医生评估。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S7"
+   ]
+  },
+  {
+   "id": "budesonide",
+   "name": "布地奈德",
+   "en": "Budesonide",
+   "aliases": [
+    "普米克",
+    "雷诺考特"
+   ],
+   "category": "other_drug",
+   "risk": "info",
+   "summary": "吸入/鼻用糖皮质激素（平喘/鼻炎）。",
+   "detail": "吸入/鼻用糖皮质激素（平喘/鼻炎），局部作用，非 G6PD 诱发物，按医嘱使用。",
+   "note": "证据有限/存在个别报道，需医生评估。",
+   "controversy": false,
+   "sources": [
+    "S2",
+    "S7"
+   ]
+  },
+  {
+   "id": "gentamicin",
+   "name": "庆大霉素",
+   "en": "Gentamicin",
+   "aliases": [
+    "硫酸庆大霉素"
+   ],
+   "category": "other_drug",
+   "risk": "caution",
+   "summary": "氨基糖苷类抗生素；并非经典 G6PD 诱发物。",
+   "detail": "氨基糖苷类抗生素；并非经典 G6PD 诱发物，但个例报道与溶血相关，且有耳肾毒性，儿科需谨慎评估。",
+   "note": "证据有限/存在个别报道，需医生评估。",
+   "controversy": true,
+   "sources": [
+    "S2",
+    "S7"
+   ]
+  },
+  {
+   "id": "changning",
+   "name": "肠炎宁",
+   "en": "Changning",
+   "aliases": [
+    "肠炎宁糖浆",
+    "肠炎宁片"
+   ],
+   "category": "tcm",
+   "risk": "caution",
+   "summary": "中成药（成分复杂），建议核对成分表并咨询医生。",
+   "detail": "常用于腹泻的中成药，成分复杂（多含地锦草、黄毛耳草等），G6PD 患儿建议咨询医生后使用。",
+   "note": "中成药多由多味中药组成，凡含本库已列回避成分者按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "jianwei",
+   "name": "健胃消食片",
+   "en": "Jianwei Xiaoshi",
+   "aliases": [
+    "健胃消食",
+    "江中健胃消食片"
+   ],
+   "category": "tcm",
+   "risk": "info",
+   "summary": "健胃类中成药，成分相对温和，仍建议核对成分。",
+   "detail": "含太子参、陈皮、山药、炒麦芽、山楂等，成分相对温和；G6PD 患儿如要使用建议核对成分并咨询医生。",
+   "note": "中成药成分复杂，凡含本库已列回避成分者按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
+   ]
+  },
+  {
+   "id": "xiaoerfeike",
+   "name": "小儿肺咳颗粒",
+   "en": "Xiao'er Feike",
+   "aliases": [
+    "小儿肺咳"
+   ],
+   "category": "tcm",
+   "risk": "caution",
+   "summary": "儿科止咳中成药（成分复杂），建议核对成分表。",
+   "detail": "含北沙参、茯苓、黄芩、百部、枇杷叶等多味中药，成分复杂，G6PD 患儿建议核对成分并咨询医生。",
+   "note": "中成药多由多味中药组成，凡含本库已列回避成分者按国内口径回避。",
+   "controversy": true,
+   "sources": [
+    "S1",
+    "S3"
    ]
   }
  ]
