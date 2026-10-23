@@ -2,8 +2,8 @@
 const G6PD_DATA = {
  "meta": {
   "title": "G6PD缺乏症（蚕豆病）禁忌速查数据库",
-  "version": "0.1.0",
-  "updated": "2026-10-22",
+  "version": "0.1.1",
+  "updated": "2026-10-23",
   "disclaimer": "本数据库仅供参考，不构成医疗建议。一切用药请以医生处方和药师指导为准；如怀疑溶血发作，请立即就医。",
   "risk_levels": {
    "forbidden": "⛔ 禁用（高风险）",
@@ -237,8 +237,8 @@ const G6PD_DATA = {
    "risk": "forbidden",
    "summary": "磺胺类滴眼液，禁用。",
    "detail": "常用于结膜炎/沙眼的磺胺类滴眼液，经黏膜吸收，同样有溶血风险。",
-   "note": "买眼药水前看清成分，含“磺胺”二字即回避。",
-   "controversy": false,
+   "note": "买眼药水前看清成分，含“磺胺”二字即回避。｜证据说明：磺胺醋酰滴眼液经黏膜全身吸收量极小，国际多归低危，国内口径建议回避；点眼后留意异常反应。",
+   "controversy": true,
    "sources": [
     "S7"
    ]
@@ -365,7 +365,7 @@ const G6PD_DATA = {
    "en": "Pamaquine",
    "aliases": [
     "扑疟母星",
-    " plasmochin"
+    "plasmochin"
    ],
    "category": "antimalarial",
    "risk": "forbidden",
@@ -484,7 +484,7 @@ const G6PD_DATA = {
    "risk": "forbidden",
    "summary": "国内资料列为禁用（存在地区分歧）。",
    "detail": "国内卫健委科普明确将氯霉素列入蚕豆病绝对禁用清单；国外分级将其列为低危，但注明地中海型与亚洲型变异者高危。",
-   "note": "鉴于国内以亚洲型变异为主，按国内口径回避为妥。",
+   "note": "鉴于国内以亚洲型变异为主，按国内口径回避为妥。｜提示：氯霉素在国际部分 G6PD 清单中归为低危，国内口径列为禁用；如必须使用，请与医生充分沟通。",
    "controversy": true,
    "sources": [
     "S1",
@@ -692,8 +692,8 @@ const G6PD_DATA = {
    "risk": "forbidden",
    "summary": "中药禁忌成分。",
    "detail": "安徽省卫健委科普将黄连、川连列为蚕豆病患者应避免的中药成分；含黄连/小檗碱的中成药（如黄连上清片、香连丸）需回避。",
-   "note": "小檗碱（黄连素）虽是西药化的常用药，其来源成分仍在禁忌清单内，使用前咨询医生。",
-   "controversy": false,
+   "note": "小檗碱（黄连素）虽是西药化的常用药，其来源成分仍在禁忌清单内，使用前咨询医生。｜证据说明：该中药回避主要依据国内儿科/卫健委口径，国际循证证据有限，按国内指南回避更稳妥；实际用药请遵医嘱。",
+   "controversy": true,
    "sources": [
     "S1"
    ]
@@ -710,8 +710,8 @@ const G6PD_DATA = {
    "risk": "forbidden",
    "summary": "中药禁忌成分。",
    "detail": "安徽省卫健委科普列为应避免的中药成分。很多“清热”类感冒中成药含金银花（如双黄连口服液）。",
-   "note": "给孩子用任何中成药前，务必逐条核对成分表。",
-   "controversy": false,
+   "note": "给孩子用任何中成药前，务必逐条核对成分表。｜证据说明：该中药回避主要依据国内儿科/卫健委口径，国际循证证据有限，按国内指南回避更稳妥；实际用药请遵医嘱。",
+   "controversy": true,
    "sources": [
     "S1"
    ]
@@ -729,8 +729,8 @@ const G6PD_DATA = {
    "risk": "forbidden",
    "summary": "中药禁忌成分。",
    "detail": "安徽省卫健委科普列为应避免的中药成分。牛黄解毒片、小儿牛黄散等含牛黄制剂需回避。",
-   "note": "人工牛黄同样在回避范围内。",
-   "controversy": false,
+   "note": "人工牛黄同样在回避范围内。｜证据说明：该中药回避主要依据国内儿科/卫健委口径，国际循证证据有限，按国内指南回避更稳妥；实际用药请遵医嘱。",
+   "controversy": true,
    "sources": [
     "S1"
    ]
@@ -749,8 +749,8 @@ const G6PD_DATA = {
    "risk": "forbidden",
    "summary": "中药禁忌成分。",
    "detail": "安徽省卫健委科普将珍珠末列为应避免的中药成分；协和医生提示珍珠粉等传统食品需咨询医生后食用。",
-   "note": "不少“惊悸安神”类儿科中成药含珍珠成分。",
-   "controversy": false,
+   "note": "不少“惊悸安神”类儿科中成药含珍珠成分。｜证据说明：该中药回避主要依据国内儿科/卫健委口径，国际循证证据有限，按国内指南回避更稳妥；实际用药请遵医嘱。",
+   "controversy": true,
    "sources": [
     "S1",
     "S3"
@@ -769,8 +769,8 @@ const G6PD_DATA = {
    "risk": "forbidden",
    "summary": "中药禁忌成分。",
    "detail": "安徽省卫健委科普列为应避免的中药成分，常见于暑湿类中成药。",
-   "note": "",
-   "controversy": false,
+   "note": "证据说明：该中药回避主要依据国内儿科/卫健委口径，国际循证证据有限，按国内指南回避更稳妥；实际用药请遵医嘱。",
+   "controversy": true,
    "sources": [
     "S1"
    ]
@@ -809,8 +809,8 @@ const G6PD_DATA = {
    "risk": "forbidden",
    "summary": "中药禁忌成分。",
    "detail": "安徽省卫健委科普列为应避免的中药成分，银翘散类制剂（如维C银翘片）含连翘。",
-   "note": "",
-   "controversy": false,
+   "note": "证据说明：该中药回避主要依据国内儿科/卫健委口径，国际循证证据有限，按国内指南回避更稳妥；实际用药请遵医嘱。",
+   "controversy": true,
    "sources": [
     "S1"
    ]
@@ -828,8 +828,8 @@ const G6PD_DATA = {
    "risk": "forbidden",
    "summary": "中药禁忌成分。",
    "detail": "安徽省卫健委科普列为应避免的中药成分，常见于开窍类中成药与外用膏药。",
-   "note": "",
-   "controversy": false,
+   "note": "证据说明：该中药回避主要依据国内儿科/卫健委口径，国际循证证据有限，按国内指南回避更稳妥；实际用药请遵医嘱。",
+   "controversy": true,
    "sources": [
     "S1"
    ]
@@ -846,8 +846,8 @@ const G6PD_DATA = {
    "risk": "forbidden",
    "summary": "中药禁忌成分。",
    "detail": "安徽省卫健委科普列为应避免的中药成分，常见于小儿惊风、清热类中成药。",
-   "note": "",
-   "controversy": false,
+   "note": "证据说明：该中药回避主要依据国内儿科/卫健委口径，国际循证证据有限，按国内指南回避更稳妥；实际用药请遵医嘱。",
+   "controversy": true,
    "sources": [
     "S1"
    ]
@@ -880,13 +880,13 @@ const G6PD_DATA = {
    "en": "Chloroquine",
    "aliases": [
     "氯喹啉",
-    "羟氯喹（相关）"
+    "羟氯喹"
    ],
    "category": "antimalarial",
    "risk": "caution",
    "summary": "存在分歧：国内列禁用，国外列为低危。",
    "detail": "安徽省卫健委将氯喹列入绝对禁用；国外分级列为低危。羟氯喹（Plaquenil）在台大医院高风险药品表中出现。用于疟疾预防或自身免疫病时，须由医生权衡。",
-   "note": "",
+   "note": "羟氯喹（hydroxychloroquine）为不同药物，G6PD 中通常按低危对待，使用前请与医生确认。",
    "controversy": true,
    "sources": [
     "S1",
@@ -1455,7 +1455,7 @@ const G6PD_DATA = {
     "氨苄西林",
     "青霉素",
     "阿莫西林克拉维酸钾",
-    " augmentin"
+    "augmentin"
    ],
    "category": "antibiotic_other",
    "risk": "safe",
@@ -1610,6 +1610,43 @@ const G6PD_DATA = {
    "sources": [
     "S2",
     "S5"
+   ]
+  },
+  {
+   "id": "toluidine-blue",
+   "name": "甲苯胺蓝",
+   "en": "Toluidine blue",
+   "aliases": [
+    "tolonium chloride",
+    "天青染料",
+    "toluidine blue O"
+   ],
+   "category": "other_drug",
+   "risk": "forbidden",
+   "summary": "与亚甲蓝同类的氧化性染色剂/药物，可能诱发溶血。",
+   "detail": "常与亚甲蓝并列列入 G6PD 禁用清单；用于部分诊断染色或局部止血场景，使用前务必告知蚕豆病史。",
+   "note": "若遇必须使用的情况，与医生确认替代方案。",
+   "controversy": false,
+   "sources": [
+    "S7"
+   ]
+  },
+  {
+   "id": "phenolphthalein",
+   "name": "酚酞",
+   "en": "Phenolphthalein",
+   "aliases": [
+    "果导",
+    "果导片"
+   ],
+   "category": "other_drug",
+   "risk": "caution",
+   "summary": "旧式刺激性泻药，部分历史资料列为 G6PD 慎用。",
+   "detail": "酚酞（如果导）属老式泻药，已在多国退市；既往资料将其列入 G6PD 慎用/回避范围，现有制剂已少见。",
+   "note": "证据有限且药品已较罕见，若使用含酚酞产品请咨询医生。",
+   "controversy": true,
+   "sources": [
+    "S1"
    ]
   }
  ]
