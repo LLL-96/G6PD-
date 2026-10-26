@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "G6PD缺乏症（蚕豆病）禁忌速查数据库",
-    "version": "0.2.0",
+    "version": "0.2.2",
     "updated": "2026-10-23",
     "disclaimer": "本数据库仅供参考，不构成医疗建议。一切用药请以医生处方和药师指导为准；如怀疑溶血发作，请立即就医。",
     "risk_levels": {
@@ -575,7 +575,10 @@
         "油炸蚕豆",
         "佛豆",
         "川豆",
-        "南豆"
+        "南豆",
+        "蚕豆花粉",
+        "蚕豆花",
+        "蚕豆芽"
       ],
       "category": "food",
       "risk": "forbidden",
@@ -9193,6 +9196,780 @@
         "绿豆糕",
         "绿豆沙",
         "绿豆粥"
+      ]
+    },
+    {
+      "id": "gap_粉丝_凉粉",
+      "name": "粉丝/凉粉",
+      "risk": "caution",
+      "category": "food",
+      "summary": "粉丝/凉粉一般用绿豆或红薯淀粉；但部分含蚕豆淀粉，G6PD 者需看配料表确认。",
+      "detail": "安徽省卫健委提示：蚕豆粉可能存在于粉丝、凉粉中。纯绿豆/红薯粉丝可放心；购买/点餐时确认不含“蚕豆”成分。",
+      "note": "买前看配料表，确认未标“蚕豆”；不确定时少量或避免。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "粉丝",
+        "凉粉",
+        "粉条",
+        "绿豆粉丝",
+        "红薯粉丝"
+      ]
+    },
+    {
+      "id": "gap_酱油",
+      "name": "酱油",
+      "risk": "safe",
+      "category": "food",
+      "summary": "普通大豆酱油不含蚕豆，可放心；少数地方用蚕豆酿造，需看配料表。",
+      "detail": "安徽省卫健委明确：普通大豆酱油不含蚕豆，可放心使用；但购买前务必读配料表，确认未标“蚕豆”或“蚕豆制品”。",
+      "note": "买前扫一眼配料表；标“蚕豆酿造/蚕豆酱油”的避开。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "生抽",
+        "老抽",
+        "豆酱油"
+      ]
+    },
+    {
+      "id": "gap_薄荷糖_口香糖",
+      "name": "薄荷糖/口香糖",
+      "risk": "caution",
+      "category": "food",
+      "summary": "薄荷糖、口香糖常含薄荷脑，按薄荷类处理，少量通常无碍。",
+      "detail": "薄荷（薄荷脑）在部分资料中被列为 G6PD 需避免；含薄荷脑的糖果/口香糖少量含服一般问题不大，但避免大量、长期含服，尤其儿童。",
+      "note": "少量含服一般无碍；避免大量/长期含服。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "薄荷糖",
+        "口香糖",
+        "薄荷口香糖",
+        "薄荷硬糖"
+      ]
+    },
+    {
+      "id": "gap_牛奶",
+      "name": "牛奶",
+      "risk": "safe",
+      "category": "food",
+      "summary": "牛奶属牛奶/乳制品，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "纯牛奶",
+        "乳制品",
+        "酸奶"
+      ]
+    },
+    {
+      "id": "gap_鸡蛋",
+      "name": "鸡蛋",
+      "risk": "safe",
+      "category": "food",
+      "summary": "鸡蛋属鸡蛋，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。（鸡蛋过敏是另一回事，与蚕豆病无关；本条目仅就 G6PD 溶血而言。）",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "蛋清",
+        "蛋黄",
+        "鸡蛋羹"
+      ]
+    },
+    {
+      "id": "gap_海鲜",
+      "name": "海鲜",
+      "risk": "safe",
+      "category": "food",
+      "summary": "海鲜属海鲜，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "鱼",
+        "虾",
+        "蟹",
+        "贝类",
+        "海鱼"
+      ]
+    },
+    {
+      "id": "gap_花生",
+      "name": "花生",
+      "risk": "safe",
+      "category": "food",
+      "summary": "花生属花生/坚果，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "花生米",
+        "花生酱"
+      ]
+    },
+    {
+      "id": "gap_坚果",
+      "name": "坚果",
+      "risk": "safe",
+      "category": "food",
+      "summary": "坚果属坚果，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "核桃",
+        "杏仁",
+        "腰果",
+        "开心果"
+      ]
+    },
+    {
+      "id": "gap_巧克力",
+      "name": "巧克力",
+      "risk": "safe",
+      "category": "food",
+      "summary": "巧克力属巧克力，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "黑巧克力",
+        "牛奶巧克力"
+      ]
+    },
+    {
+      "id": "gap_咖啡",
+      "name": "咖啡",
+      "risk": "safe",
+      "category": "food",
+      "summary": "咖啡属咖啡，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "拿铁",
+        "美式"
+      ]
+    },
+    {
+      "id": "gap_茶",
+      "name": "茶",
+      "risk": "safe",
+      "category": "food",
+      "summary": "茶属茶，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "绿茶",
+        "红茶",
+        "乌龙茶"
+      ]
+    },
+    {
+      "id": "gap_腐乳",
+      "name": "腐乳",
+      "risk": "safe",
+      "category": "food",
+      "summary": "腐乳属腐乳，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "豆腐乳",
+        "霉豆腐"
+      ]
+    },
+    {
+      "id": "gap_豆芽",
+      "name": "豆芽",
+      "risk": "safe",
+      "category": "food",
+      "summary": "豆芽属豆芽，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "绿豆芽",
+        "黄豆芽"
+      ]
+    },
+    {
+      "id": "gap_啤酒",
+      "name": "啤酒",
+      "risk": "safe",
+      "category": "food",
+      "summary": "啤酒属啤酒，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "适量饮酒"
+      ]
+    },
+    {
+      "id": "gap_红酒",
+      "name": "红酒",
+      "risk": "safe",
+      "category": "food",
+      "summary": "红酒属红酒，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "葡萄酒"
+      ]
+    },
+    {
+      "id": "gap_味精",
+      "name": "味精",
+      "risk": "safe",
+      "category": "food",
+      "summary": "味精属调味品，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "谷氨酸钠",
+        "鸡精"
+      ]
+    },
+    {
+      "id": "gap_芥末",
+      "name": "芥末",
+      "risk": "safe",
+      "category": "food",
+      "summary": "芥末属调味品，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "黄芥末",
+        "青芥"
+      ]
+    },
+    {
+      "id": "gap_芒果",
+      "name": "芒果",
+      "risk": "safe",
+      "category": "food",
+      "summary": "芒果属水果，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。（芒果/菠萝等可能引起普通过敏，但那是过敏反应，与蚕豆病溶血无关。）",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "芒果干"
+      ]
+    },
+    {
+      "id": "gap_菠萝",
+      "name": "菠萝",
+      "risk": "safe",
+      "category": "food",
+      "summary": "菠萝属水果，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。（芒果/菠萝等可能引起普通过敏，但那是过敏反应，与蚕豆病溶血无关。）",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "凤梨"
+      ]
+    },
+    {
+      "id": "gap_草莓",
+      "name": "草莓",
+      "risk": "safe",
+      "category": "food",
+      "summary": "草莓属水果，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gap_桑葚",
+      "name": "桑葚",
+      "risk": "safe",
+      "category": "food",
+      "summary": "桑葚属水果，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "桑椹"
+      ]
+    },
+    {
+      "id": "gap_杨梅",
+      "name": "杨梅",
+      "risk": "safe",
+      "category": "food",
+      "summary": "杨梅属水果，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gap_樱桃",
+      "name": "樱桃",
+      "risk": "safe",
+      "category": "food",
+      "summary": "樱桃属水果，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "车厘子"
+      ]
+    },
+    {
+      "id": "gap_石榴",
+      "name": "石榴",
+      "risk": "safe",
+      "category": "food",
+      "summary": "石榴属水果，与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "detail": "与 G6PD（蚕豆病）溶血无明确关联，可正常食用。",
+      "note": "正常食用即可。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "石榴汁"
+      ]
+    },
+    {
+      "id": "gap_洗衣液_洗衣粉",
+      "name": "洗衣液/洗衣粉",
+      "risk": "safe",
+      "category": "household",
+      "summary": "洗衣液/洗衣粉为日常用品，正常使用与 G6PD（蚕豆病）溶血无明确关联。",
+      "detail": "正常使用与 G6PD（蚕豆病）溶血无明确关联。局部/日常接触不会引起 G6PD 溶血；注意勿误食、勿入眼。",
+      "note": "正常使用即可；避免误食、入眼。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "洗衣液",
+        "洗衣粉"
+      ]
+    },
+    {
+      "id": "gap_洗洁精",
+      "name": "洗洁精",
+      "risk": "safe",
+      "category": "household",
+      "summary": "洗洁精为日常用品，正常使用与 G6PD（蚕豆病）溶血无明确关联。",
+      "detail": "正常使用与 G6PD（蚕豆病）溶血无明确关联。局部/日常接触不会引起 G6PD 溶血；注意勿误食、勿入眼。",
+      "note": "正常使用即可；避免误食、入眼。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "洗洁精",
+        "洗碗液"
+      ]
+    },
+    {
+      "id": "gap_漂白剂_84消毒液",
+      "name": "漂白剂/84消毒液",
+      "risk": "safe",
+      "category": "household",
+      "summary": "漂白剂/84消毒液为日常用品，正常使用与 G6PD（蚕豆病）溶血无明确关联。",
+      "detail": "正常使用与 G6PD（蚕豆病）溶血无明确关联。局部/日常接触不会引起 G6PD 溶血；注意勿误食、勿入眼。",
+      "note": "正常使用即可；避免误食、入眼。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "84消毒液",
+        "漂白剂",
+        "含氯消毒液"
+      ]
+    },
+    {
+      "id": "gap_香皂_沐浴露",
+      "name": "香皂/沐浴露",
+      "risk": "safe",
+      "category": "household",
+      "summary": "香皂/沐浴露为日常用品，正常使用与 G6PD（蚕豆病）溶血无明确关联。",
+      "detail": "正常使用与 G6PD（蚕豆病）溶血无明确关联。局部/日常接触不会引起 G6PD 溶血；注意勿误食、勿入眼。",
+      "note": "正常使用即可；避免误食、入眼。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "香皂",
+        "肥皂",
+        "沐浴露"
+      ]
+    },
+    {
+      "id": "gap_洗发水_护发素",
+      "name": "洗发水/护发素",
+      "risk": "safe",
+      "category": "household",
+      "summary": "洗发水/护发素为日常用品，正常使用与 G6PD（蚕豆病）溶血无明确关联。",
+      "detail": "正常使用与 G6PD（蚕豆病）溶血无明确关联。局部/日常接触不会引起 G6PD 溶血；注意勿误食、勿入眼。",
+      "note": "正常使用即可；避免误食、入眼。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "洗发水",
+        "护发素",
+        "洗头水"
+      ]
+    },
+    {
+      "id": "gap_化妆品",
+      "name": "化妆品",
+      "risk": "safe",
+      "category": "household",
+      "summary": "化妆品为日常用品，正常使用与 G6PD（蚕豆病）溶血无明确关联。",
+      "detail": "正常使用与 G6PD（蚕豆病）溶血无明确关联。局部/日常接触不会引起 G6PD 溶血；注意勿误食、勿入眼。",
+      "note": "正常使用即可；避免误食、入眼。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "口红",
+        "粉底",
+        "眼影",
+        "化妆"
+      ]
+    },
+    {
+      "id": "gap_香水",
+      "name": "香水",
+      "risk": "safe",
+      "category": "household",
+      "summary": "香水为日常用品，正常使用与 G6PD（蚕豆病）溶血无明确关联。",
+      "detail": "正常使用与 G6PD（蚕豆病）溶血无明确关联。局部/日常接触不会引起 G6PD 溶血；注意勿误食、勿入眼。",
+      "note": "正常使用即可；避免误食、入眼。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "香水",
+        "香氛"
+      ]
+    },
+    {
+      "id": "gap_面膜_护手霜_防晒霜",
+      "name": "面膜/护手霜/防晒霜",
+      "risk": "safe",
+      "category": "household",
+      "summary": "面膜/护手霜/防晒霜为日常用品，正常使用与 G6PD（蚕豆病）溶血无明确关联。",
+      "detail": "正常使用与 G6PD（蚕豆病）溶血无明确关联。局部/日常接触不会引起 G6PD 溶血；注意勿误食、勿入眼。",
+      "note": "正常使用即可；避免误食、入眼。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "面膜",
+        "护手霜",
+        "防晒霜",
+        "护肤品"
+      ]
+    },
+    {
+      "id": "gap_洗甲水_丙酮",
+      "name": "洗甲水/丙酮",
+      "risk": "safe",
+      "category": "household",
+      "summary": "洗甲水/丙酮为日常用品，正常使用与 G6PD（蚕豆病）溶血无明确关联。",
+      "detail": "正常使用与 G6PD（蚕豆病）溶血无明确关联。局部/日常接触不会引起 G6PD 溶血；注意勿误食、勿入眼。",
+      "note": "正常使用即可；避免误食、入眼。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "洗甲水",
+        "丙酮",
+        "卸甲水"
+      ]
+    },
+    {
+      "id": "gap_爽身粉",
+      "name": "爽身粉",
+      "risk": "safe",
+      "category": "household",
+      "summary": "爽身粉为日常用品，正常使用与 G6PD（蚕豆病）溶血无明确关联。",
+      "detail": "正常使用与 G6PD（蚕豆病）溶血无明确关联。局部/日常接触不会引起 G6PD 溶血；注意勿误食、勿入眼。",
+      "note": "正常使用即可；避免误食、入眼。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "爽身粉",
+        "痱子粉"
+      ]
+    },
+    {
+      "id": "gap_牙膏_漱口水",
+      "name": "牙膏/漱口水",
+      "risk": "caution",
+      "category": "household",
+      "summary": "多数牙膏、漱口水含薄荷脑，按薄荷类处理；日常刷牙漱口用量小，通常无碍。",
+      "detail": "薄荷脑在部分资料中被列为需避免；牙膏/漱口水含薄荷脑但每次用量很小、且多漱出，一般无需回避，儿童避免吞咽。",
+      "note": "按正常用量刷牙漱口，勿吞咽；对薄荷敏感者可换无薄荷配方。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "牙膏",
+        "漱口水",
+        "薄荷牙膏"
+      ]
+    },
+    {
+      "id": "gap_花露水_驱蚊液",
+      "name": "花露水/驱蚊液",
+      "risk": "caution",
+      "category": "household",
+      "summary": "花露水、部分驱蚊液含薄荷脑/樟脑/避蚊胺，属 G6PD 慎用类。",
+      "detail": "花露水常含薄荷脑、樟脑等，部分资料列为 G6PD 需避免；大面积皮肤涂抹可经皮吸收。儿童、婴幼儿尤其慎用。",
+      "note": "少量局部使用；婴幼儿避免大面积涂抹；优先物理防蚊。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "花露水",
+        "驱蚊液",
+        "驱蚊水"
+      ]
+    },
+    {
+      "id": "gap_蚊香_电蚊香",
+      "name": "蚊香/电蚊香",
+      "risk": "caution",
+      "category": "household",
+      "summary": "蚊香/电蚊香含拟除虫菊酯，部分樟脑型蚊香可能含萘或樟脑，G6PD 者建议慎用。",
+      "detail": "普通拟除虫菊酯类蚊香正常使用风险低；但“樟脑型/含萘”蚊香需避免。房间应通风，婴幼儿避免长时间吸入。",
+      "note": "选拟除虫菊酯类、注意通风；避免“樟脑/含萘”型；婴幼儿优先蚊帐。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "蚊香",
+        "电蚊香",
+        "盘蚊香",
+        "蚊香液"
+      ]
+    },
+    {
+      "id": "gap_空气清新剂",
+      "name": "空气清新剂",
+      "risk": "caution",
+      "category": "household",
+      "summary": "部分空气清新剂含萘、对二氯苯或挥发性有机物，G6PD 者建议少用/不用。",
+      "detail": "含“萘”“对二氯苯”的空气清新剂、防蛀块需避免；普通香氛类通风使用问题不大，但密闭空间长时间吸入不推荐。",
+      "note": "选成分简单的；避免含萘/对二氯苯产品；保持通风。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "空气清新剂",
+        "固体清新剂",
+        "香薰蜡烛"
+      ]
+    },
+    {
+      "id": "gap_钙片",
+      "name": "钙片",
+      "risk": "safe",
+      "category": "vitamin",
+      "summary": "钙片（碳酸钙/柠檬酸钙等）与 G6PD 溶血无明确关联，可正常补充。",
+      "detail": "钙剂不在 G6PD 禁忌/慎用名单；按需补充即可（过量补钙另有其他问题，与蚕豆病无关）。",
+      "note": "按推荐剂量补充。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "碳酸钙",
+        "柠檬酸钙",
+        "钙剂",
+        "葡萄糖酸钙片"
+      ]
+    },
+    {
+      "id": "gap_红药水",
+      "name": "红药水",
+      "risk": "safe",
+      "category": "topical",
+      "summary": "红药水（红汞）为外用消毒剂，与 G6PD 溶血无明确关联；含汞，现已少用。",
+      "detail": "红药水为含汞外用消毒剂，G6PD 无需特别回避；但因含汞、且染色影响观察，现已少用，伤口消毒优先碘伏。",
+      "note": "外用少量无碍；已少用，优先选碘伏。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "红汞",
+        "汞溴红",
+        "mercurochrome"
+      ]
+    },
+    {
+      "id": "gap_双氧水",
+      "name": "双氧水",
+      "risk": "caution",
+      "category": "topical",
+      "summary": "双氧水（过氧化氢）是氧化性消毒剂，外用小面积使用一般无碍，大面积/深部或误服需避免。",
+      "detail": "过氧化氢为氧化剂，理论上大量进入血液可加重氧化应激；外用 3% 小面积冲洗创面一般安全，但避免大面积、深部腔道冲洗或误服。",
+      "note": "小面积创面冲洗可用；避免大面积/深部/误服；优先碘伏。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "双氧水",
+        "过氧化氢",
+        "hydrogen peroxide"
+      ]
+    },
+    {
+      "id": "gap_无极膏",
+      "name": "无极膏",
+      "risk": "caution",
+      "category": "topical",
+      "summary": "无极膏含薄荷脑、樟脑等，属 G6PD 慎用外用制剂。",
+      "detail": "无极膏（复方薄荷脑软膏类）含薄荷脑、樟脑等成分，部分资料列为 G6PD 需避免；婴幼儿、大面积涂抹尤慎。",
+      "note": "少量局部使用；婴幼儿避免大面积涂抹。",
+      "controversy": false,
+      "sources": [
+        "S1",
+        "S5"
+      ],
+      "aliases": [
+        "无极膏",
+        "复方薄荷脑软膏"
       ]
     }
   ]
