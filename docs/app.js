@@ -232,6 +232,7 @@
             '<span class="chev">展开 ▾</span>' +
           '</div>' +
           '<div class="summary">' + hl(it.summary, currentQuery) + '</div>' +
+          (it.use ? '<div class="use-line"><span class="u-k">用途</span>' + esc(it.use) + '</div>' : "") +
         '</div>' +
         '<div class="detail" id="' + did + '">' +
           (it.img ? '<div class="imgwrap"><img class="item-img" alt="' + esc(it.name) + '" src="' + it.img + '"><div class="imgcap">示意图 · 仅供识别参考，以实物/说明书为准</div></div>' : "") +
@@ -525,7 +526,7 @@
       lines.push(g.name + "：");
       arr.forEach(function (it) {
         var al = (it.aliases && it.aliases.length) ? "（" + it.aliases.join("、") + "）" : "";
-        lines.push("· " + it.name + al + " —— " + (it.summary || ""));
+        lines.push("· " + it.name + al + (it.use ? "：" + it.use : "") + " —— " + (it.summary || ""));
       });
     });
     lines.push("");

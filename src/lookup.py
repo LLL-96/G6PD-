@@ -143,6 +143,8 @@ def print_item(it, index=None):
     print(f"   类别：{cat}")
     if it.get("aliases"):
         print(f"   别名：{'、'.join(it['aliases'])}")
+    if it.get("use"):
+        print(f"   用途：{it['use']}")
     print(f"   结论：{it['summary']}")
     if it.get("detail"):
         print(f"   说明：{it['detail']}")

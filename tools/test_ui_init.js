@@ -56,6 +56,7 @@ try {
   const fl = elements["forbidList"].innerHTML;
   check("禁用页渲染且含分组标题", fl.indexOf("禁用")>=0 && fl.indexOf("group-head")>=0);
   check("禁用页条目数 = "+forbidN, (fl.match(/class="item forbidden"/g)||[]).length === forbidN);
+  check("卡片渲染「用途」行（含阿司匹林用途）", fl.indexOf("use-line") >= 0 && fl.indexOf("解热、镇痛、抗炎") >= 0);
 
   const ha = elements["histArea"].innerHTML;
   check("搜索页初始历史区为空（无查询/无收藏）", ha === "");
