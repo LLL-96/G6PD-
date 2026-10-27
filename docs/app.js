@@ -18,6 +18,25 @@
     vaccine: "疫苗（常规接种）", plant: "植物 / 花草"
   };
 
+  // 一级大类：把 25 个细类归并成 6 个大类，便于按"药品/食品/生活用品/…"浏览
+  var CATEGORY_GROUP = {
+    analgesic: "drug", sulfa: "drug", furan: "drug", antimalarial: "drug", antibiotic_other: "drug",
+    cardiovascular: "drug", metabolic: "drug", neuro: "drug", urinary: "drug", antiviral: "drug",
+    respiratory: "drug", gastrointestinal: "drug", hormone: "drug", antifungal: "drug",
+    antihistamine: "drug", topical: "drug", other_drug: "drug", tcm: "drug", vitamin: "drug",
+    food: "food", household: "household", plant: "plant", occupational: "env",
+    infection: "other", vaccine: "other"
+  };
+  var GROUP_META = {
+    drug: { name: "药品", icon: "💊" },
+    food: { name: "食品", icon: "🍎" },
+    household: { name: "生活用品", icon: "🧴" },
+    plant: { name: "植物 / 花草", icon: "🌿" },
+    env: { name: "职业 / 环境", icon: "⚠️" },
+    other: { name: "感染 / 疫苗 / 提示", icon: "🩺" }
+  };
+  var GROUP_ORDER = ["drug", "food", "household", "plant", "env", "other"];
+
   var RISK_LABEL = { forbidden: "⛔ 禁用", caution: "⚠️ 慎用", safe: "✅ 常规可用", info: "ℹ️ 提示" };
   var RISK_ORDER = { forbidden: 0, caution: 1, safe: 2, info: 3 };
 
@@ -369,6 +388,7 @@
   var listSummaryEl = document.getElementById("listSummary");
   var listQEl = document.getElementById("listQ");
   var listRiskFilter = "";
+  var listGroupFilter = "";
 
   function renderAllList() {
     var rc = { forbidden: 0, caution: 0, safe: 0, info: 0 };
@@ -379,6 +399,7 @@
       summaryCell("safe", "✅ 可用", rc.safe) +
       summaryCell("info", "ℹ️ 提示", rc.info);
     currentQuery = "";
+    renderGroupChips();
     renderGrouped(norm(listQEl.value.trim()));
   }
   function summaryCell(risk, label, n) {
@@ -387,31 +408,64 @@
   }
   function renderGrouped(q) {
     q = norm(q);
-    var byCat = {};
+    var byGroup = {};
     ITEMS.forEach(function (it) {
       if (listRiskFilter && it.risk !== listRiskFilter) return;
+      var g = CATEGORY_GROUP[it.category] || "other";
+      if (listGroupFilter && g !== listGroupFilter) return;
       if (q) {
+        var gm = GROUP_META[g];
         var hit = (norm(it.name).indexOf(q) >= 0) ||
           (it.en && norm(it.en).indexOf(q) >= 0) ||
           (it.aliases || []).some(function (a) { return norm(a).indexOf(q) >= 0; }) ||
-          norm(CATEGORY_NAMES[it.category] || "").indexOf(q) >= 0;
+          norm(CATEGORY_NAMES[it.category] || "").indexOf(q) >= 0 ||
+          (gm && norm(gm.name).indexOf(q) >= 0);
         if (!hit) return;
       }
-      var c = CATEGORY_NAMES[it.category] || it.category;
-      (byCat[c] = byCat[c] || []).push(it);
+      (byGroup[g] = byGroup[g] || []).push(it);
     });
     var html = "";
-    Object.keys(byCat).sort(function (a, b) {
-      return RISK_ORDER[byCat[a][0].risk] - RISK_ORDER[byCat[b][0].risk];
-    }).forEach(function (cat) {
-      var items = byCat[cat].slice().sort(function (a, b) {
-        return RISK_ORDER[a.risk] - RISK_ORDER[b.risk];
+    GROUP_ORDER.forEach(function (g) {
+      var items = byGroup[g];
+      if (!items || !items.length) return;
+      var meta = GROUP_META[g] || { name: g, icon: "" };
+      html += '<div class="group-head">' + meta.icon + " " + esc(meta.name) +
+              '<span class="gh-count">' + items.length + " 条</span></div>";
+      var byCat = {};
+      items.forEach(function (it) {
+        var c = CATEGORY_NAMES[it.category] || it.category;
+        (byCat[c] = byCat[c] || []).push(it);
       });
-      html += '<div class="group-title">' + esc(cat) + "（" + items.length + "）</div>";
-      html += items.map(function (it) { return itemCard(it, "a"); }).join("");
+      Object.keys(byCat).sort(function (a, b) {
+        return byCat[b].length - byCat[a].length;
+      }).forEach(function (cat) {
+        var arr = byCat[cat].slice().sort(function (a, b) {
+          return RISK_ORDER[a.risk] - RISK_ORDER[b.risk];
+        });
+        html += '<div class="subcat-title">' + esc(cat) + "（" + arr.length + "）</div>";
+        html += arr.map(function (it) { return itemCard(it, "a"); }).join("");
+      });
     });
     if (!html) html = '<div class="empty"><div class="big">🔍</div>没有匹配的条目</div>';
     allListEl.innerHTML = html;
+  }
+
+  function renderGroupChips() {
+    var el = document.getElementById("groupChips");
+    if (!el) return;
+    var counts = {};
+    ITEMS.forEach(function (it) {
+      var g = CATEGORY_GROUP[it.category] || "other";
+      counts[g] = (counts[g] || 0) + 1;
+    });
+    var html = '<div class="gchip' + (listGroupFilter === "" ? " on" : "") + '" data-group="">📦 全部</div>';
+    GROUP_ORDER.forEach(function (g) {
+      if (!counts[g]) return;
+      var m = GROUP_META[g];
+      html += '<div class="gchip' + (listGroupFilter === g ? " on" : "") + '" data-group="' + g + '">' +
+              m.icon + " " + esc(m.name) + " " + counts[g] + "</div>";
+    });
+    el.innerHTML = html;
   }
 
   /* ---------- 事件绑定 ---------- */
@@ -439,6 +493,17 @@
     listRiskFilter = (listRiskFilter === r) ? "" : r;
     renderAllList();
   });
+
+  var groupChipsEl = document.getElementById("groupChips");
+  if (groupChipsEl) {
+    groupChipsEl.addEventListener("click", function (e) {
+      var b = e.target.closest(".gchip");
+      if (!b) return;
+      listGroupFilter = b.getAttribute("data-group") || "";
+      renderGroupChips();
+      renderGrouped(norm(listQEl.value.trim()));
+    });
+  }
 
   listQEl.addEventListener("input", function () { renderGrouped(norm(listQEl.value.trim())); });
 
