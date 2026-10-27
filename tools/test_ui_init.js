@@ -89,6 +89,13 @@ try {
   const cm = G.items.find(i => i.name === "氯霉素");
   check("分歧条目显示说明", g.itemCard(cm, "t").indexOf("为什么标「分歧」") >= 0);
   check("非分歧条目不显示分歧框", g.itemCard(G.items.find(i => i.name === "阿司匹林"), "t").indexOf("debate-box") < 0);
+
+  // 复方成分匹配的精确性
+  const gq = g.itemCard(G.items.find(i => i.name === "感冒清热颗粒"), "t");
+  check("感冒清热颗粒：薄荷命中禁用", gq.indexOf("含本库禁用成分") >= 0 && gq.indexOf("薄荷") >= 0);
+  const gc = g.itemCard(G.items.find(i => i.name === "复方甘草片"), "t");
+  check("复方甘草片：樟脑→慎用，不误判禁用", gc.indexOf("含本库禁用成分") < 0 && gc.indexOf("樟脑") >= 0);
+  check("连花清瘟已升级为禁用", G.items.find(i => i.name === "连花清瘟").risk === "forbidden");
 } catch(e){ fail++; console.log("❌ 异常: "+e.message); console.log(e.stack.split("\n").slice(0,4).join("\n")); }
 
 console.log(fail ? `\n${fail} 项失败` : "\nUI 初始化校验全部通过");

@@ -131,17 +131,31 @@
       if (k && !ALIAS_INDEX[k]) ALIAS_INDEX[k] = it;
     });
   });
+  /* 成分名 → 库内条目的显式对应（解决"樟脑≠萘""薄荷脑→薄荷""人工牛黄→牛黄"） */
+  var ING_MAP = {};
+  [
+    ["薄荷", "薄荷（薄荷脑/薄荷醇）"],
+    ["薄荷脑", "薄荷（薄荷脑/薄荷醇）"],
+    ["薄荷醇", "薄荷（薄荷脑/薄荷醇）"],
+    ["人工牛黄", "牛黄"],
+    ["牛黄粉", "牛黄"],
+    ["樟脑", "含薄荷脑/樟脑的外用制剂"]
+  ].forEach(function (p) { ING_MAP[norm(p[0])] = p[1]; });
+  /* 复方里的小剂量成分，不应等同于"大剂量"条目 */
+  var ING_IGNORE = {};
+  ["维生素C", "维生素c"].forEach(function (k) { ING_IGNORE[norm(k)] = true; });
   function matchIngredient(ing) {
     var k = norm(ing);
     if (!k) return null;
+    if (ING_IGNORE[k]) return null;
+    var target = ING_MAP[k];
+    if (target) {
+      var t = NAME_INDEX[norm(target)];
+      if (t) return t;
+    }
     if (NAME_INDEX[k]) return NAME_INDEX[k];
     if (ALIAS_INDEX[k]) return ALIAS_INDEX[k];
-    for (var i = 0; i < ITEMS.length; i++) {
-      var n = norm(ITEMS[i].name);
-      if (!n) continue;
-      if (n.indexOf(k) >= 0 && k.length >= 2) return ITEMS[i];
-      if (k.indexOf(n) >= 0 && n.length >= 3) return ITEMS[i];
-    }
+    // 只做精确匹配：不做名称包含，避免"甘草→复方甘草片""苦杏仁→坚果""柴胡→小柴胡颗粒"等误配
     return null;
   }
 
