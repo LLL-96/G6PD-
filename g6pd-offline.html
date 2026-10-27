@@ -3,19 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#b71c1c">
+<meta name="theme-color" content="#d64545">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="蚕豆病速查">
-<title>蚕豆病（G6PD）禁忌速查</title>
+<title>蚕豆病能不能用 · 禁忌速查</title>
 <style>
   :root {
-    --red: #c62828; --red-bg: #fdecea; --red-border: #f5b5b0;
-    --yellow: #b26a00; --yellow-bg: #fff7e0; --yellow-border: #ffe08a;
-    --green: #2e7d32; --green-bg: #eaf6eb; --green-border: #b8e0ba;
-    --blue: #1565c0; --blue-bg: #e8f1fb; --blue-border: #b3d4f5;
-    --ink: #1f2329; --ink-2: #555c66; --ink-3: #8a919c;
-    --bg: #f6f7f9; --card: #ffffff; --line: #e6e8ec;
+    --red: #e23b3b; --red-bg: #fdecec; --red-border: #f6c5c5;
+    --yellow: #e08a00; --yellow-bg: #fff6e6; --yellow-border: #ffe0a3;
+    --green: #2f9e44; --green-bg: #e9f7ec; --green-border: #b7e3c0;
+    --blue: #1971c2; --blue-bg: #e9f1fb; --blue-border: #b6d4f3;
+    --ink: #23272e; --ink-2: #565d68; --ink-3: #9097a1;
+    --bg: #f4f5f7; --card: #ffffff; --line: #e7e9ee;
+    --brand: #d64545; --brand-2: #f2a65a;
+    --shadow: 0 1px 3px rgba(20,25,35,.06), 0 6px 18px rgba(20,25,35,.05);
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { margin: 0; padding: 0; }
@@ -23,101 +25,182 @@
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
     background: var(--bg); color: var(--ink);
     font-size: 16px; line-height: 1.6;
-    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+    padding-bottom: calc(66px + env(safe-area-inset-bottom));
+    -webkit-font-smoothing: antialiased;
   }
-  header {
-    position: sticky; top: 0; z-index: 10;
-    background: linear-gradient(135deg, #b71c1c, #d32f2f);
-    color: #fff; padding: 14px 16px 12px;
-    padding-top: calc(14px + env(safe-area-inset-top));
-  }
-  header h1 { margin: 0; font-size: 19px; font-weight: 700; }
-  header p { margin: 2px 0 0; font-size: 12px; opacity: .85; }
-  main { max-width: 720px; margin: 0 auto; padding: 12px 12px 24px; }
 
-  /* 搜索区 */
+  /* ===== 顶部 ===== */
+  header {
+    position: sticky; top: 0; z-index: 40;
+    background: linear-gradient(135deg, #d64545, #ef6b4a);
+    color: #fff; padding: 14px 16px 13px;
+    padding-top: calc(14px + env(safe-area-inset-top));
+    box-shadow: 0 2px 12px rgba(214,69,69,.25);
+  }
+  header h1 { margin: 0; font-size: 18px; font-weight: 800; letter-spacing: .3px; }
+  header p { margin: 2px 0 0; font-size: 12.5px; opacity: .92; }
+  .header-badges { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .header-badge { font-size: 11px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: 2px 9px; }
+
+  main { max-width: 720px; margin: 0 auto; padding: 14px 14px 28px; }
+
+  /* ===== 搜索框 ===== */
+  .search-wrap { position: relative; }
   .searchbox {
     display: flex; align-items: center; gap: 8px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 12px; padding: 10px 12px; margin-bottom: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    background: var(--card); border: 1.5px solid var(--line);
+    border-radius: 14px; padding: 12px 14px;
+    box-shadow: var(--shadow);
   }
-  .searchbox input {
-    flex: 1; border: none; outline: none; font-size: 17px;
-    background: transparent; color: var(--ink); min-width: 0;
-  }
+  .searchbox:focus-within { border-color: var(--brand); }
+  .searchbox input { flex: 1; border: none; outline: none; font-size: 17px; background: transparent; color: var(--ink); min-width: 0; }
   .searchbox .icon { font-size: 18px; color: var(--ink-3); }
-  .searchbox .clear {
-    border: none; background: #eceef2; color: var(--ink-2);
-    width: 26px; height: 26px; border-radius: 50%; font-size: 14px;
-    display: none; align-items: center; justify-content: center; cursor: pointer;
-  }
+  .searchbox .clear { border: none; background: #eceef2; color: var(--ink-2); width: 26px; height: 26px; border-radius: 50%; font-size: 14px; display: none; align-items: center; justify-content: center; cursor: pointer; }
   .searchbox .clear.show { display: inline-flex; }
+  .hint { font-size: 12.5px; color: var(--ink-3); margin: 8px 4px 2px; }
 
-  .chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 10px; -webkit-overflow-scrolling: touch; }
-  .chips::-webkit-scrollbar { display: none; }
-  .chip {
-    flex: 0 0 auto; border: 1px solid var(--line); background: var(--card);
-    border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--ink-2);
-    cursor: pointer; user-select: none;
+  .suggest {
+    position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 30;
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 12px 34px rgba(0,0,0,.18); overflow: hidden; max-height: 60vh; overflow-y: auto;
   }
+  .suggest .opt { display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; border-bottom: 1px solid #f1f2f5; }
+  .suggest .opt:last-child { border-bottom: none; }
+  .suggest .opt.active, .suggest .opt:active { background: #f6f8fb; }
+  .suggest .dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+  .suggest .s-name { font-size: 15px; font-weight: 600; }
+  .suggest .s-cat { font-size: 12px; color: var(--ink-3); margin-left: auto; white-space: nowrap; }
+  .dot.forbidden { background: var(--red); } .dot.caution { background: var(--yellow); } .dot.safe { background: var(--green); } .dot.info { background: var(--blue); }
+
+  /* ===== 禁用清单 Hero ===== */
+  .hero {
+    display: flex; align-items: center; gap: 12px;
+    background: linear-gradient(135deg, #fff, #fff5f5);
+    border: 1.5px solid var(--red-border); border-radius: 16px;
+    padding: 14px 16px; margin: 12px 0 4px; cursor: pointer; box-shadow: var(--shadow);
+  }
+  .hero:active { transform: scale(.99); }
+  .hero-ic { font-size: 30px; }
+  .hero-txt { flex: 1; }
+  .hero-t { font-size: 16px; font-weight: 800; color: var(--red); }
+  .hero-t span { background: var(--red); color: #fff; border-radius: 8px; padding: 0 8px; margin-left: 4px; font-size: 14px; }
+  .hero-s { font-size: 12.5px; color: var(--ink-2); margin-top: 2px; }
+  .hero-arrow { color: var(--red); font-size: 20px; }
+
+  /* ===== 场景网格 ===== */
+  .sec-title { font-size: 13px; font-weight: 700; color: var(--ink-2); margin: 18px 4px 9px; }
+  .scen-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+  .scen {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 12px 6px 10px; text-align: center; cursor: pointer; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; align-items: center; gap: 5px;
+  }
+  .scen:active { transform: scale(.97); border-color: var(--brand); }
+  .scen-ic { font-size: 24px; line-height: 1; }
+  .scen-lbl { font-size: 12px; color: var(--ink); font-weight: 600; }
+
+  /* ===== 风险筛选 chips ===== */
+  .chips { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 4px; margin: 14px 0 4px; -webkit-overflow-scrolling: touch; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip { flex: 0 0 auto; border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 6px 13px; font-size: 13px; color: var(--ink-2); cursor: pointer; user-select: none; }
   .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
   .chip.on.r-forbidden { background: var(--red); border-color: var(--red); }
   .chip.on.r-caution { background: var(--yellow); border-color: var(--yellow); }
   .chip.on.r-safe { background: var(--green); border-color: var(--green); }
   .chip.on.r-info { background: var(--blue); border-color: var(--blue); }
+  .chip.on.r-fav { background: #f5a623; border-color: #f5a623; color: #fff; }
 
-  .count { font-size: 13px; color: var(--ink-3); margin: 2px 2px 10px; }
-  .quick { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px; }
-  .quick button {
-    border: 1px dashed var(--line); background: var(--card); color: var(--ink-2);
-    border-radius: 8px; padding: 6px 10px; font-size: 13px; cursor: pointer;
-  }
+  .count { font-size: 13px; color: var(--ink-3); margin: 4px 4px 8px; }
 
-  /* 条目卡片 */
-  .item {
-    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    margin-bottom: 10px; overflow: hidden; cursor: pointer; position: relative;
-  }
-  .item .bar { height: 4px; }
+  /* 历史 / 收藏 */
+  .hist-label { font-size: 12.5px; color: var(--ink-3); margin: 12px 4px 6px; }
+  .hchips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .hchip { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 6px 13px; font-size: 13px; color: var(--ink-2); cursor: pointer; box-shadow: var(--shadow); }
+  .hchip:active { background: #eef0f3; }
+  .hchip.fav { border-color: #f3d39a; color: #b8791b; }
+
+  /* ===== 条目卡片 ===== */
+  .item { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 10px; overflow: hidden; cursor: pointer; position: relative; box-shadow: var(--shadow); }
+  .item .bar { width: 5px; height: 100%; position: absolute; left: 0; top: 0; }
   .item.forbidden .bar { background: var(--red); }
   .item.caution .bar { background: var(--yellow); }
   .item.safe .bar { background: var(--green); }
   .item.info .bar { background: var(--blue); }
-  .item .head { padding: 12px 14px 10px; }
+  .item .head { padding: 12px 14px 11px 18px; }
   .item .row1 { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
   .item .name { font-size: 17px; font-weight: 700; }
-  .tag {
-    flex: 0 0 auto; font-size: 12px; font-weight: 600; border-radius: 6px;
-    padding: 2px 8px; white-space: nowrap;
-  }
+  .tag { flex: 0 0 auto; font-size: 12px; font-weight: 700; border-radius: 7px; padding: 2px 8px; white-space: nowrap; }
   .forbidden .tag { color: var(--red); background: var(--red-bg); border: 1px solid var(--red-border); }
   .caution .tag { color: var(--yellow); background: var(--yellow-bg); border: 1px solid var(--yellow-border); }
   .safe .tag { color: var(--green); background: var(--green-bg); border: 1px solid var(--green-border); }
   .info .tag { color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-border); }
-  .debate { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .debate { font-size: 12px; color: var(--yellow); font-weight: 700; }
   .item .summary { font-size: 14px; color: var(--ink-2); margin-top: 4px; }
-  .item .detail { display: none; padding: 0 14px 12px; font-size: 14px; }
+  .item .detail { display: none; padding: 0 16px 13px 18px; font-size: 14px; }
   .item.open .detail { display: block; }
   .item .detail .kv { margin-top: 6px; }
   .item .detail .k { font-size: 12px; color: var(--ink-3); }
   .item .detail .v { font-size: 14px; color: var(--ink); }
-  .item .warn {
-    margin-top: 8px; font-size: 13px; border-radius: 8px; padding: 8px 10px;
-    background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border);
-  }
+  .item .warn { margin-top: 8px; font-size: 13px; border-radius: 9px; padding: 8px 10px; background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
   .item.forbidden .warn { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
   .item .src { font-size: 11px; color: var(--ink-3); margin-top: 8px; }
   .item .chev { float: right; color: var(--ink-3); font-size: 12px; margin-top: 2px; }
+  .star { float: right; border: none; background: none; font-size: 19px; line-height: 1; cursor: pointer; padding: 0 0 0 8px; color: #cfd3da; }
+  .star.on { color: #f5a623; }
 
-  .group-title {
-    font-size: 14px; font-weight: 700; color: var(--ink-2);
-    margin: 16px 2px 8px;
-  }
+  /* 复方成分比对 */
+  .compound { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: #fafbfc; }
+  .compound .ck { font-size: 13px; font-weight: 700; color: var(--ink-2); margin-bottom: 8px; }
+  .compound .cing { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 14px; }
+  .compound .ingname { color: var(--ink); }
+  .compound .cnote { margin-top: 8px; font-size: 13px; border-radius: 8px; padding: 7px 10px; background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+  .compound .cnote.warn { background: var(--yellow-bg); color: var(--yellow); border-color: var(--yellow-border); }
+  .compound .cnote.bad { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+  .cmp-tag { font-size: 11px; font-weight: 700; border-radius: 5px; padding: 1px 6px; white-space: nowrap; }
+  .cmp-tag.bad { color: var(--red); background: var(--red-bg); }
+  .cmp-tag.warn { color: var(--yellow); background: var(--yellow-bg); }
+  .ic-badge { font-size: 16px; line-height: 1; }
+  .imgwrap { text-align: center; margin-bottom: 12px; }
+  .item-img { width: 128px; height: 128px; border-radius: 14px; border: 1px solid var(--line); background: #fff; }
+  .imgcap { font-size: 11px; color: var(--ink-3); margin-top: 5px; }
+  .s-hl, .hl { color: var(--red); font-weight: 700; }
+
+  /* ===== 分类页（手风琴）===== */
+  .list-filter { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 13px; margin-bottom: 10px; box-shadow: var(--shadow); }
+  .list-filter:focus-within { border-color: var(--brand); }
+  .list-filter input { flex: 1; border: none; outline: none; font-size: 15px; background: transparent; min-width: 0; }
+  .list-filter .icon { color: var(--ink-3); }
+  .list-note { font-size: 12.5px; color: var(--ink-3); margin: 2px 4px 10px; }
+  .scen-chips { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 8px; -webkit-overflow-scrolling: touch; }
+  .scen-chips::-webkit-scrollbar { display: none; }
+  .scen-chips .schip { flex: 0 0 auto; font-size: 13px; padding: 6px 13px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink-2); cursor: pointer; white-space: nowrap; }
+  .scen-chips .schip.on { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+  .bgroup { background: #fff; border: 1px solid var(--line); border-radius: 14px; margin-bottom: 10px; overflow: hidden; box-shadow: var(--shadow); }
+  .bg-head { display: flex; align-items: center; gap: 10px; padding: 14px 15px; cursor: pointer; }
+  .bg-ic { font-size: 20px; }
+  .bg-name { font-size: 16px; font-weight: 800; flex: 1; }
+  .bg-cnt { font-size: 12px; color: var(--ink-3); background: #f1f3f6; border-radius: 999px; padding: 1px 9px; }
+  .bg-arrow { color: var(--ink-3); font-size: 14px; transition: transform .2s; }
+  .bgroup.open .bg-arrow { transform: rotate(180deg); }
+  .bg-body { padding: 2px 12px 12px; }
+  .back-chip { display: inline-block; font-size: 13px; color: var(--brand); background: var(--red-bg); border: 1px solid var(--red-border); border-radius: 999px; padding: 5px 12px; margin: 4px 0 10px; cursor: pointer; }
+
+  .group-head { font-size: 16px; font-weight: 800; color: var(--ink); margin: 18px 2px 6px; display: flex; align-items: baseline; gap: 8px; }
+  .group-head .gh-count { font-size: 12px; font-weight: 500; color: var(--ink-3); }
+  .subcat-title { font-size: 12.5px; font-weight: 700; color: var(--ink-3); margin: 12px 2px 6px; text-transform: none; }
+
+  /* ===== 禁用清单页 ===== */
+  .forbid-intro { font-size: 13.5px; color: var(--ink-2); background: var(--red-bg); border: 1px solid var(--red-border); border-radius: 12px; padding: 11px 13px; margin-bottom: 12px; }
+  .print-bar { display: flex; gap: 10px; margin-bottom: 8px; }
+  .pbtn { flex: 1; border: 1px solid var(--line); background: #fff; border-radius: 12px; padding: 11px; font-size: 14px; font-weight: 600; color: var(--brand); cursor: pointer; box-shadow: var(--shadow); }
+  .pbtn.ghost { background: var(--brand); color: #fff; border-color: var(--brand); }
+
   .empty { text-align: center; color: var(--ink-3); padding: 40px 20px; font-size: 14px; }
   .empty .big { font-size: 40px; margin-bottom: 8px; }
 
-  .prose { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; font-size: 15px; }
+  /* =====  prose / 应急 / 提示卡 ===== */
+  .prose { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; font-size: 15px; box-shadow: var(--shadow); }
   .prose h3 { margin: 14px 0 6px; font-size: 16px; }
   .prose h3:first-child { margin-top: 0; }
   .prose ul { margin: 6px 0; padding-left: 20px; }
@@ -125,77 +208,48 @@
   .prose .step { border-left: 4px solid var(--red); padding: 8px 12px; background: var(--red-bg); border-radius: 0 8px 8px 0; margin: 10px 0; }
   .prose .step b { color: var(--red); }
   .prose .keyline { background: var(--blue-bg); border: 1px solid var(--blue-border); color: var(--blue); border-radius: 8px; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
-  .btn {
-    display: block; width: 100%; border: none; border-radius: 12px; padding: 13px;
-    font-size: 16px; font-weight: 600; background: var(--ink); color: #fff;
-    margin-top: 14px; cursor: pointer;
-  }
+  .btn { display: block; width: 100%; border: none; border-radius: 12px; padding: 13px; font-size: 16px; font-weight: 600; background: var(--ink); color: #fff; margin-top: 14px; cursor: pointer; }
   .btn.copy { background: #455a64; }
 
-  .footer-note { text-align: center; font-size: 11px; color: var(--ink-3); margin-top: 20px; line-height: 1.5; }
+  .footer-note { text-align: center; font-size: 11px; color: var(--ink-3); margin-top: 22px; line-height: 1.5; }
 
-  /* 底部 Tab */
-  nav {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
-    display: flex; background: var(--card); border-top: 1px solid var(--line);
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-  nav button {
-    flex: 1; border: none; background: none; padding: 8px 0 7px;
-    font-size: 11px; color: var(--ink-3); cursor: pointer;
-    display: flex; flex-direction: column; align-items: center; gap: 2px;
-  }
+  /* ===== 底部 Tab ===== */
+  nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; background: rgba(255,255,255,.96); backdrop-filter: saturate(160%) blur(8px); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom); }
+  nav button { flex: 1; border: none; background: none; padding: 7px 0 6px; font-size: 11px; color: var(--ink-3); cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; }
   nav button .ic { font-size: 21px; line-height: 1; }
-  nav button.on { color: var(--red); font-weight: 700; }
+  nav button.on { color: var(--brand); font-weight: 800; }
 
   .page { display: none; }
   .page.on { display: block; }
 
-  /* ===== 档案页 ===== */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .item, .scen, .hero, .bgroup { animation: fadeUp .22s ease both; }
+
+  /* ===== 档案页（保留原有样式，供 profile.js 使用）===== */
   .ptabs { display: flex; gap: 6px; overflow-x: auto; margin: 10px 0 12px; -webkit-overflow-scrolling: touch; }
   .ptabs::-webkit-scrollbar { display: none; }
-  .ptab {
-    flex: 0 0 auto; border: 1px solid var(--line); background: var(--card); color: var(--ink-2);
-    border-radius: 999px; padding: 6px 13px; font-size: 13px; cursor: pointer; user-select: none;
-  }
-  .ptab.on { background: var(--red); border-color: var(--red); color: #fff; font-weight: 600; }
-  .pcard {
-    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 14px; margin-bottom: 12px;
-  }
+  .ptab { flex: 0 0 auto; border: 1px solid var(--line); background: var(--card); color: var(--ink-2); border-radius: 999px; padding: 6px 13px; font-size: 13px; cursor: pointer; user-select: none; }
+  .ptab.on { background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 600; }
+  .pcard { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin-bottom: 12px; box-shadow: var(--shadow); }
   .pcard .pv { font-size: 15px; margin: 3px 0; }
   .pcard .pk { font-size: 12px; color: var(--ink-3); }
   .stat-row { display: flex; gap: 8px; margin-bottom: 12px; }
-  .stat {
-    flex: 1; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 10px 8px; text-align: center;
-  }
-  .stat .n { font-size: 22px; font-weight: 800; color: var(--red); }
+  .stat { flex: 1; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 8px; text-align: center; box-shadow: var(--shadow); }
+  .stat .n { font-size: 22px; font-weight: 800; color: var(--brand); }
   .stat .t { font-size: 12px; color: var(--ink-2); margin-top: 2px; }
-  .form { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+  .form { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin-bottom: 12px; box-shadow: var(--shadow); }
   .form label { display: block; font-size: 13px; color: var(--ink-2); margin: 10px 0 4px; }
   .form label:first-child { margin-top: 0; }
-  .form input, .form select, .form textarea {
-    width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px;
-    font-size: 15px; font-family: inherit; background: #fafbfc; color: var(--ink);
-    outline: none; -webkit-appearance: none; appearance: none;
-  }
-  .form input:focus, .form select:focus { border-color: var(--red); background: #fff; }
+  .form input, .form select, .form textarea { width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; font-size: 15px; font-family: inherit; background: #fafbfc; color: var(--ink); outline: none; -webkit-appearance: none; appearance: none; }
+  .form input:focus, .form select:focus { border-color: var(--brand); background: #fff; }
   .form .row { display: flex; gap: 8px; }
   .form .row > div { flex: 1; }
   .btnrow { display: flex; gap: 8px; margin-top: 14px; }
   .btnrow .btn { margin-top: 0; flex: 1; }
   .btn.ghost { background: #eceef2; color: var(--ink-2); }
   .btn.small { padding: 9px 12px; font-size: 14px; }
-  .addbtn {
-    display: block; width: 100%; border: 1.5px dashed #d3d6dc; background: none;
-    border-radius: 12px; padding: 11px; font-size: 15px; color: var(--ink-2);
-    margin-bottom: 12px; cursor: pointer;
-  }
-  .rec {
-    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 12px 14px; margin-bottom: 10px; font-size: 14px;
-  }
+  .addbtn { display: block; width: 100%; border: 1.5px dashed #d3d6dc; background: none; border-radius: 12px; padding: 11px; font-size: 15px; color: var(--ink-2); margin-bottom: 12px; cursor: pointer; }
+  .rec { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; font-size: 14px; box-shadow: var(--shadow); }
   .rec .rh { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
   .rec .rt { font-weight: 700; font-size: 15px; }
   .rec .rd { color: var(--ink-3); font-size: 12px; white-space: nowrap; }
@@ -209,122 +263,19 @@
   .mtag.safe { color: var(--green); background: var(--green-bg); }
   .mtag.info { color: var(--blue); background: var(--blue-bg); }
   .mtag.none { color: var(--ink-3); background: #eef0f3; }
-  .med-check {
-    font-size: 12.5px; border-radius: 8px; padding: 7px 10px; margin-top: 6px;
-    background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border);
-  }
+  .med-check { font-size: 12.5px; border-radius: 8px; padding: 7px 10px; margin-top: 6px; background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
   .med-check.bad { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
   .med-check.warn { background: var(--yellow-bg); color: var(--yellow); border-color: var(--yellow-border); }
-  .toast {
-    position: fixed; left: 50%; bottom: calc(84px + env(safe-area-inset-bottom)); transform: translateX(-50%);
-    background: rgba(20,22,26,.92); color: #fff; font-size: 14px; border-radius: 10px;
-    padding: 10px 18px; z-index: 99; display: none; max-width: 86vw; text-align: center;
-  }
+  .toast { position: fixed; left: 50%; bottom: calc(86px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: rgba(20,22,26,.92); color: #fff; font-size: 14px; border-radius: 10px; padding: 10px 18px; z-index: 99; display: none; max-width: 86vw; text-align: center; }
   .toast.show { display: block; }
   .overdue { color: var(--red); font-weight: 700; font-size: 12px; }
-
-  /* ===== 优化：搜索联想 / 历史 / 收藏 / 概览 ===== */
-  .search-wrap { position: relative; }
-  .suggest {
-    position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 30;
-    background: #fff; border: 1px solid var(--line); border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.16); overflow: hidden; max-height: 58vh; overflow-y: auto;
-  }
-  .suggest .opt {
-    display: flex; align-items: center; gap: 10px; padding: 11px 14px;
-    cursor: pointer; border-bottom: 1px solid #f1f2f5;
-  }
-  .suggest .opt:last-child { border-bottom: none; }
-  .suggest .opt.active, .suggest .opt:active { background: #f5f7fa; }
-  .suggest .dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
-  .suggest .s-name { font-size: 15px; font-weight: 600; }
-  .suggest .s-cat { font-size: 12px; color: var(--ink-3); margin-left: auto; white-space: nowrap; }
-  .suggest .s-hl { color: var(--red); }
-  .suggest .empty { padding: 14px; text-align: center; color: var(--ink-3); font-size: 13px; }
-  .dot.forbidden { background: var(--red); } .dot.caution { background: var(--yellow); }
-  .dot.safe { background: var(--green); } .dot.info { background: var(--blue); }
-
-  .history { margin: 2px 0 10px; }
-  .history .hlabel { font-size: 12px; color: var(--ink-3); display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-  .history .hlabel .clr { cursor: pointer; color: var(--ink-3); }
-  .history .hchips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .history .hchip { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 12px; font-size: 13px; color: var(--ink-2); cursor: pointer; }
-  .history .hchip:active { background: #eef0f3; }
-
-  .chip.r-fav { color: #b8791b; }
-  .chip.on.r-fav { background: #f5a623; border-color: #f5a623; color: #fff; }
-
-  .star {
-    float: right; border: none; background: none; font-size: 19px; line-height: 1;
-    cursor: pointer; padding: 0 0 0 8px; color: #cfd3da; transition: transform .1s ease;
-  }
-  .star.on { color: #f5a623; }
-  .star:active { transform: scale(1.2); }
-
-  .cat-pill { display: inline-block; font-size: 11px; color: var(--ink-3); background: #f1f3f6; border-radius: 6px; padding: 1px 7px; margin-left: 6px; }
-  .s-hl { color: var(--red); font-weight: 700; }
-
-  .list-summary { display: flex; gap: 8px; margin: 4px 2px 12px; }
-  .list-summary .ls { flex: 1; text-align: center; border-radius: 12px; padding: 10px 4px; border: 1px solid var(--line); background: #fff; cursor: pointer; }
-  .list-summary .ls .n { font-size: 20px; font-weight: 800; }
-  .list-summary .ls .t { font-size: 11px; color: var(--ink-2); margin-top: 2px; }
-  .list-summary .ls.active { border-color: var(--ink); }
-  .list-summary .ls.forbidden .n { color: var(--red); }
-  .list-summary .ls.caution .n { color: var(--yellow); }
-  .list-summary .ls.safe .n { color: var(--green); }
-  .list-summary .ls.info .n { color: var(--blue); }
-  .list-filter { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; margin-bottom: 10px; }
-  .list-filter input { flex: 1; border: none; outline: none; font-size: 15px; background: transparent; min-width: 0; }
-  .list-filter .icon { color: var(--ink-3); }
-
-  /* 一级大类：筛选 chip + 分段标题 */
-  .group-chips { display: flex; gap: 6px; overflow-x: auto; margin: 0 2px 10px; padding-bottom: 2px; }
-  .group-chips::-webkit-scrollbar { display: none; }
-  .group-chips .gchip {
-    flex: 0 0 auto; font-size: 13px; padding: 6px 11px; border: 1px solid var(--line);
-    border-radius: 20px; background: #fff; color: var(--ink-2); cursor: pointer; white-space: nowrap;
-  }
-  .group-chips .gchip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
-  .group-head {
-    font-size: 16px; font-weight: 800; color: var(--ink);
-    margin: 20px 2px 4px; display: flex; align-items: baseline; gap: 8px;
-  }
-  .group-head .gh-count { font-size: 12px; font-weight: 500; color: var(--ink-3); }
-  .subcat-title { font-size: 13px; font-weight: 700; color: var(--ink-2); margin: 12px 2px 6px; }
-
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-  .item { animation: fadeUp .22s ease both; }
-  .item .bar { width: 5px; height: 100%; position: absolute; left: 0; top: 0; }
-
-  .header-badges { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
-  .header-badge { font-size: 11px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: 2px 9px; }
-
-  .empty .big { font-size: 40px; margin-bottom: 8px; }
-
-  /* 复方成分比对 */
-  .compound { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: #fafbfc; }
-  .compound .ck { font-size: 13px; font-weight: 700; color: var(--ink-2); margin-bottom: 8px; }
-  .compound .cing { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 14px; }
-  .compound .ingname { color: var(--ink); }
-  .compound .cnote { margin-top: 8px; font-size: 13px; border-radius: 8px; padding: 7px 10px; background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
-  .compound .cnote.warn { background: var(--yellow-bg); color: var(--yellow); border-color: var(--yellow-border); }
-  .compound .cnote.bad { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
-  .cmp-tag { font-size: 11px; font-weight: 700; border-radius: 5px; padding: 1px 6px; white-space: nowrap; }
-  .cmp-tag.bad { color: var(--red); background: var(--red-bg); }
-  .cmp-tag.warn { color: var(--yellow); background: var(--yellow-bg); }
-
-  /* 图标与缩略图 */
-  .ic-badge { font-size: 16px; line-height: 1; }
-  .imgwrap { text-align: center; margin-bottom: 12px; }
-  .item-img { width: 128px; height: 128px; border-radius: 14px; border: 1px solid var(--line); background: #fff; }
-  .imgcap { font-size: 11px; color: var(--ink-3); margin-top: 5px; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🫘 蚕豆病（G6PD 缺乏症）禁忌速查</h1>
-  <p>药品 / 食物 / 日用品 · 风险查询 · 应急指引</p>
+  <h1>🫘 蚕豆病 · 能不能用</h1>
+  <p>宝宝有蚕豆病，药 / 食物 / 用品，一查就知道</p>
   <div class="header-badges">
     <span class="header-badge">📦 本地运行 · 数据不出手机</span>
     <span class="header-badge" id="badgeCount">共 0 条</span>
@@ -332,57 +283,72 @@
 </header>
 
 <main>
-  <!-- ============ 查询页 ============ -->
+  <!-- ============ 查一下 ============ -->
   <section class="page on" id="page-search">
     <div class="search-wrap">
       <div class="searchbox">
         <span class="icon">🔍</span>
-        <input id="q" type="search" placeholder="输入药名 / 食物名，如：布洛芬、复方新诺明" enterkeyhint="search" autocomplete="off">
+        <input id="q" type="search" placeholder="药名 / 食物 / 用品，如：布洛芬、蚕豆" enterkeyhint="search" autocomplete="off">
         <button class="clear" id="clearBtn" aria-label="清空">✕</button>
       </div>
       <div class="suggest" id="suggest" style="display:none"></div>
     </div>
+    <div class="hint">输入后立刻显示 ⛔禁用 / ⚠️慎用 / ✅可用，并附一句话原因</div>
+
+    <div class="hero" id="forbiddenHero">
+      <span class="hero-ic">⛔</span>
+      <div class="hero-txt">
+        <div class="hero-t">禁用清单 <span id="forbidCount">0</span> 项</div>
+        <div class="hero-s">最容易导致溶血的东西，就医随身带 →</div>
+      </div>
+      <span class="hero-arrow">›</span>
+    </div>
+
+    <div class="sec-title">常见场景，直接点</div>
+    <div class="scen-grid" id="scenarioGrid"></div>
+
     <div class="chips" id="chips">
       <div class="chip on" data-risk="">全部</div>
       <div class="chip r-fav" data-fav="1">⭐ 常用</div>
       <div class="chip r-forbidden" data-risk="forbidden">⛔ 禁用</div>
       <div class="chip r-caution" data-risk="caution">⚠️ 慎用</div>
-      <div class="chip r-safe" data-risk="safe">✅ 常规可用</div>
-      <div class="chip r-info" data-risk="info">ℹ️ 提示</div>
+      <div class="chip r-safe" data-risk="safe">✅ 可用</div>
     </div>
-    <div class="quick" id="quick">
-      <button data-q="对乙酰氨基酚">对乙酰氨基酚</button>
-      <button data-q="布洛芬">布洛芬</button>
-      <button data-q="阿莫西林">阿莫西林</button>
-      <button data-q="复方新诺明">复方新诺明</button>
-      <button data-q="感冒灵">感冒灵</button>
-      <button data-q="蚕豆">蚕豆</button>
-      <button data-q="樟脑丸">樟脑丸</button>
-      <button data-q="牛黄解毒片">牛黄解毒片</button>
-    </div>
+
+    <div id="histArea"></div>
     <div class="count" id="count"></div>
     <div id="results"></div>
   </section>
 
-  <!-- ============ 列表页 ============ -->
+  <!-- ============ 分类 ============ -->
   <section class="page" id="page-list">
-    <div id="listSummary" class="list-summary"></div>
-    <div id="groupChips" class="group-chips"></div>
     <div class="list-filter">
       <span class="icon">🔍</span>
-      <input id="listQ" type="search" placeholder="在全部条目中筛选（药名 / 别名 / 类别 / 药品/食品…）" autocomplete="off">
+      <input id="listQ" type="search" placeholder="在分类里搜（药名 / 别名 / 类别）" autocomplete="off">
     </div>
+    <div class="list-note">按生活场景归好类了，点开分组查看，或直接搜索。</div>
+    <div class="scen-chips" id="scenChips"></div>
     <div id="allList"></div>
   </section>
 
-  <!-- ============ 档案页 ============ -->
+  <!-- ============ 禁用清单 ============ -->
+  <section class="page" id="page-forbidden">
+    <div class="forbid-intro">以下为禁用 / 绝对回避项。就医、买药、囤货前先核对，把这份清单给医生看。</div>
+    <div class="print-bar">
+      <button class="pbtn" id="copyForbid">📋 复制清单</button>
+      <button class="pbtn ghost" id="printForbid">🖨 打印 / 存图</button>
+    </div>
+    <div id="forbidList"></div>
+  </section>
+
+  <!-- ============ 档案 ============ -->
   <section class="page" id="page-profile">
     <div id="profileApp"></div>
   </section>
 
-  <!-- ============ 应急页 ============ -->
+  <!-- ============ 应急 / 提示卡 ============ -->
   <section class="page" id="page-emergency">
-    <div class="prose">
+    <div class="prose" id="cardText">
       <h3>🚨 溶血发作怎么办（先立即就医）</h3>
       <div class="step"><b>第一步：立即停止接触诱因</b><br>停止食用蚕豆及可疑食物；停用可疑药物；远离樟脑丸（萘）等物品。</div>
       <div class="step"><b>第二步：立即送正规医院</b><br>前往医院急诊科/血液科，明确告知医生：“有蚕豆病史，怀疑溶血发作”。溶血多为自限性（1~2天，长者10天），及时处理大多可完全恢复。</div>
@@ -396,13 +362,8 @@
         <li>严重时：心跳快、呼吸急、尿少，甚至休克</li>
       </ul>
       <div class="keyline">一句话：吃过蚕豆/可疑药物 + 尿色变深 + 发黄苍白 = 高度怀疑溶血，<b>立即就医</b>。</div>
-    </div>
-  </section>
 
-  <!-- ============ 提示卡页 ============ -->
-  <section class="page" id="page-card">
-    <div class="prose" id="cardText">
-      <h3>🪪 G6PD 缺乏症（蚕豆病）就医提示卡</h3>
+      <h3 style="margin-top:18px">🪪 就医提示卡（可复制给医生）</h3>
       <p>患者/患儿患有 G6PD 缺乏症（蚕豆病）：红细胞易因氧化性物质破坏而发生急性溶血。用药、饮食前请核对以下禁忌：</p>
       <p><b>【禁用药物】</b><br>
       · 解热镇痛：阿司匹林、安乃近、氨基比林、非那西丁、保泰松<br>
@@ -415,26 +376,26 @@
       · 蚕豆及一切制品（鲜蚕豆、豆瓣酱、兰花豆、蚕豆酥等）<br>
       · 樟脑丸/卫生球/臭丸（萘）、紫药水（龙胆紫）</p>
       <p><b>【慎用（需医生评估）】</b><br>
-      奎宁、氯喹、喹诺酮类（XX沙星）、大剂量维生素C、维生素K3、硝普钠、硝酸酯类、磺酰脲类降糖药、复方感冒药（成分复杂，需逐项核对）</p>
+      奎宁、氯喹、喹诺酮类（XX沙星）、大剂量维生素C、维生素K3、磺酰脲类降糖药、复方感冒药（成分复杂，需逐项核对）</p>
       <p><b>【相对安全（供参考）】</b><br>
-      对乙酰氨基酚（常规剂量）、布洛芬（有分歧，需评估）、青霉素类 / 头孢类 / 大环内酯类抗生素</p>
+      对乙酰氨基酚（常规剂量）、青霉素类 / 头孢类 / 大环内酯类抗生素</p>
       <p>看病时请主动询问医生/药师：所开药物是否含以上禁忌成分？谢谢！</p>
     </div>
-    <button class="btn copy" id="copyCard">📋 复制提示卡全文</button>
+    <button class="btn copy" id="copyCard">📋 复制就医提示卡</button>
   </section>
 
   <div class="footer-note">
-    数据整理自公开权威资料（安徽省卫健委、协和/北大医院医生、台湾药学会等），仅供参考，不构成医疗建议。<br>
+    数据整理自公开权威资料（安徽省卫健委、台湾药学会、医院药学部等），仅供参考，不构成医疗建议。<br>
     用药请以医生处方和药师指导为准 · 本地运行，数据不出手机
   </div>
 </main>
 
 <nav>
-  <button class="on" data-page="search"><span class="ic">🔍</span>查询</button>
-  <button data-page="list"><span class="ic">📋</span>全部</button>
+  <button class="on" data-page="search"><span class="ic">🔍</span>查一下</button>
+  <button data-page="list"><span class="ic">📋</span>分类</button>
+  <button data-page="forbidden"><span class="ic">⛔</span>禁用</button>
   <button data-page="profile"><span class="ic">📁</span>档案</button>
   <button data-page="emergency"><span class="ic">🚨</span>应急</button>
-  <button data-page="card"><span class="ic">🪪</span>提示卡</button>
 </nav>
 
 <script>
@@ -10418,7 +10379,7 @@ const G6PD_DATA = {
 
 </script>
 <script>
-/* 蚕豆病禁忌速查 · 移动端逻辑
+/* 蚕豆病禁忌速查 · 移动端逻辑（场景优先 · 家长亲切版）
  * 依赖 data.js 提供的 G6PD_DATA
  * 搜索策略与 CLI 版保持一致：精确 > 别名/子串 > 字符 subsequence 模糊
  */
@@ -10435,27 +10396,38 @@ const G6PD_DATA = {
     metabolic: "内分泌（降糖药）", neuro: "神经系统/抗过敏", urinary: "泌尿系统用药",
     other_drug: "其他药物", tcm: "中药与中成药成分", food: "食物",
     household: "日用化学品", occupational: "职业/环境暴露", infection: "感染与疾病提示",
-    vaccine: "疫苗（常规接种）", plant: "植物 / 花草"
+    vaccine: "疫苗（常规接种）", plant: "植物 / 花草", antiviral: "抗病毒药",
+    respiratory: "呼吸系统用药", gastrointestinal: "消化系统用药", hormone: "激素类用药",
+    antifungal: "抗真菌药", antihistamine: "抗组胺药", topical: "外用药", vitamin: "维生素类"
   };
 
-  // 一级大类：把 25 个细类归并成 6 个大类，便于按"药品/食品/生活用品/…"浏览
-  var CATEGORY_GROUP = {
-    analgesic: "drug", sulfa: "drug", furan: "drug", antimalarial: "drug", antibiotic_other: "drug",
-    cardiovascular: "drug", metabolic: "drug", neuro: "drug", urinary: "drug", antiviral: "drug",
-    respiratory: "drug", gastrointestinal: "drug", hormone: "drug", antifungal: "drug",
-    antihistamine: "drug", topical: "drug", other_drug: "drug", tcm: "drug", vitamin: "drug",
-    food: "food", household: "household", plant: "plant", occupational: "env",
-    infection: "other", vaccine: "other"
-  };
-  var GROUP_META = {
-    drug: { name: "药品", icon: "💊" },
-    food: { name: "食品", icon: "🍎" },
-    household: { name: "生活用品", icon: "🧴" },
-    plant: { name: "植物 / 花草", icon: "🌿" },
-    env: { name: "职业 / 环境", icon: "⚠️" },
-    other: { name: "感染 / 疫苗 / 提示", icon: "🩺" }
-  };
-  var GROUP_ORDER = ["drug", "food", "household", "plant", "env", "other"];
+  /* 一级浏览分组：把 25 个细类归并为 6 个生活场景大类，更贴近家长视角 */
+  var BROWSE_GROUPS = [
+    { id: "drug", icon: "💊", name: "生病用药", cats: ["analgesic","sulfa","furan","antimalarial","antibiotic_other","cardiovascular","metabolic","neuro","urinary","antiviral","respiratory","gastrointestinal","hormone","antifungal","antihistamine","topical","other_drug","tcm","vitamin"] },
+    { id: "food", icon: "🍎", name: "日常饮食", cats: ["food"] },
+    { id: "household", icon: "🧴", name: "居家用品", cats: ["household"] },
+    { id: "plant", icon: "🌿", name: "植物花草", cats: ["plant"] },
+    { id: "env", icon: "⚠️", name: "环境 / 职业", cats: ["occupational"] },
+    { id: "other", icon: "🩺", name: "感染 / 疫苗 / 提示", cats: ["infection","vaccine"] }
+  ];
+  function catToGroup(cat) {
+    for (var i = 0; i < BROWSE_GROUPS.length; i++) {
+      if (BROWSE_GROUPS[i].cats.indexOf(cat) >= 0) return BROWSE_GROUPS[i].id;
+    }
+    return "other";
+  }
+
+  /* 首页常见场景：直接按生活情境挑出相关条目 */
+  var SCENARIOS = [
+    { id: "fever", icon: "🤒", name: "发烧·退烧", cats: ["analgesic"], kw: [] },
+    { id: "cold", icon: "🤧", name: "感冒·咳嗽", cats: ["respiratory","antihistamine","analgesic"], kw: ["感冒"] },
+    { id: "diarrhea", icon: "💩", name: "拉肚子", cats: ["gastrointestinal","urinary","antibiotic_other"], kw: [] },
+    { id: "skin", icon: "🩹", name: "湿疹·外伤", cats: ["topical","antifungal"], kw: [] },
+    { id: "vaccine", icon: "💉", name: "打疫苗", cats: ["vaccine"], kw: [] },
+    { id: "snack", icon: "🍬", name: "零食·点心", cats: ["food"], kw: [] },
+    { id: "moth", icon: "🧺", name: "衣物防蛀", cats: ["household"], kw: ["樟脑","萘","防蛀","臭丸"] },
+    { id: "outdoor", icon: "🌳", name: "外出·游玩", cats: ["plant","occupational"], kw: [] }
+  ];
 
   var RISK_LABEL = { forbidden: "⛔ 禁用", caution: "⚠️ 慎用", safe: "✅ 常规可用", info: "ℹ️ 提示" };
   var RISK_ORDER = { forbidden: 0, caution: 1, safe: 2, info: 3 };
@@ -10553,11 +10525,22 @@ const G6PD_DATA = {
     return esc(t.slice(0, i)) + '<span class="s-hl">' + esc(t.slice(i, i + q.length)) + "</span>" + esc(t.slice(i + q.length));
   }
 
+  function fieldContains(it, q) {
+    q = norm(q);
+    if (!q) return true;
+    return norm(it.name).indexOf(q) >= 0 ||
+      (it.en && norm(it.en).indexOf(q) >= 0) ||
+      (it.aliases || []).some(function (a) { return norm(a).indexOf(q) >= 0; });
+  }
+
+  function byId(id) {
+    for (var i = 0; i < ITEMS.length; i++) if (ITEMS[i].id === id) return ITEMS[i];
+    return null;
+  }
+
   /* ---------- 收藏（localStorage） ---------- */
   var FAV_KEY = "g6pd_fav_v1";
-  function loadFav() {
-    try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch (e) { return []; }
-  }
+  function loadFav() { try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch (e) { return []; } }
   var favArr = loadFav();
   function isFav(id) { return favArr.indexOf(id) >= 0; }
   function toggleFav(id) {
@@ -10568,9 +10551,7 @@ const G6PD_DATA = {
 
   /* ---------- 搜索历史（localStorage） ---------- */
   var HIST_KEY = "g6pd_history_v1";
-  function loadHist() {
-    try { return JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch (e) { return []; }
-  }
+  function loadHist() { try { return JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch (e) { return []; } }
   function pushHist(q) {
     q = (q || "").trim();
     if (!q) return;
@@ -10579,9 +10560,7 @@ const G6PD_DATA = {
     if (h.length > 8) h = h.slice(0, 8);
     try { localStorage.setItem(HIST_KEY, JSON.stringify(h)); } catch (e) {}
   }
-  function clearHist() {
-    try { localStorage.removeItem(HIST_KEY); } catch (e) {}
-  }
+  function clearHist() { try { localStorage.removeItem(HIST_KEY); } catch (e) {} }
 
   /* ---------- 联想建议 ---------- */
   function suggest(q, n) {
@@ -10599,15 +10578,13 @@ const G6PD_DATA = {
     return out.slice(0, n).map(function (x) { return x.item; });
   }
 
-  /* ---------- 渲染 ---------- */
-
+  /* ---------- 条目卡片 ---------- */
   function itemCard(it, idPrefix) {
     var label = RISK_LABEL[it.risk] || it.risk;
     var cat = CATEGORY_NAMES[it.category] || it.category;
     var aliases = (it.aliases && it.aliases.length) ? it.aliases.join("、") : "";
     var did = idPrefix + "-" + it.id;
 
-    // 复方药：自动拆成分并逐条比对禁忌库
     var comp = null, hasForbid = false, hasCaution = false;
     if (it.ingredients && it.ingredients.length) {
       comp = it.ingredients.map(function (ing) {
@@ -10667,7 +10644,7 @@ const G6PD_DATA = {
       rows + '<div class="cnote ' + (hasForbid ? "bad" : hasCaution ? "warn" : "") + '">' + note + "</div></div>";
   }
 
-  /* 卡片点击：收藏星 / 展开；历史 chip；统一委托 */
+  /* 卡片点击：收藏星 / 展开；统一委托 */
   function bindCardClicks(container) {
     container.addEventListener("click", function (e) {
       var starBtn = e.target.closest(".star");
@@ -10682,8 +10659,6 @@ const G6PD_DATA = {
         }
         return;
       }
-      var hchip = e.target.closest(".hchip");
-      if (hchip) { runQuery(hchip.getAttribute("data-q")); return; }
       var el = e.target.closest(".item");
       if (el) {
         el.classList.toggle("open");
@@ -10693,11 +10668,17 @@ const G6PD_DATA = {
     });
   }
 
-  var resultsEl = document.getElementById("results");
-  var countEl = document.getElementById("count");
-  var allListEl = document.getElementById("allList");
+  /* ---------- 搜索页状态 ---------- */
   var inputEl = document.getElementById("q");
   var clearBtn = document.getElementById("clearBtn");
+  var resultsEl = document.getElementById("results");
+  var countEl = document.getElementById("count");
+  var suggestEl = document.getElementById("suggest");
+  var chipsEl = document.getElementById("chips");
+  var histArea = document.getElementById("histArea");
+  var scenarioGrid = document.getElementById("scenarioGrid");
+  var forbiddenHero = document.getElementById("forbiddenHero");
+  var forbidCountEl = document.getElementById("forbidCount");
   var currentRisk = "";
   var currentFav = false;
   var currentQuery = "";
@@ -10716,10 +10697,7 @@ const G6PD_DATA = {
         '<div class="item info">' +
           '<div class="bar"></div>' +
           '<div class="head">' +
-            '<div class="row1">' +
-              '<span class="tag">ℹ️ 提示</span>' +
-              '<span class="name">' + esc(q) + '</span>' +
-            '</div>' +
+            '<div class="row1"><span class="tag">ℹ️ 提示</span><span class="name">' + esc(q) + '</span></div>' +
           '</div>' +
           '<div class="detail" style="display:block">' +
             '<div class="kv"><div class="k">结论</div><div class="v">本禁忌库未收录「' + esc(q) + '」。</div></div>' +
@@ -10734,7 +10712,6 @@ const G6PD_DATA = {
     countEl.textContent = "命中 " + list.length + " 条" + (currentRisk || currentFav ? "（已筛选）" : "");
   }
 
-  /* 空输入：显示收藏或历史 */
   function renderFavorites() {
     var items = ITEMS.filter(function (it) { return isFav(it.id); });
     if (!items.length) {
@@ -10747,17 +10724,22 @@ const G6PD_DATA = {
     countEl.textContent = "常用 · " + items.length + " 条";
   }
 
-  function renderHistory() {
+  function renderHistFav() {
+    var html = "";
+    if (favArr.length) {
+      html += '<div class="hist-label">⭐ 我常查的</div><div class="hchips">' +
+        favArr.map(function (id) { var it = byId(id); return it ? '<span class="hchip fav" data-q="' + esc(it.name) + '">' + esc(it.name) + "</span>" : ""; }).join("") +
+        '</div>';
+    }
     var h = loadHist();
-    if (!h.length) { resultsEl.innerHTML = ""; countEl.textContent = ""; return; }
-    resultsEl.innerHTML =
-      '<div class="history"><div class="hlabel"><span>🕘 最近查询</span>' +
-      '<span class="clr" id="histClr">清空</span></div><div class="hchips">' +
-      h.map(function (q) { return '<span class="hchip" data-q="' + esc(q) + '">' + esc(q) + "</span>"; }).join("") +
-      "</div></div>";
+    if (h.length) {
+      html += '<div class="hist-label">🕘 最近查询</div><div class="hchips">' +
+        h.map(function (q) { return '<span class="hchip" data-q="' + esc(q) + '">' + esc(q) + "</span>"; }).join("") +
+        '</div>';
+    }
+    histArea.innerHTML = html;
     countEl.textContent = "";
-    var clr = document.getElementById("histClr");
-    if (clr) clr.addEventListener("click", function (e) { e.stopPropagation(); clearHist(); renderHistory(); });
+    resultsEl.innerHTML = "";
   }
 
   function refresh() {
@@ -10766,8 +10748,8 @@ const G6PD_DATA = {
     if (!q) {
       currentQuery = "";
       hideSuggest();
-      if (currentFav) renderFavorites();
-      else renderHistory();
+      if (currentFav) { renderFavorites(); histArea.innerHTML = ""; }
+      else { renderHistFav(); }
       return;
     }
     currentQuery = q;
@@ -10783,12 +10765,11 @@ const G6PD_DATA = {
   }
 
   /* ---------- 联想下拉 ---------- */
-  var sugBox = document.getElementById("suggest");
   function showSuggest(q) {
     var items = suggest(q, 8);
     if (!items.length) { hideSuggest(); return; }
     activeIndex = -1;
-    sugBox.innerHTML = items.map(function (it, i) {
+    suggestEl.innerHTML = items.map(function (it, i) {
       var cat = CATEGORY_NAMES[it.category] || it.category;
       return '<div class="opt" data-i="' + i + '" data-name="' + esc(it.name) + '">' +
         '<span class="dot ' + esc(it.risk) + '"></span>' +
@@ -10796,136 +10777,229 @@ const G6PD_DATA = {
         '<span class="s-cat">' + esc(cat) + "</span>" +
         "</div>";
     }).join("");
-    sugBox.style.display = "block";
+    suggestEl.style.display = "block";
   }
-  function hideSuggest() { sugBox.style.display = "none"; activeIndex = -1; }
-  function updateActive(opts) {
-    opts.forEach(function (o, i) { o.classList.toggle("active", i === activeIndex); });
-  }
+  function hideSuggest() { suggestEl.style.display = "none"; activeIndex = -1; }
+  function updateActive(opts) { opts.forEach(function (o, i) { o.classList.toggle("active", i === activeIndex); }); }
   function chooseSug(name) { runQuery(name); }
 
-  /* ---------- 全部列表页 ---------- */
-  var listSummaryEl = document.getElementById("listSummary");
-  var listQEl = document.getElementById("listQ");
-  var listRiskFilter = "";
-  var listGroupFilter = "";
+  /* ---------- 分类页状态 ---------- */
+  var listQ = document.getElementById("listQ");
+  var scenChips = document.getElementById("scenChips");
+  var allList = document.getElementById("allList");
+  var browseState = { scenario: null, openGroups: {} };
 
-  function renderAllList() {
-    var rc = { forbidden: 0, caution: 0, safe: 0, info: 0 };
-    ITEMS.forEach(function (it) { rc[it.risk]++; });
-    listSummaryEl.innerHTML =
-      summaryCell("forbidden", "⛔ 禁用", rc.forbidden) +
-      summaryCell("caution", "⚠️ 慎用", rc.caution) +
-      summaryCell("safe", "✅ 可用", rc.safe) +
-      summaryCell("info", "ℹ️ 提示", rc.info);
-    currentQuery = "";
-    renderGroupChips();
-    renderGrouped(norm(listQEl.value.trim()));
-  }
-  function summaryCell(risk, label, n) {
-    return '<div class="ls ' + risk + (listRiskFilter === risk ? " active" : "") + '" data-risk="' + risk + '">' +
-      '<div class="n">' + n + '</div><div class="t">' + label + "</div></div>";
-  }
-  function renderGrouped(q) {
-    q = norm(q);
-    var byGroup = {};
-    ITEMS.forEach(function (it) {
-      if (listRiskFilter && it.risk !== listRiskFilter) return;
-      var g = CATEGORY_GROUP[it.category] || "other";
-      if (listGroupFilter && g !== listGroupFilter) return;
-      if (q) {
-        var gm = GROUP_META[g];
-        var hit = (norm(it.name).indexOf(q) >= 0) ||
-          (it.en && norm(it.en).indexOf(q) >= 0) ||
-          (it.aliases || []).some(function (a) { return norm(a).indexOf(q) >= 0; }) ||
-          norm(CATEGORY_NAMES[it.category] || "").indexOf(q) >= 0 ||
-          (gm && norm(gm.name).indexOf(q) >= 0);
-        if (!hit) return;
-      }
-      (byGroup[g] = byGroup[g] || []).push(it);
-    });
+  function subcatHTML(items) {
+    if (!items.length) return "";
+    var byCat = {};
+    items.forEach(function (it) { var c = CATEGORY_NAMES[it.category] || it.category; (byCat[c] = byCat[c] || []).push(it); });
+    var cats = Object.keys(byCat).sort(function (a, b) { return byCat[b].length - byCat[a].length; });
     var html = "";
-    GROUP_ORDER.forEach(function (g) {
-      var items = byGroup[g];
-      if (!items || !items.length) return;
-      var meta = GROUP_META[g] || { name: g, icon: "" };
-      html += '<div class="group-head">' + meta.icon + " " + esc(meta.name) +
-              '<span class="gh-count">' + items.length + " 条</span></div>";
-      var byCat = {};
-      items.forEach(function (it) {
-        var c = CATEGORY_NAMES[it.category] || it.category;
-        (byCat[c] = byCat[c] || []).push(it);
-      });
-      Object.keys(byCat).sort(function (a, b) {
-        return byCat[b].length - byCat[a].length;
-      }).forEach(function (cat) {
-        var arr = byCat[cat].slice().sort(function (a, b) {
-          return RISK_ORDER[a.risk] - RISK_ORDER[b.risk];
-        });
-        html += '<div class="subcat-title">' + esc(cat) + "（" + arr.length + "）</div>";
-        html += arr.map(function (it) { return itemCard(it, "a"); }).join("");
-      });
+    cats.forEach(function (cat) {
+      var arr = byCat[cat].slice().sort(function (a, b) { return RISK_ORDER[a.risk] - RISK_ORDER[b.risk]; });
+      html += '<div class="subcat-title">' + esc(cat) + "（" + arr.length + "）</div>";
+      html += arr.map(function (it) { return itemCard(it, "a"); }).join("");
     });
-    if (!html) html = '<div class="empty"><div class="big">🔍</div>没有匹配的条目</div>';
-    allListEl.innerHTML = html;
+    return html;
   }
 
-  function renderGroupChips() {
-    var el = document.getElementById("groupChips");
-    if (!el) return;
-    var counts = {};
-    ITEMS.forEach(function (it) {
-      var g = CATEGORY_GROUP[it.category] || "other";
-      counts[g] = (counts[g] || 0) + 1;
+  function riskHTML(items) {
+    var order = [["forbidden", "⛔ 禁用"], ["caution", "⚠️ 慎用"], ["safe", "✅ 可用"], ["info", "ℹ️ 提示"]];
+    var html = "";
+    order.forEach(function (pair) {
+      var arr = items.filter(function (it) { return it.risk === pair[0]; })
+        .sort(function (a, b) { return a.name.localeCompare(b.name, "zh"); });
+      if (arr.length) {
+        html += '<div class="subcat-title">' + pair[1] + "（" + arr.length + "）</div>";
+        html += arr.map(function (it) { return itemCard(it, "a"); }).join("");
+      }
     });
-    var html = '<div class="gchip' + (listGroupFilter === "" ? " on" : "") + '" data-group="">📦 全部</div>';
-    GROUP_ORDER.forEach(function (g) {
-      if (!counts[g]) return;
-      var m = GROUP_META[g];
-      html += '<div class="gchip' + (listGroupFilter === g ? " on" : "") + '" data-group="' + g + '">' +
-              m.icon + " " + esc(m.name) + " " + counts[g] + "</div>";
+    return html;
+  }
+
+  function scenarioItems(sid, q) {
+    var s = null;
+    for (var i = 0; i < SCENARIOS.length; i++) if (SCENARIOS[i].id === sid) s = SCENARIOS[i];
+    if (!s) return [];
+    return ITEMS.filter(function (it) {
+      var inCat = s.cats.indexOf(it.category) >= 0;
+      var hitKw = s.kw.some(function (k) { return fieldContains(it, k); });
+      if (!inCat && !hitKw) return false;
+      if (q && !fieldContains(it, q)) return false;
+      return true;
     });
-    el.innerHTML = html;
+  }
+
+  function renderScenChips() {
+    var html = '<div class="schip' + (browseState.scenario ? "" : " on") + '" data-sid="">全部场景</div>';
+    SCENARIOS.forEach(function (s) {
+      html += '<div class="schip' + (browseState.scenario === s.id ? " on" : "") + '" data-sid="' + s.id + '">' + s.icon + " " + esc(s.name) + "</div>";
+    });
+    scenChips.innerHTML = html;
+  }
+
+  function renderBrowse() {
+    renderScenChips();
+    var q = norm(listQ.value.trim());
+    if (browseState.scenario) {
+      var items = scenarioItems(browseState.scenario, q);
+      var sname = "";
+      for (var i = 0; i < SCENARIOS.length; i++) if (SCENARIOS[i].id === browseState.scenario) sname = SCENARIOS[i].name;
+      var html = '<div class="back-chip" id="backAll">← 返回全部分类</div>';
+      html += '<div class="list-note" style="margin-top:0">' + esc(sname) + " · 共 " + items.length + " 项（按风险排序）</div>";
+      html += items.length ? riskHTML(items) : '<div class="empty"><div class="big">🔍</div>没有匹配的条目</div>';
+      allList.innerHTML = html;
+      return;
+    }
+    if (q) {
+      var byGroup = {};
+      ITEMS.forEach(function (it) { if (fieldContains(it, q)) { var g = catToGroup(it.category); (byGroup[g] = byGroup[g] || []).push(it); } });
+      var flat = "";
+      BROWSE_GROUPS.forEach(function (g) {
+        var arr = byGroup[g.id];
+        if (!arr || !arr.length) return;
+        flat += '<div class="group-head">' + g.icon + " " + esc(g.name) + ' <span class="gh-count">' + arr.length + " 条</span></div>";
+        flat += subcatHTML(arr);
+      });
+      allList.innerHTML = flat || '<div class="empty"><div class="big">🔍</div>没有匹配的条目</div>';
+      return;
+    }
+    // 折叠手风琴：默认收起，点开看细类
+    var acc = "";
+    BROWSE_GROUPS.forEach(function (g) {
+      var items = ITEMS.filter(function (it) { return catToGroup(it.category) === g.id; });
+      if (!items.length) return;
+      var open = !!browseState.openGroups[g.id];
+      acc += '<div class="bgroup' + (open ? " open" : "") + '" data-g="' + g.id + '">' +
+        '<div class="bg-head"><span class="bg-ic">' + g.icon + '</span><span class="bg-name">' + esc(g.name) + '</span>' +
+        '<span class="bg-cnt">' + items.length + '</span><span class="bg-arrow">▾</span></div>' +
+        (open ? '<div class="bg-body">' + subcatHTML(items) + '</div>' : '') +
+        '</div>';
+    });
+    allList.innerHTML = acc;
+  }
+
+  /* ---------- 禁用清单 ---------- */
+  var forbidList = document.getElementById("forbidList");
+  function renderForbidden() {
+    var items = ITEMS.filter(function (it) { return it.risk === "forbidden"; });
+    var byGroup = {};
+    items.forEach(function (it) { var g = catToGroup(it.category); (byGroup[g] = byGroup[g] || []).push(it); });
+    var html = "";
+    BROWSE_GROUPS.forEach(function (g) {
+      var arr = byGroup[g.id];
+      if (!arr || !arr.length) return;
+      html += '<div class="group-head">' + g.icon + " " + esc(g.name) + ' <span class="gh-count">' + arr.length + " 条</span></div>";
+      html += subcatHTML(arr);
+    });
+    forbidList.innerHTML = html;
+  }
+  function forbiddenPlainText() {
+    var items = ITEMS.filter(function (it) { return it.risk === "forbidden"; });
+    var lines = ["【蚕豆病（G6PD）禁用清单】"];
+    var byGroup = {};
+    items.forEach(function (it) { var g = catToGroup(it.category); (byGroup[g] = byGroup[g] || []).push(it); });
+    BROWSE_GROUPS.forEach(function (g) {
+      var arr = byGroup[g.id];
+      if (!arr || !arr.length) return;
+      lines.push("");
+      lines.push(g.name + "：");
+      arr.forEach(function (it) {
+        var al = (it.aliases && it.aliases.length) ? "（" + it.aliases.join("、") + "）" : "";
+        lines.push("· " + it.name + al + " —— " + (it.summary || ""));
+      });
+    });
+    lines.push("");
+    lines.push("（仅供参考，以医生/药师指导为准）");
+    return lines.join("\n");
+  }
+
+  /* ---------- 首页渲染 ---------- */
+  function renderHome() {
+    scenarioGrid.innerHTML = SCENARIOS.map(function (s) {
+      return '<div class="scen" data-sid="' + s.id + '"><span class="scen-ic">' + s.icon + '</span><span class="scen-lbl">' + esc(s.name) + "</span></div>";
+    }).join("");
+    var fc = ITEMS.filter(function (it) { return it.risk === "forbidden"; }).length;
+    if (forbidCountEl) forbidCountEl.textContent = fc;
+    // 重置风险筛选高亮
+    currentRisk = ""; currentFav = false;
+    if (chipsEl) chipsEl.querySelectorAll(".chip").forEach(function (c) {
+      c.classList.toggle("on", c.getAttribute("data-risk") === "" && !c.getAttribute("data-fav"));
+    });
+  }
+
+  /* ---------- Tab 切换 ---------- */
+  function switchTab(page) {
+    document.querySelectorAll("nav button").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-page") === page); });
+    document.querySelectorAll(".page").forEach(function (p) { p.classList.remove("on"); });
+    var pg = document.getElementById("page-" + page);
+    if (pg) pg.classList.add("on");
+    window.scrollTo(0, 0);
+    if (page === "list") renderBrowse();
+    else if (page === "forbidden") renderForbidden();
+    else if (page === "search") { renderHome(); refresh(); }
+  }
+
+  /* ---------- 复制 / 打印 ---------- */
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  function copyText(text, btn, okMsg) {
+    function done() { if (btn) { btn.textContent = okMsg; setTimeout(function () { btn.textContent = btn.getAttribute("data-old"); }, 2500); } }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+    } else { fallbackCopy(text); done(); }
   }
 
   /* ---------- 事件绑定 ---------- */
-
-  document.getElementById("quick").addEventListener("click", function (e) {
-    var btn = e.target.closest("button");
-    if (!btn) return;
-    runQuery(btn.getAttribute("data-q"));
-  });
-
-  document.getElementById("chips").addEventListener("click", function (e) {
+  if (chipsEl) chipsEl.addEventListener("click", function (e) {
     var chip = e.target.closest(".chip");
     if (!chip) return;
-    document.querySelectorAll("#chips .chip").forEach(function (c) { c.classList.remove("on"); });
+    chipsEl.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("on"); });
     chip.classList.add("on");
     currentRisk = chip.getAttribute("data-risk") || "";
     currentFav = !!chip.getAttribute("data-fav");
     refresh();
   });
 
-  listSummaryEl.addEventListener("click", function (e) {
-    var ls = e.target.closest(".ls");
-    if (!ls) return;
-    var r = ls.getAttribute("data-risk");
-    listRiskFilter = (listRiskFilter === r) ? "" : r;
-    renderAllList();
+  if (scenarioGrid) scenarioGrid.addEventListener("click", function (e) {
+    var s = e.target.closest(".scen");
+    if (!s) return;
+    browseState.scenario = s.getAttribute("data-sid");
+    listQ.value = "";
+    switchTab("list");
   });
 
-  var groupChipsEl = document.getElementById("groupChips");
-  if (groupChipsEl) {
-    groupChipsEl.addEventListener("click", function (e) {
-      var b = e.target.closest(".gchip");
-      if (!b) return;
-      listGroupFilter = b.getAttribute("data-group") || "";
-      renderGroupChips();
-      renderGrouped(norm(listQEl.value.trim()));
-    });
-  }
+  if (forbiddenHero) forbiddenHero.addEventListener("click", function () { switchTab("forbidden"); });
 
-  listQEl.addEventListener("input", function () { renderGrouped(norm(listQEl.value.trim())); });
+  if (scenChips) scenChips.addEventListener("click", function (e) {
+    var c = e.target.closest(".schip");
+    if (!c) return;
+    browseState.scenario = c.getAttribute("data-sid") || null;
+    renderBrowse();
+  });
+
+  if (allList) allList.addEventListener("click", function (e) {
+    var back = e.target.closest("#backAll");
+    if (back) { browseState.scenario = null; renderBrowse(); return; }
+    var head = e.target.closest(".bg-head");
+    if (head) {
+      var g = head.parentNode.getAttribute("data-g");
+      browseState.openGroups[g] = !browseState.openGroups[g];
+      renderBrowse();
+    }
+  });
+
+  if (histArea) histArea.addEventListener("click", function (e) {
+    var c = e.target.closest(".hchip");
+    if (c) { switchTab("search"); runQuery(c.getAttribute("data-q")); }
+  });
+
+  if (listQ) listQ.addEventListener("input", function () { renderBrowse(); });
 
   var debounceTimer = null;
   inputEl.addEventListener("input", function () {
@@ -10933,94 +11007,57 @@ const G6PD_DATA = {
     debounceTimer = setTimeout(refresh, 100);
   });
   inputEl.addEventListener("keydown", function (e) {
-    if (sugBox.style.display === "none") return;
-    var opts = sugBox.querySelectorAll(".opt");
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      activeIndex = Math.min(activeIndex + 1, opts.length - 1);
-      updateActive(opts);
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      activeIndex = Math.max(activeIndex - 1, 0);
-      updateActive(opts);
-    } else if (e.key === "Enter") {
-      if (activeIndex >= 0 && opts[activeIndex]) {
-        e.preventDefault();
-        chooseSug(opts[activeIndex].getAttribute("data-name"));
-      } else {
-        hideSuggest();
-        pushHist(inputEl.value.trim());
-      }
-    } else if (e.key === "Escape") {
-      hideSuggest();
-    }
+    if (suggestEl.style.display === "none") return;
+    var opts = suggestEl.querySelectorAll(".opt");
+    if (e.key === "ArrowDown") { e.preventDefault(); activeIndex = Math.min(activeIndex + 1, opts.length - 1); updateActive(opts); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); activeIndex = Math.max(activeIndex - 1, 0); updateActive(opts); }
+    else if (e.key === "Enter") {
+      if (activeIndex >= 0 && opts[activeIndex]) { e.preventDefault(); chooseSug(opts[activeIndex].getAttribute("data-name")); }
+      else { hideSuggest(); pushHist(inputEl.value.trim()); }
+    } else if (e.key === "Escape") { hideSuggest(); }
   });
   inputEl.addEventListener("focus", function () {
-    if (!inputEl.value.trim()) { hideSuggest(); if (!currentFav) renderHistory(); }
+    if (!inputEl.value.trim()) { hideSuggest(); if (!currentFav) renderHistFav(); }
   });
 
   clearBtn.addEventListener("click", function () {
-    inputEl.value = "";
-    clearBtn.classList.remove("show");
-    refresh();
-    inputEl.focus();
+    inputEl.value = ""; clearBtn.classList.remove("show"); refresh(); inputEl.focus();
   });
 
-  sugBox.addEventListener("click", function (e) {
+  suggestEl.addEventListener("click", function (e) {
     var opt = e.target.closest(".opt");
     if (!opt) return;
     chooseSug(opt.getAttribute("data-name"));
   });
 
-  /* ---------- Tab 切换 ---------- */
   document.querySelectorAll("nav button").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      document.querySelectorAll("nav button").forEach(function (b) { b.classList.remove("on"); });
-      btn.classList.add("on");
-      var page = btn.getAttribute("data-page");
-      document.querySelectorAll(".page").forEach(function (p) { p.classList.remove("on"); });
-      document.getElementById("page-" + page).classList.add("on");
-      window.scrollTo(0, 0);
-      if (page === "list") renderAllList();
-      else if (page === "search") refresh();
-    });
+    btn.addEventListener("click", function () { switchTab(btn.getAttribute("data-page")); });
   });
 
-  /* ---------- 复制提示卡 ---------- */
-  document.getElementById("copyCard").addEventListener("click", function () {
+  var copyForbid = document.getElementById("copyForbid");
+  if (copyForbid) { copyForbid.setAttribute("data-old", copyForbid.textContent); copyForbid.addEventListener("click", function () { copyText(forbiddenPlainText(), copyForbid, "✅ 已复制，可粘贴给医生"); }); }
+  var printForbid = document.getElementById("printForbid");
+  if (printForbid) printForbid.addEventListener("click", function () { window.print(); });
+
+  var copyCard = document.getElementById("copyCard");
+  if (copyCard) copyCard.addEventListener("click", function () {
     var text = document.getElementById("cardText").innerText;
-    function done() {
-      var btn = document.getElementById("copyCard");
-      btn.textContent = "✅ 已复制，可直接粘贴发给医生";
-      setTimeout(function () { btn.textContent = "📋 复制提示卡全文"; }, 2500);
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
-    } else {
-      fallbackCopy(text); done();
-    }
+    function done() { copyCard.textContent = "✅ 已复制，可直接粘贴发给医生"; setTimeout(function () { copyCard.textContent = "📋 复制就医提示卡"; }, 2500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+    else { fallbackCopy(text); done(); }
   });
-
-  function fallbackCopy(text) {
-    var ta = document.createElement("textarea");
-    ta.value = text;
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand("copy"); } catch (e) {}
-    document.body.removeChild(ta);
-  }
 
   /* ---------- 初始化 ---------- */
   bindCardClicks(resultsEl);
-  bindCardClicks(allListEl);
+  bindCardClicks(allList);
 
   var badge = document.getElementById("badgeCount");
   if (badge) badge.textContent = "共 " + ITEMS.length + " 条";
 
-  renderAllList();
+  renderHome();
   refresh();
+  renderBrowse();
+  renderForbidden();
 
   /* 向档案模块（profile.js）暴露复用能力，避免重复实现 */
   window.g6pd = {

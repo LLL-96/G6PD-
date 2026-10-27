@@ -1,4 +1,4 @@
-/* 蚕豆病禁忌速查 · 移动端逻辑
+/* 蚕豆病禁忌速查 · 移动端逻辑（场景优先 · 家长亲切版）
  * 依赖 data.js 提供的 G6PD_DATA
  * 搜索策略与 CLI 版保持一致：精确 > 别名/子串 > 字符 subsequence 模糊
  */
@@ -15,27 +15,38 @@
     metabolic: "内分泌（降糖药）", neuro: "神经系统/抗过敏", urinary: "泌尿系统用药",
     other_drug: "其他药物", tcm: "中药与中成药成分", food: "食物",
     household: "日用化学品", occupational: "职业/环境暴露", infection: "感染与疾病提示",
-    vaccine: "疫苗（常规接种）", plant: "植物 / 花草"
+    vaccine: "疫苗（常规接种）", plant: "植物 / 花草", antiviral: "抗病毒药",
+    respiratory: "呼吸系统用药", gastrointestinal: "消化系统用药", hormone: "激素类用药",
+    antifungal: "抗真菌药", antihistamine: "抗组胺药", topical: "外用药", vitamin: "维生素类"
   };
 
-  // 一级大类：把 25 个细类归并成 6 个大类，便于按"药品/食品/生活用品/…"浏览
-  var CATEGORY_GROUP = {
-    analgesic: "drug", sulfa: "drug", furan: "drug", antimalarial: "drug", antibiotic_other: "drug",
-    cardiovascular: "drug", metabolic: "drug", neuro: "drug", urinary: "drug", antiviral: "drug",
-    respiratory: "drug", gastrointestinal: "drug", hormone: "drug", antifungal: "drug",
-    antihistamine: "drug", topical: "drug", other_drug: "drug", tcm: "drug", vitamin: "drug",
-    food: "food", household: "household", plant: "plant", occupational: "env",
-    infection: "other", vaccine: "other"
-  };
-  var GROUP_META = {
-    drug: { name: "药品", icon: "💊" },
-    food: { name: "食品", icon: "🍎" },
-    household: { name: "生活用品", icon: "🧴" },
-    plant: { name: "植物 / 花草", icon: "🌿" },
-    env: { name: "职业 / 环境", icon: "⚠️" },
-    other: { name: "感染 / 疫苗 / 提示", icon: "🩺" }
-  };
-  var GROUP_ORDER = ["drug", "food", "household", "plant", "env", "other"];
+  /* 一级浏览分组：把 25 个细类归并为 6 个生活场景大类，更贴近家长视角 */
+  var BROWSE_GROUPS = [
+    { id: "drug", icon: "💊", name: "生病用药", cats: ["analgesic","sulfa","furan","antimalarial","antibiotic_other","cardiovascular","metabolic","neuro","urinary","antiviral","respiratory","gastrointestinal","hormone","antifungal","antihistamine","topical","other_drug","tcm","vitamin"] },
+    { id: "food", icon: "🍎", name: "日常饮食", cats: ["food"] },
+    { id: "household", icon: "🧴", name: "居家用品", cats: ["household"] },
+    { id: "plant", icon: "🌿", name: "植物花草", cats: ["plant"] },
+    { id: "env", icon: "⚠️", name: "环境 / 职业", cats: ["occupational"] },
+    { id: "other", icon: "🩺", name: "感染 / 疫苗 / 提示", cats: ["infection","vaccine"] }
+  ];
+  function catToGroup(cat) {
+    for (var i = 0; i < BROWSE_GROUPS.length; i++) {
+      if (BROWSE_GROUPS[i].cats.indexOf(cat) >= 0) return BROWSE_GROUPS[i].id;
+    }
+    return "other";
+  }
+
+  /* 首页常见场景：直接按生活情境挑出相关条目 */
+  var SCENARIOS = [
+    { id: "fever", icon: "🤒", name: "发烧·退烧", cats: ["analgesic"], kw: [] },
+    { id: "cold", icon: "🤧", name: "感冒·咳嗽", cats: ["respiratory","antihistamine","analgesic"], kw: ["感冒"] },
+    { id: "diarrhea", icon: "💩", name: "拉肚子", cats: ["gastrointestinal","urinary","antibiotic_other"], kw: [] },
+    { id: "skin", icon: "🩹", name: "湿疹·外伤", cats: ["topical","antifungal"], kw: [] },
+    { id: "vaccine", icon: "💉", name: "打疫苗", cats: ["vaccine"], kw: [] },
+    { id: "snack", icon: "🍬", name: "零食·点心", cats: ["food"], kw: [] },
+    { id: "moth", icon: "🧺", name: "衣物防蛀", cats: ["household"], kw: ["樟脑","萘","防蛀","臭丸"] },
+    { id: "outdoor", icon: "🌳", name: "外出·游玩", cats: ["plant","occupational"], kw: [] }
+  ];
 
   var RISK_LABEL = { forbidden: "⛔ 禁用", caution: "⚠️ 慎用", safe: "✅ 常规可用", info: "ℹ️ 提示" };
   var RISK_ORDER = { forbidden: 0, caution: 1, safe: 2, info: 3 };
@@ -133,11 +144,22 @@
     return esc(t.slice(0, i)) + '<span class="s-hl">' + esc(t.slice(i, i + q.length)) + "</span>" + esc(t.slice(i + q.length));
   }
 
+  function fieldContains(it, q) {
+    q = norm(q);
+    if (!q) return true;
+    return norm(it.name).indexOf(q) >= 0 ||
+      (it.en && norm(it.en).indexOf(q) >= 0) ||
+      (it.aliases || []).some(function (a) { return norm(a).indexOf(q) >= 0; });
+  }
+
+  function byId(id) {
+    for (var i = 0; i < ITEMS.length; i++) if (ITEMS[i].id === id) return ITEMS[i];
+    return null;
+  }
+
   /* ---------- 收藏（localStorage） ---------- */
   var FAV_KEY = "g6pd_fav_v1";
-  function loadFav() {
-    try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch (e) { return []; }
-  }
+  function loadFav() { try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch (e) { return []; } }
   var favArr = loadFav();
   function isFav(id) { return favArr.indexOf(id) >= 0; }
   function toggleFav(id) {
@@ -148,9 +170,7 @@
 
   /* ---------- 搜索历史（localStorage） ---------- */
   var HIST_KEY = "g6pd_history_v1";
-  function loadHist() {
-    try { return JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch (e) { return []; }
-  }
+  function loadHist() { try { return JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch (e) { return []; } }
   function pushHist(q) {
     q = (q || "").trim();
     if (!q) return;
@@ -159,9 +179,7 @@
     if (h.length > 8) h = h.slice(0, 8);
     try { localStorage.setItem(HIST_KEY, JSON.stringify(h)); } catch (e) {}
   }
-  function clearHist() {
-    try { localStorage.removeItem(HIST_KEY); } catch (e) {}
-  }
+  function clearHist() { try { localStorage.removeItem(HIST_KEY); } catch (e) {} }
 
   /* ---------- 联想建议 ---------- */
   function suggest(q, n) {
@@ -179,15 +197,13 @@
     return out.slice(0, n).map(function (x) { return x.item; });
   }
 
-  /* ---------- 渲染 ---------- */
-
+  /* ---------- 条目卡片 ---------- */
   function itemCard(it, idPrefix) {
     var label = RISK_LABEL[it.risk] || it.risk;
     var cat = CATEGORY_NAMES[it.category] || it.category;
     var aliases = (it.aliases && it.aliases.length) ? it.aliases.join("、") : "";
     var did = idPrefix + "-" + it.id;
 
-    // 复方药：自动拆成分并逐条比对禁忌库
     var comp = null, hasForbid = false, hasCaution = false;
     if (it.ingredients && it.ingredients.length) {
       comp = it.ingredients.map(function (ing) {
@@ -247,7 +263,7 @@
       rows + '<div class="cnote ' + (hasForbid ? "bad" : hasCaution ? "warn" : "") + '">' + note + "</div></div>";
   }
 
-  /* 卡片点击：收藏星 / 展开；历史 chip；统一委托 */
+  /* 卡片点击：收藏星 / 展开；统一委托 */
   function bindCardClicks(container) {
     container.addEventListener("click", function (e) {
       var starBtn = e.target.closest(".star");
@@ -262,8 +278,6 @@
         }
         return;
       }
-      var hchip = e.target.closest(".hchip");
-      if (hchip) { runQuery(hchip.getAttribute("data-q")); return; }
       var el = e.target.closest(".item");
       if (el) {
         el.classList.toggle("open");
@@ -273,11 +287,17 @@
     });
   }
 
-  var resultsEl = document.getElementById("results");
-  var countEl = document.getElementById("count");
-  var allListEl = document.getElementById("allList");
+  /* ---------- 搜索页状态 ---------- */
   var inputEl = document.getElementById("q");
   var clearBtn = document.getElementById("clearBtn");
+  var resultsEl = document.getElementById("results");
+  var countEl = document.getElementById("count");
+  var suggestEl = document.getElementById("suggest");
+  var chipsEl = document.getElementById("chips");
+  var histArea = document.getElementById("histArea");
+  var scenarioGrid = document.getElementById("scenarioGrid");
+  var forbiddenHero = document.getElementById("forbiddenHero");
+  var forbidCountEl = document.getElementById("forbidCount");
   var currentRisk = "";
   var currentFav = false;
   var currentQuery = "";
@@ -296,10 +316,7 @@
         '<div class="item info">' +
           '<div class="bar"></div>' +
           '<div class="head">' +
-            '<div class="row1">' +
-              '<span class="tag">ℹ️ 提示</span>' +
-              '<span class="name">' + esc(q) + '</span>' +
-            '</div>' +
+            '<div class="row1"><span class="tag">ℹ️ 提示</span><span class="name">' + esc(q) + '</span></div>' +
           '</div>' +
           '<div class="detail" style="display:block">' +
             '<div class="kv"><div class="k">结论</div><div class="v">本禁忌库未收录「' + esc(q) + '」。</div></div>' +
@@ -314,7 +331,6 @@
     countEl.textContent = "命中 " + list.length + " 条" + (currentRisk || currentFav ? "（已筛选）" : "");
   }
 
-  /* 空输入：显示收藏或历史 */
   function renderFavorites() {
     var items = ITEMS.filter(function (it) { return isFav(it.id); });
     if (!items.length) {
@@ -327,17 +343,22 @@
     countEl.textContent = "常用 · " + items.length + " 条";
   }
 
-  function renderHistory() {
+  function renderHistFav() {
+    var html = "";
+    if (favArr.length) {
+      html += '<div class="hist-label">⭐ 我常查的</div><div class="hchips">' +
+        favArr.map(function (id) { var it = byId(id); return it ? '<span class="hchip fav" data-q="' + esc(it.name) + '">' + esc(it.name) + "</span>" : ""; }).join("") +
+        '</div>';
+    }
     var h = loadHist();
-    if (!h.length) { resultsEl.innerHTML = ""; countEl.textContent = ""; return; }
-    resultsEl.innerHTML =
-      '<div class="history"><div class="hlabel"><span>🕘 最近查询</span>' +
-      '<span class="clr" id="histClr">清空</span></div><div class="hchips">' +
-      h.map(function (q) { return '<span class="hchip" data-q="' + esc(q) + '">' + esc(q) + "</span>"; }).join("") +
-      "</div></div>";
+    if (h.length) {
+      html += '<div class="hist-label">🕘 最近查询</div><div class="hchips">' +
+        h.map(function (q) { return '<span class="hchip" data-q="' + esc(q) + '">' + esc(q) + "</span>"; }).join("") +
+        '</div>';
+    }
+    histArea.innerHTML = html;
     countEl.textContent = "";
-    var clr = document.getElementById("histClr");
-    if (clr) clr.addEventListener("click", function (e) { e.stopPropagation(); clearHist(); renderHistory(); });
+    resultsEl.innerHTML = "";
   }
 
   function refresh() {
@@ -346,8 +367,8 @@
     if (!q) {
       currentQuery = "";
       hideSuggest();
-      if (currentFav) renderFavorites();
-      else renderHistory();
+      if (currentFav) { renderFavorites(); histArea.innerHTML = ""; }
+      else { renderHistFav(); }
       return;
     }
     currentQuery = q;
@@ -363,12 +384,11 @@
   }
 
   /* ---------- 联想下拉 ---------- */
-  var sugBox = document.getElementById("suggest");
   function showSuggest(q) {
     var items = suggest(q, 8);
     if (!items.length) { hideSuggest(); return; }
     activeIndex = -1;
-    sugBox.innerHTML = items.map(function (it, i) {
+    suggestEl.innerHTML = items.map(function (it, i) {
       var cat = CATEGORY_NAMES[it.category] || it.category;
       return '<div class="opt" data-i="' + i + '" data-name="' + esc(it.name) + '">' +
         '<span class="dot ' + esc(it.risk) + '"></span>' +
@@ -376,136 +396,229 @@
         '<span class="s-cat">' + esc(cat) + "</span>" +
         "</div>";
     }).join("");
-    sugBox.style.display = "block";
+    suggestEl.style.display = "block";
   }
-  function hideSuggest() { sugBox.style.display = "none"; activeIndex = -1; }
-  function updateActive(opts) {
-    opts.forEach(function (o, i) { o.classList.toggle("active", i === activeIndex); });
-  }
+  function hideSuggest() { suggestEl.style.display = "none"; activeIndex = -1; }
+  function updateActive(opts) { opts.forEach(function (o, i) { o.classList.toggle("active", i === activeIndex); }); }
   function chooseSug(name) { runQuery(name); }
 
-  /* ---------- 全部列表页 ---------- */
-  var listSummaryEl = document.getElementById("listSummary");
-  var listQEl = document.getElementById("listQ");
-  var listRiskFilter = "";
-  var listGroupFilter = "";
+  /* ---------- 分类页状态 ---------- */
+  var listQ = document.getElementById("listQ");
+  var scenChips = document.getElementById("scenChips");
+  var allList = document.getElementById("allList");
+  var browseState = { scenario: null, openGroups: {} };
 
-  function renderAllList() {
-    var rc = { forbidden: 0, caution: 0, safe: 0, info: 0 };
-    ITEMS.forEach(function (it) { rc[it.risk]++; });
-    listSummaryEl.innerHTML =
-      summaryCell("forbidden", "⛔ 禁用", rc.forbidden) +
-      summaryCell("caution", "⚠️ 慎用", rc.caution) +
-      summaryCell("safe", "✅ 可用", rc.safe) +
-      summaryCell("info", "ℹ️ 提示", rc.info);
-    currentQuery = "";
-    renderGroupChips();
-    renderGrouped(norm(listQEl.value.trim()));
-  }
-  function summaryCell(risk, label, n) {
-    return '<div class="ls ' + risk + (listRiskFilter === risk ? " active" : "") + '" data-risk="' + risk + '">' +
-      '<div class="n">' + n + '</div><div class="t">' + label + "</div></div>";
-  }
-  function renderGrouped(q) {
-    q = norm(q);
-    var byGroup = {};
-    ITEMS.forEach(function (it) {
-      if (listRiskFilter && it.risk !== listRiskFilter) return;
-      var g = CATEGORY_GROUP[it.category] || "other";
-      if (listGroupFilter && g !== listGroupFilter) return;
-      if (q) {
-        var gm = GROUP_META[g];
-        var hit = (norm(it.name).indexOf(q) >= 0) ||
-          (it.en && norm(it.en).indexOf(q) >= 0) ||
-          (it.aliases || []).some(function (a) { return norm(a).indexOf(q) >= 0; }) ||
-          norm(CATEGORY_NAMES[it.category] || "").indexOf(q) >= 0 ||
-          (gm && norm(gm.name).indexOf(q) >= 0);
-        if (!hit) return;
-      }
-      (byGroup[g] = byGroup[g] || []).push(it);
-    });
+  function subcatHTML(items) {
+    if (!items.length) return "";
+    var byCat = {};
+    items.forEach(function (it) { var c = CATEGORY_NAMES[it.category] || it.category; (byCat[c] = byCat[c] || []).push(it); });
+    var cats = Object.keys(byCat).sort(function (a, b) { return byCat[b].length - byCat[a].length; });
     var html = "";
-    GROUP_ORDER.forEach(function (g) {
-      var items = byGroup[g];
-      if (!items || !items.length) return;
-      var meta = GROUP_META[g] || { name: g, icon: "" };
-      html += '<div class="group-head">' + meta.icon + " " + esc(meta.name) +
-              '<span class="gh-count">' + items.length + " 条</span></div>";
-      var byCat = {};
-      items.forEach(function (it) {
-        var c = CATEGORY_NAMES[it.category] || it.category;
-        (byCat[c] = byCat[c] || []).push(it);
-      });
-      Object.keys(byCat).sort(function (a, b) {
-        return byCat[b].length - byCat[a].length;
-      }).forEach(function (cat) {
-        var arr = byCat[cat].slice().sort(function (a, b) {
-          return RISK_ORDER[a.risk] - RISK_ORDER[b.risk];
-        });
-        html += '<div class="subcat-title">' + esc(cat) + "（" + arr.length + "）</div>";
-        html += arr.map(function (it) { return itemCard(it, "a"); }).join("");
-      });
+    cats.forEach(function (cat) {
+      var arr = byCat[cat].slice().sort(function (a, b) { return RISK_ORDER[a.risk] - RISK_ORDER[b.risk]; });
+      html += '<div class="subcat-title">' + esc(cat) + "（" + arr.length + "）</div>";
+      html += arr.map(function (it) { return itemCard(it, "a"); }).join("");
     });
-    if (!html) html = '<div class="empty"><div class="big">🔍</div>没有匹配的条目</div>';
-    allListEl.innerHTML = html;
+    return html;
   }
 
-  function renderGroupChips() {
-    var el = document.getElementById("groupChips");
-    if (!el) return;
-    var counts = {};
-    ITEMS.forEach(function (it) {
-      var g = CATEGORY_GROUP[it.category] || "other";
-      counts[g] = (counts[g] || 0) + 1;
+  function riskHTML(items) {
+    var order = [["forbidden", "⛔ 禁用"], ["caution", "⚠️ 慎用"], ["safe", "✅ 可用"], ["info", "ℹ️ 提示"]];
+    var html = "";
+    order.forEach(function (pair) {
+      var arr = items.filter(function (it) { return it.risk === pair[0]; })
+        .sort(function (a, b) { return a.name.localeCompare(b.name, "zh"); });
+      if (arr.length) {
+        html += '<div class="subcat-title">' + pair[1] + "（" + arr.length + "）</div>";
+        html += arr.map(function (it) { return itemCard(it, "a"); }).join("");
+      }
     });
-    var html = '<div class="gchip' + (listGroupFilter === "" ? " on" : "") + '" data-group="">📦 全部</div>';
-    GROUP_ORDER.forEach(function (g) {
-      if (!counts[g]) return;
-      var m = GROUP_META[g];
-      html += '<div class="gchip' + (listGroupFilter === g ? " on" : "") + '" data-group="' + g + '">' +
-              m.icon + " " + esc(m.name) + " " + counts[g] + "</div>";
+    return html;
+  }
+
+  function scenarioItems(sid, q) {
+    var s = null;
+    for (var i = 0; i < SCENARIOS.length; i++) if (SCENARIOS[i].id === sid) s = SCENARIOS[i];
+    if (!s) return [];
+    return ITEMS.filter(function (it) {
+      var inCat = s.cats.indexOf(it.category) >= 0;
+      var hitKw = s.kw.some(function (k) { return fieldContains(it, k); });
+      if (!inCat && !hitKw) return false;
+      if (q && !fieldContains(it, q)) return false;
+      return true;
     });
-    el.innerHTML = html;
+  }
+
+  function renderScenChips() {
+    var html = '<div class="schip' + (browseState.scenario ? "" : " on") + '" data-sid="">全部场景</div>';
+    SCENARIOS.forEach(function (s) {
+      html += '<div class="schip' + (browseState.scenario === s.id ? " on" : "") + '" data-sid="' + s.id + '">' + s.icon + " " + esc(s.name) + "</div>";
+    });
+    scenChips.innerHTML = html;
+  }
+
+  function renderBrowse() {
+    renderScenChips();
+    var q = norm(listQ.value.trim());
+    if (browseState.scenario) {
+      var items = scenarioItems(browseState.scenario, q);
+      var sname = "";
+      for (var i = 0; i < SCENARIOS.length; i++) if (SCENARIOS[i].id === browseState.scenario) sname = SCENARIOS[i].name;
+      var html = '<div class="back-chip" id="backAll">← 返回全部分类</div>';
+      html += '<div class="list-note" style="margin-top:0">' + esc(sname) + " · 共 " + items.length + " 项（按风险排序）</div>";
+      html += items.length ? riskHTML(items) : '<div class="empty"><div class="big">🔍</div>没有匹配的条目</div>';
+      allList.innerHTML = html;
+      return;
+    }
+    if (q) {
+      var byGroup = {};
+      ITEMS.forEach(function (it) { if (fieldContains(it, q)) { var g = catToGroup(it.category); (byGroup[g] = byGroup[g] || []).push(it); } });
+      var flat = "";
+      BROWSE_GROUPS.forEach(function (g) {
+        var arr = byGroup[g.id];
+        if (!arr || !arr.length) return;
+        flat += '<div class="group-head">' + g.icon + " " + esc(g.name) + ' <span class="gh-count">' + arr.length + " 条</span></div>";
+        flat += subcatHTML(arr);
+      });
+      allList.innerHTML = flat || '<div class="empty"><div class="big">🔍</div>没有匹配的条目</div>';
+      return;
+    }
+    // 折叠手风琴：默认收起，点开看细类
+    var acc = "";
+    BROWSE_GROUPS.forEach(function (g) {
+      var items = ITEMS.filter(function (it) { return catToGroup(it.category) === g.id; });
+      if (!items.length) return;
+      var open = !!browseState.openGroups[g.id];
+      acc += '<div class="bgroup' + (open ? " open" : "") + '" data-g="' + g.id + '">' +
+        '<div class="bg-head"><span class="bg-ic">' + g.icon + '</span><span class="bg-name">' + esc(g.name) + '</span>' +
+        '<span class="bg-cnt">' + items.length + '</span><span class="bg-arrow">▾</span></div>' +
+        (open ? '<div class="bg-body">' + subcatHTML(items) + '</div>' : '') +
+        '</div>';
+    });
+    allList.innerHTML = acc;
+  }
+
+  /* ---------- 禁用清单 ---------- */
+  var forbidList = document.getElementById("forbidList");
+  function renderForbidden() {
+    var items = ITEMS.filter(function (it) { return it.risk === "forbidden"; });
+    var byGroup = {};
+    items.forEach(function (it) { var g = catToGroup(it.category); (byGroup[g] = byGroup[g] || []).push(it); });
+    var html = "";
+    BROWSE_GROUPS.forEach(function (g) {
+      var arr = byGroup[g.id];
+      if (!arr || !arr.length) return;
+      html += '<div class="group-head">' + g.icon + " " + esc(g.name) + ' <span class="gh-count">' + arr.length + " 条</span></div>";
+      html += subcatHTML(arr);
+    });
+    forbidList.innerHTML = html;
+  }
+  function forbiddenPlainText() {
+    var items = ITEMS.filter(function (it) { return it.risk === "forbidden"; });
+    var lines = ["【蚕豆病（G6PD）禁用清单】"];
+    var byGroup = {};
+    items.forEach(function (it) { var g = catToGroup(it.category); (byGroup[g] = byGroup[g] || []).push(it); });
+    BROWSE_GROUPS.forEach(function (g) {
+      var arr = byGroup[g.id];
+      if (!arr || !arr.length) return;
+      lines.push("");
+      lines.push(g.name + "：");
+      arr.forEach(function (it) {
+        var al = (it.aliases && it.aliases.length) ? "（" + it.aliases.join("、") + "）" : "";
+        lines.push("· " + it.name + al + " —— " + (it.summary || ""));
+      });
+    });
+    lines.push("");
+    lines.push("（仅供参考，以医生/药师指导为准）");
+    return lines.join("\n");
+  }
+
+  /* ---------- 首页渲染 ---------- */
+  function renderHome() {
+    scenarioGrid.innerHTML = SCENARIOS.map(function (s) {
+      return '<div class="scen" data-sid="' + s.id + '"><span class="scen-ic">' + s.icon + '</span><span class="scen-lbl">' + esc(s.name) + "</span></div>";
+    }).join("");
+    var fc = ITEMS.filter(function (it) { return it.risk === "forbidden"; }).length;
+    if (forbidCountEl) forbidCountEl.textContent = fc;
+    // 重置风险筛选高亮
+    currentRisk = ""; currentFav = false;
+    if (chipsEl) chipsEl.querySelectorAll(".chip").forEach(function (c) {
+      c.classList.toggle("on", c.getAttribute("data-risk") === "" && !c.getAttribute("data-fav"));
+    });
+  }
+
+  /* ---------- Tab 切换 ---------- */
+  function switchTab(page) {
+    document.querySelectorAll("nav button").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-page") === page); });
+    document.querySelectorAll(".page").forEach(function (p) { p.classList.remove("on"); });
+    var pg = document.getElementById("page-" + page);
+    if (pg) pg.classList.add("on");
+    window.scrollTo(0, 0);
+    if (page === "list") renderBrowse();
+    else if (page === "forbidden") renderForbidden();
+    else if (page === "search") { renderHome(); refresh(); }
+  }
+
+  /* ---------- 复制 / 打印 ---------- */
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  function copyText(text, btn, okMsg) {
+    function done() { if (btn) { btn.textContent = okMsg; setTimeout(function () { btn.textContent = btn.getAttribute("data-old"); }, 2500); } }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+    } else { fallbackCopy(text); done(); }
   }
 
   /* ---------- 事件绑定 ---------- */
-
-  document.getElementById("quick").addEventListener("click", function (e) {
-    var btn = e.target.closest("button");
-    if (!btn) return;
-    runQuery(btn.getAttribute("data-q"));
-  });
-
-  document.getElementById("chips").addEventListener("click", function (e) {
+  if (chipsEl) chipsEl.addEventListener("click", function (e) {
     var chip = e.target.closest(".chip");
     if (!chip) return;
-    document.querySelectorAll("#chips .chip").forEach(function (c) { c.classList.remove("on"); });
+    chipsEl.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("on"); });
     chip.classList.add("on");
     currentRisk = chip.getAttribute("data-risk") || "";
     currentFav = !!chip.getAttribute("data-fav");
     refresh();
   });
 
-  listSummaryEl.addEventListener("click", function (e) {
-    var ls = e.target.closest(".ls");
-    if (!ls) return;
-    var r = ls.getAttribute("data-risk");
-    listRiskFilter = (listRiskFilter === r) ? "" : r;
-    renderAllList();
+  if (scenarioGrid) scenarioGrid.addEventListener("click", function (e) {
+    var s = e.target.closest(".scen");
+    if (!s) return;
+    browseState.scenario = s.getAttribute("data-sid");
+    listQ.value = "";
+    switchTab("list");
   });
 
-  var groupChipsEl = document.getElementById("groupChips");
-  if (groupChipsEl) {
-    groupChipsEl.addEventListener("click", function (e) {
-      var b = e.target.closest(".gchip");
-      if (!b) return;
-      listGroupFilter = b.getAttribute("data-group") || "";
-      renderGroupChips();
-      renderGrouped(norm(listQEl.value.trim()));
-    });
-  }
+  if (forbiddenHero) forbiddenHero.addEventListener("click", function () { switchTab("forbidden"); });
 
-  listQEl.addEventListener("input", function () { renderGrouped(norm(listQEl.value.trim())); });
+  if (scenChips) scenChips.addEventListener("click", function (e) {
+    var c = e.target.closest(".schip");
+    if (!c) return;
+    browseState.scenario = c.getAttribute("data-sid") || null;
+    renderBrowse();
+  });
+
+  if (allList) allList.addEventListener("click", function (e) {
+    var back = e.target.closest("#backAll");
+    if (back) { browseState.scenario = null; renderBrowse(); return; }
+    var head = e.target.closest(".bg-head");
+    if (head) {
+      var g = head.parentNode.getAttribute("data-g");
+      browseState.openGroups[g] = !browseState.openGroups[g];
+      renderBrowse();
+    }
+  });
+
+  if (histArea) histArea.addEventListener("click", function (e) {
+    var c = e.target.closest(".hchip");
+    if (c) { switchTab("search"); runQuery(c.getAttribute("data-q")); }
+  });
+
+  if (listQ) listQ.addEventListener("input", function () { renderBrowse(); });
 
   var debounceTimer = null;
   inputEl.addEventListener("input", function () {
@@ -513,94 +626,57 @@
     debounceTimer = setTimeout(refresh, 100);
   });
   inputEl.addEventListener("keydown", function (e) {
-    if (sugBox.style.display === "none") return;
-    var opts = sugBox.querySelectorAll(".opt");
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      activeIndex = Math.min(activeIndex + 1, opts.length - 1);
-      updateActive(opts);
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      activeIndex = Math.max(activeIndex - 1, 0);
-      updateActive(opts);
-    } else if (e.key === "Enter") {
-      if (activeIndex >= 0 && opts[activeIndex]) {
-        e.preventDefault();
-        chooseSug(opts[activeIndex].getAttribute("data-name"));
-      } else {
-        hideSuggest();
-        pushHist(inputEl.value.trim());
-      }
-    } else if (e.key === "Escape") {
-      hideSuggest();
-    }
+    if (suggestEl.style.display === "none") return;
+    var opts = suggestEl.querySelectorAll(".opt");
+    if (e.key === "ArrowDown") { e.preventDefault(); activeIndex = Math.min(activeIndex + 1, opts.length - 1); updateActive(opts); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); activeIndex = Math.max(activeIndex - 1, 0); updateActive(opts); }
+    else if (e.key === "Enter") {
+      if (activeIndex >= 0 && opts[activeIndex]) { e.preventDefault(); chooseSug(opts[activeIndex].getAttribute("data-name")); }
+      else { hideSuggest(); pushHist(inputEl.value.trim()); }
+    } else if (e.key === "Escape") { hideSuggest(); }
   });
   inputEl.addEventListener("focus", function () {
-    if (!inputEl.value.trim()) { hideSuggest(); if (!currentFav) renderHistory(); }
+    if (!inputEl.value.trim()) { hideSuggest(); if (!currentFav) renderHistFav(); }
   });
 
   clearBtn.addEventListener("click", function () {
-    inputEl.value = "";
-    clearBtn.classList.remove("show");
-    refresh();
-    inputEl.focus();
+    inputEl.value = ""; clearBtn.classList.remove("show"); refresh(); inputEl.focus();
   });
 
-  sugBox.addEventListener("click", function (e) {
+  suggestEl.addEventListener("click", function (e) {
     var opt = e.target.closest(".opt");
     if (!opt) return;
     chooseSug(opt.getAttribute("data-name"));
   });
 
-  /* ---------- Tab 切换 ---------- */
   document.querySelectorAll("nav button").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      document.querySelectorAll("nav button").forEach(function (b) { b.classList.remove("on"); });
-      btn.classList.add("on");
-      var page = btn.getAttribute("data-page");
-      document.querySelectorAll(".page").forEach(function (p) { p.classList.remove("on"); });
-      document.getElementById("page-" + page).classList.add("on");
-      window.scrollTo(0, 0);
-      if (page === "list") renderAllList();
-      else if (page === "search") refresh();
-    });
+    btn.addEventListener("click", function () { switchTab(btn.getAttribute("data-page")); });
   });
 
-  /* ---------- 复制提示卡 ---------- */
-  document.getElementById("copyCard").addEventListener("click", function () {
+  var copyForbid = document.getElementById("copyForbid");
+  if (copyForbid) { copyForbid.setAttribute("data-old", copyForbid.textContent); copyForbid.addEventListener("click", function () { copyText(forbiddenPlainText(), copyForbid, "✅ 已复制，可粘贴给医生"); }); }
+  var printForbid = document.getElementById("printForbid");
+  if (printForbid) printForbid.addEventListener("click", function () { window.print(); });
+
+  var copyCard = document.getElementById("copyCard");
+  if (copyCard) copyCard.addEventListener("click", function () {
     var text = document.getElementById("cardText").innerText;
-    function done() {
-      var btn = document.getElementById("copyCard");
-      btn.textContent = "✅ 已复制，可直接粘贴发给医生";
-      setTimeout(function () { btn.textContent = "📋 复制提示卡全文"; }, 2500);
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
-    } else {
-      fallbackCopy(text); done();
-    }
+    function done() { copyCard.textContent = "✅ 已复制，可直接粘贴发给医生"; setTimeout(function () { copyCard.textContent = "📋 复制就医提示卡"; }, 2500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+    else { fallbackCopy(text); done(); }
   });
-
-  function fallbackCopy(text) {
-    var ta = document.createElement("textarea");
-    ta.value = text;
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand("copy"); } catch (e) {}
-    document.body.removeChild(ta);
-  }
 
   /* ---------- 初始化 ---------- */
   bindCardClicks(resultsEl);
-  bindCardClicks(allListEl);
+  bindCardClicks(allList);
 
   var badge = document.getElementById("badgeCount");
   if (badge) badge.textContent = "共 " + ITEMS.length + " 条";
 
-  renderAllList();
+  renderHome();
   refresh();
+  renderBrowse();
+  renderForbidden();
 
   /* 向档案模块（profile.js）暴露复用能力，避免重复实现 */
   window.g6pd = {
