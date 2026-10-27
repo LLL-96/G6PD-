@@ -2,8 +2,8 @@
 const G6PD_DATA = {
  "meta": {
   "title": "G6PD缺乏症（蚕豆病）禁忌速查数据库",
-  "version": "0.2.2",
-  "updated": "2026-10-23",
+  "version": "0.2.3",
+  "updated": "2026-10-27",
   "disclaimer": "本数据库仅供参考，不构成医疗建议。一切用药请以医生处方和药师指导为准；如怀疑溶血发作，请立即就医。",
   "risk_levels": {
    "forbidden": "⛔ 禁用（高风险）",
@@ -85,7 +85,21 @@ const G6PD_DATA = {
    ],
    "icon": "💊",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fdecea%27%20stroke%3D%27%23c62828%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23c62828%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%98%BF%E5%8F%B8%E5%8C%B9%E6%9E%97%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "解热、镇痛、抗炎；小剂量还用于抗血小板、预防心脑血管血栓"
+   "use": "解热、镇痛、抗炎；小剂量还用于抗血小板、预防心脑血管血栓",
+   "py": [
+    "asipilin",
+    "yixianshuiyangsuan",
+    "baiasipilin",
+    "fufangasipilin",
+    "bamier"
+   ],
+   "pyi": [
+    "aspl",
+    "yxsys",
+    "baspl",
+    "ffaspl",
+    "bme"
+   ]
   },
   {
    "id": "metamizole",
@@ -108,7 +122,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "强效退烧、止痛（现已限制使用）"
+   "use": "强效退烧、止痛（现已限制使用）",
+   "py": [
+    "annaijin",
+    "nuowajing",
+    "luowaerjing"
+   ],
+   "pyi": [
+    "anj",
+    "nwj",
+    "lwej"
+   ]
   },
   {
    "id": "aminopyrine",
@@ -130,7 +154,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "退烧、止痛（多见于复方制剂）"
+   "use": "退烧、止痛（多见于复方制剂）",
+   "py": [
+    "anjibilin",
+    "anbilin"
+   ],
+   "pyi": [
+    "ajbl",
+    "abl"
+   ]
   },
   {
    "id": "phenacetin",
@@ -152,7 +184,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "退烧、止痛（老药，多已淘汰）"
+   "use": "退烧、止痛（老药，多已淘汰）",
+   "py": [
+    "feinaxiding",
+    "duiyixiananjibenyimi"
+   ],
+   "pyi": [
+    "fnxd",
+    "dyxajbym"
+   ]
   },
   {
    "id": "phenylbutazone",
@@ -172,7 +212,15 @@ const G6PD_DATA = {
     "S4"
    ],
    "icon": "💊",
-   "use": "强效抗炎镇痛（风湿、痛风，现已少用）"
+   "use": "强效抗炎镇痛（风湿、痛风，现已少用）",
+   "py": [
+    "baotaisong",
+    "butatong"
+   ],
+   "pyi": [
+    "bts",
+    "btt"
+   ]
   },
   {
    "id": "smz",
@@ -202,7 +250,19 @@ const G6PD_DATA = {
    ],
    "icon": "💊",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fdecea%27%20stroke%3D%27%23c62828%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23c62828%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E5%A4%8D%E6%96%B9%E6%96%B0%E8%AF%BA%E6%98%8E%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "磺胺类抗菌药（尿路、呼吸道、肠道感染），即复方新诺明/SMZ"
+   "use": "磺胺类抗菌药（尿路、呼吸道、肠道感染），即复方新诺明/SMZ",
+   "py": [
+    "fufanghuanganjiaezuo",
+    "fufangxinnuoming",
+    "huanganjiaezuo",
+    "baiyanjing"
+   ],
+   "pyi": [
+    "ffhajez",
+    "ffxnm",
+    "hajez",
+    "byj"
+   ]
   },
   {
    "id": "sulfadiazine",
@@ -224,7 +284,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "磺胺类抗菌药（流脑、一般细菌感染）"
+   "use": "磺胺类抗菌药（流脑、一般细菌感染）",
+   "py": [
+    "huanganmiding",
+    "huanganmidingyin"
+   ],
+   "pyi": [
+    "hamd",
+    "hamdy"
+   ]
   },
   {
    "id": "sulfisoxazole",
@@ -245,7 +313,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "磺胺类抗菌药（尿路感染）"
+   "use": "磺胺类抗菌药（尿路感染）",
+   "py": [
+    "huanganyiezuo",
+    "jundeqing"
+   ],
+   "pyi": [
+    "hayez",
+    "jdq"
+   ]
   },
   {
    "id": "sulfacetamide",
@@ -265,7 +341,18 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "磺胺类，眼科滴眼液（结膜炎）"
+   "use": "磺胺类，眼科滴眼液（结膜炎）",
+   "py": [
+    "huangancuxian",
+    "huanganyixian",
+    "banmayanyaoshui"
+   ],
+   "pyi": [
+    "hacx",
+    "hayx",
+    "bmyys"
+   ],
+   "debate": "作为滴眼液局部用药全身吸收极少；但磺胺类整体列为禁用，本库取保守口径。"
   },
   {
    "id": "sulfapyridine",
@@ -284,7 +371,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "磺胺类抗菌药（肠道/溃疡性结肠炎相关）"
+   "use": "磺胺类抗菌药（肠道/溃疡性结肠炎相关）",
+   "py": [
+    "huanganbiding"
+   ],
+   "pyi": [
+    "habd"
+   ]
   },
   {
    "id": "sulfaguanidine",
@@ -304,7 +397,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "肠道磺胺药（肠道感染）"
+   "use": "肠道磺胺药（肠道感染）",
+   "py": [
+    "huangangua",
+    "huanganmi"
+   ],
+   "pyi": [
+    "hag",
+    "ham"
+   ]
   },
   {
    "id": "nitrofurantoin",
@@ -327,7 +428,17 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "💊",
-   "use": "尿路感染抗菌药"
+   "use": "尿路感染抗菌药",
+   "py": [
+    "funantuoyin",
+    "funantanding",
+    "xiaojifunantuoyin"
+   ],
+   "pyi": [
+    "fnty",
+    "fntd",
+    "xjfnty"
+   ]
   },
   {
    "id": "furazolidone",
@@ -348,7 +459,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "肠道感染/痢疾抗菌药（痢特灵）"
+   "use": "肠道感染/痢疾抗菌药（痢特灵）",
+   "py": [
+    "funanzuotong",
+    "liteling"
+   ],
+   "pyi": [
+    "fnzt",
+    "ltl"
+   ]
   },
   {
    "id": "nitrofural",
@@ -370,7 +489,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "外用消毒（伤口、皮肤感染）"
+   "use": "外用消毒（伤口、皮肤感染）",
+   "py": [
+    "funanxilin",
+    "funanxing",
+    "xiaojifunanzong"
+   ],
+   "pyi": [
+    "fnxl",
+    "fnx",
+    "xjfnz"
+   ]
   },
   {
    "id": "primaquine",
@@ -394,7 +523,17 @@ const G6PD_DATA = {
    ],
    "icon": "💊",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fdecea%27%20stroke%3D%27%23c62828%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23c62828%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E4%BC%AF%E6%B0%A8%E5%96%B9%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "抗疟药，根治间日疟复发、杀灭配子体"
+   "use": "抗疟药，根治间日疟复发、杀灭配子体",
+   "py": [
+    "boankui",
+    "boankuilin",
+    "linsuanboankui"
+   ],
+   "pyi": [
+    "bak",
+    "bakl",
+    "lsbak"
+   ]
   },
   {
    "id": "pamaquine",
@@ -415,7 +554,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗疟药（扑疟母星）"
+   "use": "抗疟药（扑疟母星）",
+   "py": [
+    "pamakui",
+    "punvemuxing"
+   ],
+   "pyi": [
+    "pmk",
+    "pnmx"
+   ]
   },
   {
    "id": "quinacrine",
@@ -436,7 +583,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗疟药（现已少用）"
+   "use": "抗疟药（现已少用）",
+   "py": [
+    "adiping",
+    "mipalin",
+    "nvediping"
+   ],
+   "pyi": [
+    "adp",
+    "mpl",
+    "ndp"
+   ]
   },
   {
    "id": "methylene_blue",
@@ -458,7 +615,17 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "💊",
-   "use": "解毒、染色剂（亚硝酸盐中毒解毒；也用于染色）"
+   "use": "解毒、染色剂（亚硝酸盐中毒解毒；也用于染色）",
+   "py": [
+    "yajialan",
+    "meilan",
+    "cijialan"
+   ],
+   "pyi": [
+    "yjl",
+    "ml",
+    "cjl"
+   ]
   },
   {
    "id": "nalidixic_acid",
@@ -478,7 +645,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "⚪",
-   "use": "喹诺酮类抗菌药（尿路感染）"
+   "use": "喹诺酮类抗菌药（尿路感染）",
+   "py": [
+    "naidingsuan",
+    "naidingtongsuan"
+   ],
+   "pyi": [
+    "nds",
+    "ndts"
+   ]
   },
   {
    "id": "phenazopyridine",
@@ -500,7 +675,17 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "💊",
-   "use": "尿路镇痛药（缓解尿痛，尿液会变橙）"
+   "use": "尿路镇痛药（缓解尿痛，尿液会变橙）",
+   "py": [
+    "feinabiding",
+    "niaotongning",
+    "benoudanbian"
+   ],
+   "pyi": [
+    "fnbd",
+    "ntn",
+    "bodba"
+   ]
   },
   {
    "id": "acetanilide",
@@ -520,7 +705,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "退烧、止痛（老药，已淘汰）"
+   "use": "退烧、止痛（老药，已淘汰）",
+   "py": [
+    "yixianbenan",
+    "tuirebing"
+   ],
+   "pyi": [
+    "yxba",
+    "trb"
+   ]
   },
   {
    "id": "chloramphenicol",
@@ -540,7 +733,16 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "广谱抗生素（伤寒、眼部感染；现少用）"
+   "use": "广谱抗生素（伤寒、眼部感染；现少用）",
+   "py": [
+    "lvmeisu",
+    "lvsimeisu"
+   ],
+   "pyi": [
+    "lms",
+    "lsms"
+   ],
+   "debate": "国内资料将其列为 G6PD 禁用；部分国际资料认为风险较低。本库取保守口径（禁用）。"
   },
   {
    "id": "dapsone",
@@ -562,7 +764,17 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "💊",
-   "use": "抗麻风药；也用于疱疹样皮炎"
+   "use": "抗麻风药；也用于疱疹样皮炎",
+   "py": [
+    "anbenfeng",
+    "eranerbenfeng",
+    "diduice"
+   ],
+   "pyi": [
+    "abf",
+    "eaebf",
+    "ddc"
+   ]
   },
   {
    "id": "rasburicase",
@@ -583,7 +795,15 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "💊",
-   "use": "降尿酸酶（肿瘤溶解综合征）"
+   "use": "降尿酸酶（肿瘤溶解综合征）",
+   "py": [
+    "labulimei",
+    "aili"
+   ],
+   "pyi": [
+    "lblm",
+    "al"
+   ]
   },
   {
    "id": "fava_bean",
@@ -619,7 +839,32 @@ const G6PD_DATA = {
    ],
    "icon": "🫘",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23eaf6eb%27%20stroke%3D%27%232e7d32%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%AB%98%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%232e7d32%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E8%9A%95%E8%B1%86%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "食物（鲜/干蚕豆，及豆瓣酱、兰花豆等制品）"
+   "use": "食物（鲜/干蚕豆，及豆瓣酱、兰花豆等制品）",
+   "py": [
+    "candoujicandouzhipin",
+    "hudou",
+    "luohandou",
+    "lanhuadou",
+    "guaiweihudou",
+    "candousu",
+    "candoujiang",
+    "doubanjiang",
+    "youzhacandou",
+    "fudou",
+    "chuandou"
+   ],
+   "pyi": [
+    "cdjcdzp",
+    "hd",
+    "lhd",
+    "gwhd",
+    "cds",
+    "cdj",
+    "dbj",
+    "yzcd",
+    "fd",
+    "cd"
+   ]
   },
   {
    "id": "naphthalene",
@@ -649,7 +894,23 @@ const G6PD_DATA = {
    ],
    "icon": "⚪",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23eef2f7%27%20stroke%3D%27%23455a64%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%E2%9A%AA%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23455a64%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E6%A8%9F%E8%84%91%E4%B8%B8%2F%E8%90%98%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "衣柜防蛀防虫（挥发性气体）"
+   "use": "衣柜防蛀防虫（挥发性气体）",
+   "py": [
+    "naizhangnaowanweishengqiu",
+    "zhangnaowan",
+    "weishengqiu",
+    "chouwan",
+    "naiwan",
+    "nai"
+   ],
+   "pyi": [
+    "nznwwsq",
+    "znw",
+    "wsq",
+    "cw",
+    "nw",
+    "n"
+   ]
   },
   {
    "id": "gentian_violet",
@@ -672,7 +933,19 @@ const G6PD_DATA = {
    ],
    "icon": "🟣",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23f3e8fb%27%20stroke%3D%27%236a1b9a%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%9F%A3%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%236a1b9a%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E7%B4%AB%E8%8D%AF%E6%B0%B4%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "皮肤/黏膜消毒（外用）"
+   "use": "皮肤/黏膜消毒（外用）",
+   "py": [
+    "longdanziziyaoshui",
+    "ziyaoshui",
+    "jiazi",
+    "jiejingzi"
+   ],
+   "pyi": [
+    "ldzzys",
+    "zys",
+    "jz",
+    "jjz"
+   ]
   },
   {
    "id": "benzene",
@@ -694,7 +967,19 @@ const G6PD_DATA = {
     "S5"
    ],
    "icon": "⚠️",
-   "use": "工业溶剂、化工原料（吸入或皮肤接触）"
+   "use": "工业溶剂、化工原料（吸入或皮肤接触）",
+   "py": [
+    "benjifangxiangzurongji",
+    "ben",
+    "jiabenjiechu",
+    "youqixiliao"
+   ],
+   "pyi": [
+    "bjfxzrj",
+    "b",
+    "jbjc",
+    "yqxl"
+   ]
   },
   {
    "id": "arsenic",
@@ -715,7 +1000,17 @@ const G6PD_DATA = {
     "S5"
    ],
    "icon": "⚠️",
-   "use": "毒物、环境污染物"
+   "use": "毒物、环境污染物",
+   "py": [
+    "shenpishuanghanshenwuran",
+    "pishuang",
+    "sanyanghuaershen"
+   ],
+   "pyi": [
+    "spshswr",
+    "ps",
+    "syhes"
+   ]
   },
   {
    "id": "trinitrotoluene",
@@ -735,7 +1030,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "⚠️",
-   "use": "炸药、工业化学品"
+   "use": "炸药、工业化学品",
+   "py": [
+    "sanxiaojijiaben",
+    "zhayao"
+   ],
+   "pyi": [
+    "sxjjb",
+    "zy"
+   ]
   },
   {
    "id": "phenylhydrazine",
@@ -754,7 +1057,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "⚠️",
-   "use": "化工原料、化学试剂"
+   "use": "化工原料、化学试剂",
+   "py": [
+    "benjing",
+    "benjilianan"
+   ],
+   "pyi": [
+    "bj",
+    "bjla"
+   ]
   },
   {
    "id": "berberis",
@@ -778,7 +1089,23 @@ const G6PD_DATA = {
    ],
    "icon": "🟡",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%9F%A1%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%BB%84%E8%BF%9E%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "清热燥湿、泻火解毒（中药）"
+   "use": "清热燥湿、泻火解毒（中药）",
+   "py": [
+    "huanglianchuanlian",
+    "chuanlian",
+    "weilian",
+    "jizhaolian",
+    "huangliansu",
+    "xiaobojian"
+   ],
+   "pyi": [
+    "hlcl",
+    "cl",
+    "wl",
+    "jzl",
+    "hls",
+    "xbj"
+   ]
   },
   {
    "id": "honeysuckle",
@@ -799,7 +1126,17 @@ const G6PD_DATA = {
    ],
    "icon": "🌸",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8C%BC%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%87%91%E9%93%B6%E8%8A%B1%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "清热解毒（中药，感冒、咽痛）"
+   "use": "清热解毒（中药，感冒、咽痛）",
+   "py": [
+    "jinyinhua",
+    "shuanghua",
+    "rendonghua"
+   ],
+   "pyi": [
+    "jyh",
+    "sh",
+    "rdh"
+   ]
   },
   {
    "id": "bezoar",
@@ -821,7 +1158,19 @@ const G6PD_DATA = {
    ],
    "icon": "🟡",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%9F%A1%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E7%89%9B%E9%BB%84%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "清热解毒、凉开（中成药成分）"
+   "use": "清热解毒、凉开（中成药成分）",
+   "py": [
+    "niuhuang",
+    "tianranniuhuang",
+    "rengongniuhuang",
+    "tiwaipeiyuniuhuang"
+   ],
+   "pyi": [
+    "nh",
+    "trnh",
+    "rgnh",
+    "twpynh"
+   ]
   },
   {
    "id": "pearl",
@@ -844,7 +1193,20 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "安神定惊、明目（中药）"
+   "use": "安神定惊、明目（中药）",
+   "py": [
+    "zhenzhuzhenzhumozhenzhufen",
+    "zhenzhumo",
+    "zhenzhufen",
+    "zhenzhumu",
+    "zhubei"
+   ],
+   "pyi": [
+    "zzzzmzzf",
+    "zzm",
+    "zzf",
+    "zb"
+   ]
   },
   {
    "id": "wintersweet",
@@ -865,7 +1227,19 @@ const G6PD_DATA = {
     "S1"
    ],
    "icon": "🌿",
-   "use": "解暑生津、止咳（中药）"
+   "use": "解暑生津、止咳（中药）",
+   "py": [
+    "lameihua",
+    "lamei",
+    "huangmeihua",
+    "tiekuaizihua"
+   ],
+   "pyi": [
+    "lmh",
+    "lm",
+    "hmh",
+    "tkzh"
+   ]
   },
   {
    "id": "mint",
@@ -889,7 +1263,18 @@ const G6PD_DATA = {
    ],
    "icon": "🧴",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23eaf6eb%27%20stroke%3D%27%232e7d32%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8C%BF%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%232e7d32%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E8%96%84%E8%8D%B7%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "疏风散热、止痒（中药/外用）"
+   "use": "疏风散热、止痒（中药/外用）",
+   "py": [
+    "bohebohenaobohechun",
+    "bohenao",
+    "bohechun"
+   ],
+   "pyi": [
+    "bhbhnbhc",
+    "bhn",
+    "bhc"
+   ],
+   "debate": "部分资料将薄荷列为禁忌；也有资料认为外用或食品中少量风险低。本库取保守口径（禁用）。"
   },
   {
    "id": "forsythia",
@@ -910,7 +1295,18 @@ const G6PD_DATA = {
     "S1"
    ],
    "icon": "🌿",
-   "use": "清热解毒（中药，感冒、疮疡）"
+   "use": "清热解毒（中药，感冒、疮疡）",
+   "py": [
+    "lianqiao",
+    "qingqiao",
+    "laoqiao",
+    "lianzhao"
+   ],
+   "pyi": [
+    "lq",
+    "qq",
+    "lz"
+   ]
   },
   {
    "id": "borneol",
@@ -931,7 +1327,20 @@ const G6PD_DATA = {
     "S1"
    ],
    "icon": "🌿",
-   "use": "开窍醒神、清热止痛（外用/中成药）"
+   "use": "开窍醒神、清热止痛（外用/中成药）",
+   "py": [
+    "bingpian",
+    "hechengbingpian",
+    "longnao",
+    "aipian"
+   ],
+   "pyi": [
+    "bp",
+    "hcbp",
+    "ln",
+    "ap"
+   ],
+   "debate": "含冰片的中成药较多，部分资料列为禁忌，证据等级不一。本库取保守口径。"
   },
   {
    "id": "bear_bile",
@@ -951,7 +1360,17 @@ const G6PD_DATA = {
     "S1"
    ],
    "icon": "🌿",
-   "use": "清热明目、平肝（中药）"
+   "use": "清热明目、平肝（中药）",
+   "py": [
+    "xiongdan",
+    "xiongdanfen",
+    "jindan"
+   ],
+   "pyi": [
+    "xd",
+    "xdf",
+    "jd"
+   ]
   },
   {
    "id": "quinine",
@@ -975,7 +1394,18 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗疟药（疟疾治疗）"
+   "use": "抗疟药（疟疾治疗）",
+   "py": [
+    "kuining",
+    "jinjinashuang",
+    "kuiningshui"
+   ],
+   "pyi": [
+    "kn",
+    "jjns",
+    "kns"
+   ],
+   "debate": "国内多部资料列为禁忌/慎用；国外部分资料列为低风险。本库取保守口径（慎用）。"
   },
   {
    "id": "chloroquine",
@@ -995,7 +1425,16 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗疟药；也曾用于类风湿、红斑狼疮"
+   "use": "抗疟药；也曾用于类风湿、红斑狼疮",
+   "py": [
+    "lvkui",
+    "lvkuilin"
+   ],
+   "pyi": [
+    "lk",
+    "lkl"
+   ],
+   "debate": "国内多家指南列为绝对禁用；国际部分资料认为治疗剂量相对安全。本库取保守口径（禁用），抗疟用药请遵医嘱。"
   },
   {
    "id": "levofloxacin",
@@ -1018,7 +1457,20 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "喹诺酮类抗生素（呼吸道、尿路感染）"
+   "use": "喹诺酮类抗生素（呼吸道、尿路感染）",
+   "py": [
+    "zuoyangfushaxing",
+    "zuoke",
+    "lailixin",
+    "kelebituo"
+   ],
+   "pyi": [
+    "zyfsx",
+    "zk",
+    "llx",
+    "klbt"
+   ],
+   "debate": "国内部分资料列为慎用；国际资料多视为低风险。本库取保守口径。"
   },
   {
    "id": "ciprofloxacin",
@@ -1040,7 +1492,18 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "喹诺酮类抗生素（尿路、肠道感染）"
+   "use": "喹诺酮类抗生素（尿路、肠道感染）",
+   "py": [
+    "huanbingshaxing",
+    "xipule",
+    "xifuhuan"
+   ],
+   "pyi": [
+    "hbsx",
+    "xpl",
+    "xfh"
+   ],
+   "debate": "国内部分资料列为慎用；国际资料多视为低风险。本库取保守口径。"
   },
   {
    "id": "norfloxacin",
@@ -1061,7 +1524,18 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "喹诺酮类抗生素（肠道、尿路感染）"
+   "use": "喹诺酮类抗生素（肠道、尿路感染）",
+   "py": [
+    "nuofushaxing",
+    "fupaisuan",
+    "lichunluo"
+   ],
+   "pyi": [
+    "nfsx",
+    "fps",
+    "lcl"
+   ],
+   "debate": "国内部分资料列为慎用；国际资料多视为低风险。本库取保守口径。"
   },
   {
    "id": "ofloxacin",
@@ -1081,7 +1555,18 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "喹诺酮类抗生素（呼吸道、尿路、眼部感染）"
+   "use": "喹诺酮类抗生素（呼吸道、尿路、眼部感染）",
+   "py": [
+    "yangfushaxing",
+    "fuqinsuan",
+    "tailibituo"
+   ],
+   "pyi": [
+    "yfsx",
+    "fqs",
+    "tlbt"
+   ],
+   "debate": "国内部分资料列为慎用；国际资料多视为低风险。本库取保守口径。"
   },
   {
    "id": "moxifloxacin",
@@ -1100,7 +1585,16 @@ const G6PD_DATA = {
     "S6"
    ],
    "icon": "💊",
-   "use": "喹诺酮类抗生素（呼吸道感染）"
+   "use": "喹诺酮类抗生素（呼吸道感染）",
+   "py": [
+    "moxishaxing",
+    "baifule"
+   ],
+   "pyi": [
+    "mxsx",
+    "bfl"
+   ],
+   "debate": "国内部分资料列为慎用；国际资料多视为低风险。本库取保守口径。"
   },
   {
    "id": "acetaminophen",
@@ -1126,7 +1620,22 @@ const G6PD_DATA = {
     "S1"
    ],
    "icon": "💊",
-   "use": "退烧、止痛（感冒发热、头痛、牙痛、肌肉痛）"
+   "use": "退烧、止痛（感冒发热、头痛、牙痛、肌肉痛）",
+   "py": [
+    "duiyixiananjifen",
+    "purexitong",
+    "tainuolin",
+    "bilitong",
+    "baifuning"
+   ],
+   "pyi": [
+    "dyxajf",
+    "prxt",
+    "tnl",
+    "blt",
+    "bfn"
+   ],
+   "debate": "多数指南视为 G6PD 首选退烧药；极少数资料提示大剂量需注意。常规剂量可用。"
   },
   {
    "id": "ibuprofen",
@@ -1149,7 +1658,20 @@ const G6PD_DATA = {
     "S1"
    ],
    "icon": "💊",
-   "use": "退烧、止痛、抗炎（发热、头痛、关节痛、痛经）"
+   "use": "退烧、止痛、抗炎（发热、头痛、关节痛、痛经）",
+   "py": [
+    "buluofen",
+    "fenbidei",
+    "meilin",
+    "tuoen"
+   ],
+   "pyi": [
+    "blf",
+    "fbd",
+    "ml",
+    "te"
+   ],
+   "debate": "一派认为常规剂量相对安全（多国儿科常用）；另一派认为 NSAID 需谨慎。本库取保守口径（慎用），退烧可优先对乙酰氨基酚。"
   },
   {
    "id": "vitamin_c_high",
@@ -1172,7 +1694,19 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "维生素C（大剂量，抗氧化/辅助）"
+   "use": "维生素C（大剂量，抗氧化/辅助）",
+   "py": [
+    "dajiliangweishengsu",
+    "weishengsu",
+    "wei",
+    "kanghuaixuesuan"
+   ],
+   "pyi": [
+    "djlwss",
+    "wss",
+    "w",
+    "khxs"
+   ]
   },
   {
    "id": "vitamin_k3",
@@ -1195,7 +1729,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "⚪",
-   "use": "维生素K（促凝血、新生儿出血预防）"
+   "use": "维生素K（促凝血、新生儿出血预防）",
+   "py": [
+    "weishengsujianaikun",
+    "jianaikun",
+    "yaliusuanqingnajianaikun"
+   ],
+   "pyi": [
+    "wssjnk",
+    "jnk",
+    "ylsqnjnk"
+   ]
   },
   {
    "id": "isoniazid",
@@ -1216,7 +1760,16 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗结核药"
+   "use": "抗结核药",
+   "py": [
+    "yiyanjing",
+    "leimifeng"
+   ],
+   "pyi": [
+    "yyj",
+    "lmf"
+   ],
+   "debate": "仅有零散个案或证据有限，并非绝对禁用；本库取保守口径，抗结核请遵医嘱。"
   },
   {
    "id": "probenecid",
@@ -1236,7 +1789,16 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "促尿酸排泄药（痛风）"
+   "use": "促尿酸排泄药（痛风）",
+   "py": [
+    "binghuangshu",
+    "suobenhuangan"
+   ],
+   "pyi": [
+    "bhs",
+    "sbha"
+   ],
+   "debate": "仅有零散个案或证据有限，并非绝对禁用；本库取保守口径，痛风用药请医生评估。"
   },
   {
    "id": "nitroprusside",
@@ -1255,7 +1817,15 @@ const G6PD_DATA = {
     "S1"
    ],
    "icon": "💊",
-   "use": "强效静脉降压（高血压急症）"
+   "use": "强效静脉降压（高血压急症）",
+   "py": [
+    "xiaopuna",
+    "yaxiaojitieqinghuana"
+   ],
+   "pyi": [
+    "xpn",
+    "yxjtqhn"
+   ]
   },
   {
    "id": "isosorbide_dinitrate",
@@ -1276,7 +1846,18 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "硝酸酯类，扩张冠脉（心绞痛）"
+   "use": "硝酸酯类，扩张冠脉（心绞痛）",
+   "py": [
+    "xiaosuanyishanlizhi",
+    "xiaoxintong",
+    "yishuji"
+   ],
+   "pyi": [
+    "xsyslz",
+    "xxt",
+    "ysj"
+   ],
+   "debate": "部分资料列为慎用（大剂量/长期）；请心内科评估。"
   },
   {
    "id": "nitroglycerin",
@@ -1296,7 +1877,18 @@ const G6PD_DATA = {
     "S6"
    ],
    "icon": "💊",
-   "use": "硝酸酯类（心绞痛急救与预防）"
+   "use": "硝酸酯类（心绞痛急救与预防）",
+   "py": [
+    "xiaosuanganyou",
+    "naijiaoning",
+    "xiaosuanganyoupian"
+   ],
+   "pyi": [
+    "xsgy",
+    "njn",
+    "xsgyp"
+   ],
+   "debate": "部分资料列为慎用（大剂量/长期）；心绞痛急救不应因 G6PD 延误。"
   },
   {
    "id": "gliclazide",
@@ -1317,7 +1909,18 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "磺酰脲类降糖药（2 型糖尿病）"
+   "use": "磺酰脲类降糖药（2 型糖尿病）",
+   "py": [
+    "gelieqite",
+    "dameikang",
+    "lieke"
+   ],
+   "pyi": [
+    "glqt",
+    "dmk",
+    "lk"
+   ],
+   "debate": "磺酰脲类在部分资料列为慎用，证据不一；本库取保守口径，糖尿病用药请内分泌科评估。"
   },
   {
    "id": "glibenclamide",
@@ -1338,7 +1941,18 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "磺酰脲类降糖药（2 型糖尿病）"
+   "use": "磺酰脲类降糖药（2 型糖尿病）",
+   "py": [
+    "geliebenniao",
+    "youjiangtang",
+    "daanliao"
+   ],
+   "pyi": [
+    "glbn",
+    "yjt",
+    "dal"
+   ],
+   "debate": "磺酰脲类在部分资料列为慎用，证据不一；本库取保守口径，糖尿病用药请内分泌科评估。"
   },
   {
    "id": "glimepiride",
@@ -1358,7 +1972,18 @@ const G6PD_DATA = {
     "S6"
    ],
    "icon": "💊",
-   "use": "磺酰脲类降糖药（2 型糖尿病）"
+   "use": "磺酰脲类降糖药（2 型糖尿病）",
+   "py": [
+    "geliemeiniao",
+    "yamoli",
+    "wansuping"
+   ],
+   "pyi": [
+    "glmn",
+    "yml",
+    "wsp"
+   ],
+   "debate": "磺酰脲类在部分资料列为慎用，证据不一；本库取保守口径，糖尿病用药请内分泌科评估。"
   },
   {
    "id": "pyrimethamine",
@@ -1379,7 +2004,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗疟药；也用于弓形虫感染"
+   "use": "抗疟药；也用于弓形虫感染",
+   "py": [
+    "yianmiding",
+    "xinveding",
+    "dalapilin"
+   ],
+   "pyi": [
+    "yamd",
+    "xnd",
+    "dlpl"
+   ]
   },
   {
    "id": "colchicine",
@@ -1400,7 +2035,16 @@ const G6PD_DATA = {
    ],
    "icon": "🌸",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8C%B8%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E6%B0%B4%E4%BB%99%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "抗痛风药（急性痛风）"
+   "use": "抗痛风药（急性痛风）",
+   "py": [
+    "qiushuixianjian",
+    "qiushuixiansu"
+   ],
+   "pyi": [
+    "qsxj",
+    "qsxs"
+   ],
+   "debate": "证据有限，个别资料列为慎用；痛风急性期请医生权衡。"
   },
   {
    "id": "diphenhydramine",
@@ -1421,7 +2065,16 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗组胺药（过敏、晕车、止痒）"
+   "use": "抗组胺药（过敏、晕车、止痒）",
+   "py": [
+    "benhailaming",
+    "bennajun"
+   ],
+   "pyi": [
+    "bhlm",
+    "bnj"
+   ],
+   "debate": "第一代抗组胺药，部分资料列为慎用；二代抗组胺通常更安全。"
   },
   {
    "id": "levodopa",
@@ -1441,7 +2094,14 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗帕金森病药"
+   "use": "抗帕金森病药",
+   "py": [
+    "zuoxuanduoba"
+   ],
+   "pyi": [
+    "zxdb"
+   ],
+   "debate": "证据有限，部分资料列为慎用；帕金森用药请神经科评估。"
   },
   {
    "id": "quinidine",
@@ -1461,7 +2121,16 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗心律失常药"
+   "use": "抗心律失常药",
+   "py": [
+    "kuiniding",
+    "liusuankuiniding"
+   ],
+   "pyi": [
+    "knd",
+    "lsknd"
+   ],
+   "debate": "部分资料列为慎用；抗心律失常用药请心内科评估。"
   },
   {
    "id": "phenytoin",
@@ -1481,7 +2150,18 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗癫痫药"
+   "use": "抗癫痫药",
+   "py": [
+    "bentuoying",
+    "dalunding",
+    "bentuoyingna"
+   ],
+   "pyi": [
+    "bty",
+    "dld",
+    "btyn"
+   ],
+   "debate": "仅有零散个案或证据有限，并非绝对禁用；本库取保守口径，用前请医生评估。"
   },
   {
    "id": "compound_cold_med",
@@ -1510,7 +2190,19 @@ const G6PD_DATA = {
     "人工牛黄"
    ],
    "icon": "💊",
-   "use": "缓解感冒症状（含多种成分，需逐一核对）"
+   "use": "缓解感冒症状（含多种成分，需逐一核对）",
+   "py": [
+    "fufangganmaoyaofufangjierezhentongyao",
+    "ganmaolingkeli",
+    "fufangxinbukeli",
+    "ganmaoling"
+   ],
+   "pyi": [
+    "ffgmyffjrzty",
+    "gmlkl",
+    "ffxbkl",
+    "gml"
+   ]
   },
   {
    "id": "methyl_salicylate",
@@ -1532,7 +2224,18 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "🧴",
-   "use": "外用止痛（肌肉、关节酸痛）"
+   "use": "外用止痛（肌肉、关节酸痛）",
+   "py": [
+    "shuiyangsuanjiazhidongqingyou",
+    "dongqingyou",
+    "donglvyou"
+   ],
+   "pyi": [
+    "sysjzdqy",
+    "dqy",
+    "dly"
+   ],
+   "debate": "外用可经皮吸收少量；部分资料列为慎用，避免大面积或破损皮肤使用。"
   },
   {
    "id": "camphor_topical",
@@ -1561,7 +2264,30 @@ const G6PD_DATA = {
    ],
    "icon": "🧴",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23e8f1fb%27%20stroke%3D%27%231565c0%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%A7%B4%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%231565c0%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%A3%8E%E6%B2%B9%E7%B2%BE%2F%E6%B8%85%E5%87%89%E6%B2%B9%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "外用止痒、清凉（清凉油、风油精类）"
+   "use": "外用止痒、清凉（清凉油、风油精类）",
+   "py": [
+    "hanbohenaozhangnaodewaiyongzhiji",
+    "qingliangyou",
+    "fengyoujing",
+    "wubidi",
+    "tuiretiebufen",
+    "zhiyanggao",
+    "wanjinyou",
+    "baihuayou",
+    "bohegao"
+   ],
+   "pyi": [
+    "hbhnzndwyzj",
+    "qly",
+    "fyj",
+    "wbd",
+    "trtbf",
+    "zyg",
+    "wjy",
+    "bhy",
+    "bhg"
+   ],
+   "debate": "外用是否经皮吸收到足以溶血存在分歧；避免大面积、破损皮肤及婴幼儿面部使用。"
   },
   {
    "id": "eucalyptus",
@@ -1578,7 +2304,13 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "🧴",
-   "use": "精油（香薰、外用）"
+   "use": "精油（香薰、外用）",
+   "py": [
+    "youjialishujingyou"
+   ],
+   "pyi": [
+    "yjlsjy"
+   ]
   },
   {
    "id": "hair_dye",
@@ -1595,7 +2327,14 @@ const G6PD_DATA = {
     "S5"
    ],
    "icon": "🧴",
-   "use": "染发、着色（含对苯二胺等）"
+   "use": "染发、着色（含对苯二胺等）",
+   "py": [
+    "ranfajiyurengongsesu"
+   ],
+   "pyi": [
+    "rfjyrgss"
+   ],
+   "debate": "含对苯二胺等氧化性成分，科普资料建议回避；染发请做皮肤测试并保持通风。"
   },
   {
    "id": "honey",
@@ -1612,7 +2351,13 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🍽️",
-   "use": "食物（调味、冲饮）"
+   "use": "食物（调味、冲饮）",
+   "py": [
+    "fengmi"
+   ],
+   "pyi": [
+    "fm"
+   ]
   },
   {
    "id": "penicillins",
@@ -1636,7 +2381,21 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "💊",
-   "use": "β-内酰胺类抗生素（细菌感染）"
+   "use": "β-内酰胺类抗生素（细菌感染）",
+   "py": [
+    "qingmeisuleikangshengsu",
+    "amoxilin",
+    "anbianxilin",
+    "qingmeisu",
+    "amoxilinkelaweisuanjia"
+   ],
+   "pyi": [
+    "qmslkss",
+    "amxl",
+    "abxl",
+    "qms",
+    "amxlklwsj"
+   ]
   },
   {
    "id": "cephalosporins",
@@ -1661,7 +2420,25 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "💊",
-   "use": "头孢类抗生素（细菌感染）"
+   "use": "头孢类抗生素（细菌感染）",
+   "py": [
+    "toubaojunsuleikangshengsu",
+    "toubaokeluo",
+    "toubaodini",
+    "toubaoqianganbian",
+    "toubaobingxi",
+    "xikelao",
+    "toubaofuxin"
+   ],
+   "pyi": [
+    "tbjslkss",
+    "tbkl",
+    "tbdn",
+    "tbqab",
+    "tbbx",
+    "xkl",
+    "tbfx"
+   ]
   },
   {
    "id": "macrolides",
@@ -1684,7 +2461,21 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "💊",
-   "use": "大环内酯类抗生素（呼吸道、支原体感染）"
+   "use": "大环内酯类抗生素（呼吸道、支原体感染）",
+   "py": [
+    "dahuanneizhileikangshengsu",
+    "aqimeisu",
+    "hongmeisu",
+    "kelameisu",
+    "xishumei"
+   ],
+   "pyi": [
+    "dhnzlkss",
+    "aqms",
+    "hms",
+    "klms",
+    "xsm"
+   ]
   },
   {
    "id": "metronidazole",
@@ -1706,7 +2497,20 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "💊",
-   "use": "抗厌氧菌、抗滴虫（牙周、肠道、妇科感染）"
+   "use": "抗厌氧菌、抗滴虫（牙周、肠道、妇科感染）",
+   "py": [
+    "jiaxiaozuotixiaozuo",
+    "jiaxiaozuo",
+    "tixiaozuo",
+    "miediling"
+   ],
+   "pyi": [
+    "jxztxz",
+    "jxz",
+    "txz",
+    "mdl"
+   ],
+   "debate": "未列入多数经典 G6PD 禁用名单，一般可用；个别资料提示慎用。"
   },
   {
    "id": "vitamin_k1",
@@ -1726,7 +2530,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "⚪",
-   "use": "维生素K（促凝血、新生儿出血）"
+   "use": "维生素K（促凝血、新生儿出血）",
+   "py": [
+    "weishengsuzhiwujianaikun",
+    "yelvkun"
+   ],
+   "pyi": [
+    "wsszwjnk",
+    "ylk"
+   ]
   },
   {
    "id": "infection",
@@ -1751,7 +2563,25 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🦠",
-   "use": "科普：感染/发热本身可诱发溶血"
+   "use": "科普：感染/发热本身可诱发溶血",
+   "py": [
+    "ganranyouyin",
+    "ganyan",
+    "juxibaobingdu",
+    "shanghan",
+    "feiyan",
+    "shanghuxidaoganran",
+    "liugan"
+   ],
+   "pyi": [
+    "gryy",
+    "gy",
+    "jxbbd",
+    "sh",
+    "fy",
+    "shxdgr",
+    "lg"
+   ]
   },
   {
    "id": "neonatal_jaundice",
@@ -1772,7 +2602,17 @@ const G6PD_DATA = {
     "S8"
    ],
    "icon": "🦠",
-   "use": "科普：新生儿黄疸与 G6PD 缺乏相关"
+   "use": "科普：新生儿黄疸与 G6PD 缺乏相关",
+   "py": [
+    "xinshengerhuangdan",
+    "hehuangdan",
+    "danhongsunaobing"
+   ],
+   "pyi": [
+    "xsehd",
+    "hhd",
+    "dhsnb"
+   ]
   },
   {
    "id": "genetics",
@@ -1794,7 +2634,19 @@ const G6PD_DATA = {
     "S5"
    ],
    "icon": "🦠",
-   "use": "科普：X 连锁遗传特点"
+   "use": "科普：X 连锁遗传特点",
+   "py": [
+    "yichuantedian",
+    "liansuo",
+    "chanqianzixun",
+    "xiedaizhe"
+   ],
+   "pyi": [
+    "yctd",
+    "ls",
+    "cqzx",
+    "xdz"
+   ]
   },
   {
    "id": "toluidine-blue",
@@ -1815,7 +2667,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "染色剂、解毒（正铁血红蛋白血症）"
+   "use": "染色剂、解毒（正铁血红蛋白血症）",
+   "py": [
+    "jiabenanlan",
+    "tianqingranliao"
+   ],
+   "pyi": [
+    "jbal",
+    "tqrl"
+   ]
   },
   {
    "id": "phenolphthalein",
@@ -1835,7 +2695,17 @@ const G6PD_DATA = {
     "S1"
    ],
    "icon": "💊",
-   "use": "刺激性泻药（便秘，现已少用）"
+   "use": "刺激性泻药（便秘，现已少用）",
+   "py": [
+    "fentai",
+    "guodao",
+    "guodaopian"
+   ],
+   "pyi": [
+    "ft",
+    "gd",
+    "gdp"
+   ]
   },
   {
    "id": "pudilan",
@@ -1857,7 +2727,25 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "清热解毒（中成药，咽炎、扁桃体炎）"
+   "use": "清热解毒（中成药，咽炎、扁桃体炎）",
+   "py": [
+    "pudilan",
+    "pudilanxiaoyan",
+    "pudilanxiaoyankoufuye",
+    "pudilanxiaoyanpian"
+   ],
+   "pyi": [
+    "pdl",
+    "pdlxy",
+    "pdlxykfy",
+    "pdlxyp"
+   ],
+   "ingredients": [
+    "蒲公英",
+    "苦地丁",
+    "板蓝根",
+    "黄芩"
+   ]
   },
   {
    "id": "lanqin",
@@ -1878,7 +2766,24 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "清热解毒（中成药，咽炎）"
+   "use": "清热解毒（中成药，咽炎）",
+   "py": [
+    "lanqin",
+    "lanqinkoufuye",
+    "lanqinkeli"
+   ],
+   "pyi": [
+    "lq",
+    "lqkfy",
+    "lqkl"
+   ],
+   "ingredients": [
+    "板蓝根",
+    "黄芩",
+    "栀子",
+    "黄柏",
+    "胖大海"
+   ]
   },
   {
    "id": "banlangen",
@@ -1899,7 +2804,17 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "清热解毒（感冒、咽痛）"
+   "use": "清热解毒（感冒、咽痛）",
+   "py": [
+    "banlangen",
+    "banlangenkeli",
+    "fufangbanlangen"
+   ],
+   "pyi": [
+    "blg",
+    "blgkl",
+    "ffblg"
+   ]
   },
   {
    "id": "lianhua",
@@ -1920,7 +2835,33 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "清瘟解毒（中成药，感冒、流感）"
+   "use": "清瘟解毒（中成药，感冒、流感）",
+   "py": [
+    "lianhuaqingwen",
+    "lianhuaqingwenjiaonang",
+    "lianhuaqingwenkeli"
+   ],
+   "pyi": [
+    "lhqw",
+    "lhqwjn",
+    "lhqwkl"
+   ],
+   "ingredients": [
+    "连翘",
+    "金银花",
+    "炙麻黄",
+    "苦杏仁",
+    "石膏",
+    "板蓝根",
+    "绵马贯众",
+    "鱼腥草",
+    "广藿香",
+    "大黄",
+    "红景天",
+    "薄荷脑",
+    "甘草"
+   ],
+   "debate": "中成药复方，成分表含连翘、金银花、薄荷脑等本库禁用药材；不同厂家配方有差异，请核对成分表。"
   },
   {
    "id": "xiaochaihu",
@@ -1940,7 +2881,15 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "和解少阳（感冒、发热）"
+   "use": "和解少阳（感冒、发热）",
+   "py": [
+    "xiaochaihukeli",
+    "xiaochaihu"
+   ],
+   "pyi": [
+    "xchkl",
+    "xch"
+   ]
   },
   {
    "id": "xiaoershaoqiao",
@@ -1961,7 +2910,31 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "疏风清热（小儿感冒）"
+   "use": "疏风清热（小儿感冒）",
+   "py": [
+    "xiaoershiqiaoqingrekeli",
+    "shiqiao",
+    "xiaoershiqiao"
+   ],
+   "pyi": [
+    "xesqqrkl",
+    "sq",
+    "xesq"
+   ],
+   "ingredients": [
+    "连翘",
+    "薄荷",
+    "荆芥",
+    "淡豆豉",
+    "牛蒡子",
+    "柴胡",
+    "黄芩",
+    "赤芍",
+    "槟榔",
+    "厚朴",
+    "大黄"
+   ],
+   "debate": "中成药复方，成分含连翘、薄荷等本库禁用药材；请核对成分表。"
   },
   {
    "id": "ganmaoqingre",
@@ -1982,7 +2955,31 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "疏风散寒（风寒感冒）"
+   "use": "疏风散寒（风寒感冒）",
+   "py": [
+    "ganmaoqingrekeli",
+    "ganmaoqingre",
+    "ganmaoqingrechongji"
+   ],
+   "pyi": [
+    "gmqrkl",
+    "gmqr",
+    "gmqrcj"
+   ],
+   "ingredients": [
+    "荆芥穗",
+    "薄荷",
+    "防风",
+    "柴胡",
+    "紫苏叶",
+    "葛根",
+    "桔梗",
+    "苦杏仁",
+    "白芷",
+    "苦地丁",
+    "芦根"
+   ],
+   "debate": "中成药复方，成分含薄荷等本库禁用药材；请核对成分表。"
   },
   {
    "id": "jizhi",
@@ -2002,7 +2999,15 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "清热化痰止咳（咳嗽）"
+   "use": "清热化痰止咳（咳嗽）",
+   "py": [
+    "jizhitangjiang",
+    "jizhi"
+   ],
+   "pyi": [
+    "jztj",
+    "jz"
+   ]
   },
   {
    "id": "beibipingba",
@@ -2023,7 +3028,17 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "润肺化痰止咳"
+   "use": "润肺化痰止咳",
+   "py": [
+    "milianchuanbeipipagao",
+    "chuanbeipipagao",
+    "pipagao"
+   ],
+   "pyi": [
+    "mlcbppg",
+    "cbppg",
+    "ppg"
+   ]
   },
   {
    "id": "kangbingdu",
@@ -2044,7 +3059,29 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "清热祛湿（感冒、流感）"
+   "use": "清热祛湿（感冒、流感）",
+   "py": [
+    "kangbingdukoufuye",
+    "kangbingdu",
+    "kangbingdukeli"
+   ],
+   "pyi": [
+    "kbdkfy",
+    "kbd",
+    "kbdkl"
+   ],
+   "ingredients": [
+    "板蓝根",
+    "石膏",
+    "芦根",
+    "生地黄",
+    "郁金",
+    "知母",
+    "石菖蒲",
+    "广藿香",
+    "连翘"
+   ],
+   "debate": "中成药复方，成分含连翘等本库禁用药材；请核对成分表。"
   },
   {
    "id": "loratadine",
@@ -2065,7 +3102,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗组胺药（过敏性鼻炎、荨麻疹）"
+   "use": "抗组胺药（过敏性鼻炎、荨麻疹）",
+   "py": [
+    "lvleitading",
+    "kairuitan",
+    "keminneng"
+   ],
+   "pyi": [
+    "lltd",
+    "krt",
+    "kmn"
+   ]
   },
   {
    "id": "cetirizine",
@@ -2086,7 +3133,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗组胺药（过敏性鼻炎、荨麻疹）"
+   "use": "抗组胺药（过敏性鼻炎、荨麻疹）",
+   "py": [
+    "xitiliqin",
+    "xianteming",
+    "dimin"
+   ],
+   "pyi": [
+    "xtlq",
+    "xtm",
+    "dm"
+   ]
   },
   {
    "id": "montelukast",
@@ -2105,7 +3162,15 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "💊",
-   "use": "白三烯受体拮抗剂（哮喘、过敏性鼻炎）"
+   "use": "白三烯受体拮抗剂（哮喘、过敏性鼻炎）",
+   "py": [
+    "menglusite",
+    "shunerning"
+   ],
+   "pyi": [
+    "mlst",
+    "sen"
+   ]
   },
   {
    "id": "ambroxol",
@@ -2126,7 +3191,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "祛痰药（痰多黏稠）"
+   "use": "祛痰药（痰多黏稠）",
+   "py": [
+    "anxiusuo",
+    "mushutan",
+    "yansuananxiusuo"
+   ],
+   "pyi": [
+    "axs",
+    "mst",
+    "ysaxs"
+   ]
   },
   {
    "id": "yitanjing",
@@ -2146,7 +3221,17 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "💊",
-   "use": "复方祛痰药（氨溴索+克仑特罗，儿童咳嗽痰多）"
+   "use": "复方祛痰药（氨溴索+克仑特罗，儿童咳嗽痰多）",
+   "py": [
+    "yitanjing",
+    "anxiuteluo",
+    "anxiuteluokoufurongye"
+   ],
+   "pyi": [
+    "ytj",
+    "axtl",
+    "axtlkfry"
+   ]
   },
   {
    "id": "smecta",
@@ -2166,7 +3251,17 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "💊",
-   "use": "止泻、保护肠黏膜"
+   "use": "止泻、保护肠黏膜",
+   "py": [
+    "mengtuoshisan",
+    "simida",
+    "mengtuoshi"
+   ],
+   "pyi": [
+    "mtss",
+    "smd",
+    "mts"
+   ]
   },
   {
    "id": "mami",
@@ -2186,7 +3281,17 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "💊",
-   "use": "益生菌（调节肠道菌群，儿童）"
+   "use": "益生菌（调节肠道菌群，儿童）",
+   "py": [
+    "mamiai",
+    "kucaoganjunerlianhuojun",
+    "yishengjunkeli"
+   ],
+   "pyi": [
+    "mma",
+    "kcgjelhj",
+    "ysjkl"
+   ]
   },
   {
    "id": "probiotic",
@@ -2207,7 +3312,19 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "💊",
-   "use": "调节肠道菌群"
+   "use": "调节肠道菌群",
+   "py": [
+    "yishengjun",
+    "rusuanjun",
+    "shuangqiganjun",
+    "heshengyuan"
+   ],
+   "pyi": [
+    "ysj",
+    "rsj",
+    "sqgj",
+    "hsy"
+   ]
   },
   {
    "id": "calciumglu",
@@ -2227,7 +3344,17 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "💊",
-   "use": "补钙、抗过敏辅助"
+   "use": "补钙、抗过敏辅助",
+   "py": [
+    "putaotangsuangai",
+    "gai",
+    "putaotanggai"
+   ],
+   "pyi": [
+    "pttsg",
+    "g",
+    "pttg"
+   ]
   },
   {
    "id": "vitd",
@@ -2248,7 +3375,17 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "💊",
-   "use": "补充维生素D（促进钙吸收）"
+   "use": "补充维生素D（促进钙吸收）",
+   "py": [
+    "weishengsu",
+    "wei",
+    "xingsha"
+   ],
+   "pyi": [
+    "wss",
+    "w",
+    "xs"
+   ]
   },
   {
    "id": "calpol",
@@ -2267,7 +3404,15 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "💊",
-   "use": "外用止痒收敛（痱子、蚊虫叮咬）"
+   "use": "外用止痒收敛（痱子、蚊虫叮咬）",
+   "py": [
+    "luganshi",
+    "luganshixiji"
+   ],
+   "pyi": [
+    "lgs",
+    "lgsxj"
+   ]
   },
   {
    "id": "zincoxide",
@@ -2287,7 +3432,17 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "💊",
-   "use": "外用收敛保护（尿布疹、皮肤）"
+   "use": "外用收敛保护（尿布疹、皮肤）",
+   "py": [
+    "yanghuaxin",
+    "yanghuaxinruangao",
+    "hutunshuang"
+   ],
+   "pyi": [
+    "yhx",
+    "yhxrg",
+    "hts"
+   ]
   },
   {
    "id": "hydrocort",
@@ -2307,7 +3462,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "糖皮质激素（外用/口服，抗炎抗过敏）"
+   "use": "糖皮质激素（外用/口服，抗炎抗过敏）",
+   "py": [
+    "qinghuakedisong",
+    "qinghuakedisongrugao"
+   ],
+   "pyi": [
+    "qhkds",
+    "qhkdsrg"
+   ]
   },
   {
    "id": "mupirocin",
@@ -2326,7 +3489,15 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "💊",
-   "use": "外用抗菌（皮肤感染）"
+   "use": "外用抗菌（皮肤感染）",
+   "py": [
+    "mopiluoxing",
+    "baiduobang"
+   ],
+   "pyi": [
+    "mplx",
+    "bdb"
+   ]
   },
   {
    "id": "iodophor",
@@ -2346,7 +3517,17 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "🧴",
-   "use": "外用消毒"
+   "use": "外用消毒",
+   "py": [
+    "dianfu",
+    "dianfuxiaoduye",
+    "anerdian"
+   ],
+   "pyi": [
+    "df",
+    "dfxdy",
+    "aed"
+   ]
   },
   {
    "id": "alcohol",
@@ -2367,7 +3548,17 @@ const G6PD_DATA = {
     "S2"
    ],
    "icon": "🧴",
-   "use": "外用消毒、溶剂"
+   "use": "外用消毒、溶剂",
+   "py": [
+    "jiujing",
+    "yichun",
+    "yiyongjiujing"
+   ],
+   "pyi": [
+    "jj",
+    "yc",
+    "yyjj"
+   ]
   },
   {
    "id": "miconazole",
@@ -2388,7 +3579,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "抗真菌外用（咪康唑，皮肤/妇科）"
+   "use": "抗真菌外用（咪康唑，皮肤/妇科）",
+   "py": [
+    "dakening",
+    "mikangzuo",
+    "xiaosuanmikangzuo"
+   ],
+   "pyi": [
+    "dkn",
+    "mkz",
+    "xsmkz"
+   ]
   },
   {
    "id": "ceftriaxone",
@@ -2409,7 +3610,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "三代头孢（重症感染）"
+   "use": "三代头孢（重症感染）",
+   "py": [
+    "toubaoqusong",
+    "luoshifen",
+    "toubaosanqin"
+   ],
+   "pyi": [
+    "tbqs",
+    "lsf",
+    "tbsq"
+   ]
   },
   {
    "id": "salbutamol",
@@ -2430,7 +3641,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "β2 激动剂（哮喘、喘息急救）"
+   "use": "β2 激动剂（哮喘、喘息急救）",
+   "py": [
+    "shadinganchun",
+    "shuchuanling",
+    "wantuolin"
+   ],
+   "pyi": [
+    "sdac",
+    "scl",
+    "wtl"
+   ]
   },
   {
    "id": "budesonide",
@@ -2451,7 +3672,17 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "吸入糖皮质激素（哮喘、鼻炎）"
+   "use": "吸入糖皮质激素（哮喘、鼻炎）",
+   "py": [
+    "budinaide",
+    "pumike",
+    "leinuokaote"
+   ],
+   "pyi": [
+    "bdnd",
+    "pmk",
+    "lnkt"
+   ]
   },
   {
    "id": "gentamicin",
@@ -2471,7 +3702,15 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "氨基糖苷类（感染、肠道）"
+   "use": "氨基糖苷类（感染、肠道）",
+   "py": [
+    "qingdameisu",
+    "liusuanqingdameisu"
+   ],
+   "pyi": [
+    "qdms",
+    "lsqdms"
+   ]
   },
   {
    "id": "changning",
@@ -2492,7 +3731,17 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "清热利湿（腹泻、肠炎）"
+   "use": "清热利湿（腹泻、肠炎）",
+   "py": [
+    "changyanning",
+    "changyanningtangjiang",
+    "changyanningpian"
+   ],
+   "pyi": [
+    "cyn",
+    "cyntj",
+    "cynp"
+   ]
   },
   {
    "id": "jianwei",
@@ -2513,7 +3762,17 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "健胃消食（消化不良）"
+   "use": "健胃消食（消化不良）",
+   "py": [
+    "jianweixiaoshipian",
+    "jianweixiaoshi",
+    "jiangzhongjianweixiaoshipian"
+   ],
+   "pyi": [
+    "jwxsp",
+    "jwxs",
+    "jzjwxsp"
+   ]
   },
   {
    "id": "xiaoerfeike",
@@ -2533,7 +3792,15 @@ const G6PD_DATA = {
     "S3"
    ],
    "icon": "🌿",
-   "use": "健脾止咳（小儿咳嗽）"
+   "use": "健脾止咳（小儿咳嗽）",
+   "py": [
+    "xiaoerfeikekeli",
+    "xiaoerfeike"
+   ],
+   "pyi": [
+    "xefkkl",
+    "xefk"
+   ]
   },
   {
    "name": "双氯芬酸",
@@ -2555,7 +3822,19 @@ const G6PD_DATA = {
    "id": "双氯芬酸",
    "note": "",
    "icon": "💊",
-   "use": "抗炎镇痛（关节痛、肌肉痛、痛经、外伤痛）"
+   "use": "抗炎镇痛（关节痛、肌肉痛、痛经、外伤痛）",
+   "py": [
+    "shuanglvfensuan",
+    "futalin",
+    "daifen",
+    "yingtaiqing"
+   ],
+   "pyi": [
+    "slfs",
+    "ftl",
+    "df",
+    "ytq"
+   ]
   },
   {
    "name": "洛索洛芬",
@@ -2575,7 +3854,15 @@ const G6PD_DATA = {
    "id": "洛索洛芬",
    "note": "",
    "icon": "💊",
-   "use": "抗炎镇痛（关节炎、腰痛、术后痛）"
+   "use": "抗炎镇痛（关节炎、腰痛、术后痛）",
+   "py": [
+    "luosuoluofen",
+    "lesong"
+   ],
+   "pyi": [
+    "lslf",
+    "ls"
+   ]
   },
   {
    "name": "萘普生",
@@ -2595,7 +3882,15 @@ const G6PD_DATA = {
    "id": "萘普生",
    "note": "",
    "icon": "⚪",
-   "use": "抗炎镇痛（关节炎、痛经、头痛）"
+   "use": "抗炎镇痛（关节炎、痛经、头痛）",
+   "py": [
+    "naipusheng",
+    "naipushengna"
+   ],
+   "pyi": [
+    "nps",
+    "npsn"
+   ]
   },
   {
    "name": "美洛昔康",
@@ -2615,7 +3910,15 @@ const G6PD_DATA = {
    "id": "美洛昔康",
    "note": "",
    "icon": "💊",
-   "use": "抗炎镇痛（骨关节炎、类风湿）"
+   "use": "抗炎镇痛（骨关节炎、类风湿）",
+   "py": [
+    "meiluoxikang",
+    "mobike"
+   ],
+   "pyi": [
+    "mlxk",
+    "mbk"
+   ]
   },
   {
    "name": "塞来昔布",
@@ -2635,7 +3938,15 @@ const G6PD_DATA = {
    "id": "塞来昔布",
    "note": "",
    "icon": "💊",
-   "use": "抗炎镇痛（关节炎，胃肠道刺激相对较小）"
+   "use": "抗炎镇痛（关节炎，胃肠道刺激相对较小）",
+   "py": [
+    "sailaixibu",
+    "xiyuebao"
+   ],
+   "pyi": [
+    "slxb",
+    "xyb"
+   ]
   },
   {
    "name": "吲哚美辛",
@@ -2655,7 +3966,15 @@ const G6PD_DATA = {
    "id": "吲哚美辛",
    "note": "",
    "icon": "💊",
-   "use": "强效抗炎镇痛（关节炎、痛风）"
+   "use": "强效抗炎镇痛（关节炎、痛风）",
+   "py": [
+    "yinduomeixin",
+    "xiaoyantong"
+   ],
+   "pyi": [
+    "ydmx",
+    "xyt"
+   ]
   },
   {
    "name": "依托考昔",
@@ -2675,7 +3994,15 @@ const G6PD_DATA = {
    "id": "依托考昔",
    "note": "",
    "icon": "💊",
-   "use": "抗炎镇痛（关节炎、急性痛风）"
+   "use": "抗炎镇痛（关节炎、急性痛风）",
+   "py": [
+    "yituokaoxi",
+    "ankangxin"
+   ],
+   "pyi": [
+    "ytkx",
+    "akx"
+   ]
   },
   {
    "name": "氟比洛芬",
@@ -2695,7 +4022,15 @@ const G6PD_DATA = {
    "id": "氟比洛芬",
    "note": "",
    "icon": "💊",
-   "use": "抗炎镇痛（关节炎、术后/外伤痛）"
+   "use": "抗炎镇痛（关节炎、术后/外伤痛）",
+   "py": [
+    "fubiluofen",
+    "fubiluofenzhi"
+   ],
+   "pyi": [
+    "fblf",
+    "fblfz"
+   ]
   },
   {
    "name": "哌拉西林他唑巴坦",
@@ -2715,7 +4050,15 @@ const G6PD_DATA = {
    "id": "哌拉西林他唑巴坦",
    "note": "",
    "icon": "💊",
-   "use": "广谱青霉素复合制剂（重症感染）"
+   "use": "广谱青霉素复合制剂（重症感染）",
+   "py": [
+    "pailaxilintazuobatan",
+    "tezhixing"
+   ],
+   "pyi": [
+    "plxltzbt",
+    "tzx"
+   ]
   },
   {
    "name": "青霉素V",
@@ -2735,7 +4078,15 @@ const G6PD_DATA = {
    "id": "青霉素V",
    "note": "",
    "icon": "💊",
-   "use": "青霉素类（轻中度细菌感染）"
+   "use": "青霉素类（轻中度细菌感染）",
+   "py": [
+    "qingmeisu",
+    "qingmeisujia"
+   ],
+   "pyi": [
+    "qms",
+    "qmsj"
+   ]
   },
   {
    "name": "头孢克肟",
@@ -2756,7 +4107,17 @@ const G6PD_DATA = {
    "id": "头孢克肟",
    "note": "",
    "icon": "💊",
-   "use": "三代头孢（呼吸道、尿路感染）"
+   "use": "三代头孢（呼吸道、尿路感染）",
+   "py": [
+    "toubaokewo",
+    "shifusu",
+    "likeshu"
+   ],
+   "pyi": [
+    "tbkw",
+    "sfs",
+    "lks"
+   ]
   },
   {
    "name": "头孢拉定",
@@ -2777,7 +4138,17 @@ const G6PD_DATA = {
    "id": "头孢拉定",
    "note": "",
    "icon": "💊",
-   "use": "一代头孢（呼吸道、皮肤感染）"
+   "use": "一代头孢（呼吸道、皮肤感染）",
+   "py": [
+    "toubaolading",
+    "fanjiefu",
+    "xianfeng"
+   ],
+   "pyi": [
+    "tbld",
+    "fjf",
+    "xf"
+   ]
   },
   {
    "name": "头孢氨苄",
@@ -2798,7 +4169,17 @@ const G6PD_DATA = {
    "id": "头孢氨苄",
    "note": "",
    "icon": "💊",
-   "use": "一代头孢（呼吸道、尿路、皮肤感染）"
+   "use": "一代头孢（呼吸道、尿路、皮肤感染）",
+   "py": [
+    "toubaoanbian",
+    "xianfeng",
+    "toubaohao"
+   ],
+   "pyi": [
+    "tbab",
+    "xf",
+    "tbh"
+   ]
   },
   {
    "name": "头孢他啶",
@@ -2819,7 +4200,17 @@ const G6PD_DATA = {
    "id": "头孢他啶",
    "note": "",
    "icon": "💊",
-   "use": "三代头孢（重症、院内感染）"
+   "use": "三代头孢（重症、院内感染）",
+   "py": [
+    "toubaotading",
+    "fudaxin",
+    "kaifuding"
+   ],
+   "pyi": [
+    "tbtd",
+    "fdx",
+    "kfd"
+   ]
   },
   {
    "name": "头孢哌酮舒巴坦",
@@ -2839,7 +4230,15 @@ const G6PD_DATA = {
    "id": "头孢哌酮舒巴坦",
    "note": "",
    "icon": "💊",
-   "use": "三代头孢复合制剂（重症感染）"
+   "use": "三代头孢复合制剂（重症感染）",
+   "py": [
+    "toubaopaitongshubatan",
+    "shupushen"
+   ],
+   "pyi": [
+    "tbptsbt",
+    "sps"
+   ]
   },
   {
    "name": "罗红霉素",
@@ -2859,7 +4258,15 @@ const G6PD_DATA = {
    "id": "罗红霉素",
    "note": "",
    "icon": "💊",
-   "use": "大环内酯类（呼吸道、支原体感染）"
+   "use": "大环内酯类（呼吸道、支原体感染）",
+   "py": [
+    "luohongmeisu",
+    "luolide"
+   ],
+   "pyi": [
+    "lhms",
+    "lld"
+   ]
   },
   {
    "name": "阿米卡星",
@@ -2879,7 +4286,15 @@ const G6PD_DATA = {
    "id": "阿米卡星",
    "note": "",
    "icon": "💊",
-   "use": "氨基糖苷类抗生素（重症感染）"
+   "use": "氨基糖苷类抗生素（重症感染）",
+   "py": [
+    "amikaxing",
+    "dingankanameisu"
+   ],
+   "pyi": [
+    "amkx",
+    "daknms"
+   ]
   },
   {
    "name": "妥布霉素",
@@ -2899,7 +4314,15 @@ const G6PD_DATA = {
    "id": "妥布霉素",
    "note": "",
    "icon": "💊",
-   "use": "氨基糖苷类（重症感染、滴眼）"
+   "use": "氨基糖苷类（重症感染、滴眼）",
+   "py": [
+    "tuobumeisu",
+    "tuobaishiyanyong"
+   ],
+   "pyi": [
+    "tbms",
+    "tbsyy"
+   ]
   },
   {
    "name": "链霉素",
@@ -2917,7 +4340,14 @@ const G6PD_DATA = {
    "id": "链霉素",
    "note": "需在医生监护下使用，用药期间留意尿色变深、皮肤/眼睛发黄等溶血迹象。",
    "icon": "💊",
-   "use": "氨基糖苷类（结核、鼠疫等）"
+   "use": "氨基糖苷类（结核、鼠疫等）",
+   "py": [
+    "lianmeisu"
+   ],
+   "pyi": [
+    "lms"
+   ],
+   "debate": "仅有零散个案或证据有限，并非绝对禁用；本库取保守口径，用前请医生评估。"
   },
   {
    "name": "多西环素",
@@ -2938,7 +4368,15 @@ const G6PD_DATA = {
    "id": "多西环素",
    "note": "",
    "icon": "💊",
-   "use": "四环素类（支原体、衣原体、痤疮）"
+   "use": "四环素类（支原体、衣原体、痤疮）",
+   "py": [
+    "duoxihuansu",
+    "qianglimeisu"
+   ],
+   "pyi": [
+    "dxhs",
+    "qlms"
+   ]
   },
   {
    "name": "米诺环素",
@@ -2958,7 +4396,15 @@ const G6PD_DATA = {
    "id": "米诺环素",
    "note": "",
    "icon": "💊",
-   "use": "四环素类（痤疮、支原体感染）"
+   "use": "四环素类（痤疮、支原体感染）",
+   "py": [
+    "minuohuansu",
+    "meimanmeisu"
+   ],
+   "pyi": [
+    "mnhs",
+    "mmms"
+   ]
   },
   {
    "name": "四环素",
@@ -2976,7 +4422,13 @@ const G6PD_DATA = {
    "id": "四环素",
    "note": "",
    "icon": "💊",
-   "use": "四环素类（支原体、衣原体感染）"
+   "use": "四环素类（支原体、衣原体感染）",
+   "py": [
+    "sihuansu"
+   ],
+   "pyi": [
+    "shs"
+   ]
   },
   {
    "name": "克林霉素",
@@ -2997,7 +4449,17 @@ const G6PD_DATA = {
    "id": "克林霉素",
    "note": "",
    "icon": "💊",
-   "use": "林可胺类（厌氧菌、皮肤/骨感染）"
+   "use": "林可胺类（厌氧菌、皮肤/骨感染）",
+   "py": [
+    "kelinmeisu",
+    "lvjiemeisu",
+    "kelinmeisulinsuanzhi"
+   ],
+   "pyi": [
+    "klms",
+    "ljms",
+    "klmslsz"
+   ]
   },
   {
    "name": "万古霉素",
@@ -3017,7 +4479,15 @@ const G6PD_DATA = {
    "id": "万古霉素",
    "note": "",
    "icon": "💊",
-   "use": "糖肽类（耐药革兰阳性菌重症感染）"
+   "use": "糖肽类（耐药革兰阳性菌重症感染）",
+   "py": [
+    "wangumeisu",
+    "wenkexin"
+   ],
+   "pyi": [
+    "wgms",
+    "wkx"
+   ]
   },
   {
    "name": "利奈唑胺",
@@ -3037,7 +4507,15 @@ const G6PD_DATA = {
    "id": "利奈唑胺",
    "note": "",
    "icon": "💊",
-   "use": "噁唑烷酮类（耐药革兰阳性菌感染）"
+   "use": "噁唑烷酮类（耐药革兰阳性菌感染）",
+   "py": [
+    "linaizuoan",
+    "siwo"
+   ],
+   "pyi": [
+    "lnza",
+    "sw"
+   ]
   },
   {
    "name": "替考拉宁",
@@ -3057,7 +4535,15 @@ const G6PD_DATA = {
    "id": "替考拉宁",
    "note": "",
    "icon": "💊",
-   "use": "糖肽类（革兰阳性菌感染）"
+   "use": "糖肽类（革兰阳性菌感染）",
+   "py": [
+    "tikaolaning",
+    "tageshi"
+   ],
+   "pyi": [
+    "tkln",
+    "tgs"
+   ]
   },
   {
    "name": "奥司他韦",
@@ -3078,7 +4564,17 @@ const G6PD_DATA = {
    "id": "奥司他韦",
    "note": "",
    "icon": "💊",
-   "use": "抗流感病毒药（甲型/乙型流感）"
+   "use": "抗流感病毒药（甲型/乙型流感）",
+   "py": [
+    "aositawei",
+    "dafei",
+    "kewei"
+   ],
+   "pyi": [
+    "astw",
+    "df",
+    "kw"
+   ]
   },
   {
    "name": "阿昔洛韦",
@@ -3099,7 +4595,17 @@ const G6PD_DATA = {
    "id": "阿昔洛韦",
    "note": "",
    "icon": "💊",
-   "use": "抗疱疹病毒（疱疹、水痘）"
+   "use": "抗疱疹病毒（疱疹、水痘）",
+   "py": [
+    "axiluowei",
+    "wuhuanniaogan",
+    "shuweiliao"
+   ],
+   "pyi": [
+    "axlw",
+    "whng",
+    "swl"
+   ]
   },
   {
    "name": "伐昔洛韦",
@@ -3119,7 +4625,15 @@ const G6PD_DATA = {
    "id": "伐昔洛韦",
    "note": "",
    "icon": "💊",
-   "use": "抗疱疹病毒（带状疱疹、生殖器疱疹）"
+   "use": "抗疱疹病毒（带状疱疹、生殖器疱疹）",
+   "py": [
+    "faxiluowei",
+    "weidesi"
+   ],
+   "pyi": [
+    "fxlw",
+    "wds"
+   ]
   },
   {
    "name": "更昔洛韦",
@@ -3139,7 +4653,15 @@ const G6PD_DATA = {
    "id": "更昔洛韦",
    "note": "",
    "icon": "💊",
-   "use": "抗巨细胞病毒"
+   "use": "抗巨细胞病毒",
+   "py": [
+    "gengxiluowei",
+    "saimeiwei"
+   ],
+   "pyi": [
+    "gxlw",
+    "smw"
+   ]
   },
   {
    "name": "泛昔洛韦",
@@ -3157,7 +4679,13 @@ const G6PD_DATA = {
    "id": "泛昔洛韦",
    "note": "",
    "icon": "💊",
-   "use": "抗疱疹病毒"
+   "use": "抗疱疹病毒",
+   "py": [
+    "fanxiluowei"
+   ],
+   "pyi": [
+    "fxlw"
+   ]
   },
   {
    "name": "利巴韦林",
@@ -3177,7 +4705,15 @@ const G6PD_DATA = {
    "id": "利巴韦林",
    "note": "",
    "icon": "💊",
-   "use": "广谱抗病毒（呼吸道合胞病毒等）"
+   "use": "广谱抗病毒（呼吸道合胞病毒等）",
+   "py": [
+    "libaweilin",
+    "bingduzuo"
+   ],
+   "pyi": [
+    "lbwl",
+    "bdz"
+   ]
   },
   {
    "name": "氟康唑",
@@ -3198,7 +4734,17 @@ const G6PD_DATA = {
    "id": "氟康唑",
    "note": "",
    "icon": "💊",
-   "use": "抗真菌药（念珠菌、隐球菌）"
+   "use": "抗真菌药（念珠菌、隐球菌）",
+   "py": [
+    "fukangzuo",
+    "dafukang",
+    "sanlian"
+   ],
+   "pyi": [
+    "fkz",
+    "dfk",
+    "sl"
+   ]
   },
   {
    "name": "伊曲康唑",
@@ -3218,7 +4764,15 @@ const G6PD_DATA = {
    "id": "伊曲康唑",
    "note": "",
    "icon": "💊",
-   "use": "抗真菌药（皮肤/甲真菌、系统性真菌感染）"
+   "use": "抗真菌药（皮肤/甲真菌、系统性真菌感染）",
+   "py": [
+    "yiqukangzuo",
+    "sipirennuo"
+   ],
+   "pyi": [
+    "yqkz",
+    "sprn"
+   ]
   },
   {
    "name": "酮康唑",
@@ -3238,7 +4792,15 @@ const G6PD_DATA = {
    "id": "酮康唑",
    "note": "",
    "icon": "💊",
-   "use": "抗真菌药（外用/口服，口服受肝毒性限制）"
+   "use": "抗真菌药（外用/口服，口服受肝毒性限制）",
+   "py": [
+    "tongkangzuo",
+    "lisulao"
+   ],
+   "pyi": [
+    "tkz",
+    "lsl"
+   ]
   },
   {
    "name": "制霉菌素",
@@ -3258,7 +4820,15 @@ const G6PD_DATA = {
    "id": "制霉菌素",
    "note": "",
    "icon": "💊",
-   "use": "抗真菌药（口腔、肠道念珠菌）"
+   "use": "抗真菌药（口腔、肠道念珠菌）",
+   "py": [
+    "zhimeijunsu",
+    "zhimeisu"
+   ],
+   "pyi": [
+    "zmjs",
+    "zms"
+   ]
   },
   {
    "name": "特比萘芬",
@@ -3279,7 +4849,16 @@ const G6PD_DATA = {
    "id": "特比萘芬",
    "note": "",
    "icon": "⚪",
-   "use": "抗真菌药（皮肤癣、甲癣）"
+   "use": "抗真菌药（皮肤癣、甲癣）",
+   "py": [
+    "tebinaifen",
+    "lanmeishu",
+    "liaomeishu"
+   ],
+   "pyi": [
+    "tbnf",
+    "lms"
+   ]
   },
   {
    "name": "克霉唑",
@@ -3299,7 +4878,15 @@ const G6PD_DATA = {
    "id": "克霉唑",
    "note": "",
    "icon": "💊",
-   "use": "抗真菌药（外用，皮肤/妇科念珠菌）"
+   "use": "抗真菌药（外用，皮肤/妇科念珠菌）",
+   "py": [
+    "kemeizuo",
+    "kemeizuoyindaopian"
+   ],
+   "pyi": [
+    "kmz",
+    "kmzydp"
+   ]
   },
   {
    "name": "氯苯那敏",
@@ -3321,7 +4908,19 @@ const G6PD_DATA = {
    "id": "氯苯那敏",
    "note": "",
    "icon": "💊",
-   "use": "抗组胺药（过敏、感冒流涕）"
+   "use": "抗组胺药（过敏、感冒流涕）",
+   "py": [
+    "lvbennamin",
+    "puermin",
+    "malaisuanlvbennamin",
+    "malaisuanlvbennaminpian"
+   ],
+   "pyi": [
+    "lbnm",
+    "pem",
+    "mlslbnm",
+    "mlslbnmp"
+   ]
   },
   {
    "name": "地氯雷他定",
@@ -3342,7 +4941,17 @@ const G6PD_DATA = {
    "id": "地氯雷他定",
    "note": "",
    "icon": "💊",
-   "use": "抗组胺药（过敏性鼻炎、荨麻疹）"
+   "use": "抗组胺药（过敏性鼻炎、荨麻疹）",
+   "py": [
+    "dilvleitading",
+    "enlisi",
+    "fubiding"
+   ],
+   "pyi": [
+    "dlltd",
+    "els",
+    "fbd"
+   ]
   },
   {
    "name": "非索非那定",
@@ -3363,7 +4972,17 @@ const G6PD_DATA = {
    "id": "非索非那定",
    "note": "",
    "icon": "💊",
-   "use": "抗组胺药（过敏性鼻炎、荨麻疹）"
+   "use": "抗组胺药（过敏性鼻炎、荨麻疹）",
+   "py": [
+    "feisuofeinading",
+    "alemai",
+    "biyantong"
+   ],
+   "pyi": [
+    "fsfnd",
+    "alm",
+    "byt"
+   ]
   },
   {
    "name": "依巴斯汀",
@@ -3383,7 +5002,15 @@ const G6PD_DATA = {
    "id": "依巴斯汀",
    "note": "",
    "icon": "💊",
-   "use": "抗组胺药（过敏性鼻炎、荨麻疹）"
+   "use": "抗组胺药（过敏性鼻炎、荨麻疹）",
+   "py": [
+    "yibasiting",
+    "kaisiting"
+   ],
+   "pyi": [
+    "ybst",
+    "kst"
+   ]
   },
   {
    "name": "咪唑斯汀",
@@ -3403,7 +5030,15 @@ const G6PD_DATA = {
    "id": "咪唑斯汀",
    "note": "",
    "icon": "💊",
-   "use": "抗组胺药（过敏性鼻炎、荨麻疹）"
+   "use": "抗组胺药（过敏性鼻炎、荨麻疹）",
+   "py": [
+    "mizuositing",
+    "minzhilin"
+   ],
+   "pyi": [
+    "mzst",
+    "mzl"
+   ]
   },
   {
    "name": "赛庚啶",
@@ -3423,7 +5058,15 @@ const G6PD_DATA = {
    "id": "赛庚啶",
    "note": "",
    "icon": "💊",
-   "use": "抗组胺药（过敏，也可增进食欲）"
+   "use": "抗组胺药（过敏，也可增进食欲）",
+   "py": [
+    "saigengding",
+    "saigengdingpian"
+   ],
+   "pyi": [
+    "sgd",
+    "sgdp"
+   ]
   },
   {
    "name": "异丙嗪",
@@ -3443,7 +5086,15 @@ const G6PD_DATA = {
    "id": "异丙嗪",
    "note": "用药期间留意有无皮肤/眼睛发黄、浓茶色尿等溶血迹象，异常及时就医。",
    "icon": "💊",
-   "use": "抗组胺/镇静药（过敏、晕动、术前）"
+   "use": "抗组胺/镇静药（过敏、晕动、术前）",
+   "py": [
+    "yibingqin",
+    "feinagen"
+   ],
+   "pyi": [
+    "ybq",
+    "fng"
+   ]
   },
   {
    "name": "氨茶碱",
@@ -3463,7 +5114,15 @@ const G6PD_DATA = {
    "id": "氨茶碱",
    "note": "",
    "icon": "💊",
-   "use": "支气管扩张药（哮喘、慢阻肺）"
+   "use": "支气管扩张药（哮喘、慢阻肺）",
+   "py": [
+    "anchajian",
+    "chajianhuanshipiantongzu"
+   ],
+   "pyi": [
+    "acj",
+    "cjhsptz"
+   ]
   },
   {
    "name": "茶碱",
@@ -3481,7 +5140,13 @@ const G6PD_DATA = {
    "id": "茶碱",
    "note": "",
    "icon": "💊",
-   "use": "支气管扩张药（哮喘、慢阻肺）"
+   "use": "支气管扩张药（哮喘、慢阻肺）",
+   "py": [
+    "chajian"
+   ],
+   "pyi": [
+    "cj"
+   ]
   },
   {
    "name": "乙酰半胱氨酸",
@@ -3502,7 +5167,17 @@ const G6PD_DATA = {
    "id": "乙酰半胱氨酸",
    "note": "",
    "icon": "💊",
-   "use": "祛痰、解毒（痰液溶解；对乙酰氨基酚中毒）"
+   "use": "祛痰、解毒（痰液溶解；对乙酰氨基酚中毒）",
+   "py": [
+    "yixianbanguangansuan",
+    "tanyijing",
+    "fulushi"
+   ],
+   "pyi": [
+    "yxbgas",
+    "tyj",
+    "fls"
+   ]
   },
   {
    "name": "右美沙芬",
@@ -3523,7 +5198,17 @@ const G6PD_DATA = {
    "id": "右美沙芬",
    "note": "",
    "icon": "💊",
-   "use": "中枢镇咳药（干咳）"
+   "use": "中枢镇咳药（干咳）",
+   "py": [
+    "youmeishafen",
+    "qingxiusuanyoumeishafen",
+    "meiketangjiang"
+   ],
+   "pyi": [
+    "ymsf",
+    "qxsymsf",
+    "mktj"
+   ]
   },
   {
    "name": "异丙托溴铵",
@@ -3543,7 +5228,15 @@ const G6PD_DATA = {
    "id": "异丙托溴铵",
    "note": "",
    "icon": "💊",
-   "use": "抗胆碱支气管扩张药（哮喘、慢阻肺）"
+   "use": "抗胆碱支气管扩张药（哮喘、慢阻肺）",
+   "py": [
+    "yibingtuoxiuan",
+    "aiquanle"
+   ],
+   "pyi": [
+    "ybtxa",
+    "aql"
+   ]
   },
   {
    "name": "噻托溴铵",
@@ -3563,7 +5256,15 @@ const G6PD_DATA = {
    "id": "噻托溴铵",
    "note": "",
    "icon": "💊",
-   "use": "长效抗胆碱药（慢阻肺）"
+   "use": "长效抗胆碱药（慢阻肺）",
+   "py": [
+    "saituoxiuan",
+    "silihua"
+   ],
+   "pyi": [
+    "stxa",
+    "slh"
+   ]
   },
   {
    "name": "倍氯米松",
@@ -3584,7 +5285,17 @@ const G6PD_DATA = {
    "id": "倍氯米松",
    "note": "",
    "icon": "💊",
-   "use": "吸入糖皮质激素（哮喘）"
+   "use": "吸入糖皮质激素（哮喘）",
+   "py": [
+    "beilvmisong",
+    "biketong",
+    "bokena"
+   ],
+   "pyi": [
+    "blms",
+    "bkt",
+    "bkn"
+   ]
   },
   {
    "name": "氟替卡松",
@@ -3605,7 +5316,17 @@ const G6PD_DATA = {
    "id": "氟替卡松",
    "note": "",
    "icon": "💊",
-   "use": "吸入/鼻用糖皮质激素（哮喘、鼻炎）"
+   "use": "吸入/鼻用糖皮质激素（哮喘、鼻炎）",
+   "py": [
+    "futikasong",
+    "fushutong",
+    "fushuliang"
+   ],
+   "pyi": [
+    "ftks",
+    "fst",
+    "fsl"
+   ]
   },
   {
    "name": "沙美特罗",
@@ -3625,7 +5346,15 @@ const G6PD_DATA = {
    "id": "沙美特罗",
    "note": "",
    "icon": "💊",
-   "use": "长效β2激动剂（哮喘、慢阻肺）"
+   "use": "长效β2激动剂（哮喘、慢阻肺）",
+   "py": [
+    "shameiteluo",
+    "shulidieheyong"
+   ],
+   "pyi": [
+    "smtl",
+    "sldhy"
+   ]
   },
   {
    "name": "复方甘草片",
@@ -3650,7 +5379,15 @@ const G6PD_DATA = {
     "樟脑"
    ],
    "icon": "💊",
-   "use": "镇咳祛痰（含甘草、阿片粉）"
+   "use": "镇咳祛痰（含甘草、阿片粉）",
+   "py": [
+    "fufanggancaopian",
+    "fufanggancaoheji"
+   ],
+   "pyi": [
+    "ffgcp",
+    "ffgchj"
+   ]
   },
   {
    "name": "奥美拉唑",
@@ -3671,7 +5408,17 @@ const G6PD_DATA = {
    "id": "奥美拉唑",
    "note": "",
    "icon": "💊",
-   "use": "质子泵抑制剂（胃酸过多、溃疡、反流）"
+   "use": "质子泵抑制剂（胃酸过多、溃疡、反流）",
+   "py": [
+    "aomeilazuo",
+    "luosaike",
+    "aoke"
+   ],
+   "pyi": [
+    "amlz",
+    "lsk",
+    "ak"
+   ]
   },
   {
    "name": "泮托拉唑",
@@ -3691,7 +5438,15 @@ const G6PD_DATA = {
    "id": "泮托拉唑",
    "note": "",
    "icon": "💊",
-   "use": "质子泵抑制剂（胃酸、溃疡）"
+   "use": "质子泵抑制剂（胃酸、溃疡）",
+   "py": [
+    "pantuolazuo",
+    "pantuoluoke"
+   ],
+   "pyi": [
+    "ptlz",
+    "ptlk"
+   ]
   },
   {
    "name": "雷贝拉唑",
@@ -3711,7 +5466,15 @@ const G6PD_DATA = {
    "id": "雷贝拉唑",
    "note": "",
    "icon": "💊",
-   "use": "质子泵抑制剂（胃酸、溃疡）"
+   "use": "质子泵抑制剂（胃酸、溃疡）",
+   "py": [
+    "leibeilazuo",
+    "bolite"
+   ],
+   "pyi": [
+    "lblz",
+    "blt"
+   ]
   },
   {
    "name": "兰索拉唑",
@@ -3731,7 +5494,15 @@ const G6PD_DATA = {
    "id": "兰索拉唑",
    "note": "",
    "icon": "💊",
-   "use": "质子泵抑制剂（胃酸、溃疡）"
+   "use": "质子泵抑制剂（胃酸、溃疡）",
+   "py": [
+    "lansuolazuo",
+    "dakepulong"
+   ],
+   "pyi": [
+    "lslz",
+    "dkpl"
+   ]
   },
   {
    "name": "埃索美拉唑",
@@ -3751,7 +5522,15 @@ const G6PD_DATA = {
    "id": "埃索美拉唑",
    "note": "",
    "icon": "💊",
-   "use": "质子泵抑制剂（胃酸、溃疡）"
+   "use": "质子泵抑制剂（胃酸、溃疡）",
+   "py": [
+    "aisuomeilazuo",
+    "naixin"
+   ],
+   "pyi": [
+    "asmlz",
+    "nx"
+   ]
   },
   {
    "name": "铝碳酸镁",
@@ -3771,7 +5550,15 @@ const G6PD_DATA = {
    "id": "铝碳酸镁",
    "note": "",
    "icon": "💊",
-   "use": "抗酸、胃黏膜保护（胃酸过多）"
+   "use": "抗酸、胃黏膜保护（胃酸过多）",
+   "py": [
+    "lvtansuanmei",
+    "daxi"
+   ],
+   "pyi": [
+    "ltsm",
+    "dx"
+   ]
   },
   {
    "name": "西咪替丁",
@@ -3791,7 +5578,15 @@ const G6PD_DATA = {
    "id": "西咪替丁",
    "note": "",
    "icon": "💊",
-   "use": "H2 受体拮抗剂（胃酸过多）"
+   "use": "H2 受体拮抗剂（胃酸过多）",
+   "py": [
+    "ximitiding",
+    "taiweimei"
+   ],
+   "pyi": [
+    "xmtd",
+    "twm"
+   ]
   },
   {
    "name": "雷尼替丁",
@@ -3811,7 +5606,15 @@ const G6PD_DATA = {
    "id": "雷尼替丁",
    "note": "",
    "icon": "💊",
-   "use": "H2 受体拮抗剂（胃酸过多）"
+   "use": "H2 受体拮抗剂（胃酸过多）",
+   "py": [
+    "leinitiding",
+    "shanweide"
+   ],
+   "pyi": [
+    "lntd",
+    "swd"
+   ]
   },
   {
    "name": "法莫替丁",
@@ -3832,7 +5635,17 @@ const G6PD_DATA = {
    "id": "法莫替丁",
    "note": "",
    "icon": "💊",
-   "use": "H2 受体拮抗剂（胃酸过多）"
+   "use": "H2 受体拮抗剂（胃酸过多）",
+   "py": [
+    "famotiding",
+    "gaoshuda",
+    "xinfading"
+   ],
+   "pyi": [
+    "fmtd",
+    "gsd",
+    "xfd"
+   ]
   },
   {
    "name": "多潘立酮",
@@ -3853,7 +5666,17 @@ const G6PD_DATA = {
    "id": "多潘立酮",
    "note": "",
    "icon": "💊",
-   "use": "促动力、止吐（腹胀、恶心）"
+   "use": "促动力、止吐（腹胀、恶心）",
+   "py": [
+    "duopanlitong",
+    "madinglin",
+    "hengbang"
+   ],
+   "pyi": [
+    "dplt",
+    "mdl",
+    "hb"
+   ]
   },
   {
    "name": "莫沙必利",
@@ -3873,7 +5696,15 @@ const G6PD_DATA = {
    "id": "莫沙必利",
    "note": "",
    "icon": "💊",
-   "use": "促动力（消化不良、腹胀）"
+   "use": "促动力（消化不良、腹胀）",
+   "py": [
+    "moshabili",
+    "jiasiqing"
+   ],
+   "pyi": [
+    "msbl",
+    "jsq"
+   ]
   },
   {
    "name": "乳果糖",
@@ -3893,7 +5724,15 @@ const G6PD_DATA = {
    "id": "乳果糖",
    "note": "",
    "icon": "💊",
-   "use": "渗透性泻药（便秘、肝性脑病）"
+   "use": "渗透性泻药（便秘、肝性脑病）",
+   "py": [
+    "ruguotang",
+    "dumike"
+   ],
+   "pyi": [
+    "rgt",
+    "dmk"
+   ]
   },
   {
    "name": "开塞露",
@@ -3913,7 +5752,15 @@ const G6PD_DATA = {
    "id": "开塞露",
    "note": "",
    "icon": "💊",
-   "use": "外用通便（便秘）"
+   "use": "外用通便（便秘）",
+   "py": [
+    "kaisailu",
+    "ganyoushuan"
+   ],
+   "pyi": [
+    "ksl",
+    "gys"
+   ]
   },
   {
    "name": "口服补液盐",
@@ -3934,7 +5781,15 @@ const G6PD_DATA = {
    "id": "口服补液盐",
    "note": "",
    "icon": "💊",
-   "use": "补充水分和电解质（腹泻脱水）"
+   "use": "补充水分和电解质（腹泻脱水）",
+   "py": [
+    "koufubuyeyan",
+    "boye"
+   ],
+   "pyi": [
+    "kfbyy",
+    "by"
+   ]
   },
   {
    "name": "硫糖铝",
@@ -3954,7 +5809,15 @@ const G6PD_DATA = {
    "id": "硫糖铝",
    "note": "",
    "icon": "💊",
-   "use": "胃黏膜保护（溃疡）"
+   "use": "胃黏膜保护（溃疡）",
+   "py": [
+    "liutanglv",
+    "weikuining"
+   ],
+   "pyi": [
+    "ltl",
+    "wkn"
+   ]
   },
   {
    "name": "胶体果胶铋",
@@ -3974,7 +5837,15 @@ const G6PD_DATA = {
    "id": "胶体果胶铋",
    "note": "",
    "icon": "💊",
-   "use": "胃黏膜保护（溃疡、幽门螺杆菌）"
+   "use": "胃黏膜保护（溃疡、幽门螺杆菌）",
+   "py": [
+    "jiaotiguojiaobi",
+    "guojiaobi"
+   ],
+   "pyi": [
+    "jtgjb",
+    "gjb"
+   ]
   },
   {
    "name": "复方消化酶",
@@ -3995,7 +5866,23 @@ const G6PD_DATA = {
    "id": "复方消化酶",
    "note": "",
    "icon": "💊",
-   "use": "助消化（消化不良）"
+   "use": "助消化（消化不良）",
+   "py": [
+    "fufangxiaohuamei",
+    "daji",
+    "kangbishen"
+   ],
+   "pyi": [
+    "ffxhm",
+    "dj",
+    "kbs"
+   ],
+   "ingredients": [
+    "胃蛋白酶",
+    "木瓜蛋白酶",
+    "淀粉酶",
+    "熊去氧胆酸"
+   ]
   },
   {
    "name": "普萘洛尔",
@@ -4015,7 +5902,15 @@ const G6PD_DATA = {
    "id": "普萘洛尔",
    "note": "",
    "icon": "⚪",
-   "use": "β受体阻滞剂（降压、减慢心率、甲亢/偏头痛）"
+   "use": "β受体阻滞剂（降压、减慢心率、甲亢/偏头痛）",
+   "py": [
+    "punailuoer",
+    "xindean"
+   ],
+   "pyi": [
+    "pnle",
+    "xda"
+   ]
   },
   {
    "name": "美托洛尔",
@@ -4035,7 +5930,15 @@ const G6PD_DATA = {
    "id": "美托洛尔",
    "note": "",
    "icon": "💊",
-   "use": "β受体阻滞剂（降压、心绞痛、心律失常）"
+   "use": "β受体阻滞剂（降压、心绞痛、心律失常）",
+   "py": [
+    "meituoluoer",
+    "beitaleke"
+   ],
+   "pyi": [
+    "mtle",
+    "btlk"
+   ]
   },
   {
    "name": "比索洛尔",
@@ -4056,7 +5959,17 @@ const G6PD_DATA = {
    "id": "比索洛尔",
    "note": "",
    "icon": "💊",
-   "use": "β受体阻滞剂（降压、心衰、心绞痛）"
+   "use": "β受体阻滞剂（降压、心衰、心绞痛）",
+   "py": [
+    "bisuoluoer",
+    "kangxin",
+    "bosu"
+   ],
+   "pyi": [
+    "bsle",
+    "kx",
+    "bs"
+   ]
   },
   {
    "name": "阿替洛尔",
@@ -4076,7 +5989,15 @@ const G6PD_DATA = {
    "id": "阿替洛尔",
    "note": "",
    "icon": "💊",
-   "use": "β受体阻滞剂（降压、心绞痛）"
+   "use": "β受体阻滞剂（降压、心绞痛）",
+   "py": [
+    "atiluoer",
+    "anxianxinan"
+   ],
+   "pyi": [
+    "atle",
+    "axxa"
+   ]
   },
   {
    "name": "氨氯地平",
@@ -4097,7 +6018,17 @@ const G6PD_DATA = {
    "id": "氨氯地平",
    "note": "",
    "icon": "💊",
-   "use": "钙通道阻滞剂（降压、心绞痛）"
+   "use": "钙通道阻滞剂（降压、心绞痛）",
+   "py": [
+    "anlvdiping",
+    "luohuoxi",
+    "yashida"
+   ],
+   "pyi": [
+    "aldp",
+    "lhx",
+    "ysd"
+   ]
   },
   {
    "name": "硝苯地平",
@@ -4118,7 +6049,17 @@ const G6PD_DATA = {
    "id": "硝苯地平",
    "note": "",
    "icon": "💊",
-   "use": "钙通道阻滞剂（降压、心绞痛）"
+   "use": "钙通道阻滞剂（降压、心绞痛）",
+   "py": [
+    "xiaobendiping",
+    "xintongding",
+    "baixintong"
+   ],
+   "pyi": [
+    "xbdp",
+    "xtd",
+    "bxt"
+   ]
   },
   {
    "name": "非洛地平",
@@ -4138,7 +6079,15 @@ const G6PD_DATA = {
    "id": "非洛地平",
    "note": "",
    "icon": "💊",
-   "use": "钙通道阻滞剂（降压）"
+   "use": "钙通道阻滞剂（降压）",
+   "py": [
+    "feiluodiping",
+    "boyiding"
+   ],
+   "pyi": [
+    "fldp",
+    "byd"
+   ]
   },
   {
    "name": "缬沙坦",
@@ -4158,7 +6107,15 @@ const G6PD_DATA = {
    "id": "缬沙坦",
    "note": "",
    "icon": "💊",
-   "use": "ARB 类降压药（高血压、心衰）"
+   "use": "ARB 类降压药（高血压、心衰）",
+   "py": [
+    "xieshatan",
+    "daiwen"
+   ],
+   "pyi": [
+    "xst",
+    "dw"
+   ]
   },
   {
    "name": "氯沙坦",
@@ -4178,7 +6135,15 @@ const G6PD_DATA = {
    "id": "氯沙坦",
    "note": "",
    "icon": "💊",
-   "use": "ARB 类降压药（高血压、痛风合并高血压）"
+   "use": "ARB 类降压药（高血压、痛风合并高血压）",
+   "py": [
+    "lvshatan",
+    "kesuya"
+   ],
+   "pyi": [
+    "lst",
+    "ksy"
+   ]
   },
   {
    "name": "厄贝沙坦",
@@ -4198,7 +6163,15 @@ const G6PD_DATA = {
    "id": "厄贝沙坦",
    "note": "",
    "icon": "💊",
-   "use": "ARB 类降压药（高血压、糖尿病肾病）"
+   "use": "ARB 类降压药（高血压、糖尿病肾病）",
+   "py": [
+    "ebeishatan",
+    "anbowei"
+   ],
+   "pyi": [
+    "ebst",
+    "abw"
+   ]
   },
   {
    "name": "卡托普利",
@@ -4218,7 +6191,15 @@ const G6PD_DATA = {
    "id": "卡托普利",
    "note": "",
    "icon": "💊",
-   "use": "ACEI 类降压药（高血压、心衰）"
+   "use": "ACEI 类降压药（高血压、心衰）",
+   "py": [
+    "katuopuli",
+    "kaibotong"
+   ],
+   "pyi": [
+    "ktpl",
+    "kbt"
+   ]
   },
   {
    "name": "依那普利",
@@ -4239,7 +6220,17 @@ const G6PD_DATA = {
    "id": "依那普利",
    "note": "",
    "icon": "💊",
-   "use": "ACEI 类降压药（高血压、心衰）"
+   "use": "ACEI 类降压药（高血压、心衰）",
+   "py": [
+    "yinapuli",
+    "yisu",
+    "yueningding"
+   ],
+   "pyi": [
+    "ynpl",
+    "ys",
+    "ynd"
+   ]
   },
   {
    "name": "培哚普利",
@@ -4259,7 +6250,15 @@ const G6PD_DATA = {
    "id": "培哚普利",
    "note": "",
    "icon": "💊",
-   "use": "ACEI 类降压药（高血压、心衰）"
+   "use": "ACEI 类降压药（高血压、心衰）",
+   "py": [
+    "peiduopuli",
+    "yashida"
+   ],
+   "pyi": [
+    "pdpl",
+    "ysd"
+   ]
   },
   {
    "name": "呋塞米",
@@ -4280,7 +6279,17 @@ const G6PD_DATA = {
    "id": "呋塞米",
    "note": "",
    "icon": "💊",
-   "use": "袢利尿剂（水肿、心衰、降压）"
+   "use": "袢利尿剂（水肿、心衰、降压）",
+   "py": [
+    "fusaimi",
+    "suniao",
+    "funanbenansuan"
+   ],
+   "pyi": [
+    "fsm",
+    "sn",
+    "fnbas"
+   ]
   },
   {
    "name": "氢氯噻嗪",
@@ -4300,7 +6309,15 @@ const G6PD_DATA = {
    "id": "氢氯噻嗪",
    "note": "",
    "icon": "💊",
-   "use": "噻嗪类利尿剂（降压、水肿）"
+   "use": "噻嗪类利尿剂（降压、水肿）",
+   "py": [
+    "qinglvsaiqin",
+    "shuangqingkeniaosai"
+   ],
+   "pyi": [
+    "qlsq",
+    "sqkns"
+   ]
   },
   {
    "name": "螺内酯",
@@ -4320,7 +6337,15 @@ const G6PD_DATA = {
    "id": "螺内酯",
    "note": "",
    "icon": "💊",
-   "use": "保钾利尿剂（心衰、水肿、醛固酮增多）"
+   "use": "保钾利尿剂（心衰、水肿、醛固酮增多）",
+   "py": [
+    "luoneizhi",
+    "antishutong"
+   ],
+   "pyi": [
+    "lnz",
+    "atst"
+   ]
   },
   {
    "name": "地高辛",
@@ -4338,7 +6363,13 @@ const G6PD_DATA = {
    "id": "地高辛",
    "note": "",
    "icon": "💊",
-   "use": "强心苷（心衰、房颤控制心率）"
+   "use": "强心苷（心衰、房颤控制心率）",
+   "py": [
+    "digaoxin"
+   ],
+   "pyi": [
+    "dgx"
+   ]
   },
   {
    "name": "阿托伐他汀",
@@ -4358,7 +6389,15 @@ const G6PD_DATA = {
    "id": "阿托伐他汀",
    "note": "",
    "icon": "💊",
-   "use": "他汀类降脂药（高血脂、预防心血管事件）"
+   "use": "他汀类降脂药（高血脂、预防心血管事件）",
+   "py": [
+    "atuofatating",
+    "liputuo"
+   ],
+   "pyi": [
+    "atftt",
+    "lpt"
+   ]
   },
   {
    "name": "瑞舒伐他汀",
@@ -4378,7 +6417,15 @@ const G6PD_DATA = {
    "id": "瑞舒伐他汀",
    "note": "",
    "icon": "💊",
-   "use": "他汀类降脂药（高血脂）"
+   "use": "他汀类降脂药（高血脂）",
+   "py": [
+    "ruishufatating",
+    "keding"
+   ],
+   "pyi": [
+    "rsftt",
+    "kd"
+   ]
   },
   {
    "name": "辛伐他汀",
@@ -4398,7 +6445,15 @@ const G6PD_DATA = {
    "id": "辛伐他汀",
    "note": "",
    "icon": "💊",
-   "use": "他汀类降脂药（高血脂）"
+   "use": "他汀类降脂药（高血脂）",
+   "py": [
+    "xinfatating",
+    "shujiangzhi"
+   ],
+   "pyi": [
+    "xftt",
+    "sjz"
+   ]
   },
   {
    "name": "氯吡格雷",
@@ -4419,7 +6474,17 @@ const G6PD_DATA = {
    "id": "氯吡格雷",
    "note": "",
    "icon": "💊",
-   "use": "抗血小板药（防血栓、支架术后）"
+   "use": "抗血小板药（防血栓、支架术后）",
+   "py": [
+    "lvbigelei",
+    "boliwei",
+    "taijia"
+   ],
+   "pyi": [
+    "lbgl",
+    "blw",
+    "tj"
+   ]
   },
   {
    "name": "华法林",
@@ -4439,7 +6504,15 @@ const G6PD_DATA = {
    "id": "华法林",
    "note": "",
    "icon": "💊",
-   "use": "抗凝药（房颤、血栓、瓣膜术后）"
+   "use": "抗凝药（房颤、血栓、瓣膜术后）",
+   "py": [
+    "huafalin",
+    "bianbingtongxiangdousu"
+   ],
+   "pyi": [
+    "hfl",
+    "bbtxds"
+   ]
   },
   {
    "name": "普罗帕酮",
@@ -4459,7 +6532,15 @@ const G6PD_DATA = {
    "id": "普罗帕酮",
    "note": "",
    "icon": "💊",
-   "use": "抗心律失常药"
+   "use": "抗心律失常药",
+   "py": [
+    "puluopatong",
+    "xinlvping"
+   ],
+   "pyi": [
+    "plpt",
+    "xlp"
+   ]
   },
   {
    "name": "维拉帕米",
@@ -4479,7 +6560,15 @@ const G6PD_DATA = {
    "id": "维拉帕米",
    "note": "",
    "icon": "💊",
-   "use": "钙拮抗剂（心律失常、降压、心绞痛）"
+   "use": "钙拮抗剂（心律失常、降压、心绞痛）",
+   "py": [
+    "weilapami",
+    "yiboding"
+   ],
+   "pyi": [
+    "wlpm",
+    "ybd"
+   ]
   },
   {
    "name": "地尔硫卓",
@@ -4500,7 +6589,17 @@ const G6PD_DATA = {
    "id": "地尔硫卓",
    "note": "",
    "icon": "💊",
-   "use": "钙拮抗剂（心绞痛、心律失常、降压）"
+   "use": "钙拮抗剂（心绞痛、心律失常、降压）",
+   "py": [
+    "dierliuzhuo",
+    "hexinshuang",
+    "tianerxin"
+   ],
+   "pyi": [
+    "delz",
+    "hxs",
+    "tex"
+   ]
   },
   {
    "name": "胺碘酮",
@@ -4521,7 +6620,17 @@ const G6PD_DATA = {
    "id": "胺碘酮",
    "note": "用药期间留意有无皮肤/眼睛发黄、浓茶色尿等溶血迹象，异常及时就医。",
    "icon": "💊",
-   "use": "抗心律失常药"
+   "use": "抗心律失常药",
+   "py": [
+    "andiantong",
+    "kedalong",
+    "yiandianfutong"
+   ],
+   "pyi": [
+    "adt",
+    "kdl",
+    "yadft"
+   ]
   },
   {
    "name": "二甲双胍",
@@ -4542,7 +6651,17 @@ const G6PD_DATA = {
    "id": "二甲双胍",
    "note": "",
    "icon": "💊",
-   "use": "双胍类降糖药（2 型糖尿病一线用药）"
+   "use": "双胍类降糖药（2 型糖尿病一线用药）",
+   "py": [
+    "erjiashuanggua",
+    "gehuazhi",
+    "meidikang"
+   ],
+   "pyi": [
+    "ejsg",
+    "ghz",
+    "mdk"
+   ]
   },
   {
    "name": "阿卡波糖",
@@ -4563,7 +6682,17 @@ const G6PD_DATA = {
    "id": "阿卡波糖",
    "note": "",
    "icon": "💊",
-   "use": "α-糖苷酶抑制剂（降低餐后血糖）"
+   "use": "α-糖苷酶抑制剂（降低餐后血糖）",
+   "py": [
+    "akabotang",
+    "baitangping",
+    "kaboping"
+   ],
+   "pyi": [
+    "akbt",
+    "btp",
+    "kbp"
+   ]
   },
   {
    "name": "瑞格列奈",
@@ -4583,7 +6712,15 @@ const G6PD_DATA = {
    "id": "瑞格列奈",
    "note": "",
    "icon": "💊",
-   "use": "格列奈类降糖药（控制餐后血糖）"
+   "use": "格列奈类降糖药（控制餐后血糖）",
+   "py": [
+    "ruigelienai",
+    "nuohelong"
+   ],
+   "pyi": [
+    "rgln",
+    "nhl"
+   ]
   },
   {
    "name": "吡格列酮",
@@ -4603,7 +6740,15 @@ const G6PD_DATA = {
    "id": "吡格列酮",
    "note": "",
    "icon": "💊",
-   "use": "噻唑烷二酮类降糖药（改善胰岛素抵抗）"
+   "use": "噻唑烷二酮类降糖药（改善胰岛素抵抗）",
+   "py": [
+    "bigelietong",
+    "aiketuo"
+   ],
+   "pyi": [
+    "bglt",
+    "akt"
+   ]
   },
   {
    "name": "胰岛素",
@@ -4625,7 +6770,19 @@ const G6PD_DATA = {
    "id": "胰岛素",
    "note": "",
    "icon": "💊",
-   "use": "降糖（1 型/2 型糖尿病）"
+   "use": "降糖（1 型/2 型糖尿病）",
+   "py": [
+    "yidaosu",
+    "chongzurenyidaosu",
+    "ganjingyidaosu",
+    "mendongyidaosu"
+   ],
+   "pyi": [
+    "yds",
+    "czryds",
+    "gjyds",
+    "mdyds"
+   ]
   },
   {
    "name": "左甲状腺素",
@@ -4646,7 +6803,17 @@ const G6PD_DATA = {
    "id": "左甲状腺素",
    "note": "",
    "icon": "💊",
-   "use": "补充甲状腺激素（甲状腺功能减退）"
+   "use": "补充甲状腺激素（甲状腺功能减退）",
+   "py": [
+    "zuojiazhuangxiansu",
+    "youjiale",
+    "leitisi"
+   ],
+   "pyi": [
+    "zjzxs",
+    "yjl",
+    "lts"
+   ]
   },
   {
    "name": "泼尼松",
@@ -4666,7 +6833,15 @@ const G6PD_DATA = {
    "id": "泼尼松",
    "note": "",
    "icon": "💊",
-   "use": "糖皮质激素（抗炎、免疫抑制）"
+   "use": "糖皮质激素（抗炎、免疫抑制）",
+   "py": [
+    "ponisong",
+    "qiangdesong"
+   ],
+   "pyi": [
+    "pns",
+    "qds"
+   ]
   },
   {
    "name": "甲泼尼龙",
@@ -4687,7 +6862,17 @@ const G6PD_DATA = {
    "id": "甲泼尼龙",
    "note": "",
    "icon": "💊",
-   "use": "糖皮质激素（抗炎、免疫抑制）"
+   "use": "糖皮质激素（抗炎、免疫抑制）",
+   "py": [
+    "jiaponilong",
+    "jiaqianglong",
+    "meizhuole"
+   ],
+   "pyi": [
+    "jpnl",
+    "jql",
+    "mzl"
+   ]
   },
   {
    "name": "地塞米松",
@@ -4707,7 +6892,15 @@ const G6PD_DATA = {
    "id": "地塞米松",
    "note": "",
    "icon": "💊",
-   "use": "糖皮质激素（抗炎、抗过敏）"
+   "use": "糖皮质激素（抗炎、抗过敏）",
+   "py": [
+    "disaimisong",
+    "fumeisong"
+   ],
+   "pyi": [
+    "dsms",
+    "fms"
+   ]
   },
   {
    "name": "阿仑膦酸钠",
@@ -4727,7 +6920,15 @@ const G6PD_DATA = {
    "id": "阿仑膦酸钠",
    "note": "",
    "icon": "💊",
-   "use": "双膦酸盐（骨质疏松）"
+   "use": "双膦酸盐（骨质疏松）",
+   "py": [
+    "alunlinsuanna",
+    "fushanmei"
+   ],
+   "pyi": [
+    "allsn",
+    "fsm"
+   ]
   },
   {
    "name": "别嘌醇",
@@ -4748,7 +6949,17 @@ const G6PD_DATA = {
    "id": "别嘌醇",
    "note": "",
    "icon": "💊",
-   "use": "降尿酸药（痛风）"
+   "use": "降尿酸药（痛风）",
+   "py": [
+    "biepiaochun",
+    "tongfenglike",
+    "biepiaolingchun"
+   ],
+   "pyi": [
+    "bpc",
+    "tflk",
+    "bplc"
+   ]
   },
   {
    "name": "维生素B1",
@@ -4768,7 +6979,15 @@ const G6PD_DATA = {
    "id": "维生素B1",
    "note": "",
    "icon": "💊",
-   "use": "维生素B1（营养、神经）"
+   "use": "维生素B1（营养、神经）",
+   "py": [
+    "weishengsu",
+    "liuansu"
+   ],
+   "pyi": [
+    "wss",
+    "las"
+   ]
   },
   {
    "name": "维生素B2",
@@ -4788,7 +7007,15 @@ const G6PD_DATA = {
    "id": "维生素B2",
    "note": "",
    "icon": "💊",
-   "use": "维生素B2（营养、口角炎）"
+   "use": "维生素B2（营养、口角炎）",
+   "py": [
+    "weishengsu",
+    "hehuangsu"
+   ],
+   "pyi": [
+    "wss",
+    "hhs"
+   ]
   },
   {
    "name": "维生素B6",
@@ -4808,7 +7035,15 @@ const G6PD_DATA = {
    "id": "维生素B6",
    "note": "",
    "icon": "💊",
-   "use": "维生素B6（营养、止吐、神经）"
+   "use": "维生素B6（营养、止吐、神经）",
+   "py": [
+    "weishengsu",
+    "biduochun"
+   ],
+   "pyi": [
+    "wss",
+    "bdc"
+   ]
   },
   {
    "name": "维生素B12",
@@ -4829,7 +7064,17 @@ const G6PD_DATA = {
    "id": "维生素B12",
    "note": "",
    "icon": "💊",
-   "use": "维生素B12（营养、贫血、神经）"
+   "use": "维生素B12（营养、贫血、神经）",
+   "py": [
+    "weishengsu",
+    "guansu",
+    "jiaguan"
+   ],
+   "pyi": [
+    "wss",
+    "gas",
+    "jga"
+   ]
   },
   {
    "name": "叶酸",
@@ -4849,7 +7094,15 @@ const G6PD_DATA = {
    "id": "叶酸",
    "note": "",
    "icon": "💊",
-   "use": "叶酸（备孕、贫血）"
+   "use": "叶酸（备孕、贫血）",
+   "py": [
+    "yesuan",
+    "yesuanpian"
+   ],
+   "pyi": [
+    "ys",
+    "ysp"
+   ]
   },
   {
    "name": "维生素E",
@@ -4869,7 +7122,15 @@ const G6PD_DATA = {
    "id": "维生素E",
    "note": "",
    "icon": "💊",
-   "use": "维生素E（抗氧化、营养）"
+   "use": "维生素E（抗氧化、营养）",
+   "py": [
+    "weishengsu",
+    "shengyufen"
+   ],
+   "pyi": [
+    "wss",
+    "syf"
+   ]
   },
   {
    "name": "复合维生素",
@@ -4891,7 +7152,19 @@ const G6PD_DATA = {
    "id": "复合维生素",
    "note": "",
    "icon": "💊",
-   "use": "多种维生素补充"
+   "use": "多种维生素补充",
+   "py": [
+    "fuheweishengsu",
+    "duoweiyuansupian",
+    "shancun",
+    "jinshierkang"
+   ],
+   "pyi": [
+    "fhwss",
+    "dwysp",
+    "sc",
+    "jsek"
+   ]
   },
   {
    "name": "葡萄糖酸锌",
@@ -4911,7 +7184,15 @@ const G6PD_DATA = {
    "id": "葡萄糖酸锌",
    "note": "",
    "icon": "💊",
-   "use": "补锌（营养、腹泻辅助）"
+   "use": "补锌（营养、腹泻辅助）",
+   "py": [
+    "putaotangsuanxin",
+    "putaotangsuanxinkoufuye"
+   ],
+   "pyi": [
+    "pttsx",
+    "pttsxkfy"
+   ]
   },
   {
    "name": "铁剂",
@@ -4934,7 +7215,21 @@ const G6PD_DATA = {
    "id": "铁剂",
    "note": "",
    "icon": "💊",
-   "use": "补铁（缺铁性贫血）"
+   "use": "补铁（缺铁性贫血）",
+   "py": [
+    "tieji",
+    "liusuanyatie",
+    "fumasuanyatie",
+    "youxuantanggantie",
+    "danbaihuposuantie"
+   ],
+   "pyi": [
+    "tj",
+    "lsyt",
+    "fmsyt",
+    "yxtgt",
+    "dbhpst"
+   ]
   },
   {
    "name": "流感疫苗",
@@ -4952,7 +7247,13 @@ const G6PD_DATA = {
    "id": "流感疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防流感"
+   "use": "预防流感",
+   "py": [
+    "liuganyimiao"
+   ],
+   "pyi": [
+    "lgym"
+   ]
   },
   {
    "name": "乙肝疫苗",
@@ -4970,7 +7271,13 @@ const G6PD_DATA = {
    "id": "乙肝疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防乙型肝炎"
+   "use": "预防乙型肝炎",
+   "py": [
+    "yiganyimiao"
+   ],
+   "pyi": [
+    "ygym"
+   ]
   },
   {
    "name": "百白破疫苗",
@@ -4988,7 +7295,13 @@ const G6PD_DATA = {
    "id": "百白破疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防百日咳、白喉、破伤风"
+   "use": "预防百日咳、白喉、破伤风",
+   "py": [
+    "baibaipoyimiao"
+   ],
+   "pyi": [
+    "bbpym"
+   ]
   },
   {
    "name": "麻疹疫苗",
@@ -5006,7 +7319,13 @@ const G6PD_DATA = {
    "id": "麻疹疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防麻疹"
+   "use": "预防麻疹",
+   "py": [
+    "mazhenyimiao"
+   ],
+   "pyi": [
+    "mzym"
+   ]
   },
   {
    "name": "水痘疫苗",
@@ -5024,7 +7343,13 @@ const G6PD_DATA = {
    "id": "水痘疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防水痘"
+   "use": "预防水痘",
+   "py": [
+    "shuidouyimiao"
+   ],
+   "pyi": [
+    "sdym"
+   ]
   },
   {
    "name": "肺炎球菌疫苗",
@@ -5042,7 +7367,13 @@ const G6PD_DATA = {
    "id": "肺炎球菌疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防肺炎链球菌感染"
+   "use": "预防肺炎链球菌感染",
+   "py": [
+    "feiyanqiujunyimiao"
+   ],
+   "pyi": [
+    "fyqjym"
+   ]
   },
   {
    "name": "HPV疫苗",
@@ -5060,7 +7391,13 @@ const G6PD_DATA = {
    "id": "HPV疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防人乳头瘤病毒（宫颈癌等）"
+   "use": "预防人乳头瘤病毒（宫颈癌等）",
+   "py": [
+    "yimiao"
+   ],
+   "pyi": [
+    "ym"
+   ]
   },
   {
    "name": "新冠疫苗",
@@ -5078,7 +7415,13 @@ const G6PD_DATA = {
    "id": "新冠疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防新型冠状病毒感染"
+   "use": "预防新型冠状病毒感染",
+   "py": [
+    "xinguanyimiao"
+   ],
+   "pyi": [
+    "xgym"
+   ]
   },
   {
    "name": "卡介苗",
@@ -5096,7 +7439,13 @@ const G6PD_DATA = {
    "id": "卡介苗",
    "note": "",
    "icon": "💉",
-   "use": "预防结核（儿童）"
+   "use": "预防结核（儿童）",
+   "py": [
+    "kajiemiao"
+   ],
+   "pyi": [
+    "kjm"
+   ]
   },
   {
    "name": "脊髓灰质炎疫苗",
@@ -5114,7 +7463,13 @@ const G6PD_DATA = {
    "id": "脊髓灰质炎疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防小儿麻痹"
+   "use": "预防小儿麻痹",
+   "py": [
+    "jisuihuizhiyanyimiao"
+   ],
+   "pyi": [
+    "jshzyym"
+   ]
   },
   {
    "name": "轮状病毒疫苗",
@@ -5132,7 +7487,13 @@ const G6PD_DATA = {
    "id": "轮状病毒疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防轮状病毒腹泻"
+   "use": "预防轮状病毒腹泻",
+   "py": [
+    "lunzhuangbingduyimiao"
+   ],
+   "pyi": [
+    "lzbdym"
+   ]
   },
   {
    "name": "麻腮风疫苗",
@@ -5150,7 +7511,13 @@ const G6PD_DATA = {
    "id": "麻腮风疫苗",
    "note": "",
    "icon": "💉",
-   "use": "预防麻疹、腮腺炎、风疹"
+   "use": "预防麻疹、腮腺炎、风疹",
+   "py": [
+    "masaifengyimiao"
+   ],
+   "pyi": [
+    "msfym"
+   ]
   },
   {
    "name": "红霉素软膏",
@@ -5168,7 +7535,13 @@ const G6PD_DATA = {
    "id": "红霉素软膏",
    "note": "",
    "icon": "💊",
-   "use": "外用抗菌（皮肤、眼部感染）"
+   "use": "外用抗菌（皮肤、眼部感染）",
+   "py": [
+    "hongmeisuruangao"
+   ],
+   "pyi": [
+    "hmsrg"
+   ]
   },
   {
    "name": "阿昔洛韦乳膏",
@@ -5188,7 +7561,15 @@ const G6PD_DATA = {
    "id": "阿昔洛韦乳膏",
    "note": "",
    "icon": "💊",
-   "use": "外用抗病毒（疱疹）"
+   "use": "外用抗病毒（疱疹）",
+   "py": [
+    "axiluoweirugao",
+    "wuhuanniaoganrugao"
+   ],
+   "pyi": [
+    "axlwrg",
+    "whngrg"
+   ]
   },
   {
    "name": "氟轻松",
@@ -5208,7 +7589,13 @@ const G6PD_DATA = {
    "id": "氟轻松",
    "note": "",
    "icon": "💊",
-   "use": "外用糖皮质激素（皮炎、湿疹）"
+   "use": "外用糖皮质激素（皮炎、湿疹）",
+   "py": [
+    "fuqingsong"
+   ],
+   "pyi": [
+    "fqs"
+   ]
   },
   {
    "name": "醋酸地塞米松乳膏",
@@ -5228,7 +7615,15 @@ const G6PD_DATA = {
    "id": "醋酸地塞米松乳膏",
    "note": "",
    "icon": "💊",
-   "use": "外用糖皮质激素（皮炎、湿疹）"
+   "use": "外用糖皮质激素（皮炎、湿疹）",
+   "py": [
+    "cusuandisaimisongrugao",
+    "piyanpinghan"
+   ],
+   "pyi": [
+    "csdsmsrg",
+    "pyph"
+   ]
   },
   {
    "name": "尿素软膏",
@@ -5248,7 +7643,15 @@ const G6PD_DATA = {
    "id": "尿素软膏",
    "note": "",
    "icon": "💊",
-   "use": "外用保湿、软化角质（干裂、鱼鳞病）"
+   "use": "外用保湿、软化角质（干裂、鱼鳞病）",
+   "py": [
+    "niaosuruangao",
+    "niaosuweirugao"
+   ],
+   "pyi": [
+    "nsrg",
+    "nswrg"
+   ]
   },
   {
    "name": "维A酸乳膏",
@@ -5269,7 +7672,17 @@ const G6PD_DATA = {
    "id": "维A酸乳膏",
    "note": "",
    "icon": "💊",
-   "use": "外用维A酸（痤疮、角化）"
+   "use": "外用维A酸（痤疮、角化）",
+   "py": [
+    "weisuanrugao",
+    "diwei",
+    "weiteming"
+   ],
+   "pyi": [
+    "wsrg",
+    "dw",
+    "wtm"
+   ]
   },
   {
    "name": "鱼石脂",
@@ -5289,7 +7702,15 @@ const G6PD_DATA = {
    "id": "鱼石脂",
    "note": "",
    "icon": "💊",
-   "use": "外用（疖肿、消炎）"
+   "use": "外用（疖肿、消炎）",
+   "py": [
+    "yushizhi",
+    "yushizhiruangao"
+   ],
+   "pyi": [
+    "ysz",
+    "yszrg"
+   ]
   },
   {
    "name": "水杨酸软膏",
@@ -5307,7 +7728,13 @@ const G6PD_DATA = {
    "id": "水杨酸软膏",
    "note": "",
    "icon": "💊",
-   "use": "外用角质剥脱（银屑病、鸡眼）"
+   "use": "外用角质剥脱（银屑病、鸡眼）",
+   "py": [
+    "shuiyangsuanruangao"
+   ],
+   "pyi": [
+    "sysrg"
+   ]
   },
   {
    "name": "创可贴",
@@ -5327,7 +7754,15 @@ const G6PD_DATA = {
    "id": "创可贴",
    "note": "",
    "icon": "💊",
-   "use": "创面覆盖、止血"
+   "use": "创面覆盖、止血",
+   "py": [
+    "chuangketie",
+    "benzhalvantie"
+   ],
+   "pyi": [
+    "ckt",
+    "bzlat"
+   ]
   },
   {
    "name": "红霉素眼膏",
@@ -5345,7 +7780,13 @@ const G6PD_DATA = {
    "id": "红霉素眼膏",
    "note": "",
    "icon": "💊",
-   "use": "眼部抗菌（结膜炎）"
+   "use": "眼部抗菌（结膜炎）",
+   "py": [
+    "hongmeisuyangao"
+   ],
+   "pyi": [
+    "hmsyg"
+   ]
   },
   {
    "name": "妥布霉素滴眼液",
@@ -5365,7 +7806,15 @@ const G6PD_DATA = {
    "id": "妥布霉素滴眼液",
    "note": "",
    "icon": "💊",
-   "use": "眼部抗菌（结膜炎）"
+   "use": "眼部抗菌（结膜炎）",
+   "py": [
+    "tuobumeisudiyanye",
+    "tuobaishi"
+   ],
+   "pyi": [
+    "tbmsdyy",
+    "tbs"
+   ]
   },
   {
    "name": "色甘酸钠滴眼液",
@@ -5385,7 +7834,15 @@ const G6PD_DATA = {
    "id": "色甘酸钠滴眼液",
    "note": "",
    "icon": "💊",
-   "use": "抗过敏滴眼（过敏性结膜炎）"
+   "use": "抗过敏滴眼（过敏性结膜炎）",
+   "py": [
+    "segansuannadiyanye",
+    "ningmin"
+   ],
+   "pyi": [
+    "sgsndyy",
+    "nm"
+   ]
   },
   {
    "name": "玻璃酸钠滴眼液",
@@ -5406,7 +7863,17 @@ const G6PD_DATA = {
    "id": "玻璃酸钠滴眼液",
    "note": "",
    "icon": "💊",
-   "use": "人工泪液（眼干）"
+   "use": "人工泪液（眼干）",
+   "py": [
+    "bolisuannadiyanye",
+    "runshu",
+    "aili"
+   ],
+   "pyi": [
+    "blsndyy",
+    "rs",
+    "al"
+   ]
   },
   {
    "name": "金霉素眼膏",
@@ -5424,7 +7891,13 @@ const G6PD_DATA = {
    "id": "金霉素眼膏",
    "note": "",
    "icon": "💊",
-   "use": "眼部抗菌（结膜炎）"
+   "use": "眼部抗菌（结膜炎）",
+   "py": [
+    "jinmeisuyangao"
+   ],
+   "pyi": [
+    "jmsyg"
+   ]
   },
   {
    "name": "氯霉素滴眼液",
@@ -5444,7 +7917,15 @@ const G6PD_DATA = {
    "id": "氯霉素滴眼液",
    "note": "",
    "icon": "💊",
-   "use": "眼部抗菌（结膜炎）"
+   "use": "眼部抗菌（结膜炎）",
+   "py": [
+    "lvmeisudiyanye",
+    "runshuhanlvmeisu"
+   ],
+   "pyi": [
+    "lmsdyy",
+    "rshlms"
+   ]
   },
   {
    "name": "生理性海水鼻喷雾",
@@ -5465,7 +7946,17 @@ const G6PD_DATA = {
    "id": "生理性海水鼻喷雾",
    "note": "",
    "icon": "💊",
-   "use": "鼻腔冲洗、保湿"
+   "use": "鼻腔冲洗、保湿",
+   "py": [
+    "shenglixinghaishuibipenwu",
+    "shengliyanshuipenbi",
+    "nuosiqing"
+   ],
+   "pyi": [
+    "slxhsbpw",
+    "slyspb",
+    "nsq"
+   ]
   },
   {
    "name": "糠酸莫米松鼻喷雾",
@@ -5485,7 +7976,15 @@ const G6PD_DATA = {
    "id": "糠酸莫米松鼻喷雾",
    "note": "",
    "icon": "💊",
-   "use": "鼻用糖皮质激素（过敏性鼻炎）"
+   "use": "鼻用糖皮质激素（过敏性鼻炎）",
+   "py": [
+    "kangsuanmomisongbipenwu",
+    "neishuna"
+   ],
+   "pyi": [
+    "ksmmsbpw",
+    "nsn"
+   ]
   },
   {
    "name": "氮卓斯汀鼻喷雾",
@@ -5505,7 +8004,15 @@ const G6PD_DATA = {
    "id": "氮卓斯汀鼻喷雾",
    "note": "",
    "icon": "💊",
-   "use": "鼻用抗组胺（过敏性鼻炎）"
+   "use": "鼻用抗组胺（过敏性鼻炎）",
+   "py": [
+    "danzhuositingbipenwu",
+    "aisaiping"
+   ],
+   "pyi": [
+    "dzstbpw",
+    "asp"
+   ]
   },
   {
    "name": "地西泮",
@@ -5525,7 +8032,15 @@ const G6PD_DATA = {
    "id": "地西泮",
    "note": "",
    "icon": "💊",
-   "use": "苯二氮䓬类（抗焦虑、镇静、抗惊厥）"
+   "use": "苯二氮䓬类（抗焦虑、镇静、抗惊厥）",
+   "py": [
+    "dixipan",
+    "anding"
+   ],
+   "pyi": [
+    "dxp",
+    "ad"
+   ]
   },
   {
    "name": "艾司唑仑",
@@ -5545,7 +8060,15 @@ const G6PD_DATA = {
    "id": "艾司唑仑",
    "note": "",
    "icon": "💊",
-   "use": "苯二氮䓬类（失眠、抗焦虑）"
+   "use": "苯二氮䓬类（失眠、抗焦虑）",
+   "py": [
+    "aisizuolun",
+    "shuleanding"
+   ],
+   "pyi": [
+    "aszl",
+    "slad"
+   ]
   },
   {
    "name": "唑吡坦",
@@ -5566,7 +8089,17 @@ const G6PD_DATA = {
    "id": "唑吡坦",
    "note": "",
    "icon": "💊",
-   "use": "镇静催眠药（失眠）"
+   "use": "镇静催眠药（失眠）",
+   "py": [
+    "zuobitan",
+    "sinuosi",
+    "simenghai"
+   ],
+   "pyi": [
+    "zbt",
+    "sns",
+    "smh"
+   ]
   },
   {
    "name": "舍曲林",
@@ -5587,7 +8120,17 @@ const G6PD_DATA = {
    "id": "舍曲林",
    "note": "",
    "icon": "💊",
-   "use": "SSRI 抗抑郁药（抑郁、焦虑、强迫）"
+   "use": "SSRI 抗抑郁药（抑郁、焦虑、强迫）",
+   "py": [
+    "shequlin",
+    "zuoluofu",
+    "yulefu"
+   ],
+   "pyi": [
+    "sql",
+    "zlf",
+    "ylf"
+   ]
   },
   {
    "name": "氟西汀",
@@ -5607,7 +8150,15 @@ const G6PD_DATA = {
    "id": "氟西汀",
    "note": "",
    "icon": "💊",
-   "use": "SSRI 抗抑郁药（抑郁、强迫）"
+   "use": "SSRI 抗抑郁药（抑郁、强迫）",
+   "py": [
+    "fuxiting",
+    "baiyoujie"
+   ],
+   "pyi": [
+    "fxt",
+    "byj"
+   ]
   },
   {
    "name": "帕罗西汀",
@@ -5628,7 +8179,17 @@ const G6PD_DATA = {
    "id": "帕罗西汀",
    "note": "",
    "icon": "💊",
-   "use": "SSRI 抗抑郁药（抑郁、焦虑）"
+   "use": "SSRI 抗抑郁药（抑郁、焦虑）",
+   "py": [
+    "paluoxiting",
+    "sailete",
+    "leyou"
+   ],
+   "pyi": [
+    "plxt",
+    "slt",
+    "ly"
+   ]
   },
   {
    "name": "米氮平",
@@ -5648,7 +8209,15 @@ const G6PD_DATA = {
    "id": "米氮平",
    "note": "",
    "icon": "💊",
-   "use": "抗抑郁药（抑郁，兼改善睡眠/食欲）"
+   "use": "抗抑郁药（抑郁，兼改善睡眠/食欲）",
+   "py": [
+    "midanping",
+    "ruimeilong"
+   ],
+   "pyi": [
+    "mdp",
+    "rml"
+   ]
   },
   {
    "name": "奥氮平",
@@ -5669,7 +8238,17 @@ const G6PD_DATA = {
    "id": "奥氮平",
    "note": "",
    "icon": "💊",
-   "use": "抗精神病药（精神分裂、双相）"
+   "use": "抗精神病药（精神分裂、双相）",
+   "py": [
+    "aodanping",
+    "zaipule",
+    "oulanning"
+   ],
+   "pyi": [
+    "adp",
+    "zpl",
+    "oln"
+   ]
   },
   {
    "name": "喹硫平",
@@ -5689,7 +8268,15 @@ const G6PD_DATA = {
    "id": "喹硫平",
    "note": "",
    "icon": "💊",
-   "use": "抗精神病药（精神分裂、双相）"
+   "use": "抗精神病药（精神分裂、双相）",
+   "py": [
+    "kuiliuping",
+    "siruikang"
+   ],
+   "pyi": [
+    "klp",
+    "srk"
+   ]
   },
   {
    "name": "加巴喷丁",
@@ -5709,7 +8296,15 @@ const G6PD_DATA = {
    "id": "加巴喷丁",
    "note": "",
    "icon": "💊",
-   "use": "抗癫痫、神经痛药"
+   "use": "抗癫痫、神经痛药",
+   "py": [
+    "jiabapending",
+    "niunuoting"
+   ],
+   "pyi": [
+    "jbpd",
+    "nnt"
+   ]
   },
   {
    "name": "普瑞巴林",
@@ -5729,7 +8324,15 @@ const G6PD_DATA = {
    "id": "普瑞巴林",
    "note": "",
    "icon": "💊",
-   "use": "神经痛、抗癫痫、抗焦虑"
+   "use": "神经痛、抗癫痫、抗焦虑",
+   "py": [
+    "puruibalin",
+    "leruika"
+   ],
+   "pyi": [
+    "prbl",
+    "lrk"
+   ]
   },
   {
    "name": "丙戊酸钠",
@@ -5750,7 +8353,17 @@ const G6PD_DATA = {
    "id": "丙戊酸钠",
    "note": "用药期间留意有无皮肤/眼睛发黄、浓茶色尿等溶血迹象，异常及时就医。",
    "icon": "💊",
-   "use": "抗癫痫、双相情感障碍"
+   "use": "抗癫痫、双相情感障碍",
+   "py": [
+    "bingwusuanna",
+    "debajin",
+    "bingwusuanmei"
+   ],
+   "pyi": [
+    "bwsn",
+    "dbj",
+    "bwsm"
+   ]
   },
   {
    "name": "卡马西平",
@@ -5771,7 +8384,18 @@ const G6PD_DATA = {
    "id": "卡马西平",
    "note": "需在医生监护下使用，用药期间留意尿色变深、皮肤/眼睛发黄等溶血迹象。",
    "icon": "💊",
-   "use": "抗癫痫、三叉神经痛"
+   "use": "抗癫痫、三叉神经痛",
+   "py": [
+    "kamaxiping",
+    "deliduo",
+    "kamaxipinghuanshipian"
+   ],
+   "pyi": [
+    "kmxp",
+    "dld",
+    "kmxphsp"
+   ],
+   "debate": "仅有零散个案或证据有限，并非绝对禁用；本库取保守口径，用前请医生评估。"
   },
   {
    "name": "碘海醇",
@@ -5791,7 +8415,15 @@ const G6PD_DATA = {
    "id": "碘海醇",
    "note": "",
    "icon": "💊",
-   "use": "造影剂（CT、血管造影）"
+   "use": "造影剂（CT、血管造影）",
+   "py": [
+    "dianhaichun",
+    "ounaipaike"
+   ],
+   "pyi": [
+    "dhc",
+    "onpk"
+   ]
   },
   {
    "name": "碘普罗胺",
@@ -5811,7 +8443,15 @@ const G6PD_DATA = {
    "id": "碘普罗胺",
    "note": "",
    "icon": "💊",
-   "use": "造影剂（CT、血管造影）"
+   "use": "造影剂（CT、血管造影）",
+   "py": [
+    "dianpuluoan",
+    "youweixian"
+   ],
+   "pyi": [
+    "dpla",
+    "ywx"
+   ]
   },
   {
    "name": "硫酸钡",
@@ -5831,7 +8471,15 @@ const G6PD_DATA = {
    "id": "硫酸钡",
    "note": "",
    "icon": "💊",
-   "use": "造影剂（胃肠钡餐）"
+   "use": "造影剂（胃肠钡餐）",
+   "py": [
+    "liusuanbei",
+    "beican"
+   ],
+   "pyi": [
+    "lsb",
+    "bc"
+   ]
   },
   {
    "name": "黄体酮",
@@ -5852,7 +8500,17 @@ const G6PD_DATA = {
    "id": "黄体酮",
    "note": "",
    "icon": "💊",
-   "use": "孕激素（保胎、调经、激素替代）"
+   "use": "孕激素（保胎、调经、激素替代）",
+   "py": [
+    "huangtitong",
+    "yuntong",
+    "diquyuntong"
+   ],
+   "pyi": [
+    "htt",
+    "yt",
+    "dqyt"
+   ]
   },
   {
    "name": "雌激素",
@@ -5873,7 +8531,17 @@ const G6PD_DATA = {
    "id": "雌激素",
    "note": "",
    "icon": "💊",
-   "use": "雌激素（激素替代、避孕）"
+   "use": "雌激素（激素替代、避孕）",
+   "py": [
+    "cijisu",
+    "wusuancierchun",
+    "jiehecijisu"
+   ],
+   "pyi": [
+    "cjs",
+    "wscec",
+    "jhcjs"
+   ]
   },
   {
    "name": "复方口服避孕药",
@@ -5895,7 +8563,23 @@ const G6PD_DATA = {
    "id": "复方口服避孕药",
    "note": "",
    "icon": "💊",
-   "use": "避孕"
+   "use": "避孕",
+   "py": [
+    "fufangkoufubiyunyao",
+    "duanxiaobiyunyao",
+    "mafulong",
+    "daying"
+   ],
+   "pyi": [
+    "ffkfbyy",
+    "dxbyy",
+    "mfl",
+    "dy"
+   ],
+   "ingredients": [
+    "炔雌醇",
+    "孕激素"
+   ]
   },
   {
    "name": "海娜/指甲花",
@@ -5920,7 +8604,19 @@ const G6PD_DATA = {
    "note": "",
    "icon": "🎨",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff0e6%27%20stroke%3D%27%23b8791b%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8E%A8%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b8791b%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E6%B5%B7%E5%A8%9C%2F%E6%8C%87%E7%94%B2%E8%8A%B1%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "植物（染发、纹身原料）"
+   "use": "植物（染发、纹身原料）",
+   "py": [
+    "hainazhijiahua",
+    "zhijiahua",
+    "hainafen",
+    "sanmohua"
+   ],
+   "pyi": [
+    "hnzjh",
+    "zjh",
+    "hnf",
+    "smh"
+   ]
   },
   {
    "name": "红花",
@@ -5944,7 +8640,18 @@ const G6PD_DATA = {
    "note": "",
    "icon": "🌸",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fdecea%27%20stroke%3D%27%23c62828%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8C%BA%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23c62828%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E7%BA%A2%E8%8A%B1%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "中药（活血化瘀）；也是红花油原料"
+   "use": "中药（活血化瘀）；也是红花油原料",
+   "py": [
+    "honghua",
+    "caohonghua",
+    "honglanhua",
+    "cihonghua"
+   ],
+   "pyi": [
+    "hh",
+    "chh",
+    "hlh"
+   ]
   },
   {
    "name": "银杏/白果",
@@ -5968,7 +8675,19 @@ const G6PD_DATA = {
    "note": "",
    "icon": "🍂",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8D%82%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%93%B6%E6%9D%8F%2F%E7%99%BD%E6%9E%9C%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "植物/食材（白果需煮熟并限量）"
+   "use": "植物/食材（白果需煮熟并限量）",
+   "py": [
+    "yinxingbaiguo",
+    "baiguo",
+    "gongsunshu",
+    "yinxingyetiquwu"
+   ],
+   "pyi": [
+    "yxbg",
+    "bg",
+    "gss",
+    "yxytqw"
+   ]
   },
   {
    "name": "丹参",
@@ -5990,7 +8709,17 @@ const G6PD_DATA = {
    "id": "丹参",
    "note": "",
    "icon": "🌱",
-   "use": "中药（活血化瘀）"
+   "use": "中药（活血化瘀）",
+   "py": [
+    "danshen",
+    "zidanshen",
+    "chican"
+   ],
+   "pyi": [
+    "ds",
+    "zds",
+    "cc"
+   ]
   },
   {
    "name": "鱼腥草",
@@ -6012,7 +8741,17 @@ const G6PD_DATA = {
    "id": "鱼腥草",
    "note": "",
    "icon": "🌱",
-   "use": "中药/野菜（清热解毒）"
+   "use": "中药/野菜（清热解毒）",
+   "py": [
+    "yuxingcao",
+    "zheergen",
+    "jicai"
+   ],
+   "pyi": [
+    "yxc",
+    "zeg",
+    "jc"
+   ]
   },
   {
    "name": "茵栀黄",
@@ -6035,7 +8774,19 @@ const G6PD_DATA = {
    "id": "茵栀黄",
    "note": "",
    "icon": "🌱",
-   "use": "中药（利湿退黄，曾用于新生儿黄疸）"
+   "use": "中药（利湿退黄，曾用于新生儿黄疸）",
+   "py": [
+    "yinzhihuang",
+    "yinzhihuangkoufuye",
+    "yinzhihuangkeli",
+    "yinzhihuangzhusheye"
+   ],
+   "pyi": [
+    "yzh",
+    "yzhkfy",
+    "yzhkl",
+    "yzhzsy"
+   ]
   },
   {
    "name": "红花油",
@@ -6057,7 +8808,17 @@ const G6PD_DATA = {
    "id": "红花油",
    "note": "",
    "icon": "🌸",
-   "use": "外用活血止痛（扭伤、酸痛）"
+   "use": "外用活血止痛（扭伤、酸痛）",
+   "py": [
+    "honghuayou",
+    "zhenghonghuayou",
+    "wanhuayou"
+   ],
+   "pyi": [
+    "hhy",
+    "zhhy",
+    "why"
+   ]
   },
   {
    "name": "指甲油/美甲产品",
@@ -6081,7 +8842,21 @@ const G6PD_DATA = {
    "id": "指甲油/美甲产品",
    "note": "",
    "icon": "🧴",
-   "use": "美甲（含有机溶剂）"
+   "use": "美甲（含有机溶剂）",
+   "py": [
+    "zhijiayoumeijiachanpin",
+    "zhijiayou",
+    "meijia",
+    "jiayoujiao",
+    "guangliaojiao"
+   ],
+   "pyi": [
+    "zjymjcp",
+    "zjy",
+    "mj",
+    "jyj",
+    "glj"
+   ]
   },
   {
    "name": "高锰酸钾",
@@ -6104,7 +8879,17 @@ const G6PD_DATA = {
    "note": "",
    "icon": "🟣",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23f3e8fb%27%20stroke%3D%27%236a1b9a%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%9F%A3%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%236a1b9a%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E9%AB%98%E9%94%B0%E9%85%B8%E9%92%BE%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "外用消毒、坐浴（需稀释）"
+   "use": "外用消毒、坐浴（需稀释）",
+   "py": [
+    "gaomengsuanjia",
+    "fen",
+    "huimengyang"
+   ],
+   "pyi": [
+    "gmsj",
+    "f",
+    "hmy"
+   ]
   },
   {
    "name": "香薰/精油（薄荷脑·樟脑类）",
@@ -6129,7 +8914,23 @@ const G6PD_DATA = {
    "id": "香薰/精油（薄荷脑·樟脑类）",
    "note": "",
    "icon": "🧴",
-   "use": "香薰、扩香"
+   "use": "香薰、扩香",
+   "py": [
+    "xiangxunjingyoubohenaozhangnaolei",
+    "jingyou",
+    "xiangxun",
+    "bohejingyou",
+    "zhangnaojingyou",
+    "youjialijingyou"
+   ],
+   "pyi": [
+    "xxjybhnznl",
+    "jy",
+    "xx",
+    "bhjy",
+    "znjy",
+    "yjljy"
+   ]
   },
   {
    "name": "夹竹桃",
@@ -6152,7 +8953,17 @@ const G6PD_DATA = {
    "note": "",
    "icon": "🌸",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fdeef2%27%20stroke%3D%27%23c2185b%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%8C%B8%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23c2185b%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E5%A4%B9%E7%AB%B9%E6%A1%83%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "观赏植物（全株有毒，主要非 G6PD 风险）"
+   "use": "观赏植物（全株有毒，主要非 G6PD 风险）",
+   "py": [
+    "jiazhutao",
+    "jiazhutaoye",
+    "liuyetao"
+   ],
+   "pyi": [
+    "jzt",
+    "jzty",
+    "lyt"
+   ]
   },
   {
    "name": "水仙",
@@ -6174,7 +8985,17 @@ const G6PD_DATA = {
    "id": "水仙",
    "note": "",
    "icon": "🌸",
-   "use": "观赏植物（鳞茎有毒）"
+   "use": "观赏植物（鳞茎有毒）",
+   "py": [
+    "shuixian",
+    "shuixianhua",
+    "lingboxianzi"
+   ],
+   "pyi": [
+    "sx",
+    "sxh",
+    "lbxz"
+   ]
   },
   {
    "name": "石蒜",
@@ -6196,7 +9017,17 @@ const G6PD_DATA = {
    "id": "石蒜",
    "note": "",
    "icon": "🌱",
-   "use": "观赏植物（有毒）"
+   "use": "观赏植物（有毒）",
+   "py": [
+    "shisuan",
+    "honghuashisuan",
+    "bianhua"
+   ],
+   "pyi": [
+    "ss",
+    "hhss",
+    "bah"
+   ]
   },
   {
    "name": "郁金香",
@@ -6217,7 +9048,15 @@ const G6PD_DATA = {
    "id": "郁金香",
    "note": "",
    "icon": "🌱",
-   "use": "观赏植物（球茎有轻微毒性）"
+   "use": "观赏植物（球茎有轻微毒性）",
+   "py": [
+    "yujinxiang",
+    "yujinxianghua"
+   ],
+   "pyi": [
+    "yjx",
+    "yjxh"
+   ]
   },
   {
    "name": "滴水观音/海芋",
@@ -6239,7 +9078,17 @@ const G6PD_DATA = {
    "id": "滴水观音/海芋",
    "note": "",
    "icon": "🌱",
-   "use": "观赏植物（汁液有毒）"
+   "use": "观赏植物（汁液有毒）",
+   "py": [
+    "dishuiguanyinhaiyu",
+    "haiyu",
+    "guangdonglangdu"
+   ],
+   "pyi": [
+    "dsgyhy",
+    "hy",
+    "gdld"
+   ]
   },
   {
    "name": "绿萝/黄金葛",
@@ -6260,7 +9109,15 @@ const G6PD_DATA = {
    "id": "绿萝/黄金葛",
    "note": "",
    "icon": "🌱",
-   "use": "观赏植物（汁液有刺激性）"
+   "use": "观赏植物（汁液有刺激性）",
+   "py": [
+    "lvluohuangjinge",
+    "huangjinge"
+   ],
+   "pyi": [
+    "llhjg",
+    "hjg"
+   ]
   },
   {
    "name": "万年青/黛粉叶",
@@ -6282,7 +9139,17 @@ const G6PD_DATA = {
    "id": "万年青/黛粉叶",
    "note": "",
    "icon": "🌱",
-   "use": "观赏植物（汁液有毒）"
+   "use": "观赏植物（汁液有毒）",
+   "py": [
+    "wannianqingdaifenye",
+    "daifenye",
+    "culecao"
+   ],
+   "pyi": [
+    "wnqdfy",
+    "dfy",
+    "clc"
+   ]
   },
   {
    "name": "曼陀罗",
@@ -6304,7 +9171,17 @@ const G6PD_DATA = {
    "id": "曼陀罗",
    "note": "",
    "icon": "🌱",
-   "use": "野生/观赏植物（全株有毒）"
+   "use": "野生/观赏植物（全株有毒）",
+   "py": [
+    "mantuoluo",
+    "yangjinhua",
+    "zuixiantao"
+   ],
+   "pyi": [
+    "mtl",
+    "yjh",
+    "zxt"
+   ]
   },
   {
    "name": "蓖麻",
@@ -6325,7 +9202,15 @@ const G6PD_DATA = {
    "id": "蓖麻",
    "note": "",
    "icon": "🌱",
-   "use": "植物（种子含蓖麻毒素）"
+   "use": "植物（种子含蓖麻毒素）",
+   "py": [
+    "bima",
+    "bimazi"
+   ],
+   "pyi": [
+    "bm",
+    "bmz"
+   ]
   },
   {
    "name": "相思豆/相思子",
@@ -6347,7 +9232,17 @@ const G6PD_DATA = {
    "id": "相思豆/相思子",
    "note": "",
    "icon": "🌱",
-   "use": "植物（种子有毒）"
+   "use": "植物（种子有毒）",
+   "py": [
+    "xiangsidouxiangsizi",
+    "jimuzhu",
+    "meirendou"
+   ],
+   "pyi": [
+    "xsdxsz",
+    "jmz",
+    "mrd"
+   ]
   },
   {
    "name": "苏铁/铁树",
@@ -6369,7 +9264,17 @@ const G6PD_DATA = {
    "id": "苏铁/铁树",
    "note": "",
    "icon": "🌱",
-   "use": "观赏植物（种子有毒）"
+   "use": "观赏植物（种子有毒）",
+   "py": [
+    "sutietieshu",
+    "tieshu",
+    "fengweijiao"
+   ],
+   "pyi": [
+    "stts",
+    "ts",
+    "fwj"
+   ]
   },
   {
    "name": "马缨丹/五色梅",
@@ -6391,7 +9296,17 @@ const G6PD_DATA = {
    "id": "马缨丹/五色梅",
    "note": "",
    "icon": "🌱",
-   "use": "观赏植物（有毒）"
+   "use": "观赏植物（有毒）",
+   "py": [
+    "mayingdanwusemei",
+    "wusemei",
+    "qibianhua"
+   ],
+   "pyi": [
+    "mydwsm",
+    "wsm",
+    "qbh"
+   ]
   },
   {
    "name": "含羞草",
@@ -6412,7 +9327,15 @@ const G6PD_DATA = {
    "id": "含羞草",
    "note": "",
    "icon": "🌱",
-   "use": "观赏植物（含含羞草碱）"
+   "use": "观赏植物（含含羞草碱）",
+   "py": [
+    "hanxiucao",
+    "zhixiucao"
+   ],
+   "pyi": [
+    "hxc",
+    "zxc"
+   ]
   },
   {
    "name": "罂粟/虞美人",
@@ -6434,7 +9357,17 @@ const G6PD_DATA = {
    "id": "罂粟/虞美人",
    "note": "",
    "icon": "🌱",
-   "use": "观赏植物（罂粟含生物碱）"
+   "use": "观赏植物（罂粟含生物碱）",
+   "py": [
+    "yingsuyumeiren",
+    "yumeiren",
+    "yapianhua"
+   ],
+   "pyi": [
+    "ysymr",
+    "ymr",
+    "yph"
+   ]
   },
   {
    "name": "油漆/涂料（含苯系溶剂）",
@@ -6458,7 +9391,21 @@ const G6PD_DATA = {
    "id": "油漆/涂料（含苯系溶剂）",
    "note": "",
    "icon": "⚠️",
-   "use": "装修、工业涂装"
+   "use": "装修、工业涂装",
+   "py": [
+    "youqituliaohanbenxirongji",
+    "youqi",
+    "tuliao",
+    "rujiaoqihanrongji",
+    "muqiqi"
+   ],
+   "pyi": [
+    "yqtlhbxrj",
+    "yq",
+    "tl",
+    "rjqhrj",
+    "mqq"
+   ]
   },
   {
    "name": "对苯二胺（染发剂成分/PPD）",
@@ -6481,7 +9428,17 @@ const G6PD_DATA = {
    "id": "对苯二胺（染发剂成分/PPD）",
    "note": "",
    "icon": "⚠️",
-   "use": "染发剂主要成分"
+   "use": "染发剂主要成分",
+   "py": [
+    "duibeneranranfajichengfen",
+    "ranfajichengfen",
+    "wuersi"
+   ],
+   "pyi": [
+    "dbearfjcf",
+    "rfjcf",
+    "wes"
+   ]
   },
   {
    "name": "橡胶防老剂（防老剂D/4010NA等）",
@@ -6506,7 +9463,17 @@ const G6PD_DATA = {
    "id": "橡胶防老剂（防老剂D/4010NA等）",
    "note": "",
    "icon": "⚠️",
-   "use": "橡胶工业添加剂"
+   "use": "橡胶工业添加剂",
+   "py": [
+    "xiangjiaofanglaojifanglaojideng",
+    "fanglaoji",
+    "fanglaojijia"
+   ],
+   "pyi": [
+    "xjfljfljd",
+    "flj",
+    "fljj"
+   ]
   },
   {
    "name": "苯胺及其衍生物",
@@ -6530,7 +9497,21 @@ const G6PD_DATA = {
    "id": "苯胺及其衍生物",
    "note": "",
    "icon": "⚠️",
-   "use": "染料、化工原料"
+   "use": "染料、化工原料",
+   "py": [
+    "benanjiqiyanshengwu",
+    "benan",
+    "linjiabenan",
+    "duilvbenan",
+    "lianbenan"
+   ],
+   "pyi": [
+    "bajqysw",
+    "ba",
+    "ljba",
+    "dlba",
+    "lba"
+   ]
   },
   {
    "name": "氢醌/对苯二酚",
@@ -6553,7 +9534,19 @@ const G6PD_DATA = {
    "id": "氢醌/对苯二酚",
    "note": "",
    "icon": "⚠️",
-   "use": "美白、摄影显影、化工原料"
+   "use": "美白、摄影显影、化工原料",
+   "py": [
+    "qingkunduibenerfen",
+    "duibenerfen",
+    "qingkun",
+    "zhaoxiangxianyingji"
+   ],
+   "pyi": [
+    "qkdbef",
+    "dbef",
+    "qk",
+    "zxxyj"
+   ]
   },
   {
    "name": "硝基苯",
@@ -6575,7 +9568,15 @@ const G6PD_DATA = {
    "id": "硝基苯",
    "note": "",
    "icon": "⚠️",
-   "use": "化工原料、溶剂"
+   "use": "化工原料、溶剂",
+   "py": [
+    "xiaojiben",
+    "mibanyou"
+   ],
+   "pyi": [
+    "xjb",
+    "mby"
+   ]
   },
   {
    "name": "天那水/香蕉水（稀释剂）",
@@ -6599,7 +9600,21 @@ const G6PD_DATA = {
    "id": "天那水/香蕉水（稀释剂）",
    "note": "",
    "icon": "⚠️",
-   "use": "油漆稀释剂"
+   "use": "油漆稀释剂",
+   "py": [
+    "tiannashuixiangjiaoshuixishiji",
+    "tiannashui",
+    "xiangjiaoshui",
+    "songxiangshui",
+    "youqixishiji"
+   ],
+   "pyi": [
+    "tnsxjsxsj",
+    "tns",
+    "xjs",
+    "sxs",
+    "yqxsj"
+   ]
   },
   {
    "name": "农药/杀虫剂（百草枯/有机磷等）",
@@ -6623,7 +9638,21 @@ const G6PD_DATA = {
    "id": "农药/杀虫剂（百草枯/有机磷等）",
    "note": "",
    "icon": "⚠️",
-   "use": "农业杀虫"
+   "use": "农业杀虫",
+   "py": [
+    "nongyaoshachongjibaicaokuyoujilindeng",
+    "baicaoku",
+    "youjilin",
+    "didiwei",
+    "shachongji"
+   ],
+   "pyi": [
+    "nyscjbckyjld",
+    "bck",
+    "yjl",
+    "ddw",
+    "scj"
+   ]
   },
   {
    "name": "印刷油墨",
@@ -6646,7 +9675,19 @@ const G6PD_DATA = {
    "id": "印刷油墨",
    "note": "",
    "icon": "⚠️",
-   "use": "印刷、包装"
+   "use": "印刷、包装",
+   "py": [
+    "yinshuayoumo",
+    "youmo",
+    "yinshuayou",
+    "baozhiyoumo"
+   ],
+   "pyi": [
+    "ysym",
+    "ym",
+    "ysy",
+    "bzym"
+   ]
   },
   {
    "id": "ped_analgesic",
@@ -6674,7 +9715,17 @@ const G6PD_DATA = {
    ],
    "icon": "💊",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23eaf6eb%27%20stroke%3D%27%232e7d32%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%232e7d32%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E5%B0%8F%E5%84%BF%E6%B0%A8%E9%85%9A%E9%BB%84%E9%82%A3%E6%95%8F%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "儿童复方感冒药（退烧+抗过敏+缓解鼻塞）"
+   "use": "儿童复方感冒药（退烧+抗过敏+缓解鼻塞）",
+   "py": [
+    "xiaoeranfenhuangnaminkeli",
+    "xiaoeranfenhuangnamin",
+    "hutong"
+   ],
+   "pyi": [
+    "xeafhnmkl",
+    "xeafhnm",
+    "ht"
+   ]
   },
   {
    "id": "amantadine_complex",
@@ -6705,7 +9756,21 @@ const G6PD_DATA = {
     "S7"
    ],
    "icon": "💊",
-   "use": "复方感冒药（退烧+抗病毒+抗过敏）"
+   "use": "复方感冒药（退烧+抗病毒+抗过敏）",
+   "py": [
+    "anfenwananleikuaikegankang",
+    "kuaike",
+    "gankang",
+    "anfenwananjiaonang",
+    "fufanganfenwananpian"
+   ],
+   "pyi": [
+    "afwalkkgk",
+    "kk",
+    "gk",
+    "afwajn",
+    "ffafwap"
+   ]
   },
   {
    "id": "tylenol_complex",
@@ -6734,7 +9799,19 @@ const G6PD_DATA = {
    ],
    "note": "",
    "icon": "💊",
-   "use": "复方感冒药（退烧+止咳+缓解鼻塞）"
+   "use": "复方感冒药（退烧+止咳+缓解鼻塞）",
+   "py": [
+    "fenmameimintainuo",
+    "tainuo",
+    "fenmameiminpian",
+    "tainuoganmaopian"
+   ],
+   "pyi": [
+    "fmmmtn",
+    "tn",
+    "fmmmp",
+    "tngmp"
+   ]
   },
   {
    "id": "vitc_yin",
@@ -6764,7 +9841,17 @@ const G6PD_DATA = {
    ],
    "icon": "💊",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23fff7e0%27%20stroke%3D%27%23b26a00%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%23b26a00%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E7%BB%B4C%E9%93%B6%E7%BF%98%E7%89%87%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "中成药复方感冒药（含维生素C、银翘）"
+   "use": "中成药复方感冒药（含维生素C、银翘）",
+   "py": [
+    "weiyinqiaopian",
+    "weiyinqiao",
+    "yinqiaopian"
+   ],
+   "pyi": [
+    "wyqp",
+    "wyq",
+    "yqp"
+   ]
   },
   {
    "id": "baijiahei",
@@ -6793,7 +9880,17 @@ const G6PD_DATA = {
    "note": "",
    "icon": "💊",
    "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%27116%27%20height%3D%27116%27%20rx%3D%2718%27%20fill%3D%27%23e8f1fb%27%20stroke%3D%27%231565c0%27%20stroke-opacity%3D%270.25%27%2F%3E%3Ctext%20x%3D%2760%27%20y%3D%2770%27%20font-size%3D%2754%27%20text-anchor%3D%27middle%27%3E%F0%9F%92%8A%3C%2Ftext%3E%3Ctext%20x%3D%2760%27%20y%3D%27104%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20fill%3D%27%231565c0%27%20font-family%3D%27PingFang%20SC%2CMicrosoft%20YaHei%2Csans-serif%27%3E%E7%99%BD%E5%8A%A0%E9%BB%91%3C%2Ftext%3E%3C%2Fsvg%3E",
-   "use": "复方感冒药（日用/夜用）"
+   "use": "复方感冒药（日用/夜用）",
+   "py": [
+    "baijiahei",
+    "anfenweimameifenpian",
+    "anfenmeifenweimapian"
+   ],
+   "pyi": [
+    "bjh",
+    "afwmmfp",
+    "afmfwmp"
+   ]
   },
   {
    "id": "gap_苯唑西林",
@@ -6809,7 +9906,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "耐酶青霉素（金黄色葡萄球菌感染）"
+   "use": "耐酶青霉素（金黄色葡萄球菌感染）",
+   "py": [
+    "benzuoxilin"
+   ],
+   "pyi": [
+    "bzxl"
+   ]
   },
   {
    "id": "gap_美洛西林",
@@ -6825,7 +9928,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "广谱青霉素（重症感染）"
+   "use": "广谱青霉素（重症感染）",
+   "py": [
+    "meiluoxilin"
+   ],
+   "pyi": [
+    "mlxl"
+   ]
   },
   {
    "id": "gap_头孢唑林",
@@ -6841,7 +9950,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "一代头孢（手术预防、皮肤感染）"
+   "use": "一代头孢（手术预防、皮肤感染）",
+   "py": [
+    "toubaozuolin"
+   ],
+   "pyi": [
+    "tbzl"
+   ]
   },
   {
    "id": "gap_头孢西丁",
@@ -6857,7 +9972,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "头霉素类（厌氧菌、混合感染）"
+   "use": "头霉素类（厌氧菌、混合感染）",
+   "py": [
+    "toubaoxiding"
+   ],
+   "pyi": [
+    "tbxd"
+   ]
   },
   {
    "id": "gap_头孢孟多",
@@ -6873,7 +9994,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "二代头孢（呼吸道、皮肤感染）"
+   "use": "二代头孢（呼吸道、皮肤感染）",
+   "py": [
+    "toubaomengduo"
+   ],
+   "pyi": [
+    "tbmd"
+   ]
   },
   {
    "id": "gap_头孢硫脒",
@@ -6889,7 +10016,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "一代头孢（呼吸道、皮肤感染）"
+   "use": "一代头孢（呼吸道、皮肤感染）",
+   "py": [
+    "toubaoliumi"
+   ],
+   "pyi": [
+    "tblm"
+   ]
   },
   {
    "id": "gap_乙酰螺旋霉素",
@@ -6905,7 +10038,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "大环内酯类（呼吸道、口腔感染）"
+   "use": "大环内酯类（呼吸道、口腔感染）",
+   "py": [
+    "yixianluoxuanmeisu"
+   ],
+   "pyi": [
+    "yxlxms"
+   ]
   },
   {
    "id": "gap_麦迪霉素",
@@ -6921,7 +10060,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "大环内酯类（呼吸道、皮肤感染）"
+   "use": "大环内酯类（呼吸道、皮肤感染）",
+   "py": [
+    "maidimeisu"
+   ],
+   "pyi": [
+    "mdms"
+   ]
   },
   {
    "id": "gap_依替米星",
@@ -6937,7 +10082,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "氨基糖苷类（呼吸道、尿路感染）"
+   "use": "氨基糖苷类（呼吸道、尿路感染）",
+   "py": [
+    "yitimixing"
+   ],
+   "pyi": [
+    "ytmx"
+   ]
   },
   {
    "id": "gap_奈替米星",
@@ -6953,7 +10104,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "氨基糖苷类（重症感染）"
+   "use": "氨基糖苷类（重症感染）",
+   "py": [
+    "naitimixing"
+   ],
+   "pyi": [
+    "ntmx"
+   ]
   },
   {
    "id": "gap_土霉素",
@@ -6969,7 +10126,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "四环素类（肠道、皮肤感染）"
+   "use": "四环素类（肠道、皮肤感染）",
+   "py": [
+    "tumeisu"
+   ],
+   "pyi": [
+    "tms"
+   ]
   },
   {
    "id": "gap_洛美沙星",
@@ -6985,7 +10148,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "喹诺酮类（尿路、呼吸道感染）"
+   "use": "喹诺酮类（尿路、呼吸道感染）",
+   "py": [
+    "luomeishaxing"
+   ],
+   "pyi": [
+    "lmsx"
+   ]
   },
   {
    "id": "gap_奥硝唑",
@@ -7001,7 +10170,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗厌氧菌、抗滴虫（妇科、口腔、肠道感染）"
+   "use": "抗厌氧菌、抗滴虫（妇科、口腔、肠道感染）",
+   "py": [
+    "aoxiaozuo"
+   ],
+   "pyi": [
+    "axz"
+   ]
   },
   {
    "id": "gap_吡罗昔康",
@@ -7017,7 +10192,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "长效抗炎镇痛（关节炎）"
+   "use": "长效抗炎镇痛（关节炎）",
+   "py": [
+    "biluoxikang"
+   ],
+   "pyi": [
+    "blxk"
+   ]
   },
   {
    "id": "gap_尼美舒利",
@@ -7033,7 +10214,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗炎镇痛（曾用于儿童退烧，现已限制）"
+   "use": "抗炎镇痛（曾用于儿童退烧，现已限制）",
+   "py": [
+    "nimeishuli"
+   ],
+   "pyi": [
+    "nmsl"
+   ]
   },
   {
    "id": "gap_瑞巴派特",
@@ -7048,7 +10235,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "胃黏膜保护剂（胃溃疡、胃炎）"
+   "use": "胃黏膜保护剂（胃溃疡、胃炎）",
+   "py": [
+    "ruibapaite"
+   ],
+   "pyi": [
+    "rbpt"
+   ]
   },
   {
    "id": "gap_金刚烷胺",
@@ -7064,7 +10257,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗病毒/抗帕金森（甲型流感、帕金森）"
+   "use": "抗病毒/抗帕金森（甲型流感、帕金森）",
+   "py": [
+    "jingangwanan"
+   ],
+   "pyi": [
+    "jgwa"
+   ]
   },
   {
    "id": "gap_干扰素",
@@ -7080,7 +10279,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "免疫调节、抗病毒（乙肝、丙肝等）"
+   "use": "免疫调节、抗病毒（乙肝、丙肝等）",
+   "py": [
+    "ganraosu"
+   ],
+   "pyi": [
+    "grs"
+   ]
   },
   {
    "id": "gap_恩替卡韦",
@@ -7096,7 +10301,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗乙肝病毒"
+   "use": "抗乙肝病毒",
+   "py": [
+    "entikawei"
+   ],
+   "pyi": [
+    "etkw"
+   ]
   },
   {
    "id": "gap_替诺福韦",
@@ -7112,7 +10323,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗乙肝/艾滋病毒"
+   "use": "抗乙肝/艾滋病毒",
+   "py": [
+    "tinuofuwei"
+   ],
+   "pyi": [
+    "tnfw"
+   ]
   },
   {
    "id": "gap_拉米夫定",
@@ -7128,7 +10345,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗乙肝/艾滋病毒"
+   "use": "抗乙肝/艾滋病毒",
+   "py": [
+    "lamifuding"
+   ],
+   "pyi": [
+    "lmfd"
+   ]
   },
   {
    "id": "gap_阿德福韦酯",
@@ -7144,7 +10367,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗乙肝病毒"
+   "use": "抗乙肝病毒",
+   "py": [
+    "adefuweizhi"
+   ],
+   "pyi": [
+    "adfwz"
+   ]
   },
   {
    "id": "gap_替比夫定",
@@ -7160,7 +10389,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗乙肝病毒"
+   "use": "抗乙肝病毒",
+   "py": [
+    "tibifuding"
+   ],
+   "pyi": [
+    "tbfd"
+   ]
   },
   {
    "id": "gap_两性霉素B",
@@ -7176,7 +10411,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗真菌药（重症系统性真菌感染）"
+   "use": "抗真菌药（重症系统性真菌感染）",
+   "py": [
+    "liangxingmeisu"
+   ],
+   "pyi": [
+    "lxms"
+   ]
   },
   {
    "id": "gap_伏立康唑",
@@ -7192,7 +10433,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗真菌药（侵袭性曲霉等）"
+   "use": "抗真菌药（侵袭性曲霉等）",
+   "py": [
+    "fulikangzuo"
+   ],
+   "pyi": [
+    "flkz"
+   ]
   },
   {
    "id": "gap_卡泊芬净",
@@ -7208,7 +10455,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗真菌药（念珠菌、曲霉）"
+   "use": "抗真菌药（念珠菌、曲霉）",
+   "py": [
+    "kapofenjing"
+   ],
+   "pyi": [
+    "kpfj"
+   ]
   },
   {
    "id": "gap_酮替芬",
@@ -7223,7 +10476,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "抗组胺、肥大细胞稳定（过敏、哮喘预防）"
+   "use": "抗组胺、肥大细胞稳定（过敏、哮喘预防）",
+   "py": [
+    "tongtifen"
+   ],
+   "pyi": [
+    "ttf"
+   ]
   },
   {
    "id": "gap_司他斯汀",
@@ -7238,7 +10497,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "抗组胺药（过敏性鼻炎、荨麻疹）"
+   "use": "抗组胺药（过敏性鼻炎、荨麻疹）",
+   "py": [
+    "sitasiting"
+   ],
+   "pyi": [
+    "stst"
+   ]
   },
   {
    "id": "gap_替米沙坦",
@@ -7254,7 +10519,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "ARB 类降压药（高血压）"
+   "use": "ARB 类降压药（高血压）",
+   "py": [
+    "timishatan"
+   ],
+   "pyi": [
+    "tmst"
+   ]
   },
   {
    "id": "gap_坎地沙坦",
@@ -7270,7 +10541,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "ARB 类降压药（高血压、心衰）"
+   "use": "ARB 类降压药（高血压、心衰）",
+   "py": [
+    "kandishatan"
+   ],
+   "pyi": [
+    "kdst"
+   ]
   },
   {
    "id": "gap_福辛普利",
@@ -7286,7 +10563,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "ACEI 类降压药（高血压、心衰）"
+   "use": "ACEI 类降压药（高血压、心衰）",
+   "py": [
+    "fuxinpuli"
+   ],
+   "pyi": [
+    "fxpl"
+   ]
   },
   {
    "id": "gap_赖诺普利",
@@ -7302,7 +10585,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "ACEI 类降压药（高血压、心衰）"
+   "use": "ACEI 类降压药（高血压、心衰）",
+   "py": [
+    "lainuopuli"
+   ],
+   "pyi": [
+    "lnpl"
+   ]
   },
   {
    "id": "gap_吲达帕胺",
@@ -7318,7 +10607,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "利尿类降压药"
+   "use": "利尿类降压药",
+   "py": [
+    "yindapaan"
+   ],
+   "pyi": [
+    "ydpa"
+   ]
   },
   {
    "id": "gap_托拉塞米",
@@ -7334,7 +10629,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "袢利尿剂（水肿、心衰）"
+   "use": "袢利尿剂（水肿、心衰）",
+   "py": [
+    "tuolasaimi"
+   ],
+   "pyi": [
+    "tlsm"
+   ]
   },
   {
    "id": "gap_曲美他嗪",
@@ -7350,7 +10651,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗心绞痛药（改善心肌代谢）"
+   "use": "抗心绞痛药（改善心肌代谢）",
+   "py": [
+    "qumeitaqin"
+   ],
+   "pyi": [
+    "qmtq"
+   ]
   },
   {
    "id": "gap_尼可地尔",
@@ -7366,7 +10673,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗心绞痛药（扩张冠状动脉）"
+   "use": "抗心绞痛药（扩张冠状动脉）",
+   "py": [
+    "nikedier"
+   ],
+   "pyi": [
+    "nkde"
+   ]
   },
   {
    "id": "gap_非诺贝特",
@@ -7382,7 +10695,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "贝特类降脂药（高甘油三酯）"
+   "use": "贝特类降脂药（高甘油三酯）",
+   "py": [
+    "feinuobeite"
+   ],
+   "pyi": [
+    "fnbt"
+   ]
   },
   {
    "id": "gap_普罗布考",
@@ -7398,7 +10717,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "降脂、抗氧化药"
+   "use": "降脂、抗氧化药",
+   "py": [
+    "puluobukao"
+   ],
+   "pyi": [
+    "plbk"
+   ]
   },
   {
    "id": "gap_藻酸双酯钠",
@@ -7414,7 +10739,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "降脂、抗凝辅助用药"
+   "use": "降脂、抗凝辅助用药",
+   "py": [
+    "zaosuanshuangzhina"
+   ],
+   "pyi": [
+    "zsszn"
+   ]
   },
   {
    "id": "gap_决奈达隆",
@@ -7430,7 +10761,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗心律失常药（房颤）"
+   "use": "抗心律失常药（房颤）",
+   "py": [
+    "juenaidalong"
+   ],
+   "pyi": [
+    "jndl"
+   ]
   },
   {
    "id": "gap_伊布利特",
@@ -7446,7 +10783,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗心律失常药（房颤复律）"
+   "use": "抗心律失常药（房颤复律）",
+   "py": [
+    "yibulite"
+   ],
+   "pyi": [
+    "yblt"
+   ]
   },
   {
    "id": "gap_格列吡嗪",
@@ -7462,7 +10805,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "磺酰脲类降糖药（2 型糖尿病）"
+   "use": "磺酰脲类降糖药（2 型糖尿病）",
+   "py": [
+    "geliebiqin"
+   ],
+   "pyi": [
+    "glbq"
+   ]
   },
   {
    "id": "gap_西格列汀",
@@ -7478,7 +10827,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "DPP-4 抑制剂（2 型糖尿病）"
+   "use": "DPP-4 抑制剂（2 型糖尿病）",
+   "py": [
+    "xigelieting"
+   ],
+   "pyi": [
+    "xglt"
+   ]
   },
   {
    "id": "gap_沙格列汀",
@@ -7494,7 +10849,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "DPP-4 抑制剂（2 型糖尿病）"
+   "use": "DPP-4 抑制剂（2 型糖尿病）",
+   "py": [
+    "shagelieting"
+   ],
+   "pyi": [
+    "sglt"
+   ]
   },
   {
    "id": "gap_达格列净",
@@ -7510,7 +10871,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "SGLT2 抑制剂（2 型糖尿病，兼顾心肾保护）"
+   "use": "SGLT2 抑制剂（2 型糖尿病，兼顾心肾保护）",
+   "py": [
+    "dageliejing"
+   ],
+   "pyi": [
+    "dglj"
+   ]
   },
   {
    "id": "gap_利拉鲁肽",
@@ -7526,7 +10893,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "GLP-1 受体激动剂（2 型糖尿病、减重）"
+   "use": "GLP-1 受体激动剂（2 型糖尿病、减重）",
+   "py": [
+    "lilalutai"
+   ],
+   "pyi": [
+    "lllt"
+   ]
   },
   {
    "id": "gap_甲巯咪唑",
@@ -7542,7 +10915,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗甲状腺药（甲状腺功能亢进）"
+   "use": "抗甲状腺药（甲状腺功能亢进）",
+   "py": [
+    "jiaqiumizuo"
+   ],
+   "pyi": [
+    "jqmz"
+   ]
   },
   {
    "id": "gap_丙硫氧嘧啶",
@@ -7558,7 +10937,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗甲状腺药（甲亢）"
+   "use": "抗甲状腺药（甲亢）",
+   "py": [
+    "bingliuyangmiding"
+   ],
+   "pyi": [
+    "blymd"
+   ]
   },
   {
    "id": "gap_卡比马唑",
@@ -7574,7 +10959,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗甲状腺药（甲亢）"
+   "use": "抗甲状腺药（甲亢）",
+   "py": [
+    "kabimazuo"
+   ],
+   "pyi": [
+    "kbmz"
+   ]
   },
   {
    "id": "gap_非布司他",
@@ -7590,7 +10981,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "降尿酸药（痛风）"
+   "use": "降尿酸药（痛风）",
+   "py": [
+    "feibusita"
+   ],
+   "pyi": [
+    "fbst"
+   ]
   },
   {
    "id": "gap_苯溴马隆",
@@ -7606,7 +11003,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "促尿酸排泄药（痛风）"
+   "use": "促尿酸排泄药（痛风）",
+   "py": [
+    "benxiumalong"
+   ],
+   "pyi": [
+    "bxml"
+   ]
   },
   {
    "id": "gap_碳酸氢钠",
@@ -7622,7 +11025,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗酸、碱化尿液"
+   "use": "抗酸、碱化尿液",
+   "py": [
+    "tansuanqingna"
+   ],
+   "pyi": [
+    "tsqn"
+   ]
   },
   {
    "id": "gap_碳酸钙",
@@ -7638,7 +11047,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "补钙"
+   "use": "补钙",
+   "py": [
+    "tansuangai"
+   ],
+   "pyi": [
+    "tsg"
+   ]
   },
   {
    "id": "gap_骨化三醇",
@@ -7654,7 +11069,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "活性维生素D（钙磷代谢、骨质疏松）"
+   "use": "活性维生素D（钙磷代谢、骨质疏松）",
+   "py": [
+    "guhuasanchun"
+   ],
+   "pyi": [
+    "ghsc"
+   ]
   },
   {
    "id": "gap_阿法骨化醇",
@@ -7670,7 +11091,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "活性维生素D（骨质疏松、肾性骨病）"
+   "use": "活性维生素D（骨质疏松、肾性骨病）",
+   "py": [
+    "afaguhuachun"
+   ],
+   "pyi": [
+    "afghc"
+   ]
   },
   {
    "id": "gap_溴己新",
@@ -7686,7 +11113,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "祛痰药（痰多黏稠）"
+   "use": "祛痰药（痰多黏稠）",
+   "py": [
+    "xiujixin"
+   ],
+   "pyi": [
+    "xjx"
+   ]
   },
   {
    "id": "gap_羧甲司坦",
@@ -7702,7 +11135,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "祛痰药（痰液黏稠）"
+   "use": "祛痰药（痰液黏稠）",
+   "py": [
+    "suojiasitan"
+   ],
+   "pyi": [
+    "sjst"
+   ]
   },
   {
    "id": "gap_特布他林",
@@ -7718,7 +11157,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "β2 激动剂（支气管哮喘、喘息）"
+   "use": "β2 激动剂（支气管哮喘、喘息）",
+   "py": [
+    "tebutalin"
+   ],
+   "pyi": [
+    "tbtl"
+   ]
   },
   {
    "id": "gap_可待因",
@@ -7734,7 +11179,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "中枢镇咳药（干咳，有成瘾性）"
+   "use": "中枢镇咳药（干咳，有成瘾性）",
+   "py": [
+    "kedaiyin"
+   ],
+   "pyi": [
+    "kdy"
+   ]
   },
   {
    "id": "gap_喷托维林",
@@ -7750,7 +11201,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "镇咳药（干咳）"
+   "use": "镇咳药（干咳）",
+   "py": [
+    "pentuoweilin"
+   ],
+   "pyi": [
+    "ptwl"
+   ]
   },
   {
    "id": "gap_桉柠蒎",
@@ -7766,7 +11223,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "祛痰、促排（痰多）"
+   "use": "祛痰、促排（痰多）",
+   "py": [
+    "anningpai"
+   ],
+   "pyi": [
+    "anp"
+   ]
   },
   {
    "id": "gap_枸橼酸铋钾",
@@ -7782,7 +11245,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "胃黏膜保护、根除幽门螺杆菌"
+   "use": "胃黏膜保护、根除幽门螺杆菌",
+   "py": [
+    "juyuansuanbijia"
+   ],
+   "pyi": [
+    "jysbj"
+   ]
   },
   {
    "id": "gap_伊托必利",
@@ -7798,7 +11267,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "促胃肠动力（消化不良、腹胀）"
+   "use": "促胃肠动力（消化不良、腹胀）",
+   "py": [
+    "yituobili"
+   ],
+   "pyi": [
+    "ytbl"
+   ]
   },
   {
    "id": "gap_甲氧氯普胺",
@@ -7814,7 +11289,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "止吐、促动力（恶心呕吐）"
+   "use": "止吐、促动力（恶心呕吐）",
+   "py": [
+    "jiayanglvpuan"
+   ],
+   "pyi": [
+    "jylpa"
+   ]
   },
   {
    "id": "gap_昂丹司琼",
@@ -7830,7 +11311,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "止吐（化疗、术后呕吐）"
+   "use": "止吐（化疗、术后呕吐）",
+   "py": [
+    "angdansiqiong"
+   ],
+   "pyi": [
+    "adsq"
+   ]
   },
   {
    "id": "gap_格拉司琼",
@@ -7846,7 +11333,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "止吐（化疗、术后呕吐）"
+   "use": "止吐（化疗、术后呕吐）",
+   "py": [
+    "gelasiqiong"
+   ],
+   "pyi": [
+    "glsq"
+   ]
   },
   {
    "id": "gap_洛哌丁胺",
@@ -7862,7 +11355,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "止泻药（急慢性腹泻）"
+   "use": "止泻药（急慢性腹泻）",
+   "py": [
+    "luopaidingan"
+   ],
+   "pyi": [
+    "lpda"
+   ]
   },
   {
    "id": "gap_地衣芽孢杆菌",
@@ -7878,7 +11377,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "益生菌（调节肠道菌群）"
+   "use": "益生菌（调节肠道菌群）",
+   "py": [
+    "diyiyabaoganjun"
+   ],
+   "pyi": [
+    "dyybgj"
+   ]
   },
   {
    "id": "gap_胰酶",
@@ -7894,7 +11399,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "消化酶（胰腺外分泌不足）"
+   "use": "消化酶（胰腺外分泌不足）",
+   "py": [
+    "yimei"
+   ],
+   "pyi": [
+    "ym"
+   ]
   },
   {
    "id": "gap_多酶片",
@@ -7910,7 +11421,18 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "助消化（消化不良）"
+   "use": "助消化（消化不良）",
+   "py": [
+    "duomeipian"
+   ],
+   "pyi": [
+    "dmp"
+   ],
+   "ingredients": [
+    "胃蛋白酶",
+    "胰酶",
+    "淀粉酶"
+   ]
   },
   {
    "id": "gap_熊去氧胆酸",
@@ -7926,7 +11448,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "利胆药（胆结石、胆汁淤积）"
+   "use": "利胆药（胆结石、胆汁淤积）",
+   "py": [
+    "xiongquyangdansuan"
+   ],
+   "pyi": [
+    "xqyds"
+   ]
   },
   {
    "id": "gap_丁二磺酸腺苷蛋氨酸",
@@ -7942,7 +11470,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "保肝利胆（胆汁淤积）"
+   "use": "保肝利胆（胆汁淤积）",
+   "py": [
+    "dingerhuangsuanxiangandanansuan"
+   ],
+   "pyi": [
+    "dehsxgdas"
+   ]
   },
   {
    "id": "gap_甘草酸二铵",
@@ -7958,7 +11492,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "保肝药（肝炎）"
+   "use": "保肝药（肝炎）",
+   "py": [
+    "gancaosuaneran"
+   ],
+   "pyi": [
+    "gcsea"
+   ]
   },
   {
    "id": "gap_水飞蓟素",
@@ -7974,7 +11514,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "保肝药（肝损伤辅助）"
+   "use": "保肝药（肝损伤辅助）",
+   "py": [
+    "shuifeijisu"
+   ],
+   "pyi": [
+    "sfjs"
+   ]
   },
   {
    "id": "gap_联苯双酯",
@@ -7990,7 +11536,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "保肝降酶药"
+   "use": "保肝降酶药",
+   "py": [
+    "lianbenshuangzhi"
+   ],
+   "pyi": [
+    "lbsz"
+   ]
   },
   {
    "id": "gap_双环醇",
@@ -8006,7 +11558,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "保肝降酶药"
+   "use": "保肝降酶药",
+   "py": [
+    "shuanghuanchun"
+   ],
+   "pyi": [
+    "shc"
+   ]
   },
   {
    "id": "gap_聚乙二醇4000",
@@ -8022,7 +11580,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "渗透性泻药（便秘）"
+   "use": "渗透性泻药（便秘）",
+   "py": [
+    "juyierchun"
+   ],
+   "pyi": [
+    "jyec"
+   ]
   },
   {
    "id": "gap_复方聚乙二醇电解质",
@@ -8038,7 +11602,19 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "肠道清洁（肠镜前准备）"
+   "use": "肠道清洁（肠镜前准备）",
+   "py": [
+    "fufangjuyierchundianjiezhi"
+   ],
+   "pyi": [
+    "ffjyecdjz"
+   ],
+   "ingredients": [
+    "聚乙二醇4000",
+    "氯化钠",
+    "氯化钾",
+    "碳酸氢钠"
+   ]
   },
   {
    "id": "gap_阿普唑仑",
@@ -8054,7 +11630,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "苯二氮䓬类（抗焦虑、惊恐障碍）"
+   "use": "苯二氮䓬类（抗焦虑、惊恐障碍）",
+   "py": [
+    "apuzuolun"
+   ],
+   "pyi": [
+    "apzl"
+   ]
   },
   {
    "id": "gap_氯硝西泮",
@@ -8070,7 +11652,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "苯二氮䓬类（抗癫痫、惊恐障碍）"
+   "use": "苯二氮䓬类（抗癫痫、惊恐障碍）",
+   "py": [
+    "lvxiaoxipan"
+   ],
+   "pyi": [
+    "lxxp"
+   ]
   },
   {
    "id": "gap_劳拉西泮",
@@ -8086,7 +11674,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "苯二氮䓬类（抗焦虑、镇静）"
+   "use": "苯二氮䓬类（抗焦虑、镇静）",
+   "py": [
+    "laolaxipan"
+   ],
+   "pyi": [
+    "llxp"
+   ]
   },
   {
    "id": "gap_佐匹克隆",
@@ -8102,7 +11696,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "镇静催眠药（失眠）"
+   "use": "镇静催眠药（失眠）",
+   "py": [
+    "zuopikelong"
+   ],
+   "pyi": [
+    "zpkl"
+   ]
   },
   {
    "id": "gap_咪达唑仑",
@@ -8118,7 +11718,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "苯二氮䓬类（镇静、麻醉诱导）"
+   "use": "苯二氮䓬类（镇静、麻醉诱导）",
+   "py": [
+    "midazuolun"
+   ],
+   "pyi": [
+    "mdzl"
+   ]
   },
   {
    "id": "gap_苯巴比妥",
@@ -8134,7 +11740,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗癫痫、镇静药"
+   "use": "抗癫痫、镇静药",
+   "py": [
+    "benbabituo"
+   ],
+   "pyi": [
+    "bbbt"
+   ]
   },
   {
    "id": "gap_左乙拉西坦",
@@ -8150,7 +11762,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗癫痫药"
+   "use": "抗癫痫药",
+   "py": [
+    "zuoyilaxitan"
+   ],
+   "pyi": [
+    "zylxt"
+   ]
   },
   {
    "id": "gap_拉莫三嗪",
@@ -8166,7 +11784,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗癫痫、双相情感障碍"
+   "use": "抗癫痫、双相情感障碍",
+   "py": [
+    "lamosanqin"
+   ],
+   "pyi": [
+    "lmsq"
+   ]
   },
   {
    "id": "gap_西酞普兰",
@@ -8182,7 +11806,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "SSRI 抗抑郁药"
+   "use": "SSRI 抗抑郁药",
+   "py": [
+    "xitaipulan"
+   ],
+   "pyi": [
+    "xtpl"
+   ]
   },
   {
    "id": "gap_艾司西酞普兰",
@@ -8198,7 +11828,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "SSRI 抗抑郁药"
+   "use": "SSRI 抗抑郁药",
+   "py": [
+    "aisixitaipulan"
+   ],
+   "pyi": [
+    "asxtpl"
+   ]
   },
   {
    "id": "gap_利培酮",
@@ -8214,7 +11850,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗精神病药（精神分裂、双相）"
+   "use": "抗精神病药（精神分裂、双相）",
+   "py": [
+    "lipeitong"
+   ],
+   "pyi": [
+    "lpt"
+   ]
   },
   {
    "id": "gap_阿立哌唑",
@@ -8230,7 +11872,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗精神病药"
+   "use": "抗精神病药",
+   "py": [
+    "alipaizuo"
+   ],
+   "pyi": [
+    "alpz"
+   ]
   },
   {
    "id": "gap_氟哌啶醇",
@@ -8246,7 +11894,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗精神病药、止吐"
+   "use": "抗精神病药、止吐",
+   "py": [
+    "fupaidingchun"
+   ],
+   "pyi": [
+    "fpdc"
+   ]
   },
   {
    "id": "gap_奋乃静",
@@ -8262,7 +11916,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗精神病药"
+   "use": "抗精神病药",
+   "py": [
+    "fennaijing"
+   ],
+   "pyi": [
+    "fnj"
+   ]
   },
   {
    "id": "gap_舒必利",
@@ -8278,7 +11938,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗精神病药、止吐"
+   "use": "抗精神病药、止吐",
+   "py": [
+    "shubili"
+   ],
+   "pyi": [
+    "sbl"
+   ]
   },
   {
    "id": "gap_哌替啶",
@@ -8294,7 +11960,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "阿片类镇痛药（剧痛）"
+   "use": "阿片类镇痛药（剧痛）",
+   "py": [
+    "paitiding"
+   ],
+   "pyi": [
+    "ptd"
+   ]
   },
   {
    "id": "gap_曲马多",
@@ -8310,7 +11982,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "中枢性镇痛药（中重度疼痛）"
+   "use": "中枢性镇痛药（中重度疼痛）",
+   "py": [
+    "qumaduo"
+   ],
+   "pyi": [
+    "qmd"
+   ]
   },
   {
    "id": "gap_芬太尼",
@@ -8326,7 +12004,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "阿片类镇痛药（麻醉、剧痛）"
+   "use": "阿片类镇痛药（麻醉、剧痛）",
+   "py": [
+    "fentaini"
+   ],
+   "pyi": [
+    "ftn"
+   ]
   },
   {
    "id": "gap_羟考酮",
@@ -8342,7 +12026,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "阿片类镇痛药（癌痛、剧痛）"
+   "use": "阿片类镇痛药（癌痛、剧痛）",
+   "py": [
+    "qiangkaotong"
+   ],
+   "pyi": [
+    "qkt"
+   ]
   },
   {
    "id": "gap_罗通定",
@@ -8358,7 +12048,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "镇痛、镇静药（头痛、痛经）"
+   "use": "镇痛、镇静药（头痛、痛经）",
+   "py": [
+    "luotongding"
+   ],
+   "pyi": [
+    "ltd"
+   ]
   },
   {
    "id": "gap_吗啡",
@@ -8373,7 +12069,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "阿片类镇痛药（剧痛、癌痛）"
+   "use": "阿片类镇痛药（剧痛、癌痛）",
+   "py": [
+    "mafei"
+   ],
+   "pyi": [
+    "mf"
+   ]
   },
   {
    "id": "gap_氯丙嗪",
@@ -8388,7 +12090,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "抗精神病药，也用于止吐、镇静"
+   "use": "抗精神病药，也用于止吐、镇静",
+   "py": [
+    "lvbingqin"
+   ],
+   "pyi": [
+    "lbq"
+   ]
   },
   {
    "id": "gap_氨酚羟考酮",
@@ -8404,7 +12112,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "复方镇痛药（对乙酰氨基酚 + 羟考酮）"
+   "use": "复方镇痛药（对乙酰氨基酚 + 羟考酮）",
+   "py": [
+    "anfenqiangkaotong"
+   ],
+   "pyi": [
+    "afqkt"
+   ]
   },
   {
    "id": "gap_炔雌醇",
@@ -8420,7 +12134,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "雌激素（避孕、激素替代，常配孕激素）"
+   "use": "雌激素（避孕、激素替代，常配孕激素）",
+   "py": [
+    "guicichun"
+   ],
+   "pyi": [
+    "gcc"
+   ]
   },
   {
    "id": "gap_米非司酮",
@@ -8436,7 +12156,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗孕激素（药物流产、紧急避孕、子宫肌瘤）"
+   "use": "抗孕激素（药物流产、紧急避孕、子宫肌瘤）",
+   "py": [
+    "mifeisitong"
+   ],
+   "pyi": [
+    "mfst"
+   ]
   },
   {
    "id": "gap_己烯雌酚",
@@ -8452,7 +12178,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "雌激素（历史用药，现已限用）"
+   "use": "雌激素（历史用药，现已限用）",
+   "py": [
+    "jixicifen"
+   ],
+   "pyi": [
+    "jxcf"
+   ]
   },
   {
    "id": "gap_替勃龙",
@@ -8468,7 +12200,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "激素替代（更年期）"
+   "use": "激素替代（更年期）",
+   "py": [
+    "tibolong"
+   ],
+   "pyi": [
+    "tbl"
+   ]
   },
   {
    "id": "gap_坦索罗辛",
@@ -8484,7 +12222,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "α受体阻滞剂（前列腺增生、辅助排石）"
+   "use": "α受体阻滞剂（前列腺增生、辅助排石）",
+   "py": [
+    "tansuoluoxin"
+   ],
+   "pyi": [
+    "tslx"
+   ]
   },
   {
    "id": "gap_非那雄胺",
@@ -8500,7 +12244,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "5α还原酶抑制剂（前列腺增生、脱发）"
+   "use": "5α还原酶抑制剂（前列腺增生、脱发）",
+   "py": [
+    "feinaxiongan"
+   ],
+   "pyi": [
+    "fnxa"
+   ]
   },
   {
    "id": "gap_度他雄胺",
@@ -8516,7 +12266,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "5α还原酶抑制剂（前列腺增生）"
+   "use": "5α还原酶抑制剂（前列腺增生）",
+   "py": [
+    "dutaxiongan"
+   ],
+   "pyi": [
+    "dtxa"
+   ]
   },
   {
    "id": "gap_托特罗定",
@@ -8532,7 +12288,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗胆碱药（膀胱过度活动、尿频）"
+   "use": "抗胆碱药（膀胱过度活动、尿频）",
+   "py": [
+    "tuoteluoding"
+   ],
+   "pyi": [
+    "ttld"
+   ]
   },
   {
    "id": "gap_索利那新",
@@ -8548,7 +12310,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗胆碱药（膀胱过度活动）"
+   "use": "抗胆碱药（膀胱过度活动）",
+   "py": [
+    "suolinaxin"
+   ],
+   "pyi": [
+    "slnx"
+   ]
   },
   {
    "id": "gap_黄酮哌酯",
@@ -8564,7 +12332,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "泌尿解痉药（尿频尿急）"
+   "use": "泌尿解痉药（尿频尿急）",
+   "py": [
+    "huangtongpaizhi"
+   ],
+   "pyi": [
+    "htpz"
+   ]
   },
   {
    "id": "gap_肝素",
@@ -8580,7 +12354,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗凝药（防血栓）"
+   "use": "抗凝药（防血栓）",
+   "py": [
+    "gansu"
+   ],
+   "pyi": [
+    "gs"
+   ]
   },
   {
    "id": "gap_利伐沙班",
@@ -8596,7 +12376,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "新型口服抗凝药（防血栓、房颤）"
+   "use": "新型口服抗凝药（防血栓、房颤）",
+   "py": [
+    "lifashaban"
+   ],
+   "pyi": [
+    "lfsb"
+   ]
   },
   {
    "id": "gap_达比加群",
@@ -8612,7 +12398,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "新型口服抗凝药（房颤、血栓）"
+   "use": "新型口服抗凝药（房颤、血栓）",
+   "py": [
+    "dabijiaqun"
+   ],
+   "pyi": [
+    "dbjq"
+   ]
   },
   {
    "id": "gap_替格瑞洛",
@@ -8628,7 +12420,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗血小板药（急性冠脉、支架术后）"
+   "use": "抗血小板药（急性冠脉、支架术后）",
+   "py": [
+    "tigeruiluo"
+   ],
+   "pyi": [
+    "tgrl"
+   ]
   },
   {
    "id": "gap_腺苷钴胺",
@@ -8644,7 +12442,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "维生素B12 类（营养、神经）"
+   "use": "维生素B12 类（营养、神经）",
+   "py": [
+    "xianganguan"
+   ],
+   "pyi": [
+    "xgga"
+   ]
   },
   {
    "id": "gap_氨甲环酸",
@@ -8660,7 +12464,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "止血药（纤溶亢进性出血）"
+   "use": "止血药（纤溶亢进性出血）",
+   "py": [
+    "anjiahuansuan"
+   ],
+   "pyi": [
+    "ajhs"
+   ]
   },
   {
    "id": "gap_氨甲苯酸",
@@ -8676,7 +12486,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "止血药"
+   "use": "止血药",
+   "py": [
+    "anjiabensuan"
+   ],
+   "pyi": [
+    "ajbs"
+   ]
   },
   {
    "id": "gap_鱼油",
@@ -8691,7 +12507,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "营养补充（Omega-3）"
+   "use": "营养补充（Omega-3）",
+   "py": [
+    "yuyou"
+   ],
+   "pyi": [
+    "yy"
+   ]
   },
   {
    "id": "gap_鱼肝油",
@@ -8706,7 +12528,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "营养补充（维生素 A/D）"
+   "use": "营养补充（维生素 A/D）",
+   "py": [
+    "yuganyou"
+   ],
+   "pyi": [
+    "ygy"
+   ]
   },
   {
    "id": "gap_环孢素",
@@ -8721,7 +12549,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "免疫抑制剂（器官移植、自身免疫病）"
+   "use": "免疫抑制剂（器官移植、自身免疫病）",
+   "py": [
+    "huanbaosu"
+   ],
+   "pyi": [
+    "hbs"
+   ]
   },
   {
    "id": "gap_他克莫司",
@@ -8736,7 +12570,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "免疫抑制剂（移植、湿疹外用）"
+   "use": "免疫抑制剂（移植、湿疹外用）",
+   "py": [
+    "takemosi"
+   ],
+   "pyi": [
+    "tkms"
+   ]
   },
   {
    "id": "gap_吗替麦考酚酯",
@@ -8751,7 +12591,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "免疫抑制剂（器官移植）"
+   "use": "免疫抑制剂（器官移植）",
+   "py": [
+    "matimaikaofenzhi"
+   ],
+   "pyi": [
+    "mtmkfz"
+   ]
   },
   {
    "id": "gap_来氟米特",
@@ -8766,7 +12612,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "免疫抑制剂（类风湿关节炎）"
+   "use": "免疫抑制剂（类风湿关节炎）",
+   "py": [
+    "laifumite"
+   ],
+   "pyi": [
+    "lfmt"
+   ]
   },
   {
    "id": "gap_硫唑嘌呤",
@@ -8782,7 +12634,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "免疫抑制剂（移植、自身免疫病）"
+   "use": "免疫抑制剂（移植、自身免疫病）",
+   "py": [
+    "liuzuopiaoling"
+   ],
+   "pyi": [
+    "lzpl"
+   ]
   },
   {
    "id": "gap_甲氨蝶呤",
@@ -8797,7 +12655,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "抗肿瘤/免疫抑制（类风湿、肿瘤）"
+   "use": "抗肿瘤/免疫抑制（类风湿、肿瘤）",
+   "py": [
+    "jiaandieling"
+   ],
+   "pyi": [
+    "jadl"
+   ]
   },
   {
    "id": "gap_雷公藤",
@@ -8813,7 +12677,13 @@ const G6PD_DATA = {
     "S3"
    ],
    "aliases": [],
-   "use": "祛风除湿、消肿止痛（类风湿，毒性较大）"
+   "use": "祛风除湿、消肿止痛（类风湿，毒性较大）",
+   "py": [
+    "leigongteng"
+   ],
+   "pyi": [
+    "lgt"
+   ]
   },
   {
    "id": "gap_沙利度胺",
@@ -8828,7 +12698,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "免疫调节/抗肿瘤（多发性骨髓瘤）"
+   "use": "免疫调节/抗肿瘤（多发性骨髓瘤）",
+   "py": [
+    "shaliduan"
+   ],
+   "pyi": [
+    "slda"
+   ]
   },
   {
    "id": "gap_环磷酰胺",
@@ -8844,7 +12720,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "化疗、免疫抑制"
+   "use": "化疗、免疫抑制",
+   "py": [
+    "huanlinxianan"
+   ],
+   "pyi": [
+    "hlxa"
+   ]
   },
   {
    "id": "gap_顺铂",
@@ -8860,7 +12742,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "化疗（多种实体瘤）"
+   "use": "化疗（多种实体瘤）",
+   "py": [
+    "shunbo"
+   ],
+   "pyi": [
+    "sb"
+   ]
   },
   {
    "id": "gap_卡铂",
@@ -8876,7 +12764,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "化疗（多种实体瘤）"
+   "use": "化疗（多种实体瘤）",
+   "py": [
+    "kabo"
+   ],
+   "pyi": [
+    "kb"
+   ]
   },
   {
    "id": "gap_紫杉醇",
@@ -8892,7 +12786,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "化疗（乳腺癌、卵巢癌等）"
+   "use": "化疗（乳腺癌、卵巢癌等）",
+   "py": [
+    "zishanchun"
+   ],
+   "pyi": [
+    "zsc"
+   ]
   },
   {
    "id": "gap_多西他赛",
@@ -8908,7 +12808,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "化疗（乳腺癌、肺癌等）"
+   "use": "化疗（乳腺癌、肺癌等）",
+   "py": [
+    "duoxitasai"
+   ],
+   "pyi": [
+    "dxts"
+   ]
   },
   {
    "id": "gap_氟尿嘧啶",
@@ -8924,7 +12830,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "化疗（消化道肿瘤等）"
+   "use": "化疗（消化道肿瘤等）",
+   "py": [
+    "funiaomiding"
+   ],
+   "pyi": [
+    "fnmd"
+   ]
   },
   {
    "id": "gap_吉西他滨",
@@ -8940,7 +12852,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "化疗（胰腺癌、肺癌等）"
+   "use": "化疗（胰腺癌、肺癌等）",
+   "py": [
+    "jixitabin"
+   ],
+   "pyi": [
+    "jxtb"
+   ]
   },
   {
    "id": "gap_表柔比星",
@@ -8956,7 +12874,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "化疗（乳腺癌等）"
+   "use": "化疗（乳腺癌等）",
+   "py": [
+    "biaoroubixing"
+   ],
+   "pyi": [
+    "brbx"
+   ]
   },
   {
    "id": "gap_伊马替尼",
@@ -8972,7 +12896,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "靶向药（慢粒白血病、胃肠道间质瘤）"
+   "use": "靶向药（慢粒白血病、胃肠道间质瘤）",
+   "py": [
+    "yimatini"
+   ],
+   "pyi": [
+    "ymtn"
+   ]
   },
   {
    "id": "gap_吉非替尼",
@@ -8988,7 +12918,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "靶向药（EGFR 突变肺癌）"
+   "use": "靶向药（EGFR 突变肺癌）",
+   "py": [
+    "jifeitini"
+   ],
+   "pyi": [
+    "jftn"
+   ]
   },
   {
    "id": "gap_培美曲塞",
@@ -9004,7 +12940,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "化疗（肺癌、间皮瘤）"
+   "use": "化疗（肺癌、间皮瘤）",
+   "py": [
+    "peimeiqusai"
+   ],
+   "pyi": [
+    "pmqs"
+   ]
   },
   {
    "id": "gap_依托泊苷",
@@ -9020,7 +12962,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "化疗（小细胞肺癌、淋巴瘤）"
+   "use": "化疗（小细胞肺癌、淋巴瘤）",
+   "py": [
+    "yituopogan"
+   ],
+   "pyi": [
+    "ytpg"
+   ]
   },
   {
    "id": "gap_利福平",
@@ -9036,7 +12984,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗结核药（结核、麻风）"
+   "use": "抗结核药（结核、麻风）",
+   "py": [
+    "lifuping"
+   ],
+   "pyi": [
+    "lfp"
+   ]
   },
   {
    "id": "gap_吡嗪酰胺",
@@ -9052,7 +13006,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗结核药"
+   "use": "抗结核药",
+   "py": [
+    "biqinxianan"
+   ],
+   "pyi": [
+    "bqxa"
+   ]
   },
   {
    "id": "gap_对氨基水杨酸",
@@ -9068,7 +13028,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗结核药"
+   "use": "抗结核药",
+   "py": [
+    "duianjishuiyangsuan"
+   ],
+   "pyi": [
+    "dajsys"
+   ]
   },
   {
    "id": "gap_小儿柴桂退热颗粒",
@@ -9084,7 +13050,21 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "发汗解表（小儿发热）"
+   "use": "发汗解表（小儿发热）",
+   "py": [
+    "xiaoerchaiguituirekeli"
+   ],
+   "pyi": [
+    "xecgtrkl"
+   ],
+   "ingredients": [
+    "柴胡",
+    "桂枝",
+    "葛根",
+    "黄芩",
+    "白芍",
+    "蝉蜕"
+   ]
   },
   {
    "id": "gap_醒脾养儿颗粒",
@@ -9100,7 +13080,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "醒脾开胃（小儿厌食）"
+   "use": "醒脾开胃（小儿厌食）",
+   "py": [
+    "xingpiyangerkeli"
+   ],
+   "pyi": [
+    "xpyekl"
+   ]
   },
   {
    "id": "gap_小儿七星茶",
@@ -9116,7 +13102,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "开胃消滞（小儿积食、夜啼）"
+   "use": "开胃消滞（小儿积食、夜啼）",
+   "py": [
+    "xiaoerqixingcha"
+   ],
+   "pyi": [
+    "xeqxc"
+   ]
   },
   {
    "id": "gap_健儿消食口服液",
@@ -9132,7 +13124,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "健脾消食（小儿厌食）"
+   "use": "健脾消食（小儿厌食）",
+   "py": [
+    "jianerxiaoshikoufuye"
+   ],
+   "pyi": [
+    "jexskfy"
+   ]
   },
   {
    "id": "gap_神曲消食口服液",
@@ -9148,7 +13146,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "消食导滞（消化不良）"
+   "use": "消食导滞（消化不良）",
+   "py": [
+    "shenquxiaoshikoufuye"
+   ],
+   "pyi": [
+    "sqxskfy"
+   ]
   },
   {
    "id": "gap_藿香正气水",
@@ -9164,7 +13168,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "解表化湿（中暑、胃肠型感冒）"
+   "use": "解表化湿（中暑、胃肠型感冒）",
+   "py": [
+    "huoxiangzhengqishui"
+   ],
+   "pyi": [
+    "hxzqs"
+   ]
   },
   {
    "id": "gap_参苓白术散",
@@ -9180,7 +13190,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "健脾益气（脾虚泄泻）"
+   "use": "健脾益气（脾虚泄泻）",
+   "py": [
+    "canlingbaizhusan"
+   ],
+   "pyi": [
+    "clbzs"
+   ]
   },
   {
    "id": "gap_归脾丸",
@@ -9196,7 +13212,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "益气健脾养血（心脾两虚）"
+   "use": "益气健脾养血（心脾两虚）",
+   "py": [
+    "guipiwan"
+   ],
+   "pyi": [
+    "gpw"
+   ]
   },
   {
    "id": "gap_六味地黄丸",
@@ -9212,7 +13234,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "滋阴补肾"
+   "use": "滋阴补肾",
+   "py": [
+    "liuweidihuangwan"
+   ],
+   "pyi": [
+    "lwdhw"
+   ]
   },
   {
    "id": "gap_逍遥丸",
@@ -9228,7 +13256,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "疏肝健脾（肝郁脾虚）"
+   "use": "疏肝健脾（肝郁脾虚）",
+   "py": [
+    "xiaoyaowan"
+   ],
+   "pyi": [
+    "xyw"
+   ]
   },
   {
    "id": "gap_金匮肾气丸",
@@ -9244,7 +13278,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "温补肾阳"
+   "use": "温补肾阳",
+   "py": [
+    "jinkuishenqiwan"
+   ],
+   "pyi": [
+    "jksqw"
+   ]
   },
   {
    "id": "gap_玉屏风颗粒",
@@ -9260,7 +13300,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "益气固表（易感冒、自汗）"
+   "use": "益气固表（易感冒、自汗）",
+   "py": [
+    "yupingfengkeli"
+   ],
+   "pyi": [
+    "ypfkl"
+   ]
   },
   {
    "id": "gap_萘敏维滴眼液",
@@ -9275,7 +13321,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "滴眼液（缓解眼干、充血，含萘甲唑啉）"
+   "use": "滴眼液（缓解眼干、充血，含萘甲唑啉）",
+   "py": [
+    "naiminweidiyanye"
+   ],
+   "pyi": [
+    "nmwdyy"
+   ]
   },
   {
    "id": "gap_夫西地酸乳膏",
@@ -9290,7 +13342,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "外用抗菌（皮肤感染）"
+   "use": "外用抗菌（皮肤感染）",
+   "py": [
+    "fuxidisuanrugao"
+   ],
+   "pyi": [
+    "fxdsrg"
+   ]
   },
   {
    "id": "gap_阿达帕林凝胶",
@@ -9305,7 +13363,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "外用维A酸（痤疮）"
+   "use": "外用维A酸（痤疮）",
+   "py": [
+    "adapalinningjiao"
+   ],
+   "pyi": [
+    "adplnj"
+   ]
   },
   {
    "id": "gap_云南白药",
@@ -9321,7 +13385,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "止血化瘀、消肿止痛（外用/口服）"
+   "use": "止血化瘀、消肿止痛（外用/口服）",
+   "py": [
+    "yunnanbaiyao"
+   ],
+   "pyi": [
+    "ynby"
+   ]
   },
   {
    "id": "gap_湿润烧伤膏",
@@ -9336,7 +13406,13 @@ const G6PD_DATA = {
     "S3"
    ],
    "aliases": [],
-   "use": "外用（烧烫伤、创面）"
+   "use": "外用（烧烫伤、创面）",
+   "py": [
+    "shirunshaoshanggao"
+   ],
+   "pyi": [
+    "srssg"
+   ]
   },
   {
    "id": "gap_布洛芬栓",
@@ -9352,7 +13428,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "退烧、止痛（栓剂，适合不能口服的儿童）"
+   "use": "退烧、止痛（栓剂，适合不能口服的儿童）",
+   "py": [
+    "buluofenshuan"
+   ],
+   "pyi": [
+    "blfs"
+   ]
   },
   {
    "id": "gap_对乙酰氨基酚栓",
@@ -9368,7 +13450,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "退烧、止痛（栓剂）"
+   "use": "退烧、止痛（栓剂）",
+   "py": [
+    "duiyixiananjifenshuan"
+   ],
+   "pyi": [
+    "dyxajfs"
+   ]
   },
   {
    "id": "gap_双氯芬酸钠栓",
@@ -9384,7 +13472,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "抗炎镇痛（栓剂）"
+   "use": "抗炎镇痛（栓剂）",
+   "py": [
+    "shuanglvfensuannashuan"
+   ],
+   "pyi": [
+    "slfsns"
+   ]
   },
   {
    "id": "gap_消炎痛栓",
@@ -9400,7 +13494,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "吲哚美辛栓，抗炎镇痛退烧（栓剂）"
+   "use": "吲哚美辛栓，抗炎镇痛退烧（栓剂）",
+   "py": [
+    "xiaoyantongshuan"
+   ],
+   "pyi": [
+    "xyts"
+   ]
   },
   {
    "id": "gap_小儿布洛芬栓",
@@ -9416,7 +13516,13 @@ const G6PD_DATA = {
     "S2"
    ],
    "aliases": [],
-   "use": "儿童退烧（栓剂）"
+   "use": "儿童退烧（栓剂）",
+   "py": [
+    "xiaoerbuluofenshuan"
+   ],
+   "pyi": [
+    "xeblfs"
+   ]
   },
   {
    "id": "antimalarial_hydroxychloroquine",
@@ -9435,7 +13541,18 @@ const G6PD_DATA = {
     "硫酸羟氯喹",
     "羟氯喹片"
    ],
-   "use": "抗疟药；现主要用于类风湿关节炎、红斑狼疮"
+   "use": "抗疟药；现主要用于类风湿关节炎、红斑狼疮",
+   "py": [
+    "qianglvkui",
+    "liusuanqianglvkui",
+    "qianglvkuipian"
+   ],
+   "pyi": [
+    "qlk",
+    "lsqlk",
+    "qlkp"
+   ],
+   "debate": "与氯喹不同：多国资料认为羟氯喹溶血风险低、相对安全；国内部分资料仍偏保守。"
   },
   {
    "id": "gap2_甲氟喹",
@@ -9451,7 +13568,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "抗疟药（疟疾预防与治疗）"
+   "use": "抗疟药（疟疾预防与治疗）",
+   "py": [
+    "jiafukui"
+   ],
+   "pyi": [
+    "jfk"
+   ]
   },
   {
    "id": "gap2_吡哌酸",
@@ -9467,7 +13590,14 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "喹诺酮类（肠道、尿路感染）"
+   "use": "喹诺酮类（肠道、尿路感染）",
+   "py": [
+    "bipaisuan"
+   ],
+   "pyi": [
+    "bps"
+   ],
+   "debate": "国内部分资料列为慎用；国际资料多视为低风险。本库取保守口径。"
   },
   {
    "id": "gap2_美沙拉嗪",
@@ -9483,7 +13613,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "抗炎药（溃疡性结肠炎）"
+   "use": "抗炎药（溃疡性结肠炎）",
+   "py": [
+    "meishalaqin"
+   ],
+   "pyi": [
+    "mslq"
+   ]
   },
   {
    "id": "gap2_普鲁卡因胺",
@@ -9499,7 +13635,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "抗心律失常药"
+   "use": "抗心律失常药",
+   "py": [
+    "pulukayinan"
+   ],
+   "pyi": [
+    "plkya"
+   ]
   },
   {
    "id": "gap2_肼苯哒嗪",
@@ -9515,7 +13657,13 @@ const G6PD_DATA = {
     "S7"
    ],
    "aliases": [],
-   "use": "血管扩张性降压药"
+   "use": "血管扩张性降压药",
+   "py": [
+    "jingbendaqin"
+   ],
+   "pyi": [
+    "jbdq"
+   ]
   },
   {
    "id": "sulfa_sulfasalazine",
@@ -9536,7 +13684,17 @@ const G6PD_DATA = {
     "sulfasalazine",
     "SASP"
    ],
-   "use": "抗炎药（溃疡性结肠炎、类风湿关节炎）"
+   "use": "抗炎药（溃疡性结肠炎、类风湿关节炎）",
+   "py": [
+    "liudanhuangbiding",
+    "huanganshalaqin",
+    "oudanhuanganbiding"
+   ],
+   "pyi": [
+    "ldhbd",
+    "haslq",
+    "odhabd"
+   ]
   },
   {
    "id": "cv_methyldopa",
@@ -9556,7 +13714,18 @@ const G6PD_DATA = {
     "甲多巴",
     "methyldopa"
    ],
-   "use": "中枢性降压药（常用于妊娠期高血压）"
+   "use": "中枢性降压药（常用于妊娠期高血压）",
+   "py": [
+    "jiajiduoba",
+    "aidaomei",
+    "jiaduoba"
+   ],
+   "pyi": [
+    "jjdb",
+    "adm",
+    "jdb"
+   ],
+   "debate": "RCH 等资料列为避免（可致免疫性溶血）；妊娠期高血压请产科评估。"
   },
   {
    "id": "other_nitazoxanide",
@@ -9574,7 +13743,16 @@ const G6PD_DATA = {
     "nitazoxanide",
     "硝唑尼特片"
    ],
-   "use": "抗寄生虫/抗感染（隐孢子虫、肠道感染）"
+   "use": "抗寄生虫/抗感染（隐孢子虫、肠道感染）",
+   "py": [
+    "xiaozuonite",
+    "xiaozuonitepian"
+   ],
+   "pyi": [
+    "xznt",
+    "xzntp"
+   ],
+   "debate": "结构与硝基呋喃类相关，部分资料列为禁用/慎用。"
   },
   {
    "id": "abx_trimethoprim",
@@ -9594,7 +13772,18 @@ const G6PD_DATA = {
     "三甲氧苄啶",
     "甲氧苄氨嘧啶"
    ],
-   "use": "抗菌增效剂（常与磺胺类合用）"
+   "use": "抗菌增效剂（常与磺胺类合用）",
+   "py": [
+    "jiayangbianding",
+    "sanjiayangbianding",
+    "jiayangbiananmiding"
+   ],
+   "pyi": [
+    "jybd",
+    "sjybd",
+    "jybamd"
+   ],
+   "debate": "复方新诺明成分之一，部分资料列为慎用。"
   },
   {
    "id": "food_bitter_melon",
@@ -9617,7 +13806,25 @@ const G6PD_DATA = {
     "野生苦瓜",
     "苦瓜干"
    ],
-   "use": "蔬菜（清炒、煲汤）"
+   "use": "蔬菜（清炒、煲汤）",
+   "py": [
+    "kugualianggua",
+    "lianggua",
+    "kuguazi",
+    "kuguazhi",
+    "kuguacha",
+    "yeshengkugua",
+    "kuguagan"
+   ],
+   "pyi": [
+    "kglg",
+    "lg",
+    "kgz",
+    "kgc",
+    "yskg",
+    "kgg"
+   ],
+   "debate": "苦瓜籽含 vicine 样物质，有溶血个案；果肉少量通常无碍，避免籽、生食与浓缩汁。"
   },
   {
    "id": "food_blueberry",
@@ -9636,7 +13843,20 @@ const G6PD_DATA = {
     "蓝莓酱",
     "蓝莓汁"
    ],
-   "use": "水果"
+   "use": "水果",
+   "py": [
+    "lanmei",
+    "lanmeigan",
+    "lanmeijiang",
+    "lanmeizhi"
+   ],
+   "pyi": [
+    "lm",
+    "lmg",
+    "lmj",
+    "lmz"
+   ],
+   "debate": "极少数敏感个体个案，证据有限；可少量尝试，避免大量浓缩制品。"
   },
   {
    "id": "food_aloe",
@@ -9655,7 +13875,20 @@ const G6PD_DATA = {
     "芦荟胶囊",
     "芦荟胶"
    ],
-   "use": "食用/饮品原料"
+   "use": "食用/饮品原料",
+   "py": [
+    "luhuishiyong",
+    "luhuizhi",
+    "luhuijiaonang",
+    "luhuijiao"
+   ],
+   "pyi": [
+    "lhsy",
+    "lhz",
+    "lhjn",
+    "lhj"
+   ],
+   "debate": "食用芦荟部分资料列为慎食，证据有限；外用芦荟胶通常无碍。"
   },
   {
    "id": "food_soybean",
@@ -9677,7 +13910,25 @@ const G6PD_DATA = {
     "豆腐",
     "豆制品"
    ],
-   "use": "豆类食物（豆浆、豆腐原料）"
+   "use": "豆类食物（豆浆、豆腐原料）",
+   "py": [
+    "huangdoudadou",
+    "huangdou",
+    "dadou",
+    "doujiang",
+    "dounai",
+    "doufu",
+    "douzhipin"
+   ],
+   "pyi": [
+    "hddd",
+    "hd",
+    "dd",
+    "dj",
+    "dn",
+    "df",
+    "dzp"
+   ]
   },
   {
    "id": "food_mungbean",
@@ -9697,7 +13948,21 @@ const G6PD_DATA = {
     "绿豆沙",
     "绿豆粥"
    ],
-   "use": "豆类食物（绿豆汤、绿豆糕）"
+   "use": "豆类食物（绿豆汤、绿豆糕）",
+   "py": [
+    "lvdou",
+    "lvdoutang",
+    "lvdougao",
+    "lvdousha",
+    "lvdouzhou"
+   ],
+   "pyi": [
+    "ld",
+    "ldt",
+    "ldg",
+    "lds",
+    "ldz"
+   ]
   },
   {
    "id": "gap_粉丝_凉粉",
@@ -9719,7 +13984,23 @@ const G6PD_DATA = {
     "绿豆粉丝",
     "红薯粉丝"
    ],
-   "use": "淀粉类食物（可能含豆类淀粉）"
+   "use": "淀粉类食物（可能含豆类淀粉）",
+   "py": [
+    "fensiliangfen",
+    "fensi",
+    "liangfen",
+    "fentiao",
+    "lvdoufensi",
+    "hongshufensi"
+   ],
+   "pyi": [
+    "fslf",
+    "fs",
+    "lf",
+    "ft",
+    "ldfs",
+    "hsfs"
+   ]
   },
   {
    "id": "gap_酱油",
@@ -9739,7 +14020,19 @@ const G6PD_DATA = {
     "老抽",
     "豆酱油"
    ],
-   "use": "调味品（发酵豆制）"
+   "use": "调味品（发酵豆制）",
+   "py": [
+    "jiangyou",
+    "shengchou",
+    "laochou",
+    "doujiangyou"
+   ],
+   "pyi": [
+    "jy",
+    "sc",
+    "lc",
+    "djy"
+   ]
   },
   {
    "id": "gap_薄荷糖_口香糖",
@@ -9760,7 +14053,21 @@ const G6PD_DATA = {
     "薄荷口香糖",
     "薄荷硬糖"
    ],
-   "use": "零食（含薄荷脑）"
+   "use": "零食（含薄荷脑）",
+   "py": [
+    "bohetangkouxiangtang",
+    "bohetang",
+    "kouxiangtang",
+    "bohekouxiangtang",
+    "boheyingtang"
+   ],
+   "pyi": [
+    "bhtkxt",
+    "bht",
+    "kxt",
+    "bhkxt",
+    "bhyt"
+   ]
   },
   {
    "id": "gap_牛奶",
@@ -9780,7 +14087,19 @@ const G6PD_DATA = {
     "乳制品",
     "酸奶"
    ],
-   "use": "饮品/乳制品"
+   "use": "饮品/乳制品",
+   "py": [
+    "niunai",
+    "chunniunai",
+    "ruzhipin",
+    "suannai"
+   ],
+   "pyi": [
+    "nn",
+    "cnn",
+    "rzp",
+    "sn"
+   ]
   },
   {
    "id": "gap_鸡蛋",
@@ -9800,7 +14119,19 @@ const G6PD_DATA = {
     "蛋黄",
     "鸡蛋羹"
    ],
-   "use": "食物"
+   "use": "食物",
+   "py": [
+    "jidan",
+    "danqing",
+    "danhuang",
+    "jidangeng"
+   ],
+   "pyi": [
+    "jd",
+    "dq",
+    "dh",
+    "jdg"
+   ]
   },
   {
    "id": "gap_海鲜",
@@ -9822,7 +14153,22 @@ const G6PD_DATA = {
     "贝类",
     "海鱼"
    ],
-   "use": "食物"
+   "use": "食物",
+   "py": [
+    "haixian",
+    "yu",
+    "xia",
+    "xie",
+    "beilei",
+    "haiyu"
+   ],
+   "pyi": [
+    "hx",
+    "y",
+    "x",
+    "bl",
+    "hy"
+   ]
   },
   {
    "id": "gap_花生",
@@ -9841,7 +14187,17 @@ const G6PD_DATA = {
     "花生米",
     "花生酱"
    ],
-   "use": "坚果/零食"
+   "use": "坚果/零食",
+   "py": [
+    "huasheng",
+    "huashengmi",
+    "huashengjiang"
+   ],
+   "pyi": [
+    "hs",
+    "hsm",
+    "hsj"
+   ]
   },
   {
    "id": "gap_坚果",
@@ -9862,7 +14218,21 @@ const G6PD_DATA = {
     "腰果",
     "开心果"
    ],
-   "use": "零食"
+   "use": "零食",
+   "py": [
+    "jianguo",
+    "hetao",
+    "xingren",
+    "yaoguo",
+    "kaixinguo"
+   ],
+   "pyi": [
+    "jg",
+    "ht",
+    "xr",
+    "yg",
+    "kxg"
+   ]
   },
   {
    "id": "gap_巧克力",
@@ -9881,7 +14251,17 @@ const G6PD_DATA = {
     "黑巧克力",
     "牛奶巧克力"
    ],
-   "use": "零食"
+   "use": "零食",
+   "py": [
+    "qiaokeli",
+    "heiqiaokeli",
+    "niunaiqiaokeli"
+   ],
+   "pyi": [
+    "qkl",
+    "hqkl",
+    "nnqkl"
+   ]
   },
   {
    "id": "gap_咖啡",
@@ -9900,7 +14280,17 @@ const G6PD_DATA = {
     "拿铁",
     "美式"
    ],
-   "use": "饮品（含咖啡因）"
+   "use": "饮品（含咖啡因）",
+   "py": [
+    "kafei",
+    "natie",
+    "meishi"
+   ],
+   "pyi": [
+    "kf",
+    "nt",
+    "ms"
+   ]
   },
   {
    "id": "gap_茶",
@@ -9920,7 +14310,19 @@ const G6PD_DATA = {
     "红茶",
     "乌龙茶"
    ],
-   "use": "饮品"
+   "use": "饮品",
+   "py": [
+    "cha",
+    "lvcha",
+    "hongcha",
+    "wulongcha"
+   ],
+   "pyi": [
+    "c",
+    "lc",
+    "hc",
+    "wlc"
+   ]
   },
   {
    "id": "gap_腐乳",
@@ -9939,7 +14341,17 @@ const G6PD_DATA = {
     "豆腐乳",
     "霉豆腐"
    ],
-   "use": "发酵豆制品（调味）"
+   "use": "发酵豆制品（调味）",
+   "py": [
+    "furu",
+    "doufuru",
+    "meidoufu"
+   ],
+   "pyi": [
+    "fr",
+    "dfr",
+    "mdf"
+   ]
   },
   {
    "id": "gap_豆芽",
@@ -9958,7 +14370,17 @@ const G6PD_DATA = {
     "绿豆芽",
     "黄豆芽"
    ],
-   "use": "蔬菜（豆类发芽）"
+   "use": "蔬菜（豆类发芽）",
+   "py": [
+    "douya",
+    "lvdouya",
+    "huangdouya"
+   ],
+   "pyi": [
+    "dy",
+    "ldy",
+    "hdy"
+   ]
   },
   {
    "id": "gap_啤酒",
@@ -9976,7 +14398,15 @@ const G6PD_DATA = {
    "aliases": [
     "适量饮酒"
    ],
-   "use": "酒精饮品（可能含豆类/酵母）"
+   "use": "酒精饮品（可能含豆类/酵母）",
+   "py": [
+    "pijiu",
+    "shiliangyinjiu"
+   ],
+   "pyi": [
+    "pj",
+    "slyj"
+   ]
   },
   {
    "id": "gap_红酒",
@@ -9994,7 +14424,15 @@ const G6PD_DATA = {
    "aliases": [
     "葡萄酒"
    ],
-   "use": "酒精饮品"
+   "use": "酒精饮品",
+   "py": [
+    "hongjiu",
+    "putaojiu"
+   ],
+   "pyi": [
+    "hj",
+    "ptj"
+   ]
   },
   {
    "id": "gap_味精",
@@ -10013,7 +14451,17 @@ const G6PD_DATA = {
     "谷氨酸钠",
     "鸡精"
    ],
-   "use": "调味品（谷氨酸钠）"
+   "use": "调味品（谷氨酸钠）",
+   "py": [
+    "weijing",
+    "guansuanna",
+    "jijing"
+   ],
+   "pyi": [
+    "wj",
+    "gasn",
+    "jj"
+   ]
   },
   {
    "id": "gap_芥末",
@@ -10032,7 +14480,17 @@ const G6PD_DATA = {
     "黄芥末",
     "青芥"
    ],
-   "use": "调味品"
+   "use": "调味品",
+   "py": [
+    "jiemo",
+    "huangjiemo",
+    "qingjie"
+   ],
+   "pyi": [
+    "jm",
+    "hjm",
+    "qj"
+   ]
   },
   {
    "id": "gap_芒果",
@@ -10050,7 +14508,15 @@ const G6PD_DATA = {
    "aliases": [
     "芒果干"
    ],
-   "use": "水果"
+   "use": "水果",
+   "py": [
+    "mangguo",
+    "mangguogan"
+   ],
+   "pyi": [
+    "mg",
+    "mgg"
+   ]
   },
   {
    "id": "gap_菠萝",
@@ -10068,7 +14534,15 @@ const G6PD_DATA = {
    "aliases": [
     "凤梨"
    ],
-   "use": "水果"
+   "use": "水果",
+   "py": [
+    "boluo",
+    "fengli"
+   ],
+   "pyi": [
+    "bl",
+    "fl"
+   ]
   },
   {
    "id": "gap_草莓",
@@ -10084,7 +14558,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "水果"
+   "use": "水果",
+   "py": [
+    "caomei"
+   ],
+   "pyi": [
+    "cm"
+   ]
   },
   {
    "id": "gap_桑葚",
@@ -10102,7 +14582,13 @@ const G6PD_DATA = {
    "aliases": [
     "桑椹"
    ],
-   "use": "水果"
+   "use": "水果",
+   "py": [
+    "sangshen"
+   ],
+   "pyi": [
+    "ss"
+   ]
   },
   {
    "id": "gap_杨梅",
@@ -10118,7 +14604,13 @@ const G6PD_DATA = {
     "S5"
    ],
    "aliases": [],
-   "use": "水果"
+   "use": "水果",
+   "py": [
+    "yangmei"
+   ],
+   "pyi": [
+    "ym"
+   ]
   },
   {
    "id": "gap_樱桃",
@@ -10136,7 +14628,15 @@ const G6PD_DATA = {
    "aliases": [
     "车厘子"
    ],
-   "use": "水果"
+   "use": "水果",
+   "py": [
+    "yingtao",
+    "chelizi"
+   ],
+   "pyi": [
+    "yt",
+    "clz"
+   ]
   },
   {
    "id": "gap_石榴",
@@ -10154,7 +14654,15 @@ const G6PD_DATA = {
    "aliases": [
     "石榴汁"
    ],
-   "use": "水果"
+   "use": "水果",
+   "py": [
+    "shiliu",
+    "shiliuzhi"
+   ],
+   "pyi": [
+    "sl",
+    "slz"
+   ]
   },
   {
    "id": "gap_洗衣液_洗衣粉",
@@ -10173,7 +14681,17 @@ const G6PD_DATA = {
     "洗衣液",
     "洗衣粉"
    ],
-   "use": "衣物洗涤"
+   "use": "衣物洗涤",
+   "py": [
+    "xiyiyexiyifen",
+    "xiyiye",
+    "xiyifen"
+   ],
+   "pyi": [
+    "xyyxyf",
+    "xyy",
+    "xyf"
+   ]
   },
   {
    "id": "gap_洗洁精",
@@ -10192,7 +14710,15 @@ const G6PD_DATA = {
     "洗洁精",
     "洗碗液"
    ],
-   "use": "餐具洗涤"
+   "use": "餐具洗涤",
+   "py": [
+    "xijiejing",
+    "xiwanye"
+   ],
+   "pyi": [
+    "xjj",
+    "xwy"
+   ]
   },
   {
    "id": "gap_漂白剂_84消毒液",
@@ -10212,7 +14738,19 @@ const G6PD_DATA = {
     "漂白剂",
     "含氯消毒液"
    ],
-   "use": "环境消毒、漂白"
+   "use": "环境消毒、漂白",
+   "py": [
+    "piaobaijixiaoduye",
+    "xiaoduye",
+    "piaobaiji",
+    "hanlvxiaoduye"
+   ],
+   "pyi": [
+    "pbjxdy",
+    "xdy",
+    "pbj",
+    "hlxdy"
+   ]
   },
   {
    "id": "gap_香皂_沐浴露",
@@ -10232,7 +14770,19 @@ const G6PD_DATA = {
     "肥皂",
     "沐浴露"
    ],
-   "use": "洗浴清洁"
+   "use": "洗浴清洁",
+   "py": [
+    "xiangzaomuyulu",
+    "xiangzao",
+    "feizao",
+    "muyulu"
+   ],
+   "pyi": [
+    "xzmyl",
+    "xz",
+    "fz",
+    "myl"
+   ]
   },
   {
    "id": "gap_洗发水_护发素",
@@ -10252,7 +14802,19 @@ const G6PD_DATA = {
     "护发素",
     "洗头水"
    ],
-   "use": "洗发护发"
+   "use": "洗发护发",
+   "py": [
+    "xifashuihufasu",
+    "xifashui",
+    "hufasu",
+    "xitoushui"
+   ],
+   "pyi": [
+    "xfshfs",
+    "xfs",
+    "hfs",
+    "xts"
+   ]
   },
   {
    "id": "gap_化妆品",
@@ -10273,7 +14835,21 @@ const G6PD_DATA = {
     "眼影",
     "化妆"
    ],
-   "use": "护肤、彩妆"
+   "use": "护肤、彩妆",
+   "py": [
+    "huazhuangpin",
+    "kouhong",
+    "fendi",
+    "yanying",
+    "huazhuang"
+   ],
+   "pyi": [
+    "hzp",
+    "kh",
+    "fd",
+    "yy",
+    "hz"
+   ]
   },
   {
    "id": "gap_香水",
@@ -10292,7 +14868,15 @@ const G6PD_DATA = {
     "香水",
     "香氛"
    ],
-   "use": "香氛"
+   "use": "香氛",
+   "py": [
+    "xiangshui",
+    "xiangfen"
+   ],
+   "pyi": [
+    "xs",
+    "xf"
+   ]
   },
   {
    "id": "gap_面膜_护手霜_防晒霜",
@@ -10313,7 +14897,21 @@ const G6PD_DATA = {
     "防晒霜",
     "护肤品"
    ],
-   "use": "护肤"
+   "use": "护肤",
+   "py": [
+    "mianmohushoushuangfangshaishuang",
+    "mianmo",
+    "hushoushuang",
+    "fangshaishuang",
+    "hufupin"
+   ],
+   "pyi": [
+    "mmhssfss",
+    "mm",
+    "hss",
+    "fss",
+    "hfp"
+   ]
   },
   {
    "id": "gap_洗甲水_丙酮",
@@ -10333,7 +14931,18 @@ const G6PD_DATA = {
     "丙酮",
     "卸甲水"
    ],
-   "use": "卸甲（有机溶剂）"
+   "use": "卸甲（有机溶剂）",
+   "py": [
+    "xijiashuibingtong",
+    "xijiashui",
+    "bingtong",
+    "xiejiashui"
+   ],
+   "pyi": [
+    "xjsbt",
+    "xjs",
+    "bt"
+   ]
   },
   {
    "id": "gap_爽身粉",
@@ -10352,7 +14961,15 @@ const G6PD_DATA = {
     "爽身粉",
     "痱子粉"
    ],
-   "use": "爽身、吸汗（滑石粉类）"
+   "use": "爽身、吸汗（滑石粉类）",
+   "py": [
+    "shuangshenfen",
+    "feizifen"
+   ],
+   "pyi": [
+    "ssf",
+    "fzf"
+   ]
   },
   {
    "id": "gap_牙膏_漱口水",
@@ -10372,7 +14989,19 @@ const G6PD_DATA = {
     "漱口水",
     "薄荷牙膏"
    ],
-   "use": "口腔清洁"
+   "use": "口腔清洁",
+   "py": [
+    "yagaoshukoushui",
+    "yagao",
+    "shukoushui",
+    "boheyagao"
+   ],
+   "pyi": [
+    "ygsks",
+    "yg",
+    "sks",
+    "bhyg"
+   ]
   },
   {
    "id": "gap_花露水_驱蚊液",
@@ -10392,7 +15021,19 @@ const G6PD_DATA = {
     "驱蚊液",
     "驱蚊水"
    ],
-   "use": "驱蚊、止痒（含避蚊胺/薄荷脑）"
+   "use": "驱蚊、止痒（含避蚊胺/薄荷脑）",
+   "py": [
+    "hualushuiquwenye",
+    "hualushui",
+    "quwenye",
+    "quwenshui"
+   ],
+   "pyi": [
+    "hlsqwy",
+    "hls",
+    "qwy",
+    "qws"
+   ]
   },
   {
    "id": "gap_蚊香_电蚊香",
@@ -10413,7 +15054,21 @@ const G6PD_DATA = {
     "盘蚊香",
     "蚊香液"
    ],
-   "use": "驱蚊（含拟除虫菊酯）"
+   "use": "驱蚊（含拟除虫菊酯）",
+   "py": [
+    "wenxiangdianwenxiang",
+    "wenxiang",
+    "dianwenxiang",
+    "panwenxiang",
+    "wenxiangye"
+   ],
+   "pyi": [
+    "wxdwx",
+    "wx",
+    "dwx",
+    "pwx",
+    "wxy"
+   ]
   },
   {
    "id": "gap_空气清新剂",
@@ -10433,7 +15088,17 @@ const G6PD_DATA = {
     "固体清新剂",
     "香薰蜡烛"
    ],
-   "use": "除味、香氛"
+   "use": "除味、香氛",
+   "py": [
+    "kongqiqingxinji",
+    "gutiqingxinji",
+    "xiangxunlazhu"
+   ],
+   "pyi": [
+    "kqqxj",
+    "gtqxj",
+    "xxlz"
+   ]
   },
   {
    "id": "gap_钙片",
@@ -10454,7 +15119,21 @@ const G6PD_DATA = {
     "钙剂",
     "葡萄糖酸钙片"
    ],
-   "use": "补钙"
+   "use": "补钙",
+   "py": [
+    "gaipian",
+    "tansuangai",
+    "ningmengsuangai",
+    "gaiji",
+    "putaotangsuangaipian"
+   ],
+   "pyi": [
+    "gp",
+    "tsg",
+    "nmsg",
+    "gj",
+    "pttsgp"
+   ]
   },
   {
    "id": "gap_红药水",
@@ -10474,7 +15153,17 @@ const G6PD_DATA = {
     "汞溴红",
     "mercurochrome"
    ],
-   "use": "外用消毒（汞溴红，现已少用）"
+   "use": "外用消毒（汞溴红，现已少用）",
+   "py": [
+    "hongyaoshui",
+    "honggong",
+    "gongxiuhong"
+   ],
+   "pyi": [
+    "hys",
+    "hg",
+    "gxh"
+   ]
   },
   {
    "id": "gap_双氧水",
@@ -10494,7 +15183,15 @@ const G6PD_DATA = {
     "过氧化氢",
     "hydrogen peroxide"
    ],
-   "use": "外用消毒、清洗伤口"
+   "use": "外用消毒、清洗伤口",
+   "py": [
+    "shuangyangshui",
+    "guoyanghuaqing"
+   ],
+   "pyi": [
+    "sys",
+    "gyhq"
+   ]
   },
   {
    "id": "gap_无极膏",
@@ -10513,7 +15210,15 @@ const G6PD_DATA = {
     "无极膏",
     "复方薄荷脑软膏"
    ],
-   "use": "外用止痒（蚊虫叮咬、皮炎）"
+   "use": "外用止痒（蚊虫叮咬、皮炎）",
+   "py": [
+    "wujigao",
+    "fufangbohenaoruangao"
+   ],
+   "pyi": [
+    "wjg",
+    "ffbhnrg"
+   ]
   }
  ]
 };

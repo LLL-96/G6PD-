@@ -120,6 +120,26 @@ def search(query, items=None):
         key = it["id"]
         if merged.get(key, 0) < score:
             merged[key] = score
+    # 拼音兜底：中文/别名都没命中时，尝试全拼或首字母
+    if not merged and q.isascii() and q.isalpha():
+        hits = []
+        for it in items:
+            best = 0
+            for k in it.get("pyi", []):
+                if k == q:
+                    best = 95
+                    break
+                if k.startswith(q):
+                    best = max(best, 85)
+            if not best:
+                for k in it.get("py", []):
+                    if q in k:
+                        best = 70
+                        break
+            if best:
+                hits.append((best, it))
+        hits.sort(key=lambda x: -x[0])
+        return hits
     return sorted(((s, ITEM_BY_ID[i]) for i, s in merged.items()), key=lambda x: -x[0])
 
 ITEM_BY_ID = {it["id"]: it for it in ITEMS}
@@ -150,6 +170,8 @@ def print_item(it, index=None):
         print(f"   说明：{it['detail']}")
     if it.get("note"):
         print(yellow(f"   注意：{it['note']}"))
+    if it.get("controversy"):
+        print(yellow(f"   分歧：{it.get('debate') or '不同资料分级不一致，本库取保守口径，具体请遵医嘱。'}"))
     if it.get("sources"):
         print(dim(f"   来源：{source_line(it)}"))
     print()

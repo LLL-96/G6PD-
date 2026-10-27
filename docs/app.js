@@ -122,6 +122,61 @@
   }
   /* ===== SEARCH-CORE-END ===== */
 
+  /* ---------- 成分匹配（严格：名称 / 精确别名，避免别名子串误配） ---------- */
+  var NAME_INDEX = {}, ALIAS_INDEX = {};
+  ITEMS.forEach(function (it) {
+    NAME_INDEX[norm(it.name)] = it;
+    (it.aliases || []).forEach(function (a) {
+      var k = norm(a);
+      if (k && !ALIAS_INDEX[k]) ALIAS_INDEX[k] = it;
+    });
+  });
+  function matchIngredient(ing) {
+    var k = norm(ing);
+    if (!k) return null;
+    if (NAME_INDEX[k]) return NAME_INDEX[k];
+    if (ALIAS_INDEX[k]) return ALIAS_INDEX[k];
+    for (var i = 0; i < ITEMS.length; i++) {
+      var n = norm(ITEMS[i].name);
+      if (!n) continue;
+      if (n.indexOf(k) >= 0 && k.length >= 2) return ITEMS[i];
+      if (k.indexOf(n) >= 0 && n.length >= 3) return ITEMS[i];
+    }
+    return null;
+  }
+
+  /* ---------- 拼音搜索（中文搜不到时兜底；支持全拼与首字母） ---------- */
+  function pinyinSearch(q) {
+    var nq = norm(q);
+    if (!/^[a-z]+$/.test(nq)) return [];
+    var out = [];
+    ITEMS.forEach(function (it) {
+      var py = it.py || [], pyi = it.pyi || [];
+      var best = 0;
+      for (var i = 0; i < pyi.length; i++) {
+        if (pyi[i] === nq) { best = 95; break; }
+        if (pyi[i].indexOf(nq) === 0) best = Math.max(best, 85);
+      }
+      if (!best) {
+        for (var j = 0; j < py.length; j++) {
+          if (py[j].indexOf(nq) >= 0) { best = 70; break; }
+        }
+      }
+      if (best) out.push({ score: best, item: it });
+    });
+    out.sort(function (a, b) {
+      if (b.score !== a.score) return b.score - a.score;
+      return RISK_ORDER[a.item.risk] - RISK_ORDER[b.item.risk];
+    });
+    return out.map(function (x) { return x.item; });
+  }
+  var searchCore = search;
+  search = function (q) {
+    var r = searchCore(q);
+    if (r.length) return r;
+    return pinyinSearch(q);
+  };
+
   function esc(s) {
     return String(s == null ? "" : s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -190,6 +245,9 @@
       var s = scoreItem(nq, it);
       if (s >= 50) out.push({ score: s, item: it });
     });
+    if (!out.length) {
+      pinyinSearch(q).slice(0, n).forEach(function (it) { out.push({ score: 60, item: it }); });
+    }
     out.sort(function (a, b) {
       if (b.score !== a.score) return b.score - a.score;
       return RISK_ORDER[a.item.risk] - RISK_ORDER[b.item.risk];
@@ -207,8 +265,7 @@
     var comp = null, hasForbid = false, hasCaution = false;
     if (it.ingredients && it.ingredients.length) {
       comp = it.ingredients.map(function (ing) {
-        var r = search(ing);
-        var top = r[0];
+        var top = matchIngredient(ing);
         return { name: ing, risk: top ? top.risk : "none", matched: top ? top.name : null };
       });
       hasForbid = comp.some(function (c) { return c.risk === "forbidden"; });
@@ -240,6 +297,7 @@
           (aliases ? '<div class="kv"><div class="k">别名/商品名</div><div class="v">' + esc(aliases) + '</div></div>' : "") +
           (it.detail ? '<div class="kv"><div class="k">说明</div><div class="v">' + esc(it.detail) + '</div></div>' : "") +
           (it.note ? '<div class="warn">⚠ ' + esc(it.note) + '</div>' : "") +
+          (it.controversy ? '<div class="debate-box"><b>⚠ 为什么标「分歧」</b><br>' + esc(it.debate || "不同资料的分级不完全一致（有的列为慎用/避免，有的认为风险很低）；本库按更保守的口径标注，具体请遵医嘱。") + '</div>' : "") +
           (comp ? compoundBlock(comp, hasForbid, hasCaution) : "") +
           '<div class="src">来源：' + sourceText(it) + '</div>' +
         '</div>' +
@@ -255,10 +313,12 @@
       return '<div class="cing"><span class="mtag ' + cls + '">' + esc(lab) + "</span>" +
         '<span class="ingname">' + esc(c.name) + approx + "</span></div>";
     }).join("");
+    var bad = comp.filter(function (c) { return c.risk === "forbidden"; }).map(function (c) { return c.name; });
+    var warn = comp.filter(function (c) { return c.risk === "caution"; }).map(function (c) { return c.name; });
     var note = hasForbid
-      ? "⛔ 本品含禁用成分，如已开具请立即与开药医生复核。"
+      ? "⛔ 含本库禁用成分：" + esc(bad.join("、")) + "。建议避免使用；如已服用，请立即与医生/药师确认。"
       : hasCaution
-        ? "⚠ 本品含慎用成分，请确认医生/药师已知情。"
+        ? "⚠ 含本库慎用成分：" + esc(warn.join("、")) + "。请确认医生/药师已知情。"
         : "成分均未提示禁忌，但仍需遵医嘱。";
     return '<div class="compound"><div class="ck">🔬 成分比对（逐条核对禁忌库）</div>' +
       rows + '<div class="cnote ' + (hasForbid ? "bad" : hasCaution ? "warn" : "") + '">' + note + "</div></div>";
@@ -353,7 +413,8 @@
     }
     var h = loadHist();
     if (h.length) {
-      html += '<div class="hist-label">🕘 最近查询</div><div class="hchips">' +
+      html += '<div class="hist-label" style="display:flex;justify-content:space-between;align-items:center">' +
+        '<span>🕘 最近查询</span><span class="hist-clear" id="histClear">清空</span></div><div class="hchips">' +
         h.map(function (q) { return '<span class="hchip" data-q="' + esc(q) + '">' + esc(q) + "</span>"; }).join("") +
         '</div>';
     }
@@ -407,7 +468,7 @@
   var listQ = document.getElementById("listQ");
   var scenChips = document.getElementById("scenChips");
   var allList = document.getElementById("allList");
-  var browseState = { scenario: null, openGroups: {} };
+  var browseState = { scenario: null };
 
   function subcatHTML(items) {
     if (!items.length) return "";
@@ -484,17 +545,15 @@
       allList.innerHTML = flat || '<div class="empty"><div class="big">🔍</div>没有匹配的条目</div>';
       return;
     }
-    // 折叠手风琴：默认收起，点开看细类
+    // 折叠手风琴：用原生 <details>，展开不重渲染、不跳滚动
     var acc = "";
     BROWSE_GROUPS.forEach(function (g) {
       var items = ITEMS.filter(function (it) { return catToGroup(it.category) === g.id; });
       if (!items.length) return;
-      var open = !!browseState.openGroups[g.id];
-      acc += '<div class="bgroup' + (open ? " open" : "") + '" data-g="' + g.id + '">' +
-        '<div class="bg-head"><span class="bg-ic">' + g.icon + '</span><span class="bg-name">' + esc(g.name) + '</span>' +
-        '<span class="bg-cnt">' + items.length + '</span><span class="bg-arrow">▾</span></div>' +
-        (open ? '<div class="bg-body">' + subcatHTML(items) + '</div>' : '') +
-        '</div>';
+      acc += '<details class="bgroup">' +
+        '<summary class="bg-head"><span class="bg-ic">' + g.icon + '</span><span class="bg-name">' + esc(g.name) + '</span>' +
+        '<span class="bg-cnt">' + items.length + '</span><span class="bg-arrow">▾</span></summary>' +
+        '<div class="bg-body">' + subcatHTML(items) + '</div></details>';
     });
     allList.innerHTML = acc;
   }
@@ -513,6 +572,11 @@
       html += subcatHTML(arr);
     });
     forbidList.innerHTML = html;
+    var pm = document.getElementById("printMeta");
+    if (pm) {
+      pm.textContent = "共 " + items.length + " 项 · 数据更新 " +
+        ((G6PD_DATA.meta && G6PD_DATA.meta.updated) || "—") + " · 仅供参考，以医生/药师指导为准";
+    }
   }
   function forbiddenPlainText() {
     var items = ITEMS.filter(function (it) { return it.risk === "forbidden"; });
@@ -606,15 +670,10 @@
   if (allList) allList.addEventListener("click", function (e) {
     var back = e.target.closest("#backAll");
     if (back) { browseState.scenario = null; renderBrowse(); return; }
-    var head = e.target.closest(".bg-head");
-    if (head) {
-      var g = head.parentNode.getAttribute("data-g");
-      browseState.openGroups[g] = !browseState.openGroups[g];
-      renderBrowse();
-    }
   });
 
   if (histArea) histArea.addEventListener("click", function (e) {
+    if (e.target.closest("#histClear")) { clearHist(); renderHistFav(); return; }
     var c = e.target.closest(".hchip");
     if (c) { switchTab("search"); runQuery(c.getAttribute("data-q")); }
   });
@@ -673,6 +732,17 @@
 
   var badge = document.getElementById("badgeCount");
   if (badge) badge.textContent = "共 " + ITEMS.length + " 条";
+
+  var dm = document.getElementById("dataMeta");
+  if (dm && G6PD_DATA.meta) {
+    dm.textContent = "数据更新 " + (G6PD_DATA.meta.updated || "—") +
+      " · v" + (G6PD_DATA.meta.version || "") + " · 共 " + ITEMS.length + " 条";
+  }
+  var fl = document.getElementById("feedbackLink");
+  if (fl) {
+    fl.href = "https://github.com/LLL-96/G6PD-/issues/new?title=" + encodeURIComponent("数据纠错") +
+      "&body=" + encodeURIComponent("条目名称：\n问题描述：\n参考来源：");
+  }
 
   renderHome();
   refresh();

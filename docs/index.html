@@ -118,6 +118,7 @@
   .hchip { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 6px 13px; font-size: 13px; color: var(--ink-2); cursor: pointer; box-shadow: var(--shadow); }
   .hchip:active { background: #eef0f3; }
   .hchip.fav { border-color: #f3d39a; color: #b8791b; }
+  .hist-clear { font-size: 12px; color: var(--ink-3); cursor: pointer; text-decoration: underline; }
 
   /* ===== 条目卡片 ===== */
   .item { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 10px; overflow: hidden; cursor: pointer; position: relative; box-shadow: var(--shadow); }
@@ -138,6 +139,8 @@
   .item .summary { font-size: 14px; color: var(--ink-2); margin-top: 4px; }
   .item .use-line { font-size: 13px; color: var(--ink-3); margin-top: 3px; line-height: 1.5; }
   .item .use-line .u-k { display: inline-block; font-size: 11px; font-weight: 700; color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 5px; padding: 0 5px; margin-right: 5px; vertical-align: 1px; }
+  .item .debate-box { margin-top: 8px; font-size: 13px; line-height: 1.6; border-radius: 9px; padding: 9px 11px; background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .item .debate-box b { color: var(--yellow); }
   .item .detail { display: none; padding: 0 16px 13px 18px; font-size: 14px; }
   .item.open .detail { display: block; }
   .item .detail .kv { margin-top: 6px; }
@@ -185,6 +188,9 @@
   .bg-cnt { font-size: 12px; color: var(--ink-3); background: #f1f3f6; border-radius: 999px; padding: 1px 9px; }
   .bg-arrow { color: var(--ink-3); font-size: 14px; transition: transform .2s; }
   .bgroup.open .bg-arrow { transform: rotate(180deg); }
+  details.bgroup > summary { list-style: none; }
+  details.bgroup > summary::-webkit-details-marker { display: none; }
+  details.bgroup[open] .bg-arrow { transform: rotate(180deg); }
   .bg-body { padding: 2px 12px 12px; }
   .back-chip { display: inline-block; font-size: 13px; color: var(--brand); background: var(--red-bg); border: 1px solid var(--red-border); border-radius: 999px; padding: 5px 12px; margin: 4px 0 10px; cursor: pointer; }
 
@@ -271,6 +277,27 @@
   .toast { position: fixed; left: 50%; bottom: calc(86px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: rgba(20,22,26,.92); color: #fff; font-size: 14px; border-radius: 10px; padding: 10px 18px; z-index: 99; display: none; max-width: 86vw; text-align: center; }
   .toast.show { display: block; }
   .overdue { color: var(--red); font-weight: 700; font-size: 12px; }
+
+  /* ===== 打印（只打当前页，隐藏导航/搜索/按钮）===== */
+  .print-only { display: none; }
+  @media print {
+    header, nav, .print-bar, .footer-note, .search-wrap, .chips, .hero, .sec-title,
+    .scen-grid, .hint, .list-filter, .scen-chips, .back-chip,
+    .star, .chev, .btn, .pbtn, .toast { display: none !important; }
+    body { background: #fff; padding: 0; font-size: 11.5pt; }
+    main { max-width: none; padding: 0; }
+    .page { display: none !important; }
+    .page.on { display: block !important; }
+    .print-only { display: block; margin-bottom: 10px; }
+    .print-only h2 { font-size: 15pt; margin: 0 0 4px; }
+    .print-only .pm { font-size: 9pt; color: #555; }
+    .item, .bgroup { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; page-break-inside: avoid; margin-bottom: 6px; }
+    .item .detail { display: none !important; }
+    .group-head { margin-top: 10px; }
+    .subcat-title { margin-top: 8px; }
+    .tag { border: 1px solid currentColor; }
+    a { color: inherit; text-decoration: none; }
+  }
 </style>
 </head>
 <body>
@@ -335,6 +362,10 @@
 
   <!-- ============ 禁用清单 ============ -->
   <section class="page" id="page-forbidden">
+    <div class="print-only">
+      <h2>🫘 蚕豆病（G6PD 缺乏症）禁用清单</h2>
+      <div class="pm" id="printMeta"></div>
+    </div>
     <div class="forbid-intro">以下为禁用 / 绝对回避项。就医、买药、囤货前先核对，把这份清单给医生看。</div>
     <div class="print-bar">
       <button class="pbtn" id="copyForbid">📋 复制清单</button>
@@ -388,6 +419,7 @@
 
   <div class="footer-note">
     数据整理自公开权威资料（安徽省卫健委、台湾药学会、医院药学部等），仅供参考，不构成医疗建议。<br>
+    <span id="dataMeta"></span> · <a href="#" id="feedbackLink" target="_blank" rel="noopener">发现错误？点此反馈</a><br>
     用药请以医生处方和药师指导为准 · 本地运行，数据不出手机
   </div>
 </main>

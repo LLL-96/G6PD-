@@ -78,6 +78,17 @@ try {
   } catch(e){ threw = e; }
   check("交互·展开分组不抛错", !threw);
   check("交互·展开后分类页含食物条目", elements["allList"].innerHTML.indexOf("蚕豆") >= 0 || elements["allList"].innerHTML.indexOf("食物") >= 0);
+
+  // 新能力：拼音搜索 / 复方拆解 / 分歧说明
+  const g = window.g6pd;
+  check("拼音首字母 blf → 布洛芬", g.search("blf").some(i => i.name === "布洛芬"));
+  check("拼音全拼 buluofen → 布洛芬", g.search("buluofen").some(i => i.name === "布洛芬"));
+  const lh = G.items.find(i => i.name === "连花清瘟");
+  const lhCard = g.itemCard(lh, "t");
+  check("连花清瘟拆解出禁用成分", lhCard.indexOf("含本库禁用成分") >= 0 && lhCard.indexOf("连翘") >= 0);
+  const cm = G.items.find(i => i.name === "氯霉素");
+  check("分歧条目显示说明", g.itemCard(cm, "t").indexOf("为什么标「分歧」") >= 0);
+  check("非分歧条目不显示分歧框", g.itemCard(G.items.find(i => i.name === "阿司匹林"), "t").indexOf("debate-box") < 0);
 } catch(e){ fail++; console.log("❌ 异常: "+e.message); console.log(e.stack.split("\n").slice(0,4).join("\n")); }
 
 console.log(fail ? `\n${fail} 项失败` : "\nUI 初始化校验全部通过");
